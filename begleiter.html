@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tägliche Begleiter · Logic | Soul</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --gold: #C5A059; --gold-light: #d4b472; --gold-dim: rgba(197,160,89,0.1);
+  --gold-border: rgba(197,160,89,0.32); --gold-dark: #a8863e;
+  --navy: #0D1B2A; --navy-mid: #162336; --navy-light: rgba(13,27,42,0.06);
+  --navy-border: rgba(13,27,42,0.12);
+  --bg: #F2F0ED; --bg-alt: #FAFAF8; --bg-card: #FFFFFF;
+  --border: rgba(13,27,42,0.09);
+  --text: #0D1B2A; --text-mid: rgba(13,27,42,0.65); --text-dim: rgba(13,27,42,0.42);
+  --alma: #19047C; --alma-dark: #0f0250; --creme: #F5EDD8;
+  --nav-h: 68px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; font-weight:300; }
+
+
+/* NAV */
+header { position:fixed; top:0; left:0; right:0; z-index:500; background:rgba(250,250,248,0.97); backdrop-filter:blur(20px); border-bottom:1px solid var(--border); box-shadow:0 1px 20px rgba(13,27,42,0.05); }
+.header-top { height:var(--nav-h); display:flex; align-items:center; justify-content:space-between; padding:0 3rem; }
+.logo { display:flex; align-items:baseline; cursor:pointer; text-decoration:none; }
+.logo-logik { font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--navy); }
+.logo-pipe  { font-family:'DM Sans',sans-serif; font-size:1.1rem; font-weight:300; color:var(--gold); padding:0 0.13rem; }
+.logo-soul  { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:400; font-style:italic; color:var(--navy); }
+.main-nav { display:flex; align-items:center; list-style:none; }
+.nav-btn { display:flex; align-items:center; gap:0.3rem; height:var(--nav-h); padding:0 0.85rem; font-family:'DM Sans',sans-serif; font-size:0.61rem; font-weight:400; letter-spacing:0.18em; text-transform:uppercase; color:var(--navy); opacity:0.55; background:none; border:none; cursor:pointer; transition:opacity 0.2s; white-space:nowrap; border-bottom:2px solid transparent; text-decoration:none; display:flex; align-items:center; }
+.nav-btn:hover { opacity:1; }
+.nav-btn.active { opacity:1; border-bottom-color:var(--gold); }
+.nav-btn svg { width:7px; height:7px; opacity:0.4; transition:transform 0.25s; flex-shrink:0; }
+.nav-cta { margin-left:1rem !important; padding:0.5rem 1.3rem !important; height:auto !important; border:1.5px solid var(--gold) !important; color:var(--gold-dark) !important; font-size:0.6rem !important; opacity:1 !important; transition:background 0.25s, color 0.25s !important; }
+.nav-cta:hover { background:var(--gold) !important; color:white !important; }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; }
+.hamburger span { display:block; width:22px; height:1.5px; background:var(--navy); }
+
+/* SIDEBAR */
+.sidebar-panel { position:fixed; top:var(--nav-h); width:260px; background:var(--navy); border:1px solid rgba(197,160,89,0.2); border-top:2px solid var(--gold); z-index:450; display:flex; flex-direction:column; opacity:0; visibility:hidden; pointer-events:none; transform:translateY(-8px); transition:opacity 0.22s ease, transform 0.22s ease, visibility 0.22s; overflow-y:auto; max-height:calc(100vh - var(--nav-h) - 2rem); box-shadow:0 8px 40px rgba(0,0,0,0.25); }
+.sidebar-panel.open { opacity:1; visibility:visible; pointer-events:all; transform:translateY(0); }
+.sidebar-overlay { position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(13,27,42,0.15); backdrop-filter:blur(2px); z-index:440; opacity:0; visibility:hidden; transition:opacity 0.22s, visibility 0.22s; cursor:pointer; }
+.sidebar-overlay.open { opacity:1; visibility:visible; }
+.sidebar-header { padding:1.25rem 1.5rem 0.85rem; border-bottom:1px solid rgba(197,160,89,0.12); }
+.sidebar-label { font-size:0.5rem; letter-spacing:0.5em; text-transform:uppercase; color:var(--gold); display:block; }
+.sidebar-title { font-family:'Playfair Display',serif; font-size:1rem; color:rgba(255,255,255,0.9); margin-top:0.35rem; }
+.sidebar-items { padding:0.5rem 0; }
+.sidebar-btn { display:flex; align-items:center; width:100%; padding:0.8rem 1.5rem; font-family:'DM Sans',sans-serif; font-size:0.61rem; font-weight:300; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.6); background:none; border:none; border-bottom:1px solid rgba(255,255,255,0.04); text-align:left; cursor:pointer; transition:color 0.18s, background 0.18s, padding-left 0.18s; text-decoration:none; }
+.sidebar-btn:last-child { border-bottom:none; }
+.sidebar-btn:hover { color:var(--gold); background:rgba(197,160,89,0.07); padding-left:1.85rem; }
+
+/* MOBILE MENU */
+.mobile-menu { display:none; position:fixed; top:var(--nav-h); left:0; right:0; bottom:0; background:var(--navy); z-index:490; overflow-y:auto; flex-direction:column; }
+.mobile-menu.open { display:flex; }
+.mobile-menu-btn { display:flex; align-items:center; justify-content:space-between; width:100%; padding:1.1rem 1.75rem; font-family:'DM Sans',sans-serif; font-size:0.72rem; font-weight:300; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.7); background:none; border:none; border-bottom:1px solid rgba(255,255,255,0.06); text-align:left; cursor:pointer; }
+.mobile-menu-btn:hover, .mobile-menu-btn.expanded { color:var(--gold); }
+.mobile-menu-btn svg { width:10px; height:10px; opacity:0.4; transition:transform 0.25s; flex-shrink:0; }
+.mobile-menu-btn.expanded svg { transform:rotate(180deg); opacity:1; }
+.mobile-submenu { display:none; flex-direction:column; background:rgba(0,0,0,0.25); border-bottom:1px solid rgba(255,255,255,0.06); }
+.mobile-submenu.open { display:flex; }
+.mobile-sub-btn { display:block; width:100%; padding:0.85rem 2.5rem; font-family:'DM Sans',sans-serif; font-size:0.65rem; font-weight:300; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.5); background:none; border:none; border-bottom:1px solid rgba(255,255,255,0.03); text-align:left; cursor:pointer; transition:color 0.2s, padding-left 0.2s; text-decoration:none; display:block; }
+.mobile-sub-btn:hover { color:var(--gold); padding-left:3rem; }
+.mobile-menu-cta { margin:1.5rem 1.75rem; border:1.5px solid var(--gold); color:var(--gold); padding:0.75rem 1.75rem; font-family:'DM Sans',sans-serif; font-size:0.63rem; letter-spacing:0.22em; text-transform:uppercase; background:none; cursor:pointer; transition:background 0.25s, color 0.25s; text-align:center; display:block; text-decoration:none; }
+.mobile-menu-cta:hover { background:var(--gold); color:white; }
+
+/* PAGE LAYOUT */
+main { padding-top:var(--nav-h); min-height:100vh; }
+.page-wrap { max-width:1160px; margin:0 auto; padding:4rem 3rem 6rem; width:100%; }
+.page-hero { margin-bottom:3.5rem; padding-bottom:2.5rem; border-bottom:1px solid var(--border); }
+.page-eyebrow { font-size:0.55rem; letter-spacing:0.5em; text-transform:uppercase; color:var(--gold); margin-bottom:0.85rem; }
+.page-title { font-family:'Playfair Display',serif; font-size:clamp(2.2rem,3.5vw,3.8rem); font-weight:400; line-height:1.1; color:var(--navy); margin-bottom:1.25rem; }
+.page-title em { font-style:italic; color:var(--gold-dark); }
+.page-sub { font-size:0.9rem; line-height:1.95; color:var(--text-mid); max-width:680px; }
+.page-intro-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; margin-bottom:4rem; }
+
+/* CARDS & COMPONENTS */
+.card { background:var(--bg-card); border:1px solid var(--border); padding:2.5rem; position:relative; transition:border-color 0.3s, box-shadow 0.3s, transform 0.3s; }
+.card:hover { border-color:var(--gold-border); box-shadow:0 8px 40px rgba(197,160,89,0.1); transform:translateY(-3px); }
+.card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:var(--gold); transform:scaleX(0); transition:transform 0.35s; transform-origin:left; }
+.card:hover::before { transform:scaleX(1); }
+.card-grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.card-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+.card-eyebrow { font-size:0.52rem; letter-spacing:0.4em; text-transform:uppercase; color:var(--gold); margin-bottom:0.75rem; display:block; }
+.card-title { font-family:'Playfair Display',serif; font-size:1.4rem; color:var(--navy); margin-bottom:0.4rem; }
+.card-text { font-size:0.8rem; line-height:1.85; color:var(--text-mid); }
+
+/* PILLAR LIST */
+.pillar-list { display:flex; flex-direction:column; gap:1.75rem; }
+.pillar { border-left:2px solid var(--gold-border); padding-left:1.25rem; transition:border-color 0.3s; }
+.pillar:hover { border-left-color:var(--gold); }
+.pillar-num { font-size:0.52rem; letter-spacing:0.4em; color:var(--gold); margin-bottom:0.35rem; }
+.pillar-title { font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--navy); margin-bottom:0.35rem; }
+.pillar-text { font-size:0.79rem; line-height:1.8; color:var(--text-mid); }
+
+/* DARK BAND */
+.dark-band { background:var(--navy); padding:3rem; display:flex; align-items:center; justify-content:space-between; gap:3rem; flex-wrap:wrap; margin-top:3.5rem; }
+.dark-band-title { font-family:'Playfair Display',serif; font-size:1.4rem; color:rgba(255,255,255,0.9); line-height:1.4; }
+.dark-band-text { font-size:0.84rem; color:rgba(255,255,255,0.55); line-height:1.85; margin-top:0.5rem; }
+
+/* INTERNAL LINK */
+.internal-link { display:inline-flex; align-items:center; gap:0.5rem; font-size:0.65rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold-dark); text-decoration:none; border-bottom:1px solid var(--gold-border); padding-bottom:2px; transition:border-color 0.25s, color 0.25s; }
+.internal-link:hover { color:var(--gold); border-color:var(--gold); }
+.internal-link::after { content:'→'; font-size:0.9rem; }
+
+/* BUTTONS */
+.btn-gold { background:var(--gold); color:white; border:none; padding:0.9rem 2.2rem; font-family:'DM Sans',sans-serif; font-size:0.63rem; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; text-decoration:none; cursor:pointer; display:inline-block; transition:background 0.25s, transform 0.2s; }
+.btn-gold:hover { background:var(--gold-dark); transform:translateY(-2px); }
+.btn-outline { border:1.5px solid var(--border); color:var(--text); padding:0.9rem 2.2rem; font-family:'DM Sans',sans-serif; font-size:0.63rem; font-weight:300; letter-spacing:0.22em; text-transform:uppercase; text-decoration:none; cursor:pointer; display:inline-block; background:transparent; transition:border-color 0.25s, color 0.25s; }
+.btn-outline:hover { border-color:var(--gold); color:var(--gold-dark); }
+.btn-outline-light { border:1.5px solid rgba(255,255,255,0.25); color:rgba(255,255,255,0.8); padding:0.9rem 2.2rem; font-family:'DM Sans',sans-serif; font-size:0.63rem; font-weight:300; letter-spacing:0.22em; text-transform:uppercase; text-decoration:none; cursor:pointer; display:inline-block; background:transparent; transition:border-color 0.25s, color 0.25s; }
+.btn-outline-light:hover { border-color:var(--gold); color:var(--gold); }
+.btn-navy { background:var(--navy); color:white; border:none; padding:0.9rem 2.2rem; font-family:'DM Sans',sans-serif; font-size:0.63rem; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; text-decoration:none; cursor:pointer; display:inline-block; transition:background 0.25s; }
+.btn-navy:hover { background:var(--navy-mid); }
+
+/* FOOTER */
+footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); padding:2rem 3rem; display:flex; align-items:center; justify-content:space-between; flex-shrink:0; flex-wrap:wrap; gap:1.5rem; }
+.footer-logo { display:flex; align-items:baseline; cursor:pointer; text-decoration:none; }
+.footer-logik { font-family:'DM Sans',sans-serif; font-size:0.9rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.88); }
+.footer-pipe  { font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:300; color:var(--gold); padding:0 0.13rem; }
+.footer-soul  { font-family:'Playfair Display',serif; font-size:1rem; font-weight:400; font-style:italic; color:rgba(255,255,255,0.88); }
+.footer-nav { display:flex; gap:1.75rem; flex-wrap:wrap; }
+.footer-nav a { font-size:0.58rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.35); text-decoration:none; transition:color 0.25s; }
+.footer-nav a:hover { color:var(--gold); }
+.footer-legal { display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap; }
+.footer-copy { font-size:0.58rem; color:rgba(255,255,255,0.25); }
+.footer-legal-btn { font-size:0.58rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.25); background:none; border:none; cursor:pointer; transition:color 0.25s; padding:0; }
+.footer-legal-btn:hover { color:var(--gold); }
+
+/* REVEAL */
+.reveal { opacity:0; transform:translateY(20px); transition:opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width:1024px) {
+  .header-top { padding:0 1.5rem; }
+  .main-nav { display:none; }
+  .hamburger { display:flex; }
+  .page-wrap { padding:3rem 1.5rem 5rem; }
+  .page-intro-grid { grid-template-columns:1fr; gap:2rem; }
+  .card-grid-3 { grid-template-columns:1fr; }
+  .card-grid-2 { grid-template-columns:1fr; }
+  .dark-band { flex-direction:column; }
+  footer { flex-direction:column; text-align:center; padding:2rem 1.5rem; }
+  .footer-nav { justify-content:center; }
+  .footer-legal { justify-content:center; }
+  .sidebar-panel { left:0 !important; right:0 !important; width:100% !important; max-height:70vh; border-left:none; border-right:none; }
+}
+
+
+.legal-overlay { display:none; position:fixed; inset:0; background:rgba(13,27,42,0.6); backdrop-filter:blur(4px); z-index:600; align-items:center; justify-content:center; padding:2rem; }
+.legal-overlay.open { display:flex; }
+.legal-box { background:var(--bg-card); border:1px solid var(--border); max-width:600px; width:100%; max-height:80vh; display:flex; flex-direction:column; overflow:hidden; }
+.legal-box-header { display:flex; align-items:center; justify-content:space-between; padding:1.25rem 1.75rem; border-bottom:1px solid var(--border); flex-shrink:0; }
+.legal-box-title { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--navy); }
+.legal-box-close { background:none; border:1px solid var(--border); padding:0.3rem 0.6rem; font-size:0.75rem; color:var(--text-dim); cursor:pointer; transition:border-color 0.2s, color 0.2s; }
+.legal-box-close:hover { border-color:var(--gold); color:var(--gold-dark); }
+.legal-box-content { padding:1.75rem; overflow-y:auto; font-size:0.82rem; line-height:1.85; color:var(--text-mid); display:flex; flex-direction:column; gap:1rem; }
+
+</style>
+</head>
+<body style="background:var(--bg-alt);">
+
+<header>
+  <div class="header-top">
+    <a class="logo" href="index.html">
+      <span class="logo-logik">LOGIC</span><span class="logo-pipe"> | </span><span class="logo-soul">Soul</span>
+    </a>
+    <ul class="main-nav" id="mainNav">
+      <li><button class="nav-btn" id="btn-unternehmen" onclick="toggleSidebar('unternehmen',this)">Für Unternehmen <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button></li>
+      <li><a class="nav-btn" href="fuer-dich.html">Für Dich</a></li>
+      <li><button class="nav-btn" id="btn-begleiter" onclick="toggleSidebar('begleiter',this)">Tägliche Begleiter <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button></li>
+      <li><button class="nav-btn" id="btn-haptisch" onclick="toggleSidebar('haptisch',this)">Haptische Begleiter <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button></li>
+      <li><a class="nav-btn" href="methodik.html">Methodik</a></li>
+      <li><a class="nav-btn nav-cta" href="kontakt.html">Gespräch anfragen</a></li>
+    </ul>
+    <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-btn" id="mob-btn-unternehmen" onclick="toggleMobileSubmenu('unternehmen')">Für Unternehmen <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button>
+  <div class="mobile-submenu" id="mob-sub-unternehmen">
+    <a class="mobile-sub-btn" href="unternehmen.html">Übersicht</a>
+    <a class="mobile-sub-btn" href="audit.html">KI-Audit</a>
+    <a class="mobile-sub-btn" href="optimierung.html">KI-Optimierung</a>
+    <a class="mobile-sub-btn" href="begleiter-team.html">Tägliche Begleiter im Team</a>
+  </div>
+  <a class="mobile-menu-btn" href="fuer-dich.html">Für Dich</a>
+  <button class="mobile-menu-btn" id="mob-btn-begleiter" onclick="toggleMobileSubmenu('begleiter')">Tägliche Begleiter <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button>
+  <div class="mobile-submenu" id="mob-sub-begleiter">
+    <a class="mobile-sub-btn" href="begleiter.html">Übersicht</a>
+    <a class="mobile-sub-btn" href="sam.html">SAM</a>
+    <a class="mobile-sub-btn" href="alma.html">ALMA</a>
+  </div>
+  <button class="mobile-menu-btn" id="mob-btn-haptisch" onclick="toggleMobileSubmenu('haptisch')">Haptische Begleiter <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button>
+  <div class="mobile-submenu" id="mob-sub-haptisch">
+    <a class="mobile-sub-btn" href="basis-set.html">Basis-Set</a>
+    <a class="mobile-sub-btn" href="selbstreflexion.html">Selbstreflexions-Set</a>
+    <a class="mobile-sub-btn" href="fuehrungsset.html">Führungskräfte-Set</a>
+    <a class="mobile-sub-btn" href="etraining.html">E-Training</a>
+  </div>
+  <a class="mobile-menu-btn" href="methodik.html">Methodik</a>
+  <a class="mobile-menu-cta" href="kontakt.html">Gespräch anfragen</a>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<div class="sidebar-panel" id="sidebar-unternehmen">
+  <div class="sidebar-header"><span class="sidebar-label">B2B</span><div class="sidebar-title">Für Unternehmen</div></div>
+  <div class="sidebar-items">
+    <a class="sidebar-btn" href="unternehmen.html">Übersicht</a>
+    <a class="sidebar-btn" href="audit.html">KI-Audit</a>
+    <a class="sidebar-btn" href="optimierung.html">KI-Optimierung</a>
+    <a class="sidebar-btn" href="begleiter-team.html">Tägliche Begleiter im Team</a>
+    <a class="sidebar-btn" href="alma.html">ALMA — Für Führungskräfte</a>
+  </div>
+</div>
+
+<div class="sidebar-panel" id="sidebar-begleiter">
+  <div class="sidebar-header"><span class="sidebar-label">Digital</span><div class="sidebar-title">Tägliche Begleiter</div></div>
+  <div class="sidebar-items">
+    <a class="sidebar-btn" href="begleiter.html">Übersicht</a>
+    <a class="sidebar-btn" href="sam.html">SAM — Persönliche Entwicklung</a>
+    <a class="sidebar-btn" href="alma.html">ALMA — Führungskräfte</a>
+  </div>
+</div>
+
+<div class="sidebar-panel" id="sidebar-haptisch">
+  <div class="sidebar-header"><span class="sidebar-label">Haptik</span><div class="sidebar-title">Haptische Begleiter</div></div>
+  <div class="sidebar-items">
+    <a class="sidebar-btn" href="basis-set.html">Basis-Set · Karten + Workbook</a>
+    <a class="sidebar-btn" href="selbstreflexion.html">Selbstreflexions-Set</a>
+    <a class="sidebar-btn" href="fuehrungsset.html">Führungskräfte-Set + Workbook</a>
+    <a class="sidebar-btn" href="etraining.html">E-Training · bald verfügbar</a>
+  </div>
+</div>
+
+<main>
+  <div class="page-wrap">
+    <div class="page-hero reveal">
+      <p class="page-eyebrow">Digital · KI-Begleiter</p>
+      <h1 class="page-title">Tägliche Begleiter — <em>digital & menschlich.</em></h1>
+    </div>
+    
+<p class="page-sub reveal">Für wen suchst Du einen Begleiter?</p>
+
+<div class="card-grid-2 reveal" style="margin-top:3rem;">
+  <a href="begleiter-team.html" class="card" style="text-decoration:none;background:var(--navy);padding:3rem;">
+    <span class="card-eyebrow" style="color:var(--gold);">Für Unternehmen</span>
+    <div class="card-title" style="color:rgba(255,255,255,0.92);font-size:1.6rem;">Tägliche Begleiter<br>im Team</div>
+    <p class="card-text" style="color:rgba(255,255,255,0.55);margin-top:0.75rem;">ALMA für Führungskräfte, L|S Sales für den Vertrieb — KI-Begleiter die täglich entlasten.</p>
+    <div style="margin-top:2rem;"><span class="internal-link" style="color:var(--gold);border-color:rgba(197,160,89,0.3);">Zu den Team-Begleitern</span></div>
+  </a>
+  <a href="sam.html" class="card" style="text-decoration:none;background:var(--creme);padding:3rem;">
+    <span class="card-eyebrow">Persönliche Entwicklung</span>
+    <div class="card-title" style="font-size:1.6rem;">SAM — Dein<br>persönlicher Begleiter</div>
+    <p class="card-text" style="margin-top:0.75rem;">Klarheit, Handlungsfähigkeit und innere Stabilität — täglich, auf Deinem Handy.</p>
+    <div style="margin-top:2rem;"><span class="internal-link">Zu SAM</span></div>
+  </a>
+</div>
+
+  </div>
+</main>
+
+<footer>
+  <a class="footer-logo" href="index.html">
+    <span class="footer-logik">LOGIC</span><span class="footer-pipe"> | </span><span class="footer-soul">Soul</span>
+  </a>
+  <nav class="footer-nav">
+    <a href="unternehmen.html">Unternehmen</a>
+    <a href="fuer-dich.html">Für Dich</a>
+    <a href="begleiter.html">Tägliche Begleiter</a>
+    <a href="alma.html">ALMA</a>
+    <a href="sam.html">SAM</a>
+    <a href="methodik.html">Methodik</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+  <div class="footer-legal">
+    <span class="footer-copy">© 2026 Logic | Soul · Yana Thomée</span>
+    <button class="footer-legal-btn" onclick="showLegal('impressum')">Impressum</button>
+    <button class="footer-legal-btn" onclick="showLegal('datenschutz')">Datenschutz</button>
+  </div>
+</footer>
+
+<div id="legal-impressum" class="legal-overlay" onclick="if(event.target===this)closeLegal()">
+  <div class="legal-box">
+    <div class="legal-box-header"><div class="legal-box-title">Impressum</div><button class="legal-box-close" onclick="closeLegal()">✕</button></div>
+    <div class="legal-box-content">
+      <p><strong>Angaben gemäß § 5 TMG</strong></p>
+      <p>Yana Thomée · Logic | Soul<br>[STRASSE] · [PLZ ORT]</p>
+      <p><strong>Kontakt</strong><br>hallo@logic-soul.com</p>
+      <p style="font-size:0.72rem;color:var(--text-dim);">TODO: Vollständiges Impressum eintragen.</p>
+    </div>
+  </div>
+</div>
+
+<div id="legal-datenschutz" class="legal-overlay" onclick="if(event.target===this)closeLegal()">
+  <div class="legal-box">
+    <div class="legal-box-header"><div class="legal-box-title">Datenschutzerklärung</div><button class="legal-box-close" onclick="closeLegal()">✕</button></div>
+    <div class="legal-box-content">
+      <p><strong>Verantwortliche Stelle</strong><br>Yana Thomée · hallo@logic-soul.com</p>
+      <p style="font-size:0.72rem;color:var(--text-dim);">TODO: Vollständige Datenschutzerklärung eintragen.</p>
+    </div>
+  </div>
+</div>
+
+
+<script>
+let currentSidebar = null;
+function toggleSidebar(id, btnEl) {
+  if (currentSidebar === id) { closeSidebar(); return; }
+  closeSidebar(false);
+  currentSidebar = id;
+  const panel = document.getElementById('sidebar-' + id);
+  panel.classList.add('open');
+  document.getElementById('sidebarOverlay').classList.add('open');
+  if (btnEl && window.innerWidth > 1024) {
+    const rect = btnEl.getBoundingClientRect();
+    let left = rect.left;
+    if (left + 260 > window.innerWidth - 16) left = window.innerWidth - 276;
+    panel.style.left = left + 'px';
+  }
+}
+function closeSidebar(reset=true) {
+  document.querySelectorAll('.sidebar-panel').forEach(p => p.classList.remove('open'));
+  document.getElementById('sidebarOverlay').classList.remove('open');
+  if (reset) currentSidebar = null;
+}
+function toggleMobileMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function toggleMobileSubmenu(id) {
+  const sub = document.getElementById('mob-sub-' + id);
+  const btn = document.getElementById('mob-btn-' + id);
+  const isOpen = sub.classList.contains('open');
+  document.querySelectorAll('.mobile-submenu').forEach(s => s.classList.remove('open'));
+  document.querySelectorAll('.mobile-menu-btn').forEach(b => b.classList.remove('expanded'));
+  if (!isOpen) { sub.classList.add('open'); btn.classList.add('expanded'); }
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSidebar(); });
+// Reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold:0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+// Legal
+function showLegal(id) { document.getElementById('legal-' + id).classList.add('open'); }
+function closeLegal() { document.querySelectorAll('.legal-overlay').forEach(m => m.classList.remove('open')); }
+</script>
+
+</body>
+</html>
