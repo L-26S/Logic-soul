@@ -436,7 +436,6 @@ async function submitForm() {
     dsgvo.style.outline = '';
   }
   if (!valid) {
-    // Shake button to signal error
     btn.style.transform = 'translateX(-6px)';
     setTimeout(() => { btn.style.transform = 'translateX(6px)'; }, 100);
     setTimeout(() => { btn.style.transform = 'translateX(-4px)'; }, 200);
@@ -444,37 +443,38 @@ async function submitForm() {
     return;
   }
 
-  // Loading state
+  // Loading
   btn.innerHTML = '<span style="display:inline-flex;align-items:center;gap:0.6rem;"><span style="width:14px;height:14px;border:2px solid rgba(255,255,255,0.3);border-top-color:white;border-radius:50%;animation:spin 0.8s linear infinite;display:inline-block;"></span> Wird gesendet…</span>';
   btn.disabled = true;
   btn.style.opacity = '0.8';
 
   try {
-    const formData = new FormData();
-    formData.append('name', nameEl ? nameEl.value : '');
-    formData.append('email', emailEl ? emailEl.value : '');
-    formData.append('telefon', telEl ? telEl.value : '');
-    formData.append('unternehmen', companyEl ? companyEl.value : '');
-    formData.append('thema', topicEl ? topicEl.value : '');
-    formData.append('nachricht', msgEl ? msgEl.value : '');
-
-    const res = await fetch('https://formspree.io/f/xojybyzp', {
+    const res = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: formData
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key:  'c28c5f3e-1228-4088-a7cf-2bcb930dafa6',
+        subject:     'Neue Anfrage — Logic | Soul',
+        from_name:   'Logic | Soul Website',
+        name:        nameEl ? nameEl.value : '',
+        email:       emailEl ? emailEl.value : '',
+        telefon:     telEl ? telEl.value : '',
+        unternehmen: companyEl ? companyEl.value : '',
+        thema:       topicEl ? topicEl.value : '',
+        nachricht:   msgEl ? msgEl.value : ''
+      })
     });
 
-    if (res.ok) {
-      // Success
+    const data = await res.json();
+
+    if (data.success) {
       btn.innerHTML = '✓ Gesendet';
       btn.style.background = '#4a8a4a';
       btn.style.opacity = '1';
       success.style.display = 'block';
-      // Clear fields
       [nameEl, emailEl, telEl, companyEl, msgEl].forEach(f => { if (f) f.value = ''; });
       if (topicEl) topicEl.selectedIndex = 0;
       dsgvo.checked = false;
-      // Scroll to success message
       success.scrollIntoView({ behavior: 'smooth', block: 'center' });
     } else {
       btn.innerHTML = '✕ Fehler — bitte per E-Mail schreiben';
