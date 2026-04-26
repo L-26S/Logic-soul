@@ -408,66 +408,53 @@ function closeLegal() { document.querySelectorAll('.legal-overlay').forEach(m =>
 </script>
 
 <script>
-async function submitForm() {
-  const btn     = document.getElementById('f-submit');
-  const success = document.getElementById('form-success');
+function submitForm() {
+  var name  = document.getElementById('f-name').value.trim();
+  var email = document.getElementById('f-email').value.trim();
+  var msg   = document.getElementById('f-msg').value.trim();
+  var dsgvo = document.getElementById('dsgvo-check').checked;
+  var btn   = document.getElementById('f-submit');
 
-  const nameEl  = document.getElementById('f-name');
-  const emailEl = document.getElementById('f-email');
-  const msgEl   = document.getElementById('f-msg');
-  const dsgvo   = document.getElementById('dsgvo-check');
-  if (!nameEl || !emailEl || !msgEl) { console.error('Felder nicht gefunden'); return; }
-  const name = nameEl.value.trim();
-  const email = emailEl.value.trim();
-  const msg = msgEl.value.trim();
-
-  // Validate
-  let valid = true;
-  if (!name)  { document.getElementById('f-name').style.borderColor  = 'rgba(197,160,89,0.7)'; valid = false; } else { document.getElementById('f-name').style.borderColor  = ''; }
-  if (!email) { document.getElementById('f-email').style.borderColor = 'rgba(197,160,89,0.7)'; valid = false; } else { document.getElementById('f-email').style.borderColor = ''; }
-  if (!msg)   { document.getElementById('f-msg').style.borderColor   = 'rgba(197,160,89,0.7)'; valid = false; } else { document.getElementById('f-msg').style.borderColor   = ''; }
-  if (!dsgvo.checked) { dsgvo.style.outline = '2px solid rgba(197,160,89,0.7)'; valid = false; } else { dsgvo.style.outline = ''; }
-
-  if (!valid) { btn.textContent = 'Bitte alle Pflichtfelder ausfüllen'; setTimeout(() => { btn.textContent = 'Nachricht senden'; }, 2000); return; }
+  if (!name || !email || !msg || !dsgvo) {
+    btn.textContent = 'Bitte alle Pflichtfelder ausfüllen';
+    setTimeout(function() { btn.textContent = 'Nachricht senden'; }, 2000);
+    return;
+  }
 
   btn.textContent = 'Wird gesendet…';
   btn.disabled = true;
 
-  const payload = {
-    access_key:  'c28c5f3e-1228-4088-a7cf-2bcb930dafa6',
-    subject:     'Neue Anfrage — Logic | Soul',
-    from_name:   'Logic | Soul Website',
-    name:        name,
-    email:       email,
-    telefon:     document.getElementById('f-tel').value,
-    unternehmen: document.getElementById('f-company').value,
-    thema:       document.getElementById('f-topic').value,
-    nachricht:   msg
-  };
-
   fetch('https://api.web3forms.com/submit', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-    body: JSON.stringify(payload)
+    body: JSON.stringify({
+      access_key:  'c28c5f3e-1228-4088-a7cf-2bcb930dafa6',
+      subject:     'Neue Anfrage — Logic | Soul',
+      from_name:   'Logic | Soul Website',
+      name:        name,
+      email:       email,
+      telefon:     document.getElementById('f-tel').value,
+      unternehmen: document.getElementById('f-company').value,
+      thema:       document.getElementById('f-topic').value,
+      nachricht:   msg
+    })
   })
-  .then(function(res) { return res.json(); })
-  .then(function(data) {
-    console.log('Response:', JSON.stringify(data));
-    if (data.success === true) {
+  .then(function(r) { return r.json(); })
+  .then(function(d) {
+    console.log('Response:', d);
+    if (d.success) {
       btn.textContent = '✓ Gesendet';
       btn.style.background = '#4a8a4a';
-      success.style.display = 'block';
-      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      document.getElementById('form-success').style.display = 'block';
     } else {
-      console.error('Failed:', data);
       btn.textContent = 'Fehler — bitte per E-Mail schreiben';
       btn.style.background = '#a85050';
       btn.disabled = false;
     }
   })
-  .catch(function(err) {
-    console.error('Error:', err);
-    btn.textContent = 'Verbindungsfehler';
+  .catch(function(e) {
+    console.error(e);
+    btn.textContent = 'Fehler — bitte per E-Mail schreiben';
     btn.style.background = '#a85050';
     btn.disabled = false;
   });
