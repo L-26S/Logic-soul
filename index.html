@@ -161,40 +161,233 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
 .legal-box-content { padding:1.75rem; overflow-y:auto; font-size:0.82rem; line-height:1.85; color:var(--text-mid); display:flex; flex-direction:column; gap:1rem; }
 
 
-/* HERO SLIDER */
-.hero-slider { position:relative; height:calc(100vh - var(--nav-h) - 120px); min-height:500px; overflow:hidden; width:100%; }
-.hero-slide { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity 0.9s ease; pointer-events:none; }
-.hero-slide.active { opacity:1; pointer-events:all; }
-.slide-business { background:var(--navy); }
-.slide-private { background:var(--bg-alt); }
-.slide-haptisch { background:var(--creme); }
-.hero-slide-inner { text-align:center; max-width:580px; padding:3rem 2rem 5rem; display:flex; flex-direction:column; align-items:center; position:relative; z-index:3; }
-.split-label { font-size:0.55rem; letter-spacing:0.5em; text-transform:uppercase; color:var(--gold); margin-bottom:1.5rem; }
-.split-title { font-family:'Playfair Display',serif; font-size:clamp(2.4rem,4.5vw,4rem); font-weight:400; line-height:1.1; margin-bottom:1.5rem; }
-.slide-business .split-title { color:rgba(255,255,255,0.92); }
-.slide-private  .split-title { color:var(--navy); }
-.slide-haptisch .split-title { color:var(--navy); }
-.slide-business .split-title em { color:var(--gold); font-style:italic; }
-.slide-private  .split-title em { color:var(--gold-dark); font-style:italic; }
-.slide-haptisch .split-title em { color:var(--gold-dark); font-style:italic; }
-.split-body { font-size:0.9rem; line-height:2; max-width:440px; margin-bottom:2.5rem; }
-.slide-business .split-body { color:rgba(255,255,255,0.55); }
-.slide-private  .split-body { color:var(--text-mid); }
-.slide-haptisch .split-body { color:var(--text-mid); }
-.slide-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
-.slider-dots { position:absolute; bottom:2rem; left:50%; transform:translateX(-50%); display:flex; gap:0.75rem; z-index:10; }
-.slider-dot { width:8px; height:8px; border-radius:50%; border:1.5px solid var(--gold); background:transparent; cursor:pointer; transition:background 0.3s; padding:0; }
-.slider-dot.active { background:var(--gold); }
-.slider-logo { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none; z-index:2; opacity:0.06; display:flex; align-items:baseline; white-space:nowrap; }
-.sl-logik { font-family:'DM Sans',sans-serif; font-size:clamp(2rem,5vw,4rem); font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); }
-.sl-pipe  { font-family:'DM Sans',sans-serif; font-size:clamp(2.5rem,6vw,5rem); font-weight:300; color:var(--gold); padding:0 0.2rem; }
-.sl-soul  { font-family:'Playfair Display',serif; font-size:clamp(2rem,5vw,4rem); font-style:italic; color:var(--gold); }
-.quote-band { background:var(--navy); padding:2.5rem 4rem; display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
-.quote-band blockquote { font-family:'Playfair Display',serif; font-size:clamp(1rem,1.6vw,1.35rem); font-style:italic; font-weight:400; color:rgba(255,255,255,0.8); line-height:1.65; max-width:640px; }
-.quote-band blockquote em { color:var(--gold); font-style:normal; }
-@media (max-width:1024px) {
-  .hero-slider { height:calc(100vh - var(--nav-h) - 80px); }
-  .quote-band { flex-direction:column; padding:2rem 1.5rem; }
+/* ══ HERO ══ */
+.hero {
+  min-height: calc(100vh - var(--nav-h));
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  background: var(--navy);
+  padding: 5rem 2rem 4rem;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 60% 40%, rgba(197,160,89,0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-inner { max-width: 780px; position: relative; z-index: 1; }
+.hero-eyebrow {
+  font-size: 0.55rem; letter-spacing: 0.5em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 2rem;
+  opacity: 0; animation: fadeUp 0.7s ease 0.1s forwards;
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
+  font-weight: 400; line-height: 1.15;
+  color: rgba(255,255,255,0.92); margin-bottom: 2rem;
+  opacity: 0; animation: fadeUp 0.7s ease 0.25s forwards;
+}
+.hero-title em { font-style: italic; color: var(--gold); }
+.hero-sub {
+  font-size: 0.95rem; line-height: 2;
+  color: rgba(255,255,255,0.55);
+  max-width: 580px; margin: 0 auto 1.5rem;
+  opacity: 0; animation: fadeUp 0.7s ease 0.4s forwards;
+}
+.hero-pain {
+  display: flex; flex-direction: column; gap: 0.35rem;
+  margin: 0 auto 1.5rem; max-width: 480px;
+  opacity: 0; animation: fadeUp 0.7s ease 0.5s forwards;
+}
+.hero-pain-item {
+  font-size: 0.88rem; color: rgba(255,255,255,0.45);
+  padding: 0.5rem 1rem;
+  border-left: 2px solid rgba(197,160,89,0.25);
+  text-align: left;
+}
+.hero-verdict {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem; font-style: italic;
+  color: var(--gold); margin-bottom: 2.5rem;
+  opacity: 0; animation: fadeUp 0.7s ease 0.6s forwards;
+}
+.hero-btns {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp 0.7s ease 0.7s forwards;
+}
+
+/* ══ BRIDGE ══ */
+.bridge {
+  background: var(--bg-alt); padding: 6rem 2rem; text-align: center;
+}
+.bridge-inner { max-width: 700px; margin: 0 auto; }
+.bridge-label {
+  font-size: 0.55rem; letter-spacing: 0.5em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1.5rem; display: block;
+}
+.bridge-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 400; line-height: 1.3;
+  color: var(--navy); margin-bottom: 1.75rem;
+}
+.bridge-title em { font-style: italic; color: var(--gold-dark); }
+.bridge-body {
+  font-size: 0.95rem; line-height: 2;
+  color: var(--text-mid); max-width: 560px;
+  margin: 0 auto 2.5rem;
+}
+.bridge-statement {
+  background: var(--navy);
+  border-left: 3px solid var(--gold);
+  padding: 2rem 2.5rem; text-align: left;
+  max-width: 560px; margin: 0 auto;
+}
+.bridge-statement p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem; font-style: italic;
+  line-height: 1.8; color: rgba(255,255,255,0.85);
+}
+.bridge-statement em { color: var(--gold); font-style: normal; }
+
+/* ══ WORLD SECTION ══ */
+.world-section {
+  padding: 6rem 2rem;
+}
+.world-section.dark { background: var(--navy); }
+.world-section.light { background: var(--creme); }
+
+.world-inner {
+  max-width: 960px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: start;
+}
+
+.world-eyebrow {
+  font-size: 0.55rem; letter-spacing: 0.5em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1.25rem; display: block;
+}
+.world-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 400; line-height: 1.2; margin-bottom: 1.25rem;
+}
+.dark .world-title { color: rgba(255,255,255,0.92); }
+.light .world-title { color: var(--navy); }
+.dark .world-title em { color: var(--gold); font-style: italic; }
+.light .world-title em { color: var(--gold-dark); font-style: italic; }
+
+.world-intro {
+  font-size: 0.88rem; line-height: 2; margin-bottom: 1.5rem;
+}
+.dark .world-intro { color: rgba(255,255,255,0.55); }
+.light .world-intro { color: var(--text-mid); }
+
+.pain-list {
+  list-style: none; display: flex; flex-direction: column;
+  gap: 0.5rem; margin-bottom: 2rem;
+}
+.pain-list li {
+  font-size: 0.82rem; padding: 0.6rem 1rem;
+  border-left: 2px solid rgba(197,160,89,0.3);
+  display: flex; gap: 0.75rem;
+}
+.dark .pain-list li { color: rgba(255,255,255,0.5); }
+.light .pain-list li { color: var(--text-mid); }
+
+.world-resolution {
+  font-size: 0.9rem; line-height: 1.9; margin-bottom: 2rem;
+}
+.dark .world-resolution { color: rgba(255,255,255,0.7); }
+.light .world-resolution { color: var(--text); }
+
+/* Feature card */
+.feature-card {
+  padding: 2.5rem;
+  border-top: 2px solid var(--gold);
+  display: flex; flex-direction: column; gap: 1rem;
+}
+.dark .feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(197,160,89,0.2); border-top: 2px solid var(--gold); }
+.light .feature-card { background: var(--navy); }
+
+.feature-card-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem; font-style: italic; color: var(--gold);
+}
+.feature-card-tag {
+  font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+.feature-card-text {
+  font-size: 0.82rem; line-height: 1.85;
+  color: rgba(255,255,255,0.55);
+}
+.feature-card-points {
+  list-style: none; display: flex; flex-direction: column; gap: 0.4rem;
+}
+.feature-card-points li {
+  font-size: 0.78rem; color: rgba(255,255,255,0.5);
+  display: flex; gap: 0.6rem; align-items: flex-start;
+}
+.feature-card-points li::before { content: '—'; color: var(--gold); flex-shrink: 0; }
+
+/* ══ CONNECTION ══ */
+.connection {
+  background: var(--bg); padding: 6rem 2rem; text-align: center;
+}
+.connection-inner { max-width: 640px; margin: 0 auto; }
+.connection-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  color: var(--navy); margin-bottom: 1.5rem; line-height: 1.35;
+}
+.connection-title em { font-style: italic; color: var(--gold-dark); }
+.connection-body {
+  font-size: 0.9rem; line-height: 2; color: var(--text-mid);
+  margin-bottom: 2rem;
+}
+.connection-pillars {
+  display: flex; gap: 2rem; justify-content: center;
+  flex-wrap: wrap; margin-bottom: 0;
+}
+.connection-pillar {
+  font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--gold-dark); padding: 0.5rem 1.25rem;
+  border: 1px solid var(--gold-border);
+}
+
+/* ══ CLOSING ══ */
+.closing {
+  background: var(--navy); padding: 7rem 2rem; text-align: center;
+}
+.closing-inner { max-width: 620px; margin: 0 auto; }
+.closing-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+  font-style: italic; font-weight: 400;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.65; margin-bottom: 0.75rem;
+}
+.closing-quote em { color: var(--gold); font-style: normal; }
+.closing-attr {
+  font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: rgba(255,255,255,0.25); margin-bottom: 1.5rem; display: block;
+}
+.closing-sub {
+  font-size: 0.88rem; color: rgba(255,255,255,0.45);
+  line-height: 1.9; margin-bottom: 3rem;
+}
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+@media (max-width: 1024px) {
+  .world-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .world-section { padding: 4rem 1.5rem; }
 }
 </style>
 </head>
@@ -203,7 +396,7 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
 <header>
   <div class="header-top">
     <a class="logo" href="index.html">
-      <span class="logo-logik">LOGIC</span><span class="logo-pipe"> | </span><span class="logo-soul">Soul</span>
+      <span class="logo-logik">LOGIK</span><span class="logo-pipe"> | </span><span class="logo-soul">Soul</span>
     </a>
     <ul class="main-nav" id="mainNav">
       <li><button class="nav-btn" id="btn-unternehmen" onclick="toggleSidebar('unternehmen',this)">Für Unternehmen <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button></li>
@@ -277,64 +470,209 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
   </div>
 </div>
 
-<main style="padding-top:var(--nav-h);">
+<main>
 
-  <div class="hero-slider">
-    <!-- Slide 0: Unternehmen -->
-    <div class="hero-slide slide-business active" id="slide-0">
-      <div class="hero-slide-inner">
-        <p class="split-label">Für Unternehmen</p>
-        <h2 class="split-title">Hilft Ihr Chatbot<br>Ihren Kunden <em>wirklich?</em></h2>
-        <p class="split-body">Viele Unternehmen haben KI eingeführt — und trotzdem sind Kunden frustrierter und Mitarbeiter überlasteter als zuvor. Wir ändern das.</p>
-        <div class="slide-btns">
-          <a href="unternehmen.html" class="btn-gold">Mehr erfahren</a>
-          <a href="kontakt.html" class="btn-outline-light">Gespräch anfragen</a>
-        </div>
+  <!-- ══ 1. HERO ══ -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">KI · Mensch · Kommunikation</p>
+      <h1 class="hero-title">
+        Wir machen sichtbar,<br>wie Menschen und KI <em>reagieren</em> —<br>
+        damit Kommunikation wieder funktioniert.
+      </h1>
+      <p class="hero-sub">
+        Du willst klar handeln — und reagierst trotzdem anders?<br>
+        Dein System ist schneller als Dein Verstand.
+      </p>
+      <div class="hero-pain">
+        <div class="hero-pain-item">Kunden brechen Gespräche ab.</div>
+        <div class="hero-pain-item">Mitarbeitende nutzen Ihre KI nicht wirklich.</div>
+        <div class="hero-pain-item">Die Antworten Ihrer KI sind korrekt — aber sie wirken nicht.</div>
+      </div>
+      <p class="hero-verdict">Das ist kein Zufall. Es ist Systemverhalten.</p>
+      <div class="hero-btns">
+        <a href="unternehmen.html" class="btn-gold">Das betrifft unser Unternehmen</a>
+        <a href="fuer-dich.html" class="btn-outline-light">Das betrifft mich persönlich</a>
       </div>
     </div>
-    <!-- Slide 1: Für Dich -->
-    <div class="hero-slide slide-private" id="slide-1">
-      <div class="hero-slide-inner">
-        <p class="split-label">Für Dich</p>
-        <h2 class="split-title">Dein täglicher<br>Begleiter <em>auf dem Handy.</em></h2>
-        <p class="split-body">SAM begleitet Dich in dem Moment, der zählt — ob als Führungskraft, im Beruf oder für persönliche Klarheit. Täglich. Direkt. Menschlich.</p>
-        <div class="slide-btns">
-          <a href="sam.html" class="btn-navy">SAM entdecken</a>
-          <a href="fuer-dich.html" class="btn-outline">Mehr erfahren</a>
-        </div>
-      </div>
-    </div>
-    <!-- Slide 2: Haptik -->
-    <div class="hero-slide slide-haptisch" id="slide-2">
-      <div class="hero-slide-inner">
-        <p class="split-label">Haptische Begleiter</p>
-        <h2 class="split-title">Die Methode <em>in die Hand nehmen.</em></h2>
-        <p class="split-body">Kartensets und Workbooks als greifbarer Anker — für den Alltag, die Führung und die persönliche Entwicklung. Immer verfügbar. Auch ohne Handy.</p>
-        <div class="slide-btns">
-          <a href="basis-set.html" class="btn-navy">Basis-Set entdecken</a>
-          <a href="fuehrungsset.html" class="btn-outline">Führungskräfte-Set</a>
-        </div>
-      </div>
-    </div>
-    <!-- Dots -->
-    <div class="slider-dots">
-      <button class="slider-dot active" id="dot-0" onclick="manualSlide(0)"></button>
-      <button class="slider-dot" id="dot-1" onclick="manualSlide(1)"></button>
-      <button class="slider-dot" id="dot-2" onclick="manualSlide(2)"></button>
-    </div>
-    <div class="slider-logo" aria-hidden="true"><span class="sl-logik">LOGIC</span><span class="sl-pipe"> | </span><span class="sl-soul">Soul</span></div>
-  </div>
+  </section>
 
-  <div class="quote-band">
-    <blockquote>„Souveränität ist eine Frage der inneren <em>Stabilität</em>. Du hörst auf, der Stress zu sein — und fängst an, den Stress zu beobachten."</blockquote>
-    <a href="kontakt.html" class="btn-outline-light">Gespräch anfragen</a>
-  </div>
+  <!-- ══ 2. BRIDGE ══ -->
+  <section class="bridge">
+    <div class="bridge-inner reveal">
+      <span class="bridge-label">Der Kern</span>
+      <h2 class="bridge-title">
+        Was unterschiedlich wirkt,<br>folgt <em>derselben Logik.</em>
+      </h2>
+      <p class="bridge-body">
+        Menschen verlieren unter Druck ihre Klarheit.<br>
+        KI verliert unter Komplexität ihre Wirkung.<br><br>
+        In beiden Fällen passiert dasselbe:<br>
+        Ein System übernimmt — bevor bewusste Steuerung möglich ist.<br><br>
+        Und genau deshalb funktionieren viele Gespräche nicht —<br>weder im Alltag noch im Unternehmen.
+      </p>
+      <div class="bridge-statement">
+        <p>Reaktionen verstehen. Muster erkennen. Kommunikation bewusst gestalten. <em>Innen wie außen.</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 3. FÜR UNTERNEHMEN ══ -->
+  <section class="world-section dark">
+    <div class="world-inner">
+      <div class="reveal">
+        <span class="world-eyebrow">Für Unternehmen</span>
+        <h2 class="world-title">Ihre KI ist im Einsatz —<br>aber wird nicht wirklich <em>genutzt?</em></h2>
+        <ul class="pain-list">
+          <li>Kunden brechen Gespräche mit dem Chatbot ab.</li>
+          <li>Mitarbeitende umgehen das System.</li>
+          <li>Die KI liefert Antworten — aber keine Klarheit.</li>
+        </ul>
+        <p class="world-resolution">
+          Weil Ihre KI nicht versteht, wie Menschen tatsächlich reagieren.<br>
+          Und genau deshalb entsteht keine Verbindung.<br><br>
+          Wir gestalten KI und Kommunikation so, dass sie sich menschlich richtig anfühlen —
+          klar, präzise und wirksam.
+        </p>
+        <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);line-height:1.8;margin-bottom:1.75rem;border-left:2px solid rgba(197,160,89,0.3);padding-left:1rem;">
+          In 15 Minuten zeigen wir Ihnen, wo Ihre KI den Menschen verliert —
+          kostenlos und unverbindlich.
+        </p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+          <a href="kontakt.html" class="btn-gold">Kostenloses Erstgespräch buchen</a>
+          <a href="unternehmen.html" class="btn-outline-light">Mehr erfahren</a>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="feature-card">
+          <div class="feature-card-name">ALMA</div>
+          <div class="feature-card-tag">KI-Begleiter für Führungskräfte</div>
+          <p class="feature-card-text">
+            Führung entscheidet sich nicht in ruhigen Momenten —<br>
+            sondern unter Druck.
+          </p>
+          <ul class="feature-card-points">
+            <li>Wenn Gespräche kippen</li>
+            <li>Wenn Konflikte entstehen</li>
+            <li>Wenn Entscheidungen schwer werden</li>
+          </ul>
+          <p class="feature-card-text" style="margin-top:0.5rem;">
+            ALMA unterstützt Führungskräfte genau dort — Situationen sortieren, Reaktionen verstehen, klar führen. Bevor das System übernimmt.
+          </p>
+          <a href="alma.html" class="btn-gold" style="text-align:center;margin-top:0.5rem;">ALMA entdecken</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 4. FÜR DICH ══ -->
+  <section class="world-section light">
+    <div class="world-inner">
+      <div class="reveal">
+        <span class="world-eyebrow">Für Dich</span>
+        <h2 class="world-title">Du merkst es oft erst<br>im <em>Nachhinein.</em></h2>
+        <p class="world-intro">Du wolltest ruhig bleiben — und wirst plötzlich scharf.<br>
+        Du wolltest klar sein — und bist innerlich unruhig.<br>
+        Du wolltest souverän wirken — und zweifelst danach an Dir.</p>
+        <p class="world-resolution"><strong>Das Problem ist nicht Dein Verhalten.</strong><br>
+        Dein System hat übernommen.<br><br>
+        SystemAlchemie hilft Dir zu erkennen, wie Dein inneres System tatsächlich reagiert — damit Du wieder handlungsfähig wirst.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+          <a href="fuer-dich.html" class="btn-navy">Für Dich entdecken</a>
+          <a href="methodik.html" class="btn-outline">Die Methode</a>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="feature-card">
+          <div class="feature-card-name">SAM</div>
+          <div class="feature-card-tag">Dein persönlicher Begleiter</div>
+          <p class="feature-card-text">
+            Du verstehst oft erst später, was eigentlich passiert ist.<br>
+            SAM hilft Dir genau in diesem Moment.
+          </p>
+          <ul class="feature-card-points">
+            <li>Klarer sehen — auch unter Druck</li>
+            <li>Reaktionen einordnen statt sofort reagieren</li>
+            <li>Täglich. Auf Deinem Handy. Ohne Coaching-Ton.</li>
+          </ul>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:0.5rem;">
+            <a href="sam.html" class="btn-gold" style="text-align:center;">SAM entdecken</a>
+            <a href="DIGISTORE_URL_HIER_EINSETZEN" target="_blank" style="text-align:center;font-size:0.65rem;color:rgba(255,255,255,0.4);letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;">3 Tage testen · 1 € →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CASE STUDY ══ -->
+  <section style="background:var(--bg-alt);padding:5rem 2rem;">
+    <div style="max-width:760px;margin:0 auto;" class="reveal">
+      <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;">Aus der Praxis</p>
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--gold);padding:2.5rem 3rem;">
+        <p style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--navy);line-height:1.7;margin-bottom:1.5rem;font-style:italic;">
+          „Ein führendes Weiterbildungsunternehmen bat uns, ihr KI-System zu analysieren."
+        </p>
+        <p style="font-size:0.86rem;line-height:1.95;color:var(--text-mid);margin-bottom:1.5rem;">
+          Ergebnis: In 4 von 5 emotionalen Testszenarien leitete das System den Nutzer sofort zu Kursempfehlungen weiter —
+          ohne den eigentlichen Zustand zu erkennen. Die KI funktionierte technisch einwandfrei.
+          Sie verstand nur nicht, was der Mensch gerade brauchte.
+        </p>
+        <p style="font-size:0.86rem;line-height:1.95;color:var(--text);">
+          <strong>Was wir verändert haben:</strong> Die Prompt-Architektur wurde so umgebaut, dass das System
+          zuerst beim Menschen bleibt — bevor es routet, empfiehlt oder antwortet.
+          Weniger Eskalationen. Mehr Vertrauen. Messbar.
+        </p>
+        <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+          <p style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dim);">Anonymisiertes Fallbeispiel · KI-Audit & Optimierung</p>
+          <a href="kontakt.html" class="internal-link">Eigenen Audit anfragen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- ══ 5. VERBINDUNG ══ -->
+  <section class="connection">
+    <div class="connection-inner reveal">
+      <h2 class="connection-title">
+        SystemAlchemie und AI Behavior<br>sind keine zwei Themen —<br>
+        sie sind <em>zwei Anwendungen</em> derselben Fähigkeit.
+      </h2>
+      <p class="connection-body">
+        Innen wie außen. Mensch wie Maschine.<br>
+        Wer versteht wie Systeme reagieren, kann sie bewusst gestalten.
+      </p>
+      <div class="connection-pillars">
+        <span class="connection-pillar">Reaktionen verstehen</span>
+        <span class="connection-pillar">Muster erkennen</span>
+        <span class="connection-pillar">Kommunikation gestalten</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 6. CLOSING ══ -->
+  <section class="closing">
+    <div class="closing-inner reveal">
+      <blockquote class="closing-quote">
+        „Du hörst auf, der Stress zu sein —<br>
+        und fängst an, ihn zu <em>beobachten.</em>"
+      </blockquote>
+      <span class="closing-attr">Das verändert alles.</span>
+      <p class="closing-sub">
+        Für Dich. Für Deine Führung.<br>
+        Für die Systeme, die Du nutzt oder baust.
+      </p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="fuer-dich.html" class="btn-gold">Für Dich starten</a>
+        <a href="kontakt.html" class="btn-outline-light">Für Unternehmen sprechen</a>
+      </div>
+    </div>
+  </section>
 
 </main>
 
 <footer>
   <a class="footer-logo" href="index.html">
-    <span class="footer-logik">LOGIC</span><span class="footer-pipe"> | </span><span class="footer-soul">Soul</span>
+    <span class="footer-logik">LOGIK</span><span class="footer-pipe"> | </span><span class="footer-soul">Soul</span>
   </a>
   <nav class="footer-nav">
     <a href="unternehmen.html">Unternehmen</a>
@@ -346,7 +684,7 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
     <a href="kontakt.html">Kontakt</a>
   </nav>
   <div class="footer-legal">
-    <span class="footer-copy">© 2026 Logic | Soul · Yana Thomée</span>
+    <span class="footer-copy">© 2026 LOGIK | Soul · Yana Thomée</span>
     <button class="footer-legal-btn" onclick="showLegal('impressum')">Impressum</button>
     <button class="footer-legal-btn" onclick="showLegal('datenschutz')">Datenschutz</button>
   </div>
@@ -357,7 +695,7 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
     <div class="legal-box-header"><div class="legal-box-title">Impressum</div><button class="legal-box-close" onclick="closeLegal()">✕</button></div>
     <div class="legal-box-content">
       <p><strong>Angaben gemäß § 5 TMG</strong></p>
-      <p>Yana Thomée · Logic | Soul<br>[STRASSE] · [PLZ ORT]</p>
+      <p>Yana Thomée · LOGIK | Soul<br>[STRASSE] · [PLZ ORT]</p>
       <p><strong>Kontakt</strong><br>hallo@logic-soul.com</p>
       <p style="font-size:0.72rem;color:var(--text-dim);">TODO: Vollständiges Impressum eintragen.</p>
     </div>
@@ -418,27 +756,5 @@ function showLegal(id) { document.getElementById('legal-' + id).classList.add('o
 function closeLegal() { document.querySelectorAll('.legal-overlay').forEach(m => m.classList.remove('open')); }
 </script>
 
-<script>
-let currentSlide = 0;
-const totalSlides = 3;
-let sliderTimer = null;
-function goToSlide(n) {
-  const prev = document.getElementById('slide-' + currentSlide);
-  const prevDot = document.getElementById('dot-' + currentSlide);
-  if (prev) prev.classList.remove('active');
-  if (prevDot) prevDot.classList.remove('active');
-  currentSlide = ((n % totalSlides) + totalSlides) % totalSlides;
-  const next = document.getElementById('slide-' + currentSlide);
-  const nextDot = document.getElementById('dot-' + currentSlide);
-  if (next) next.classList.add('active');
-  if (nextDot) nextDot.classList.add('active');
-}
-function startSlider() { if (sliderTimer) clearInterval(sliderTimer); sliderTimer = setInterval(() => goToSlide(currentSlide + 1), 5000); }
-function manualSlide(n) { goToSlide(n); startSlider(); }
-let touchStartX = 0;
-document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive:true });
-document.addEventListener('touchend', e => { const diff = touchStartX - e.changedTouches[0].clientX; if (Math.abs(diff) > 50) { goToSlide(diff > 0 ? currentSlide + 1 : currentSlide - 1); startSlider(); } });
-document.addEventListener('DOMContentLoaded', () => { if (document.getElementById('slide-0')) { goToSlide(0); startSlider(); } });
-</script>
 </body>
 </html>
