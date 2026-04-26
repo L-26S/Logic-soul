@@ -409,83 +409,72 @@ function closeLegal() { document.querySelectorAll('.legal-overlay').forEach(m =>
 
 <script>
 async function submitForm() {
-  const nameEl    = document.getElementById('f-name');
-  const emailEl   = document.getElementById('f-email');
-  const telEl     = document.getElementById('f-tel');
-  const companyEl = document.getElementById('f-company');
-  const topicEl   = document.getElementById('f-topic');
-  const msgEl     = document.getElementById('f-msg');
-  const dsgvo     = document.getElementById('dsgvo-check');
-  const btn       = document.getElementById('f-submit');
-  const success   = document.getElementById('form-success');
+  const btn     = document.getElementById('f-submit');
+  const success = document.getElementById('form-success');
+
+  // Get values
+  const name     = (document.getElementById('f-name')    || {}).value || '';
+  const email    = (document.getElementById('f-email')   || {}).value || '';
+  const tel      = (document.getElementById('f-tel')     || {}).value || '';
+  const company  = (document.getElementById('f-company') || {}).value || '';
+  const topic    = (document.getElementById('f-topic')   || {}).value || '';
+  const msg      = (document.getElementById('f-msg')     || {}).value || '';
+  const dsgvo    = document.getElementById('dsgvo-check');
 
   // Validate
   let valid = true;
-  [nameEl, emailEl, msgEl].forEach(f => {
-    if (!f || !f.value.trim()) {
-      if (f) f.style.borderColor = 'rgba(197,160,89,0.7)';
-      valid = false;
-    } else {
-      f.style.borderColor = '';
-    }
-  });
-  if (!dsgvo.checked) {
-    dsgvo.style.outline = '2px solid rgba(197,160,89,0.7)';
-    valid = false;
-  } else {
-    dsgvo.style.outline = '';
-  }
-  if (!valid) {
-    btn.style.transform = 'translateX(-6px)';
-    setTimeout(() => { btn.style.transform = 'translateX(6px)'; }, 100);
-    setTimeout(() => { btn.style.transform = 'translateX(-4px)'; }, 200);
-    setTimeout(() => { btn.style.transform = 'translateX(0)'; }, 300);
-    return;
-  }
+  if (!name.trim()) { document.getElementById('f-name').style.borderColor = 'rgba(197,160,89,0.7)'; valid = false; } else { document.getElementById('f-name').style.borderColor = ''; }
+  if (!email.trim()) { document.getElementById('f-email').style.borderColor = 'rgba(197,160,89,0.7)'; valid = false; } else { document.getElementById('f-email').style.borderColor = ''; }
+  if (!msg.trim()) { document.getElementById('f-msg').style.borderColor = 'rgba(197,160,89,0.7)'; valid = false; } else { document.getElementById('f-msg').style.borderColor = ''; }
+  if (dsgvo && !dsgvo.checked) { dsgvo.style.outline = '2px solid rgba(197,160,89,0.7)'; valid = false; } else if (dsgvo) { dsgvo.style.outline = ''; }
 
-  // Loading
-  btn.innerHTML = '<span style="display:inline-flex;align-items:center;gap:0.6rem;"><span style="width:14px;height:14px;border:2px solid rgba(255,255,255,0.3);border-top-color:white;border-radius:50%;animation:spin 0.8s linear infinite;display:inline-block;"></span> Wird gesendet…</span>';
+  if (!valid) return;
+
+  // Loading state
+  btn.textContent = 'Wird gesendet…';
   btn.disabled = true;
-  btn.style.opacity = '0.8';
 
   try {
     const res = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
-      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({
         access_key:  'c28c5f3e-1228-4088-a7cf-2bcb930dafa6',
         subject:     'Neue Anfrage — Logic | Soul',
         from_name:   'Logic | Soul Website',
-        name:        nameEl ? nameEl.value : '',
-        email:       emailEl ? emailEl.value : '',
-        telefon:     telEl ? telEl.value : '',
-        unternehmen: companyEl ? companyEl.value : '',
-        thema:       topicEl ? topicEl.value : '',
-        nachricht:   msgEl ? msgEl.value : ''
+        name:        name,
+        email:       email,
+        telefon:     tel,
+        unternehmen: company,
+        thema:       topic,
+        nachricht:   msg
       })
     });
 
     const data = await res.json();
+    console.log('Web3Forms response:', data);
 
     if (data.success) {
-      btn.innerHTML = '✓ Gesendet';
+      btn.textContent = '✓ Gesendet';
       btn.style.background = '#4a8a4a';
-      btn.style.opacity = '1';
       success.style.display = 'block';
-      [nameEl, emailEl, telEl, companyEl, msgEl].forEach(f => { if (f) f.value = ''; });
-      if (topicEl) topicEl.selectedIndex = 0;
-      dsgvo.checked = false;
       success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      document.getElementById('f-name').value = '';
+      document.getElementById('f-email').value = '';
+      document.getElementById('f-tel').value = '';
+      document.getElementById('f-company').value = '';
+      document.getElementById('f-msg').value = '';
+      if (dsgvo) dsgvo.checked = false;
     } else {
-      btn.innerHTML = '✕ Fehler — bitte per E-Mail schreiben';
+      console.error('Web3Forms error:', data);
+      btn.textContent = 'Fehler — bitte per E-Mail schreiben';
       btn.style.background = '#a85050';
-      btn.style.opacity = '1';
       btn.disabled = false;
     }
   } catch(err) {
-    btn.innerHTML = '✕ Verbindungsfehler — bitte per E-Mail schreiben';
+    console.error('Fetch error:', err);
+    btn.textContent = 'Fehler — bitte per E-Mail schreiben';
     btn.style.background = '#a85050';
-    btn.style.opacity = '1';
     btn.disabled = false;
   }
 }
