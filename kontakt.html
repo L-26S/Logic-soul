@@ -450,17 +450,18 @@ async function submitForm() {
   btn.style.opacity = '0.8';
 
   try {
+    const formData = new FormData();
+    formData.append('name', nameEl ? nameEl.value : '');
+    formData.append('email', emailEl ? emailEl.value : '');
+    formData.append('telefon', telEl ? telEl.value : '');
+    formData.append('unternehmen', companyEl ? companyEl.value : '');
+    formData.append('thema', topicEl ? topicEl.value : '');
+    formData.append('nachricht', msgEl ? msgEl.value : '');
+
     const res = await fetch('https://formspree.io/f/xojybyzp', {
       method: 'POST',
-      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name:        nameEl ? nameEl.value : '',
-        email:       emailEl ? emailEl.value : '',
-        telefon:     telEl ? telEl.value : '',
-        unternehmen: companyEl ? companyEl.value : '',
-        thema:       topicEl ? topicEl.value : '',
-        nachricht:   msgEl ? msgEl.value : ''
-      })
+      headers: { 'Accept': 'application/json' },
+      body: formData
     });
 
     if (res.ok) {
