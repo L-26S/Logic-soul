@@ -172,6 +172,12 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
 .dsgvo-label { display:flex; align-items:flex-start; gap:0.75rem; cursor:pointer; }
 .dsgvo-check { flex-shrink:0; width:16px; height:16px; margin-top:2px; accent-color:var(--gold); cursor:pointer; }
 .dsgvo-text { font-size:0.68rem; line-height:1.75; color:var(--text-dim); }
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+#f-submit { transition: background 0.3s, transform 0.1s, opacity 0.3s; }
 </style>
 </head>
 <body>
@@ -308,7 +314,7 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
             </label>
           </div>
           <button id="f-submit" class="btn-gold" style="align-self:flex-start;" onclick="submitForm()">Nachricht senden</button>
-          <p id="form-success" style="display:none;font-size:0.78rem;color:var(--gold-dark);">Vielen Dank für Ihre Anfrage. Das Team von Logic | Soul wird sich in Kürze mit Ihnen in Verbindung setzen.</p>
+          <div id="form-success" style="display:none;background:var(--navy);border-left:3px solid var(--gold);padding:1.25rem 1.5rem;margin-top:0.5rem;"><p style="font-family:'Playfair Display',serif;font-size:1rem;color:rgba(255,255,255,0.9);margin-bottom:0.35rem;">Vielen Dank für Ihre Anfrage.</p><p style="font-size:0.8rem;color:rgba(255,255,255,0.55);line-height:1.7;">Das Team von Logic | Soul wird sich in Kürze mit Ihnen in Verbindung setzen.</p></div>
         </div>
       </div>
     </div>
@@ -403,17 +409,17 @@ function closeLegal() { document.querySelectorAll('.legal-overlay').forEach(m =>
 
 <script>
 async function submitForm() {
-  const nameEl     = document.getElementById('f-name');
-  const emailEl    = document.getElementById('f-email');
-  const telEl      = document.getElementById('f-tel');
-  const companyEl  = document.getElementById('f-company');
-  const topicEl    = document.getElementById('f-topic');
-  const msgEl      = document.getElementById('f-msg');
-  const dsgvo      = document.getElementById('dsgvo-check');
-  const btn        = document.getElementById('f-submit');
-  const success    = document.getElementById('form-success');
+  const nameEl    = document.getElementById('f-name');
+  const emailEl   = document.getElementById('f-email');
+  const telEl     = document.getElementById('f-tel');
+  const companyEl = document.getElementById('f-company');
+  const topicEl   = document.getElementById('f-topic');
+  const msgEl     = document.getElementById('f-msg');
+  const dsgvo     = document.getElementById('dsgvo-check');
+  const btn       = document.getElementById('f-submit');
+  const success   = document.getElementById('form-success');
 
-  // Validate required fields
+  // Validate
   let valid = true;
   [nameEl, emailEl, msgEl].forEach(f => {
     if (!f || !f.value.trim()) {
@@ -429,38 +435,56 @@ async function submitForm() {
   } else {
     dsgvo.style.outline = '';
   }
-  if (!valid) return;
+  if (!valid) {
+    // Shake button to signal error
+    btn.style.transform = 'translateX(-6px)';
+    setTimeout(() => { btn.style.transform = 'translateX(6px)'; }, 100);
+    setTimeout(() => { btn.style.transform = 'translateX(-4px)'; }, 200);
+    setTimeout(() => { btn.style.transform = 'translateX(0)'; }, 300);
+    return;
+  }
 
-  btn.textContent = 'Wird gesendet…';
+  // Loading state
+  btn.innerHTML = '<span style="display:inline-flex;align-items:center;gap:0.6rem;"><span style="width:14px;height:14px;border:2px solid rgba(255,255,255,0.3);border-top-color:white;border-radius:50%;animation:spin 0.8s linear infinite;display:inline-block;"></span> Wird gesendet…</span>';
   btn.disabled = true;
+  btn.style.opacity = '0.8';
 
   try {
     const res = await fetch('https://formspree.io/f/xojybyzp', {
       method: 'POST',
       headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        name:         nameEl ? nameEl.value : '',
-        email:        emailEl ? emailEl.value : '',
-        telefon:      telEl ? telEl.value : '',
-        unternehmen:  companyEl ? companyEl.value : '',
-        thema:        topicEl ? topicEl.value : '',
-        nachricht:    msgEl ? msgEl.value : ''
+        name:        nameEl ? nameEl.value : '',
+        email:       emailEl ? emailEl.value : '',
+        telefon:     telEl ? telEl.value : '',
+        unternehmen: companyEl ? companyEl.value : '',
+        thema:       topicEl ? topicEl.value : '',
+        nachricht:   msgEl ? msgEl.value : ''
       })
     });
 
     if (res.ok) {
+      // Success
+      btn.innerHTML = '✓ Gesendet';
+      btn.style.background = '#4a8a4a';
+      btn.style.opacity = '1';
       success.style.display = 'block';
-      success.style.color = 'var(--gold-dark)';
+      // Clear fields
       [nameEl, emailEl, telEl, companyEl, msgEl].forEach(f => { if (f) f.value = ''; });
       if (topicEl) topicEl.selectedIndex = 0;
       dsgvo.checked = false;
-      btn.textContent = '✓ Gesendet';
+      // Scroll to success message
+      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
     } else {
-      btn.textContent = 'Fehler — bitte direkt mailen';
+      btn.innerHTML = '✕ Fehler — bitte per E-Mail schreiben';
+      btn.style.background = '#a85050';
+      btn.style.opacity = '1';
       btn.disabled = false;
     }
   } catch(err) {
-    btn.textContent = 'Fehler — bitte direkt mailen';
+    btn.innerHTML = '✕ Verbindungsfehler — bitte per E-Mail schreiben';
+    btn.style.background = '#a85050';
+    btn.style.opacity = '1';
     btn.disabled = false;
   }
 }!DOCTYPE html>
@@ -773,7 +797,7 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
             </label>
           </div>
           <button id="f-submit" class="btn-gold" style="align-self:flex-start;" onclick="submitForm()">Nachricht senden</button>
-          <p id="form-success" style="display:none;font-size:0.78rem;color:var(--gold-dark);">Vielen Dank für Ihre Anfrage. Das Team von Logic | Soul wird sich in Kürze mit Ihnen in Verbindung setzen.</p>
+          <div id="form-success" style="display:none;background:var(--navy);border-left:3px solid var(--gold);padding:1.25rem 1.5rem;margin-top:0.5rem;"><p style="font-family:'Playfair Display',serif;font-size:1rem;color:rgba(255,255,255,0.9);margin-bottom:0.35rem;">Vielen Dank für Ihre Anfrage.</p><p style="font-size:0.8rem;color:rgba(255,255,255,0.55);line-height:1.7;">Das Team von Logic | Soul wird sich in Kürze mit Ihnen in Verbindung setzen.</p></div>
         </div>
       </div>
     </div>
