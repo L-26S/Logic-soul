@@ -513,48 +513,7 @@ async function submitForm() {
 </div>
 
 
-<script>
-let currentSidebar = null;
-function toggleSidebar(id, btnEl) {
-  if (currentSidebar === id) { closeSidebar(); return; }
-  closeSidebar(false);
-  currentSidebar = id;
-  const panel = document.getElementById('sidebar-' + id);
-  panel.classList.add('open');
-  document.getElementById('sidebarOverlay').classList.add('open');
-  if (btnEl && window.innerWidth > 1024) {
-    const rect = btnEl.getBoundingClientRect();
-    let left = rect.left;
-    if (left + 260 > window.innerWidth - 16) left = window.innerWidth - 276;
-    panel.style.left = left + 'px';
-  }
-}
-function closeSidebar(reset=true) {
-  document.querySelectorAll('.sidebar-panel').forEach(p => p.classList.remove('open'));
-  document.getElementById('sidebarOverlay').classList.remove('open');
-  if (reset) currentSidebar = null;
-}
-function toggleMobileMenu() {
-  document.getElementById('mobileMenu').classList.toggle('open');
-}
-function toggleMobileSubmenu(id) {
-  const sub = document.getElementById('mob-sub-' + id);
-  const btn = document.getElementById('mob-btn-' + id);
-  const isOpen = sub.classList.contains('open');
-  document.querySelectorAll('.mobile-submenu').forEach(s => s.classList.remove('open'));
-  document.querySelectorAll('.mobile-menu-btn').forEach(b => b.classList.remove('expanded'));
-  if (!isOpen) { sub.classList.add('open'); btn.classList.add('expanded'); }
-}
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSidebar(); });
-// Reveal
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-}, { threshold:0.08 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-// Legal
-function showLegal(id) { document.getElementById('legal-' + id).classList.add('open'); }
-function closeLegal() { document.querySelectorAll('.legal-overlay').forEach(m => m.classList.remove('open')); }
-</script>
+
 
 <script>
 function submitForm() {
