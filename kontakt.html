@@ -412,14 +412,14 @@ async function submitForm() {
   const btn     = document.getElementById('f-submit');
   const success = document.getElementById('form-success');
 
-const nameEl  = document.getElementById('f-name');
-const emailEl = document.getElementById('f-email');
-const msgEl   = document.getElementById('f-msg');
-const dsgvo   = document.getElementById('dsgvo-check');
-if (!nameEl || !emailEl || !msgEl) { console.error('Felder nicht gefunden'); return; }
-const name = nameEl.value.trim();
-const email = emailEl.value.trim();
-const msg = msgEl.value.trim();
+  const nameEl  = document.getElementById('f-name');
+  const emailEl = document.getElementById('f-email');
+  const msgEl   = document.getElementById('f-msg');
+  const dsgvo   = document.getElementById('dsgvo-check');
+  if (!nameEl || !emailEl || !msgEl) { console.error('Felder nicht gefunden'); return; }
+  const name = nameEl.value.trim();
+  const email = emailEl.value.trim();
+  const msg = msgEl.value.trim();
 
   // Validate
   let valid = true;
