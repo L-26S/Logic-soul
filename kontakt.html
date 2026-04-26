@@ -178,6 +178,7 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
   to   { transform: rotate(360deg); }
 }
 #f-submit { transition: background 0.3s, transform 0.1s, opacity 0.3s; }
+#form-success { display: none; }
 </style>
 </head>
 <body>
@@ -290,13 +291,17 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
       <!-- Formular -->
       <div class="reveal">
         <p style="font-size:0.55rem;letter-spacing:0.45em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;">Nachricht schreiben</p>
-        <div style="display:flex;flex-direction:column;gap:1.25rem;">
-          <div class="form-group"><label class="form-label">Name</label><input type="text" id="f-name" class="form-input" placeholder="Ihr Name"></div>
-          <div class="form-group"><label class="form-label">E-Mail</label><input type="email" id="f-email" class="form-input" placeholder="ihre@email.de"></div>
-          <div class="form-group"><label class="form-label">Telefon <span style="opacity:0.5;">(optional)</span></label><input type="tel" id="f-tel" class="form-input" placeholder="+49 000 000000"></div>
-          <div class="form-group"><label class="form-label">Unternehmen <span style="opacity:0.5;">(optional)</span></label><input type="text" id="f-company" class="form-input" placeholder="Ihr Unternehmen"></div>
+        <form action="https://api.web3forms.com/submit" method="POST" style="display:flex;flex-direction:column;gap:1.25rem;">
+          <input type="hidden" name="access_key" value="c28c5f3e-1228-4088-a7cf-2bcb930dafa6">
+          <input type="hidden" name="subject" value="Neue Anfrage — Logic | Soul">
+          <input type="hidden" name="from_name" value="Logic | Soul Website">
+          <input type="hidden" name="redirect" value="https://logic-soul.com/danke.html">
+          <div class="form-group"><label class="form-label">Name *</label><input type="text" name="name" class="form-input" placeholder="Ihr Name" required></div>
+          <div class="form-group"><label class="form-label">E-Mail *</label><input type="email" name="email" class="form-input" placeholder="ihre@email.de" required></div>
+          <div class="form-group"><label class="form-label">Telefon <span style="opacity:0.5;">(optional)</span></label><input type="tel" name="telefon" class="form-input" placeholder="+49 000 000000"></div>
+          <div class="form-group"><label class="form-label">Unternehmen <span style="opacity:0.5;">(optional)</span></label><input type="text" name="unternehmen" class="form-input" placeholder="Ihr Unternehmen"></div>
           <div class="form-group"><label class="form-label">Worum geht es?</label>
-            <select id="f-topic" class="form-input form-select">
+            <select name="thema" class="form-input form-select">
               <option value="">Bitte wählen</option>
               <option>KI-Audit für mein Unternehmen</option>
               <option>KI-Optimierung / Projektarbeit</option>
@@ -306,16 +311,15 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
               <option>Etwas anderes</option>
             </select>
           </div>
-          <div class="form-group"><label class="form-label">Nachricht</label><textarea id="f-msg" class="form-input form-textarea" placeholder="Was bewegt Sie gerade?" rows="4"></textarea></div>
+          <div class="form-group"><label class="form-label">Nachricht *</label><textarea name="nachricht" class="form-input form-textarea" placeholder="Was bewegt Sie gerade?" rows="4" required></textarea></div>
           <div class="form-group">
             <label class="dsgvo-label">
-              <input type="checkbox" id="dsgvo-check" class="dsgvo-check">
+              <input type="checkbox" name="dsgvo" class="dsgvo-check" required>
               <span class="dsgvo-text">Ich stimme zu, dass meine Angaben zur Kontaktaufnahme gespeichert werden. Die Daten werden ausschließlich zur Bearbeitung meiner Anfrage genutzt, nicht an Dritte weitergegeben und nach Abschluss gelöscht. Widerruf jederzeit per E-Mail an <a href="mailto:hello@logic-soul.com" style="color:var(--gold-dark);">hello@logic-soul.com</a>. Weitere Informationen in unserer <a href="#" onclick="showLegal('datenschutz')" style="color:var(--gold-dark);">Datenschutzerklärung</a>. *</span>
             </label>
           </div>
-          <button id="f-submit" class="btn-gold" style="align-self:flex-start;" onclick="submitForm()">Nachricht senden</button>
-          <div id="form-success" style="display:none;background:var(--navy);border-left:3px solid var(--gold);padding:1.25rem 1.5rem;margin-top:0.5rem;"><p style="font-family:'Playfair Display',serif;font-size:1rem;color:rgba(255,255,255,0.9);margin-bottom:0.35rem;">Vielen Dank für Ihre Anfrage.</p><p style="font-size:0.8rem;color:rgba(255,255,255,0.55);line-height:1.7;">Das Team von Logic | Soul wird sich in Kürze mit Ihnen in Verbindung setzen.</p></div>
-        </div>
+          <button type="submit" class="btn-gold" style="align-self:flex-start;">Nachricht senden</button>
+        </form>
       </div>
     </div>
   </div>
