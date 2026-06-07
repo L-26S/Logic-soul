@@ -445,7 +445,7 @@ body { background: #F5EDD8; }
       <li><button class="nav-btn" onclick="toggleSidebar('unternehmen', this)">Für Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
       <li><button class="nav-btn" onclick="toggleSidebar('dich', this)">Für Dich <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
       <li><button class="nav-btn" onclick="toggleSidebar('produkte', this)">Produkte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
-      <li><a href="methodik.html" class="nav-btn">Methodik</a></li>
+      <li><button class="nav-btn" onclick="toggleSidebar('methodik', this)">Methodik <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
       <li><a href="kontakt.html" class="nav-btn nav-cta">Gespräch anfragen</a></li>
     </ul>
   </nav>
@@ -456,6 +456,18 @@ body { background: #F5EDD8; }
 </header>
 
 <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<div class="sidebar-panel" id="sidebar-methodik">
+  <div class="sidebar-header">
+    <span class="sidebar-label">Logic | Soul</span>
+    <div class="sidebar-title">Methodik</div>
+  </div>
+  <div class="sidebar-items">
+    <a href="systemalchemie.html" class="sidebar-btn">Was ist SystemAlchemie?</a>
+    <a href="entstehung.html" class="sidebar-btn">Wie sie entstand</a>
+    <a href="methodik.html" class="sidebar-btn">Die 5 Schritte</a>
+  </div>
+</div>
 
 <div class="sidebar-panel" id="sidebar-unternehmen">
   <div class="sidebar-header">
@@ -529,7 +541,14 @@ body { background: #F5EDD8; }
     <a href="selbstreflexion.html" class="mobile-sub-btn">Selbstreflexions-Set</a>
     <a href="etraining.html" class="mobile-sub-btn">E-Training</a>
   </div>
-  <a href="methodik.html" class="mobile-menu-btn" style="text-decoration:none;">Methodik</a>
+  <button class="mobile-menu-btn" id="mob-btn-methodik" onclick="toggleMobileSubmenu('methodik')">
+    Methodik <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+  </button>
+  <div class="mobile-submenu" id="mob-sub-methodik">
+    <a href="systemalchemie.html" class="mobile-sub-btn">Was ist SystemAlchemie?</a>
+    <a href="entstehung.html" class="mobile-sub-btn">Wie sie entstand</a>
+    <a href="methodik.html" class="mobile-sub-btn">Die 5 Schritte</a>
+  </div>
   <a href="kontakt.html" class="mobile-menu-cta">Gespräch anfragen</a>
 </div>
 
@@ -627,8 +646,8 @@ body { background: #F5EDD8; }
   </nav>
   <div class="footer-legal">
     <span class="footer-copy">© 2026 Logic | Soul · Yana Thomée</span>
-    <button class="footer-legal-btn" onclick="showLegal('impressum')">Impressum</button>
-    <a href="datenschutz.html" class="footer-legal-btn" style="background:none;border:none;cursor:pointer;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;">Datenschutz</a>
+    <button onclick="showLegal('impressum')" style="background:none;border:none;cursor:pointer;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(242,240,237,0.5);padding:0;">Impressum</button>
+    <a href="datenschutz.html" style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(242,240,237,0.5);text-decoration:none;">Datenschutz</a>
   </div>
 </footer>
 
