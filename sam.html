@@ -442,7 +442,7 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(13,27,42,0.65);margin-t
       <li><button class="nav-btn" onclick="toggleSidebar('unternehmen', this)">Für Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
       <li><button class="nav-btn" onclick="toggleSidebar('dich', this)">Für Dich <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
       <li><button class="nav-btn" onclick="toggleSidebar('produkte', this)">Produkte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
-      <li><a href="methodik.html" class="nav-btn">Methodik</a></li>
+      <li><button class="nav-btn" onclick="toggleSidebar('methodik', this)">Methodik <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
       <li><a href="kontakt.html" class="nav-btn nav-cta">Gespräch anfragen</a></li>
     </ul>
   </nav>
@@ -453,6 +453,18 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(13,27,42,0.65);margin-t
 </header>
 
 <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<div class="sidebar-panel" id="sidebar-methodik">
+  <div class="sidebar-header">
+    <span class="sidebar-label">Logic | Soul</span>
+    <div class="sidebar-title">Methodik</div>
+  </div>
+  <div class="sidebar-items">
+    <a href="systemalchemie.html" class="sidebar-btn">Was ist SystemAlchemie?</a>
+    <a href="entstehung.html" class="sidebar-btn">Wie sie entstand</a>
+    <a href="methodik.html" class="sidebar-btn">Die 5 Schritte</a>
+  </div>
+</div>
 
 <div class="sidebar-panel" id="sidebar-unternehmen">
   <div class="sidebar-header">
@@ -526,7 +538,14 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(13,27,42,0.65);margin-t
     <a href="selbstreflexion.html" class="mobile-sub-btn">Selbstreflexions-Set</a>
     <a href="etraining.html" class="mobile-sub-btn">E-Training</a>
   </div>
-  <a href="methodik.html" class="mobile-menu-btn" style="text-decoration:none;">Methodik</a>
+  <button class="mobile-menu-btn" id="mob-btn-methodik" onclick="toggleMobileSubmenu('methodik')">
+    Methodik <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+  </button>
+  <div class="mobile-submenu" id="mob-sub-methodik">
+    <a href="systemalchemie.html" class="mobile-sub-btn">Was ist SystemAlchemie?</a>
+    <a href="entstehung.html" class="mobile-sub-btn">Wie sie entstand</a>
+    <a href="methodik.html" class="mobile-sub-btn">Die 5 Schritte</a>
+  </div>
   <a href="kontakt.html" class="mobile-menu-cta">Gespräch anfragen</a>
 </div>
 
@@ -609,20 +628,20 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(13,27,42,0.65);margin-t
     <div style="margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(13,27,42,0.1);" class="reveal">
       <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:1.25rem;">SAM und die Kartensets</p>
       <p style="font-size:0.9rem;line-height:1.9;color:rgba(13,27,42,0.65);margin-bottom:2rem;">SAM und die Kartensets ergänzen sich. Haptisch und digital. Der Einstieg in die SystemAlchemie auf zwei Wegen gleichzeitig.</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
-        <a href="basis-set.html" style="text-decoration:none;">
-          <div style="background:white;border:1px solid rgba(13,27,42,0.1);border-top:2px solid #C5A059;padding:2rem;transition:box-shadow 0.3s;" onmouseover="this.style.boxShadow='0 4px 20px rgba(197,160,89,0.15)'" onmouseout="this.style.boxShadow=''">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:stretch;">
+        <a href="basis-set.html" style="text-decoration:none;display:flex;">
+          <div style="background:white;border:1px solid rgba(13,27,42,0.1);border-top:2px solid #C5A059;padding:2rem;transition:box-shadow 0.3s;display:flex;flex-direction:column;width:100%;box-sizing:border-box;" onmouseover="this.style.boxShadow='0 4px 20px rgba(197,160,89,0.15)'" onmouseout="this.style.boxShadow=''">
             <p style="font-size:0.52rem;letter-spacing:0.4em;text-transform:uppercase;color:rgba(13,27,42,0.4);margin-bottom:0.5rem;">Einstieg</p>
             <p style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#0D1B2A;margin-bottom:0.5rem;">Basis-Set</p>
-            <p style="font-size:0.8rem;line-height:1.7;color:rgba(13,27,42,0.6);margin-bottom:1rem;">Kartenset und Workbook als haptischer Einstieg. Ideal für den Anfang mit SAM.</p>
+            <p style="font-size:0.8rem;line-height:1.7;color:rgba(13,27,42,0.6);margin-bottom:1rem;flex:1;">Kartenset und Workbook als haptischer Einstieg. Ideal für den Anfang mit SAM.</p>
             <p style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#C5A059;">Entdecken →</p>
           </div>
         </a>
-        <a href="selbstreflexion.html" style="text-decoration:none;">
-          <div style="background:white;border:1px solid rgba(13,27,42,0.1);border-top:2px solid #C5A059;padding:2rem;transition:box-shadow 0.3s;" onmouseover="this.style.boxShadow='0 4px 20px rgba(197,160,89,0.15)'" onmouseout="this.style.boxShadow=''">
+        <a href="selbstreflexion.html" style="text-decoration:none;display:flex;">
+          <div style="background:white;border:1px solid rgba(13,27,42,0.1);border-top:2px solid #C5A059;padding:2rem;transition:box-shadow 0.3s;display:flex;flex-direction:column;width:100%;box-sizing:border-box;" onmouseover="this.style.boxShadow='0 4px 20px rgba(197,160,89,0.15)'" onmouseout="this.style.boxShadow=''">
             <p style="font-size:0.52rem;letter-spacing:0.4em;text-transform:uppercase;color:rgba(13,27,42,0.4);margin-bottom:0.5rem;">Tiefer gehen</p>
             <p style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#0D1B2A;margin-bottom:0.5rem;">Selbstreflexions-Set</p>
-            <p style="font-size:0.8rem;line-height:1.7;color:rgba(13,27,42,0.6);margin-bottom:1rem;">Für alle die mit SAM gearbeitet haben und tiefer gehen möchten.</p>
+            <p style="font-size:0.8rem;line-height:1.7;color:rgba(13,27,42,0.6);margin-bottom:1rem;flex:1;">Für alle die mit SAM gearbeitet haben und tiefer gehen möchten.</p>
             <p style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#C5A059;">Entdecken →</p>
           </div>
         </a>
@@ -676,8 +695,8 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(13,27,42,0.65);margin-t
   </nav>
   <div class="footer-legal">
     <span class="footer-copy">© 2026 Logic | Soul · Yana Thomée</span>
-    <button class="footer-legal-btn" onclick="showLegal('impressum')">Impressum</button>
-    <a href="datenschutz.html" class="footer-legal-btn" style="background:none;border:none;cursor:pointer;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;">Datenschutz</a>
+    <button onclick="showLegal('impressum')" style="background:none;border:none;cursor:pointer;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(242,240,237,0.5);padding:0;">Impressum</button>
+    <a href="datenschutz.html" style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(242,240,237,0.5);text-decoration:none;">Datenschutz</a>
   </div>
 </footer>
 
