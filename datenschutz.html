@@ -444,7 +444,7 @@ body { background: #F5EDD8; }
       <li><button class="nav-btn" onclick="toggleSidebar('unternehmen', this)">Für Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
       <li><button class="nav-btn" onclick="toggleSidebar('dich', this)">Für Dich <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
       <li><button class="nav-btn" onclick="toggleSidebar('produkte', this)">Produkte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
-      <li><a href="methodik.html" class="nav-btn">Methodik</a></li>
+      <li><button class="nav-btn" onclick="toggleSidebar('methodik', this)">Methodik <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
       <li><a href="kontakt.html" class="nav-btn nav-cta">Gespräch anfragen</a></li>
     </ul>
   </nav>
@@ -455,6 +455,18 @@ body { background: #F5EDD8; }
 </header>
 
 <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<div class="sidebar-panel" id="sidebar-methodik">
+  <div class="sidebar-header">
+    <span class="sidebar-label">Logic | Soul</span>
+    <div class="sidebar-title">Methodik</div>
+  </div>
+  <div class="sidebar-items">
+    <a href="systemalchemie.html" class="sidebar-btn">Was ist SystemAlchemie?</a>
+    <a href="entstehung.html" class="sidebar-btn">Wie sie entstand</a>
+    <a href="methodik.html" class="sidebar-btn">Die 5 Schritte</a>
+  </div>
+</div>
 
 <div class="sidebar-panel" id="sidebar-unternehmen">
   <div class="sidebar-header">
@@ -528,7 +540,14 @@ body { background: #F5EDD8; }
     <a href="selbstreflexion.html" class="mobile-sub-btn">Selbstreflexions-Set</a>
     <a href="etraining.html" class="mobile-sub-btn">E-Training</a>
   </div>
-  <a href="methodik.html" class="mobile-menu-btn" style="text-decoration:none;">Methodik</a>
+  <button class="mobile-menu-btn" id="mob-btn-methodik" onclick="toggleMobileSubmenu('methodik')">
+    Methodik <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+  </button>
+  <div class="mobile-submenu" id="mob-sub-methodik">
+    <a href="systemalchemie.html" class="mobile-sub-btn">Was ist SystemAlchemie?</a>
+    <a href="entstehung.html" class="mobile-sub-btn">Wie sie entstand</a>
+    <a href="methodik.html" class="mobile-sub-btn">Die 5 Schritte</a>
+  </div>
   <a href="kontakt.html" class="mobile-menu-cta">Gespräch anfragen</a>
 </div>
 
@@ -571,8 +590,9 @@ body { background: #F5EDD8; }
       <h2 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#0D1B2A;margin:2rem 0 0.75rem;font-weight:500;">7. Seitenfunktionalitäten</h2>
       <p><strong>Google Web Fonts:</strong> Diese Seite nutzt Web Fonts von Google Ireland Limited, Gordon House, 4 Barrow St, Dublin, D04 E5W5, Irland. Die Nutzung erfolgt nur mit deiner ausdrücklichen Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Google hat sich dem EU-US Data Privacy Framework angeschlossen.</p>
 
-      <h2 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#0D1B2A;margin:2rem 0 0.75rem;font-weight:500;">8. Tools und Buchhaltung</h2>
-      <p><strong>Finom:</strong> PNL Fintech B.V., Jachthavenweg 109H, 1081KM Amsterdam, Niederlande. Verarbeitung von Rechnungs- und Buchhaltungsdaten. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</p>
+      <h2 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#0D1B2A;margin:2rem 0 0.75rem;font-weight:500;">8. Tools und Dienstleister</h2>
+      <p><strong>Finom:</strong> PNL Fintech B.V., Jachthavenweg 109H, 1081KM Amsterdam, Niederlande. Wir nutzen Finom als Zahlungsdienstleister für die Abwicklung von Geschäftstransaktionen. Sofern hierbei personenbezogene Daten verarbeitet werden, erfolgt dies auf Basis von Art. 6 Abs. 1 lit. b und lit. f DSGVO.</p>
+      <p><strong>Lexware Office:</strong> Haufe-Lexware GmbH &amp; Co. KG, Munzinger Straße 9, 79111 Freiburg, Deutschland. Wir nutzen Lexware Office für die Buchhaltung. Verarbeitung von Eingangs- und Ausgangsrechnungen sowie Bankbewegungen. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</p>
       <p><strong>Supabase:</strong> Für die Datenspeicherung von SAM und ALMA nutzen wir Supabase Inc. mit Serverstandort Frankfurt (EU). Wir haben einen Auftragsverarbeitungsvertrag abgeschlossen. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.</p>
 
       <h2 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#0D1B2A;margin:2rem 0 0.75rem;font-weight:500;">9. Deine Rechte</h2>
