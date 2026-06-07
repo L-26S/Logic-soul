@@ -414,6 +414,15 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
     padding-right: 1.25rem !important;
   }
 }
+
+.footer-dropdown { position: relative; display: inline-block; }
+.footer-dropdown-btn { background: none; border: none; cursor: pointer; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(242,240,237,0.5); font-family: inherit; padding: 0; transition: color 0.2s; }
+.footer-dropdown-btn:hover { color: var(--gold); }
+.footer-dropdown-menu { display: none; position: absolute; bottom: calc(100% + 8px); left: 0; background: #0a1520; border: 1px solid rgba(197,160,89,0.2); border-top: 2px solid var(--gold); min-width: 200px; z-index: 100; }
+.footer-dropdown-menu.open { display: block; }
+.footer-dropdown-menu a { display: block; padding: 0.65rem 1rem; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(242,240,237,0.55); text-decoration: none; transition: color 0.2s, background 0.2s; }
+.footer-dropdown-menu a:hover { color: var(--gold); background: rgba(197,160,89,0.05); }
+
 </style>
 </head>
 <body>
@@ -492,7 +501,7 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
     <a href="fuehrungsset.html" class="sidebar-btn">Führungskräfte-Set</a>
     <a href="basis-set.html" class="sidebar-btn">Basis-Set</a>
     <a href="selbstreflexion.html" class="sidebar-btn">Selbstreflexions-Set</a>
-    <a href="musterchecks.html" class="sidebar-btn">Beziehungsmuster-Sets</a>
+    <a href="musterchecks.html" class="sidebar-btn">Musterchecks</a>
     <a href="etraining.html" class="sidebar-btn">E-Training</a>
   </div>
 </div>
@@ -576,11 +585,13 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
     <a href="basis-set.html">Basis-Set</a>
     <a href="methodik.html">Methodik</a>
     <a href="kontakt.html">Kontakt</a>
-  </nav>
-  <nav class="footer-nav" style="margin-top:0.75rem;padding-top:0.75rem;border-top:1px solid rgba(242,240,237,0.1);">
-    <span style="font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(242,240,237,0.3);">Weitere Produkte</span>
-    <a href="musterchecks.html" style="color:rgba(242,240,237,0.55);">Beziehungsmuster-Check</a>
-    <a href="https://kompass.logic-soul.com" target="_blank" style="color:rgba(242,240,237,0.35);">Business Kompass ↗</a>
+    <div class="footer-dropdown" id="footerWeitere">
+      <button onclick="toggleFooterDropdown()" class="footer-dropdown-btn">Weitere Produkte <svg viewBox="0 0 10 6" fill="none" style="width:8px;height:8px;margin-left:4px;vertical-align:middle;"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button>
+      <div class="footer-dropdown-menu" id="footerDropdownMenu">
+        <a href="musterchecks.html">Beziehungsmuster-Check</a>
+        <a href="https://kompass.logic-soul.com" target="_blank">Business Kompass ↗</a>
+      </div>
+    </div>
   </nav>
   <div class="footer-legal">
     <span class="footer-copy">© 2026 Logic | Soul · Yana Thomée</span>
