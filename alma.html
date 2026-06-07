@@ -2,18 +2,19 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="keywords" content="KI für Führungskräfte, schwieriges Mitarbeitergespräch vorbereiten, Kündigung aussprechen, Konfliktgespräch Führungskraft, unter Druck führen, Führungskräfte Coaching KI, KI für HR, Führungsstärke entwickeln, Führungskraft Selbstreflexion, emotionale Intelligenz Führung, Führungskräfte Stress Umgang, Führungskräfte Entwicklung">
-<meta name="description" content="ALMA — KI-Begleiter für Führungskräfte in schwierigen Situationen. Kündigung vorbereiten, Konflikt lösen, unter Druck klar bleiben. Vor dem Gespräch, nicht erst danach.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ALMA begleitet Führungskräfte zu innerer Klarheit vor schwierigen Gesprächen. Mit Führungskräfte-Set, Workshop und Jahreslizenz. Ab 30 Personen Kartenset gratis.">
+<meta name="keywords" content="ALMA Führungskräfte, Führungskräfte Coaching KI, schwieriges Gespräch vorbereiten, Führungskräfte Entwicklung KI">
 <meta property="og:title" content="ALMA — KI-Begleiter für Führungskräfte | Logic | Soul">
-<meta property="og:description" content="ALMA unterstützt Führungskräfte in schwierigen Situationen — Kündigung, Konflikt, Eskalation. KI-Begleitung vor dem Gespräch, nicht erst danach.">
-<meta property="og:url" content="https://logic-soul.com/alma.html">
+<meta property="og:description" content="ALMA begleitet Führungskräfte zu innerer Klarheit vor schwierigen Gesprächen. Mit Führungskräfte-Set, Workshop und Jahreslizenz. Ab 30 Personen Kartenset gratis.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Logic | Soul">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ALMA — KI-Begleiter für Führungskräfte | Logic | Soul</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+
+
 
 :root {
   --gold: #C5A059; --gold-light: #d4b472; --gold-dim: rgba(197,160,89,0.1);
@@ -169,205 +170,593 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
 .legal-box-content { padding:1.75rem; overflow-y:auto; font-size:0.82rem; line-height:1.85; color:var(--text-mid); display:flex; flex-direction:column; gap:1rem; }
 
 
-/* ALMA dark page overrides */
-.page-eyebrow { color: var(--gold) !important; }
-.page-title { color: rgba(255,255,255,0.92) !important; font-family:'Playfair Display',serif !important; font-weight:400 !important; }
-.page-title em { color: var(--gold) !important; }
-.page-sub { color: rgba(255,255,255,0.6) !important; }
-.page-hero { border-color: rgba(197,160,89,0.2) !important; }
-.pillar { border-color: rgba(197,160,89,0.3) !important; }
-.pillar-title { color: var(--gold) !important; }
-.pillar-text { color: rgba(255,255,255,0.55) !important; }
-.internal-link { color: var(--gold) !important; border-color: rgba(197,160,89,0.3) !important; }
-footer { background: rgba(0,0,0,0.3) !important; }
-</style>
-
-<script type="application/ld+json">
-{
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "ALMA — KI-Begleiter für Führungskräfte",
-      "provider": {"@type": "Organization", "name": "Logic | Soul", "url": "https://logic-soul.com"},
-      "description": "ALMA begleitet Führungskräfte durch schwierige Situationen — Kündigung, Konflikt, Eskalation. KI-Coaching für Führungskräfte.",
-      "areaServed": "DE",
-      "serviceType": "KI-Coaching Führungskräfte",
-      "audience": {"@type": "Audience", "audienceType": "Führungskräfte"}
-    }
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Was ist ALMA?",
-      "acceptedAnswer": {"@type": "Answer", "text": "ALMA ist ein KI-Begleiter für Führungskräfte in schwierigen Situationen — Kündigung, Konflikt, Eskalation. ALMA begleitet strukturiert durch die Vorbereitung auf kritische Gespräche, bevor der Druck die Führung übernimmt."}
-    },
-    {
-      "@type": "Question", 
-      "name": "Wie unterscheidet sich ALMA von klassischem Führungskräfte-Coaching?",
-      "acceptedAnswer": {"@type": "Answer", "text": "ALMA ersetzt kein Coaching — sondern ergänzt es. ALMA ist immer verfügbar, direkt vor dem entscheidenden Gespräch, ohne Wartezeit. Für den Moment der zählt."}
-    },
-    {
-      "@type": "Question",
-      "name": "Kann ALMA unternehmensweit eingesetzt werden?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Ja. ALMA ist als B2B-Lizenz für Unternehmen verfügbar — DSGVO-konform und betriebsratskonform. Sprechen Sie uns für ein individuelles Angebot an."}
-    }
-  ]
+/* ══ HERO ══ */
+.hero {
+  min-height: calc(100vh - var(--nav-h));
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  background: var(--navy);
+  padding: 5rem 2rem 4rem;
+  position: relative; overflow: hidden;
 }
-</script>
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 60% 40%, rgba(197,160,89,0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-inner { max-width: 780px; position: relative; z-index: 1; }
+.hero-eyebrow {
+  font-size: 0.55rem; letter-spacing: 0.5em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 2rem;
+  opacity: 0; animation: fadeUp 0.7s ease 0.1s forwards;
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
+  font-weight: 400; line-height: 1.15;
+  color: rgba(255,255,255,0.92); margin-bottom: 2rem;
+  opacity: 0; animation: fadeUp 0.7s ease 0.25s forwards;
+}
+.hero-title em { font-style: italic; color: var(--gold); }
+.hero-sub {
+  font-size: 0.95rem; line-height: 2;
+  color: rgba(255,255,255,0.55);
+  max-width: 580px; margin: 0 auto 1.5rem;
+  opacity: 0; animation: fadeUp 0.7s ease 0.4s forwards;
+}
+.hero-pain {
+  display: flex; flex-direction: column; gap: 0.35rem;
+  margin: 0 auto 1.5rem; max-width: 480px;
+  opacity: 0; animation: fadeUp 0.7s ease 0.5s forwards;
+}
+.hero-pain-item {
+  font-size: 0.88rem; color: rgba(255,255,255,0.45);
+  padding: 0.5rem 1rem;
+  border-left: 2px solid rgba(197,160,89,0.25);
+  text-align: left;
+}
+.hero-verdict {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem; font-style: italic;
+  color: var(--gold); margin-bottom: 2.5rem;
+  opacity: 0; animation: fadeUp 0.7s ease 0.6s forwards;
+}
+.hero-btns {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp 0.7s ease 0.7s forwards;
+}
+
+/* ══ BRIDGE ══ */
+.bridge {
+  background: var(--bg-alt); padding: 6rem 2rem; text-align: center;
+}
+.bridge-inner { max-width: 700px; margin: 0 auto; }
+.bridge-label {
+  font-size: 0.55rem; letter-spacing: 0.5em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1.5rem; display: block;
+}
+.bridge-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 400; line-height: 1.3;
+  color: var(--navy); margin-bottom: 1.75rem;
+}
+.bridge-title em { font-style: italic; color: var(--gold-dark); }
+.bridge-body {
+  font-size: 0.95rem; line-height: 2;
+  color: var(--text-mid); max-width: 560px;
+  margin: 0 auto 2.5rem;
+}
+.bridge-statement {
+  background: var(--navy);
+  border-left: 3px solid var(--gold);
+  padding: 2rem 2.5rem; text-align: left;
+  max-width: 560px; margin: 0 auto;
+}
+.bridge-statement p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem; font-style: italic;
+  line-height: 1.8; color: rgba(255,255,255,0.85);
+}
+.bridge-statement em { color: var(--gold); font-style: normal; }
+
+/* ══ WORLD SECTION ══ */
+.world-section {
+  padding: 6rem 2rem;
+}
+.world-section.dark { background: var(--navy); }
+.world-section.light { background: var(--creme); }
+
+.world-inner {
+  max-width: 960px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: start;
+}
+
+.world-eyebrow {
+  font-size: 0.55rem; letter-spacing: 0.5em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1.25rem; display: block;
+}
+.world-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 400; line-height: 1.2; margin-bottom: 1.25rem;
+}
+.dark .world-title { color: rgba(255,255,255,0.92); }
+.light .world-title { color: var(--navy); }
+.dark .world-title em { color: var(--gold); font-style: italic; }
+.light .world-title em { color: var(--gold-dark); font-style: italic; }
+
+.world-intro {
+  font-size: 0.88rem; line-height: 2; margin-bottom: 1.5rem;
+}
+.dark .world-intro { color: rgba(255,255,255,0.55); }
+.light .world-intro { color: var(--text-mid); }
+
+.pain-list {
+  list-style: none; display: flex; flex-direction: column;
+  gap: 0.5rem; margin-bottom: 2rem;
+}
+.pain-list li {
+  font-size: 0.82rem; padding: 0.6rem 1rem;
+  border-left: 2px solid rgba(197,160,89,0.3);
+  display: flex; gap: 0.75rem;
+}
+.dark .pain-list li { color: rgba(255,255,255,0.5); }
+.light .pain-list li { color: var(--text-mid); }
+
+.world-resolution {
+  font-size: 0.9rem; line-height: 1.9; margin-bottom: 2rem;
+}
+.dark .world-resolution { color: rgba(255,255,255,0.7); }
+.light .world-resolution { color: var(--text); }
+
+/* Feature card */
+.feature-card {
+  padding: 2.5rem;
+  border-top: 2px solid var(--gold);
+  display: flex; flex-direction: column; gap: 1rem;
+}
+.dark .feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(197,160,89,0.2); border-top: 2px solid var(--gold); }
+.light .feature-card { background: var(--navy); }
+
+.feature-card-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem; font-style: italic; color: var(--gold);
+}
+.feature-card-tag {
+  font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+.feature-card-text {
+  font-size: 0.82rem; line-height: 1.85;
+  color: rgba(255,255,255,0.55);
+}
+.feature-card-points {
+  list-style: none; display: flex; flex-direction: column; gap: 0.4rem;
+}
+.feature-card-points li {
+  font-size: 0.78rem; color: rgba(255,255,255,0.5);
+  display: flex; gap: 0.6rem; align-items: flex-start;
+}
+.feature-card-points li::before { content: '—'; color: var(--gold); flex-shrink: 0; }
+
+/* ══ CONNECTION ══ */
+.connection {
+  background: var(--bg); padding: 6rem 2rem; text-align: center;
+}
+.connection-inner { max-width: 640px; margin: 0 auto; }
+.connection-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  color: var(--navy); margin-bottom: 1.5rem; line-height: 1.35;
+}
+.connection-title em { font-style: italic; color: var(--gold-dark); }
+.connection-body {
+  font-size: 0.9rem; line-height: 2; color: var(--text-mid);
+  margin-bottom: 2rem;
+}
+.connection-pillars {
+  display: flex; gap: 2rem; justify-content: center;
+  flex-wrap: wrap; margin-bottom: 0;
+}
+.connection-pillar {
+  font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--gold-dark); padding: 0.5rem 1.25rem;
+  border: 1px solid var(--gold-border);
+}
+
+/* ══ CLOSING ══ */
+.closing {
+  background: var(--navy); padding: 7rem 2rem; text-align: center;
+}
+.closing-inner { max-width: 620px; margin: 0 auto; }
+.closing-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+  font-style: italic; font-weight: 400;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.65; margin-bottom: 0.75rem;
+}
+.closing-quote em { color: var(--gold); font-style: normal; }
+.closing-attr {
+  font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: rgba(255,255,255,0.25); margin-bottom: 1.5rem; display: block;
+}
+.closing-sub {
+  font-size: 0.88rem; color: rgba(255,255,255,0.45);
+  line-height: 1.9; margin-bottom: 3rem;
+}
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+@media (max-width: 1024px) {
+  .world-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .world-section { padding: 4rem 1.5rem; }
+}
+
+
+
+
+body { background: #C8CDE8; }
+.page-eyebrow { color: #33335D !important; opacity: 0.7; }
+.page-title { color: #33335D !important; font-family:'Playfair Display',serif !important; font-weight:400 !important; }
+.page-title em { color: #C5A059 !important; }
+.page-sub { color: rgba(51,51,93,0.7) !important; }
+.page-hero { border-color: rgba(51,51,93,0.15) !important; }
+.pillar { border-color: rgba(197,160,89,0.4) !important; }
+.pillar-num { color: #C5A059 !important; }
+.pillar-title { color: #33335D !important; }
+.pillar-text { color: rgba(51,51,93,0.65) !important; }
+.internal-link { color: #33335D !important; border-color: rgba(51,51,93,0.2) !important; }
+.page-wrap { max-width: 1160px; }
+details { border-bottom:1px solid rgba(51,51,93,0.12);padding:1.25rem 0; }
+summary { font-size:0.9rem;font-weight:500;color:#33335D;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center; }
+summary::-webkit-details-marker { display:none; }
+details p { font-size:0.82rem;line-height:1.9;color:rgba(51,51,93,0.65);margin-top:0.75rem; }
+.alma-card { background: #33335D; border-top: 2px solid #C5A059; padding: 2.5rem; }
+.alma-dark-band { background: #33335D; padding: 3rem; }
+.process-step { background: white; border-left: 3px solid #C5A059; padding: 1.5rem 2rem; margin-bottom: 1rem; }
+.process-step-num { font-size:0.55rem;letter-spacing:0.4em;text-transform:uppercase;color:#C5A059;margin-bottom:0.35rem; }
+.process-step-title { font-family:'Playfair Display',serif;font-size:1.1rem;color:#33335D;margin-bottom:0.35rem; }
+.process-step-text { font-size:0.82rem;line-height:1.8;color:rgba(51,51,93,0.65); }
+
+
+@media (max-width: 768px) {
+  div[style*="grid-template-columns:repeat(3,1fr)"],
+  div[style*="grid-template-columns:repeat(3, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  div[style*="grid-template-columns:1fr 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  .page-wrap {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+}
+</style>
 </head>
-<body style="background:linear-gradient(160deg, #19047C 0%, #0f0250 60%, #08013a 100%);">
-
+<body>
 <header>
-  <div class="header-top">
-    <a class="logo" href="index.html">
-      <span class="logo-logik">LOGIC</span><span class="logo-pipe"> | </span><span class="logo-soul">Soul</span>
-    </a>
-    <ul class="main-nav" id="mainNav">
-      <li><button class="nav-btn" id="btn-unternehmen" onclick="toggleSidebar('unternehmen',this)">Für Unternehmen <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button></li>
-      <li><a class="nav-btn" href="fuer-dich.html">Für Dich</a></li>
-      <li><button class="nav-btn" id="btn-begleiter" onclick="toggleSidebar('begleiter',this)">Tägliche Begleiter <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button></li>
-      <li><button class="nav-btn" id="btn-haptisch" onclick="toggleSidebar('haptisch',this)">Haptische Begleiter <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button></li>
-      <li><a class="nav-btn" href="methodik.html">Methodik</a></li>
-      <li><a class="nav-btn nav-cta" href="kontakt.html">Gespräch anfragen</a></li>
+<div class="header-top">
+  <a href="index.html" class="logo">
+    <span class="logo-logik">Logic</span>
+    <span class="logo-pipe"> | </span>
+    <span class="logo-soul">Soul</span>
+  </a>
+  <nav>
+    <ul class="main-nav">
+      <li><button class="nav-btn" onclick="toggleSidebar('unternehmen', this)">Für Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
+      <li><button class="nav-btn" onclick="toggleSidebar('dich', this)">Für Dich <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
+      <li><button class="nav-btn" onclick="toggleSidebar('produkte', this)">Produkte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
+      <li><a href="methodik.html" class="nav-btn">Methodik</a></li>
+      <li><a href="kontakt.html" class="nav-btn nav-cta">Gespräch anfragen</a></li>
     </ul>
-    <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-menu-btn" id="mob-btn-unternehmen" onclick="toggleMobileSubmenu('unternehmen')">Für Unternehmen <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button>
-  <div class="mobile-submenu" id="mob-sub-unternehmen">
-    <a class="mobile-sub-btn" href="unternehmen.html">Übersicht</a>
-    <a class="mobile-sub-btn" href="audit.html">KI-Audit</a>
-    <a class="mobile-sub-btn" href="optimierung.html">KI-Optimierung</a>
-    <a class="mobile-sub-btn" href="begleiter-team.html">Tägliche Begleiter im Team</a>
-  </div>
-  <a class="mobile-menu-btn" href="fuer-dich.html">Für Dich</a>
-  <button class="mobile-menu-btn" id="mob-btn-begleiter" onclick="toggleMobileSubmenu('begleiter')">Tägliche Begleiter <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button>
-  <div class="mobile-submenu" id="mob-sub-begleiter">
-    <a class="mobile-sub-btn" href="begleiter.html">Übersicht</a>
-    <a class="mobile-sub-btn" href="sam.html">SAM</a>
-    <a class="mobile-sub-btn" href="alma.html">ALMA</a>
-  </div>
-  <button class="mobile-menu-btn" id="mob-btn-haptisch" onclick="toggleMobileSubmenu('haptisch')">Haptische Begleiter <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button>
-  <div class="mobile-submenu" id="mob-sub-haptisch">
-    <a class="mobile-sub-btn" href="basis-set.html">Basis-Set</a>
-    <a class="mobile-sub-btn" href="selbstreflexion.html">Selbstreflexions-Set</a>
-    <a class="mobile-sub-btn" href="fuehrungsset.html">Führungskräfte-Set</a>
-    <a class="mobile-sub-btn" href="etraining.html">E-Training</a>
-  </div>
-  <a class="mobile-menu-btn" href="methodik.html">Methodik</a>
-  <a class="mobile-menu-cta" href="kontakt.html">Gespräch anfragen</a>
+  </nav>
+  <button class="hamburger" onclick="toggleMobileMenu()">
+    <span></span><span></span><span></span>
+  </button>
 </div>
+</header>
 
 <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
 
 <div class="sidebar-panel" id="sidebar-unternehmen">
-  <div class="sidebar-header"><span class="sidebar-label">B2B</span><div class="sidebar-title">Für Unternehmen</div></div>
+  <div class="sidebar-header">
+    <span class="sidebar-label">Logic | Soul</span>
+    <div class="sidebar-title">Für Führungskräfte</div>
+  </div>
   <div class="sidebar-items">
-    <a class="sidebar-btn" href="unternehmen.html">Übersicht</a>
-    <a class="sidebar-btn" href="audit.html">KI-Audit</a>
-    <a class="sidebar-btn" href="optimierung.html">KI-Optimierung</a>
-    <a class="sidebar-btn" href="begleiter-team.html">Tägliche Begleiter im Team</a>
-    <a class="sidebar-btn" href="alma.html">ALMA — Für Führungskräfte</a>
+    <a href="alma.html" class="sidebar-btn">ALMA</a>
+    <a href="fuehrungsset.html" class="sidebar-btn">Führungskräfte-Set</a>
+    <a href="kontakt.html" class="sidebar-btn">Erstgespräch anfragen</a>
   </div>
 </div>
 
-<div class="sidebar-panel" id="sidebar-begleiter">
-  <div class="sidebar-header"><span class="sidebar-label">Digital</span><div class="sidebar-title">Tägliche Begleiter</div></div>
+<div class="sidebar-panel" id="sidebar-dich">
+  <div class="sidebar-header">
+    <span class="sidebar-label">Logic | Soul</span>
+    <div class="sidebar-title">Für Dich</div>
+  </div>
   <div class="sidebar-items">
-    <a class="sidebar-btn" href="begleiter.html">Übersicht</a>
-    <a class="sidebar-btn" href="sam.html">SAM — Persönliche Entwicklung</a>
-    <a class="sidebar-btn" href="alma.html">ALMA — Führungskräfte</a>
+    <a href="sam.html" class="sidebar-btn">SAM</a>
+    <a href="musterchecks.html" class="sidebar-btn">Musterchecks</a>
+    <a href="basis-set.html" class="sidebar-btn">Basis-Set</a>
+    <a href="selbstreflexion.html" class="sidebar-btn">Selbstreflexions-Set</a>
+    <a href="etraining.html" class="sidebar-btn">E-Training</a>
   </div>
 </div>
 
-<div class="sidebar-panel" id="sidebar-haptisch">
-  <div class="sidebar-header"><span class="sidebar-label">Haptik</span><div class="sidebar-title">Haptische Begleiter</div></div>
+<div class="sidebar-panel" id="sidebar-produkte">
+  <div class="sidebar-header">
+    <span class="sidebar-label">Logic | Soul</span>
+    <div class="sidebar-title">Produkte</div>
+  </div>
   <div class="sidebar-items">
-    <a class="sidebar-btn" href="basis-set.html">Basis-Set · Karten + Workbook</a>
-    <a class="sidebar-btn" href="selbstreflexion.html">Selbstreflexions-Set</a>
-    <a class="sidebar-btn" href="fuehrungsset.html">Führungskräfte-Set + Workbook</a>
-    <a class="sidebar-btn" href="etraining.html">E-Training · bald verfügbar</a>
+    <a href="produkte.html" class="sidebar-btn" style="color:var(--gold);border-bottom:1px solid rgba(197,160,89,0.2);">Alle Produkte</a>
+    <a href="alma.html" class="sidebar-btn">ALMA — für Führungskräfte</a>
+    <a href="sam.html" class="sidebar-btn">SAM — für Dich</a>
+    <a href="fuehrungsset.html" class="sidebar-btn">Führungskräfte-Set</a>
+    <a href="basis-set.html" class="sidebar-btn">Basis-Set</a>
+    <a href="selbstreflexion.html" class="sidebar-btn">Selbstreflexions-Set</a>
+    <a href="musterchecks.html" class="sidebar-btn">Beziehungsmuster-Sets</a>
+    <a href="etraining.html" class="sidebar-btn">E-Training</a>
   </div>
 </div>
 
-<main style="color:rgba(255,255,255,0.88);">
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-btn" id="mob-btn-unternehmen" onclick="toggleMobileSubmenu('unternehmen')">
+    Für Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+  </button>
+  <div class="mobile-submenu" id="mob-sub-unternehmen">
+    <a href="alma.html" class="mobile-sub-btn">ALMA</a>
+    <a href="fuehrungsset.html" class="mobile-sub-btn">Führungskräfte-Set</a>
+  </div>
+  <button class="mobile-menu-btn" id="mob-btn-dich" onclick="toggleMobileSubmenu('dich')">
+    Für Dich <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+  </button>
+  <div class="mobile-submenu" id="mob-sub-dich">
+    <a href="sam.html" class="mobile-sub-btn">SAM</a>
+    <a href="musterchecks.html" class="mobile-sub-btn">Musterchecks</a>
+    <a href="basis-set.html" class="mobile-sub-btn">Basis-Set</a>
+    <a href="selbstreflexion.html" class="mobile-sub-btn">Selbstreflexions-Set</a>
+    <a href="etraining.html" class="mobile-sub-btn">E-Training</a>
+  </div>
+  <button class="mobile-menu-btn" id="mob-btn-produkte" onclick="toggleMobileSubmenu('produkte')">
+    Produkte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+  </button>
+  <div class="mobile-submenu" id="mob-sub-produkte">
+    <a href="alma.html" class="mobile-sub-btn">ALMA</a>
+    <a href="sam.html" class="mobile-sub-btn">SAM</a>
+    <a href="fuehrungsset.html" class="mobile-sub-btn">Führungskräfte-Set</a>
+    <a href="basis-set.html" class="mobile-sub-btn">Basis-Set</a>
+    <a href="selbstreflexion.html" class="mobile-sub-btn">Selbstreflexions-Set</a>
+    <a href="etraining.html" class="mobile-sub-btn">E-Training</a>
+  </div>
+  <a href="methodik.html" class="mobile-menu-btn" style="text-decoration:none;">Methodik</a>
+  <a href="kontakt.html" class="mobile-menu-cta">Gespräch anfragen</a>
+</div>
+
+
+
+<main style="color:#33335D;">
   <div class="page-wrap">
-    <div class="page-hero reveal" style="border-color:rgba(197,160,89,0.2);">
-      <p class="page-eyebrow">KI-Begleiter für Führungskräfte</p>
-      <h1 class="page-title">ALMA — vor dem Gespräch, <em>nicht erst danach.</em></h1>
+
+    <!-- HERO -->
+    <div class="page-hero reveal" style="border-color:rgba(51,51,93,0.15);">
+      <p class="page-eyebrow">Für Führungskräfte</p>
+      <h1 class="page-title">Das Gespräch ist morgen.<br><em>Bist du bereit?</em></h1>
     </div>
-    
-<p class="page-sub reveal" style="color:rgba(255,255,255,0.6);">ALMA begleitet Führungskräfte in genau dem Moment, der zählt. Kündigung. Konflikt. Schwieriges Gespräch. Handlungsfähigkeit zurück — bevor der Druck die Führung übernimmt.</p>
 
-<div class="page-intro-grid" style="margin-top:3rem;">
-  <div class="reveal">
-    <div class="pillar-list">
-      <div class="pillar" style="border-color:rgba(197,160,89,0.3);"><div class="pillar-title" style="color:var(--gold);">Schwierige Situationen meistern</div><div class="pillar-text" style="color:rgba(255,255,255,0.55);">Kündigung, Konflikt, Eskalation — ALMA begleitet strukturiert durch die Vorbereitung.</div></div>
-      <div class="pillar" style="border-color:rgba(197,160,89,0.3);"><div class="pillar-title" style="color:var(--gold);">Proaktives Rollenspiel</div><div class="pillar-text" style="color:rgba(255,255,255,0.55);">„Sollen wir das kurz durchspielen?" ALMA übt mit Ihnen — vor dem echten Gespräch.</div></div>
-      <div class="pillar" style="border-color:rgba(197,160,89,0.3);"><div class="pillar-title" style="color:var(--gold);">Leadership-Kartenset integriert</div><div class="pillar-text" style="color:rgba(255,255,255,0.55);">ALMA entfaltet ihre volle Wirkung zusammen mit dem Führungskräfte-Set — dem haptischen Anker. <a href="fuehrungsset.html" class="internal-link" style="color:var(--gold);border-color:rgba(197,160,89,0.3);margin-top:0.5rem;display:inline-flex;">Zum Führungskräfte-Set</a></div></div>
-      <div class="pillar" style="border-color:rgba(197,160,89,0.3);"><div class="pillar-title" style="color:var(--gold);">DSGVO-konform · B2B-Lizenz</div><div class="pillar-text" style="color:rgba(255,255,255,0.55);">Unternehmensweiter Rollout möglich. Betriebsrat-konform. Kein medizinischer Kontext.</div></div>
+    <p class="page-sub reveal" style="color:rgba(51,51,93,0.7);">Nicht die Argumente fehlen. Was fehlt ist der innere Zustand aus dem heraus du sprichst. Der entscheidet ob dein Gegenüber zuhört oder dicht macht. ALMA begleitet dich dahin. Vor dem Gespräch. Nicht danach.</p>
+
+    <!-- ALMA + Kartenset -->
+    <div style="background:rgba(51,51,93,0.08);padding:2rem 3rem;border-left:3px solid #C5A059;margin:2rem 0 3rem;" class="reveal">
+      <p style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#33335D;margin-bottom:0.75rem;font-style:italic;">ALMA und das Führungskräfte-Set sind unschlagbar.</p>
+      <p style="font-size:0.88rem;line-height:1.9;color:rgba(51,51,93,0.65);">Die Karten liegen auf dem Tisch bevor das Gespräch beginnt. ALMA hat dich innerlich vorbereitet. Haptisch und digital in einem. Genau dann wenn es drauf ankommt. Im Workshop lernst du wie beides zusammenwirkt.</p>
     </div>
-    <div style="margin-top:2.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
-      <a href="kontakt.html" class="btn-gold">Lizenz anfragen</a>
-      <a href="fuehrungsset.html" class="btn-outline-light">Führungskräfte-Set ansehen</a>
+
+    <!-- HAUPTINHALT -->
+    <div class="page-intro-grid" style="margin-top:3rem;">
+      <div class="reveal">
+        <div class="pillar-list">
+          <div class="pillar">
+            <div class="pillar-num">01</div>
+            <div class="pillar-title">Innere Klarheit zuerst</div>
+            <div class="pillar-text">Werkzeuge helfen nur wenn du klar bist. ALMA bringt dich zuerst in diesen Zustand. Aus Reaktion wird Präsenz. Aus Druck wird Handlungsspielraum. Das ist der Unterschied den du im Gespräch spürst.</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">02</div>
+            <div class="pillar-title">Muster erkennen</div>
+            <div class="pillar-text">ALMA begleitet über Zeit. Nicht einmalig. Gesprächsprotokolle werden vollständig gespeichert. Du siehst wie du dich entwickelst. Wann etwas kippt. Und wann etwas gelingt.</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">03</div>
+            <div class="pillar-title">ALMA Plus kommt</div>
+            <div class="pillar-text">Erst wenn innere Stabilität und Klarheit entstanden sind kommen Werkzeuge. ALMA Plus baut darauf auf. Nicht davor. Workshops ohne innere Stabilität verpuffen. Mit ALMA nicht.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="alma-card">
+          <p style="font-size:0.52rem;letter-spacing:0.4em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.75rem;">ALMA</p>
+          <p style="font-family:'Playfair Display',serif;font-size:1.6rem;font-style:italic;color:#C5A059;margin-bottom:1.25rem;">Nicht bessere Werkzeuge.<br>Klarere Führung.</p>
+          <p style="font-size:0.82rem;line-height:1.85;color:rgba(255,255,255,0.65);margin-bottom:1.5rem;">In 30 Tagen wirst du mindestens ein Gespräch anders führen als vorher. Weil du verstehst was in dir passiert. Nicht weil du eine neue Technik gelernt hast.</p>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:2rem;">
+            <p style="font-size:0.78rem;color:rgba(255,255,255,0.5);display:flex;gap:0.6rem;"><span style="color:#C5A059;">—</span>Testmonat zum Monatspreis</p>
+            <p style="font-size:0.78rem;color:rgba(255,255,255,0.5);display:flex;gap:0.6rem;"><span style="color:#C5A059;">—</span>Jahreslizenz ab 115 Euro pro Nutzer</p>
+            <p style="font-size:0.78rem;color:rgba(255,255,255,0.5);display:flex;gap:0.6rem;"><span style="color:#C5A059;">—</span>Workshop zur Nutzung von ALMA und den Karten</p>
+            <p style="font-size:0.78rem;color:rgba(255,255,255,0.5);display:flex;gap:0.6rem;"><span style="color:#C5A059;">—</span>Ab 30 Nutzern halber Tag Workshop + Kartenset für Führungskräfteentwicklung geschenkt</p>
+          </div>
+          <a href="kontakt.html" class="btn-gold" style="display:block;text-align:center;">Erstgespräch anfragen</a>
+        </div>
+      </div>
     </div>
-  </div>
 
-<div style="background:rgba(10,1,54,0.5);border:1px solid rgba(197,160,89,0.2);padding:2.5rem 3rem;margin-top:3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;" class="reveal">
-  <div>
-    <p style="font-size:0.55rem;letter-spacing:0.45em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">Bundle-Empfehlung</p>
-    <p style="font-family:'Playfair Display',serif;font-size:1.2rem;color:rgba(255,255,255,0.9);">ALMA + Führungskräfte-Set</p>
-    <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-top:0.4rem;">Die maximale Wirkung entsteht wenn digitaler und haptischer Begleiter zusammenwirken.</p>
-  </div>
-  <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-    <a href="kontakt.html" class="btn-gold">ALMA anfragen</a>
-    <a href="fuehrungsset.html" class="btn-outline-light">Zum Set →</a>
-  </div>
-</div>
+    <!-- WARUM WERKZEUGE VERSAGEN -->
+    <div style="margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(51,51,93,0.12);" class="reveal">
+      <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:1.25rem;">Warum Workshops verpuffen</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;">
+        <div>
+          <p style="font-family:'Playfair Display',serif;font-size:1.3rem;color:#33335D;margin-bottom:1rem;font-weight:400;line-height:1.4;">Ohne innere Stabilität bringt kein Werkzeug etwas im Moment wenn es drauf ankommt.</p>
+          <p style="font-size:0.85rem;line-height:1.9;color:rgba(51,51,93,0.65);">Du kennst das Gefühl. Der Workshop war gut. Drei Wochen später ist alles wie vorher. Nicht weil die Methode falsch war. Sondern weil das System unter Druck immer auf die alte Spur zurückfällt. ALMA verändert die Spur selbst. Erst dann greifen Werkzeuge dauerhaft.</p>
+        </div>
+        <div style="background:white;padding:2rem;border-left:3px solid #C5A059;">
+          <p style="font-size:0.75rem;font-weight:500;color:rgba(51,51,93,0.5);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem;">ALMA Phase 1</p>
+          <p style="font-size:0.85rem;line-height:1.8;color:#33335D;margin-bottom:0.5rem;"><strong>Innere Klarheit und Stabilität.</strong> Reaktionsmuster sehen. Aus Schutz wird Führung.</p>
+          <div style="margin:1.25rem 0;height:1px;background:rgba(51,51,93,0.1);"></div>
+          <p style="font-size:0.75rem;font-weight:500;color:#C5A059;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem;">ALMA Plus — kommt bald</p>
+          <p style="font-size:0.85rem;line-height:1.8;color:rgba(51,51,93,0.5);">Werkzeuge die erst wirken wenn das Fundament steht. Gesprächssimulation. Entscheidungskompass. Tiefenanalyse.</p>
+        </div>
+      </div>
+    </div>
 
-  </div>
+    <!-- KARTEN IM ALLTAG -->
+    <div style="margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(51,51,93,0.12);" class="reveal">
+      <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:1.25rem;">Das Führungskräfte-Set im Alltag</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;">
+        <div>
+          <p style="font-family:'Playfair Display',serif;font-size:1.2rem;color:#33335D;margin-bottom:1rem;font-weight:400;">60 Karten. Immer griffbereit. Kein Handy nötig.</p>
+          <div style="display:flex;flex-direction:column;gap:0.85rem;">
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <span style="color:#C5A059;font-size:1rem;flex-shrink:0;">—</span>
+              <p style="font-size:0.85rem;line-height:1.7;color:rgba(51,51,93,0.65);"><strong style="color:#33335D;">Vor dem Gespräch:</strong> Eine Karte ziehen. Den Impuls lesen. Im Körper ankommen. Dann in das Gespräch gehen.</p>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <span style="color:#C5A059;font-size:1rem;flex-shrink:0;">—</span>
+              <p style="font-size:0.85rem;line-height:1.7;color:rgba(51,51,93,0.65);"><strong style="color:#33335D;">Im Team:</strong> Eine Karte als Einstieg in Meetings. Drei Minuten Reflexion. Die Qualität der Gespräche verändert sich.</p>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <span style="color:#C5A059;font-size:1rem;flex-shrink:0;">—</span>
+              <p style="font-size:0.85rem;line-height:1.7;color:rgba(51,51,93,0.65);"><strong style="color:#33335D;">Mit ALMA:</strong> ALMA kennt die Karten. Im Gespräch verweist ALMA auf konkrete Karten die zu deiner Situation passen.</p>
+            </div>
+          </div>
+        </div>
+        <div style="background:white;padding:2rem;border-top:2px solid #C5A059;">
+          <p style="font-size:0.55rem;letter-spacing:0.4em;text-transform:uppercase;color:rgba(51,51,93,0.4);margin-bottom:0.75rem;">4 Kategorien</p>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.5rem;">
+            <div style="padding:0.6rem 0.85rem;background:rgba(197,160,89,0.08);font-size:0.82rem;color:#33335D;">Konflikt Quickstart</div>
+            <div style="padding:0.6rem 0.85rem;background:rgba(197,160,89,0.08);font-size:0.82rem;color:#33335D;">Selbstreflexion</div>
+            <div style="padding:0.6rem 0.85rem;background:rgba(197,160,89,0.08);font-size:0.82rem;color:#33335D;">1-zu-1 Dialog</div>
+            <div style="padding:0.6rem 0.85rem;background:rgba(197,160,89,0.08);font-size:0.82rem;color:#33335D;">Team Dynamik</div>
+          </div>
+          <a href="fuehrungsset.html" class="internal-link" style="color:#33335D;border-color:rgba(51,51,93,0.2);">Führungskräfte-Set entdecken</a>
+        </div>
+      </div>
+    </div>
 
-<div style="margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(197,160,89,0.2);" class="reveal">
-  <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;">Häufige Fragen</p>
-  <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:rgba(255,255,255,0.9);margin-bottom:2rem;font-weight:400;">Alles zu ALMA</h2>
-  <div style="display:flex;flex-direction:column;gap:0;">
-    <details style="border-bottom:1px solid rgba(197,160,89,0.15);padding:1.25rem 0;">
-      <summary style="font-size:0.9rem;font-weight:500;color:rgba(255,255,255,0.85);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">Was ist ALMA? <span style="color:var(--gold);font-size:1.2rem;">+</span></summary>
-      <p style="font-size:0.82rem;line-height:1.9;color:rgba(255,255,255,0.55);margin-top:0.75rem;">ALMA ist ein KI-Begleiter für Führungskräfte in schwierigen Situationen — Kündigung, Konflikt, Eskalation. ALMA begleitet strukturiert durch die Vorbereitung auf kritische Gespräche, bevor der Druck die Führung übernimmt.</p>
-    </details>
-    <details style="border-bottom:1px solid rgba(197,160,89,0.15);padding:1.25rem 0;">
-      <summary style="font-size:0.9rem;font-weight:500;color:rgba(255,255,255,0.85);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">Wie unterscheidet sich ALMA von klassischem Führungskräfte-Coaching? <span style="color:var(--gold);font-size:1.2rem;">+</span></summary>
-      <p style="font-size:0.82rem;line-height:1.9;color:rgba(255,255,255,0.55);margin-top:0.75rem;">ALMA ersetzt kein Coaching — sondern ergänzt es. ALMA ist immer verfügbar, direkt vor dem entscheidenden Gespräch, ohne Wartezeit. Für den Moment der zählt.</p>
-    </details>
-    <details style="padding:1.25rem 0;">
-      <summary style="font-size:0.9rem;font-weight:500;color:rgba(255,255,255,0.85);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">Kann ALMA unternehmensweit eingesetzt werden? <span style="color:var(--gold);font-size:1.2rem;">+</span></summary>
-      <p style="font-size:0.82rem;line-height:1.9;color:rgba(255,255,255,0.55);margin-top:0.75rem;">Ja. ALMA ist als B2B-Lizenz für Unternehmen verfügbar — DSGVO-konform und betriebsratskonform. Sprechen Sie uns für ein individuelles Angebot an.</p>
-    </details>
-  </div>
-</div>
+    <!-- EINFÜHRUNGSPROZESS -->
+    <div style="margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(51,51,93,0.12);" class="reveal">
+      <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:0.75rem;">So wird ALMA eingeführt</p>
+      <p style="font-size:0.9rem;color:rgba(51,51,93,0.65);margin-bottom:2rem;">Kein Tool-Rollout. Eine echte Einführung mit Begleitung.</p>
+      <div style="display:flex;flex-direction:column;gap:0;">
+        <div class="process-step">
+          <div class="process-step-num">Schritt 01</div>
+          <div class="process-step-title">Erstgespräch</div>
+          <p class="process-step-text">15 Minuten. Wir schauen gemeinsam welches Paket passt, wie viele Lizenzen sinnvoll sind und was eure Führungskräfte gerade brauchen.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">Schritt 02</div>
+          <div class="process-step-title">Testmonat</div>
+          <p class="process-step-text">Ausgewählte Führungskräfte testen ALMA einen Monat. Zum Monatspreis, ohne Bindung. Ihr seht selbst was passiert.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">Schritt 03</div>
+          <div class="process-step-title">Workshop inklusive</div>
+          <p class="process-step-text">Zu jeder Buchung kommt ein Workshop dazu. Darin wird erklärt wie ALMA funktioniert, wie die Karten mit ALMA zusammenwirken und wie Führungskräfte den maximalen Nutzen aus beiden ziehen. Ab 30 gebuchten Nutzern ist ein halber Tag Workshop im Paket enthalten.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">Schritt 04</div>
+          <div class="process-step-title">Jahreslizenzen mit Co-Termination</div>
+          <p class="process-step-text">Alle Lizenzen laufen immer zum gleichen Datum aus. Auch wenn im Laufe des Jahres neue dazukommen. Eine Rechnung. Ein Datum. Kein Verwaltungsaufwand für HR.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAKETE -->
+    <div style="margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(51,51,93,0.12);" class="reveal">
+      <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:0.75rem;">Pakete und Preise</p>
+      <p style="font-size:0.9rem;color:rgba(51,51,93,0.65);margin-bottom:2rem;">Je mehr Führungskräfte, desto besser der Preis. Und ab 30 Personen gibt es das Führungskräfte-Set obendrauf.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:stretch;">
+        <div style="background:white;border:1px solid rgba(51,51,93,0.1);border-top:2px solid #C5A059;padding:2rem;display:flex;flex-direction:column;">
+          <p style="font-size:0.55rem;letter-spacing:0.4em;text-transform:uppercase;color:rgba(51,51,93,0.4);margin-bottom:0.5rem;">Starter</p>
+          <p style="font-family:'Playfair Display',serif;font-size:1.3rem;color:#33335D;margin-bottom:0.25rem;">1 bis 10 Nutzer</p>
+          <p style="font-size:1.1rem;color:#C5A059;margin-bottom:1rem;font-weight:500;">115 Euro pro Nutzer / Monat</p>
+          <p style="font-size:0.78rem;line-height:1.7;color:rgba(51,51,93,0.55);flex:1;">Jahreslizenz, jährlich im Voraus. Testmonat verfügbar. Workshop zur Nutzung von ALMA und den Karten zusätzlich buchbar.</p>
+          <a href="kontakt.html" style="margin-top:1.5rem;display:block;text-align:center;padding:0.75rem;border:1.5px solid rgba(51,51,93,0.2);font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:#33335D;text-decoration:none;">Anfragen</a>
+        </div>
+        <div style="background:#33335D;border-top:2px solid #C5A059;padding:2rem;display:flex;flex-direction:column;">
+          <p style="font-size:0.55rem;letter-spacing:0.4em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.5rem;">Team</p>
+          <p style="font-family:'Playfair Display',serif;font-size:1.3rem;color:rgba(255,255,255,0.9);margin-bottom:0.25rem;">11 bis 29 Nutzer</p>
+          <p style="font-size:1.1rem;color:#C5A059;margin-bottom:1rem;font-weight:500;">Staffelpreis</p>
+          <p style="font-size:0.78rem;line-height:1.7;color:rgba(255,255,255,0.5);flex:1;">Jahreslizenz. Workshop zur Nutzung von ALMA und den Karten zusätzlich buchbar. Preis auf Anfrage.</p>
+          <a href="kontakt.html" style="margin-top:1.5rem;display:block;text-align:center;padding:0.75rem;border:1.5px solid rgba(197,160,89,0.4);font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:#C5A059;text-decoration:none;">Anfragen</a>
+        </div>
+        <div style="background:#33335D;border-top:2px solid #C5A059;padding:2rem;position:relative;display:flex;flex-direction:column;">
+          <div style="position:absolute;top:-1px;left:0;right:0;background:#C5A059;padding:0.25rem 0.75rem;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:white;text-align:center;">Ab 30 Nutzer — Workshop halber Tag inklusive</div>
+          <p style="font-size:0.55rem;letter-spacing:0.4em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.5rem;margin-top:1rem;">Enterprise</p>
+          <p style="font-family:'Playfair Display',serif;font-size:1.3rem;color:rgba(255,255,255,0.9);margin-bottom:0.25rem;">Ab 30 Nutzer</p>
+          <p style="font-size:1.1rem;color:#C5A059;margin-bottom:1rem;font-weight:500;">Individuell</p>
+          <p style="font-size:0.78rem;line-height:1.7;color:rgba(255,255,255,0.5);flex:1;">Jahreslizenz. Halber Tag Workshop inklusive. Kartenset für Führungskräfteentwicklung für jede Führungskraft geschenkt.</p>
+          <a href="kontakt.html" style="margin-top:1.5rem;display:block;text-align:center;padding:0.75rem;background:#C5A059;font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:white;text-decoration:none;">Anfragen</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div style="margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(51,51,93,0.12);" class="reveal">
+      <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#33335D;margin-bottom:2rem;font-weight:400;">Häufige Fragen</h2>
+      <details>
+        <summary>Was ist ALMA und was ist ALMA nicht? <span style="color:#C5A059;">+</span></summary>
+        <p>ALMA ist kein Coaching-Ersatz, kein Führungskräfte-Training und kein Tool mit Schritt-für-Schritt-Anleitung. ALMA ist der Moment der inneren Klarheit bevor das Gespräch beginnt. Täglich verfügbar. Ohne Wartezeit.</p>
+      </details>
+      <details>
+        <summary>Was passiert beim inklusivierten Workshop? <span style="color:#C5A059;">+</span></summary>
+        <p>Zu jeder Buchung kommt ein Workshop zur Nutzung von ALMA und den Karten dazu. Ab 30 gebuchten Nutzern ist ein halber Tag Workshop im Paket enthalten und jede Führungskraft erhält ein Kartenset für Führungskräfteentwicklung geschenkt. Kein Theorie-Workshop. Ein praktischer Einstieg.</p>
+      </details>
+      <details>
+        <summary>Was ist ALMA Plus? <span style="color:#C5A059;">+</span></summary>
+        <p>ALMA Plus kommt wenn innere Stabilität und Klarheit entstanden sind. Es enthält konkrete Werkzeuge wie Gesprächssimulation und Entscheidungskompass. Werkzeuge die erst wirken wenn das Fundament steht. ALMA empfiehlt den Wechsel selbst wenn du bereit bist.</p>
+      </details>
+      <details>
+        <summary>Wie funktioniert das Kartenset mit ALMA zusammen? <span style="color:#C5A059;">+</span></summary>
+        <p>ALMA kennt alle 60 Karten des Führungskräfte-Sets. Im Gespräch verweist ALMA auf konkrete Karten die zu deiner aktuellen Situation passen. Du hältst die Karte in der Hand während ALMA dich begleitet. Haptisch und digital in einem.</p>
+      </details>
+      <details style="border-bottom:none;">
+        <summary>Kann ALMA unternehmensweit eingesetzt werden? <span style="color:#C5A059;">+</span></summary>
+        <p>Ja. ALMA ist als B2B-Jahreslizenz verfügbar. Mit Co-Termination und DSGVO-konformer Datenspeicherung. Ab 30 Nutzern ist ein halber Tag Workshop enthalten und jede Führungskraft erhält ein Kartenset für Führungskräfteentwicklung geschenkt.</p>
+      </details>
+    </div>
+
+    <!-- CTA -->
+    <div style="margin-top:4rem;background:#33335D;padding:3rem;text-align:center;" class="reveal">
+      <p style="font-family:'Playfair Display',serif;font-size:1.4rem;color:rgba(255,255,255,0.88);margin-bottom:0.75rem;font-weight:400;">In 15 Minuten zeigen wir dir den Unterschied.</p>
+      <p style="font-size:0.85rem;color:rgba(255,255,255,0.45);margin-bottom:2rem;">Kein Pitch. Ein echtes Gespräch darüber was ALMA für euch bedeuten kann.</p>
+      <a href="kontakt.html" class="btn-gold">Kostenloses Erstgespräch buchen</a>
+    </div>
+
   </div>
 </main>
-
 <footer>
-  <a class="footer-logo" href="index.html">
-    <span class="footer-logik">LOGIC</span><span class="footer-pipe"> | </span><span class="footer-soul">Soul</span>
+  <a href="index.html" class="footer-logo">
+    <span class="footer-logik">Logic</span>
+    <span class="footer-pipe"> | </span>
+    <span class="footer-soul">Soul</span>
   </a>
   <nav class="footer-nav">
-    <a href="unternehmen.html">Unternehmen</a>
-    <a href="fuer-dich.html">Für Dich</a>
-    <a href="begleiter.html">Tägliche Begleiter</a>
     <a href="alma.html">ALMA</a>
     <a href="sam.html">SAM</a>
+    <a href="fuehrungsset.html">Führungskräfte-Set</a>
+    <a href="basis-set.html">Basis-Set</a>
     <a href="methodik.html">Methodik</a>
     <a href="kontakt.html">Kontakt</a>
+    <a href="https://business-kompass.vercel.app" target="_blank" style="opacity:0.4;">Business Kompass ↗</a>
   </nav>
   <div class="footer-legal">
     <span class="footer-copy">© 2026 Logic | Soul · Yana Thomée</span>
@@ -380,10 +769,10 @@ footer { background: rgba(0,0,0,0.3) !important; }
   <div class="legal-box">
     <div class="legal-box-header"><div class="legal-box-title">Impressum</div><button class="legal-box-close" onclick="closeLegal()">✕</button></div>
     <div class="legal-box-content">
-      <p><strong>Angaben gemäß § 5 TMG</strong></p>
-      <p>Yana Thomée · Logic | Soul<br>[STRASSE] · [PLZ ORT]</p>
-      <p><strong>Kontakt</strong><br>hello@logic-soul.com</p>
-      <p style="font-size:0.72rem;color:var(--text-dim);">TODO: Vollständiges Impressum eintragen.</p>
+      <p>Yana Thomée<br>Hölzleswiesen 13<br>70619 Stuttgart<br>Deutschland</p>
+      <p>E-Mail: <a href="mailto:hello@logic-soul.com" style="color:var(--gold-dark);">hello@logic-soul.com</a></p>
+      <p>Wir sind zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit.</p>
+      <p style="font-size:0.72rem;color:var(--text-dim);">Stand: 30.04.2026</p>
     </div>
   </div>
 </div>
@@ -393,12 +782,10 @@ footer { background: rgba(0,0,0,0.3) !important; }
     <div class="legal-box-header"><div class="legal-box-title">Datenschutzerklärung</div><button class="legal-box-close" onclick="closeLegal()">✕</button></div>
     <div class="legal-box-content">
       <p><strong>Verantwortliche Stelle</strong><br>Yana Thomée · hello@logic-soul.com</p>
-      <p style="font-size:0.72rem;color:var(--text-dim);">TODO: Vollständige Datenschutzerklärung eintragen.</p>
+      <p style="font-size:0.72rem;color:var(--text-dim);">Vollständige Datenschutzerklärung folgt.</p>
     </div>
   </div>
 </div>
-
-
 <script>
 let currentSidebar = null;
 function toggleSidebar(id, btnEl) {
@@ -431,16 +818,19 @@ function toggleMobileSubmenu(id) {
   document.querySelectorAll('.mobile-menu-btn').forEach(b => b.classList.remove('expanded'));
   if (!isOpen) { sub.classList.add('open'); btn.classList.add('expanded'); }
 }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSidebar(); });
-// Reveal
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-}, { threshold:0.08 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-// Legal
-function showLegal(id) { document.getElementById('legal-' + id).classList.add('open'); }
-function closeLegal() { document.querySelectorAll('.legal-overlay').forEach(m => m.classList.remove('open')); }
+function showLegal(type) {
+  document.getElementById('legal-' + type).classList.add('open');
+}
+function closeLegal() {
+  document.querySelectorAll('.legal-overlay').forEach(o => o.classList.remove('open'));
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeSidebar(); closeLegal(); } });
+document.querySelectorAll('.reveal').forEach(el => {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  obs.observe(el);
+});
 </script>
-
 </body>
 </html>
