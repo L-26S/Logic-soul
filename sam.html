@@ -2,18 +2,19 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="keywords" content="KI Coach, KI Coaching deutsch, persönlicher KI Assistent, digitaler Begleiter Alltag, Selbstreflexion App, innere Klarheit, unter Druck klar denken, immer wieder gleich reagieren, innere Unruhe, Selbstwahrnehmung entwickeln, Achtsamkeit KI, KI Mentor, emotionale Intelligenz KI">
-<meta name="description" content="SAM — Ihr persönlicher KI-Begleiter für mehr Klarheit im Alltag. Kein klassisches Coaching — sondern ein täglicher KI-Mentor der bei Dir bleibt. 3 Tage testen für 1 €.">
-<meta property="og:title" content="SAM — KI-Mentor für persönliche Entwicklung | Logic | Soul">
-<meta property="og:description" content="SAM ist Ihr täglicher KI-Mentor für persönliche Klarheit und innere Stabilität. 3 Tage testen für 1 €, danach 47 €/Monat. Jederzeit kündbar.">
-<meta property="og:url" content="https://logic-soul.com/sam.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SAM begleitet dich täglich durch die SystemAlchemie-Methode. Musterchecks, Gesprächsvorbereitung, innere Klarheit. 3 Tage für 1 Euro testen.">
+<meta name="keywords" content="SAM KI Begleiter, KI Coach, innere Klarheit, Musterchecks, SystemAlchemie, täglicher KI Mentor">
+<meta property="og:title" content="SAM — Dein täglicher KI-Begleiter für innere Klarheit | Logic | Soul">
+<meta property="og:description" content="SAM begleitet dich täglich durch die SystemAlchemie-Methode. Musterchecks, Gesprächsvorbereitung, innere Klarheit. 3 Tage für 1 Euro testen.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Logic | Soul">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SAM — KI-Mentor für persönliche Entwicklung | Logic | Soul</title>
+<title>SAM — Dein täglicher KI-Begleiter für innere Klarheit | Logic | Soul</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+
+
 
 :root {
   --gold: #C5A059; --gold-light: #d4b472; --gold-dim: rgba(197,160,89,0.1);
@@ -168,226 +169,510 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
 .legal-box-close:hover { border-color:var(--gold); color:var(--gold-dark); }
 .legal-box-content { padding:1.75rem; overflow-y:auto; font-size:0.82rem; line-height:1.85; color:var(--text-mid); display:flex; flex-direction:column; gap:1rem; }
 
-</style>
 
-<script type="application/ld+json">
-{
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "SAM — Täglicher KI-Mentor",
-      "applicationCategory": "LifestyleApplication",
-      "operatingSystem": "Web, iOS, Android",
-      "description": "SAM ist Ihr persönlicher KI-Begleiter für innere Klarheit und persönliche Entwicklung. Täglich verfügbar, ohne Wertung.",
-      "offers": {
-        "@type": "Offer",
-        "price": "47.00",
-        "priceCurrency": "EUR",
-        "priceSpecification": {
-          "@type": "RecurringCharge",
-          "billingPeriod": "P1M"
-        }
-      },
-      "provider": {"@type": "Organization", "name": "Logic | Soul", "url": "https://logic-soul.com"}
-    }
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Was ist SAM — ist das ein KI Coach?",
-      "acceptedAnswer": {"@type": "Answer", "text": "SAM ist kein klassischer KI Coach — sondern ein täglicher KI-Begleiter für innere Klarheit. Kein Coaching, keine Sitzungen. SAM ist täglich verfügbar und hilft Dir, Deine Reaktionen zu verstehen und handlungsfähig zu bleiben."}
-    },
-    {
-      "@type": "Question",
-      "name": "Was kostet SAM?",
-      "acceptedAnswer": {"@type": "Answer", "text": "SAM kostet 47 € pro Monat. Du kannst SAM 3 Tage lang für nur 1 € testen — jederzeit kündbar."}
-    },
-    {
-      "@type": "Question",
-      "name": "Für wen ist SAM geeignet?",
-      "acceptedAnswer": {"@type": "Answer", "text": "SAM ist für alle Menschen die in stressigen Momenten klarer werden möchten — ob im Beruf, in der Führungsrolle oder im privaten Alltag. SAM hilft Dir, innere Muster zu erkennen und souverän zu handeln."}
-    },
-    {
-      "@type": "Question",
-      "name": "Ist SAM eine Therapie oder ein Coaching?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Nein. SAM ersetzt keine Therapie und ist kein Coaching. SAM ist ein digitaler Begleiter der Dir hilft, im Alltag klarer zu werden — ohne Diagnosen, ohne Bewertungen."}
-    }
-  ]
+/* ══ HERO ══ */
+.hero {
+  min-height: calc(100vh - var(--nav-h));
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  background: var(--navy);
+  padding: 5rem 2rem 4rem;
+  position: relative; overflow: hidden;
 }
-</script>
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 60% 40%, rgba(197,160,89,0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-inner { max-width: 780px; position: relative; z-index: 1; }
+.hero-eyebrow {
+  font-size: 0.55rem; letter-spacing: 0.5em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 2rem;
+  opacity: 0; animation: fadeUp 0.7s ease 0.1s forwards;
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
+  font-weight: 400; line-height: 1.15;
+  color: rgba(255,255,255,0.92); margin-bottom: 2rem;
+  opacity: 0; animation: fadeUp 0.7s ease 0.25s forwards;
+}
+.hero-title em { font-style: italic; color: var(--gold); }
+.hero-sub {
+  font-size: 0.95rem; line-height: 2;
+  color: rgba(255,255,255,0.55);
+  max-width: 580px; margin: 0 auto 1.5rem;
+  opacity: 0; animation: fadeUp 0.7s ease 0.4s forwards;
+}
+.hero-pain {
+  display: flex; flex-direction: column; gap: 0.35rem;
+  margin: 0 auto 1.5rem; max-width: 480px;
+  opacity: 0; animation: fadeUp 0.7s ease 0.5s forwards;
+}
+.hero-pain-item {
+  font-size: 0.88rem; color: rgba(255,255,255,0.45);
+  padding: 0.5rem 1rem;
+  border-left: 2px solid rgba(197,160,89,0.25);
+  text-align: left;
+}
+.hero-verdict {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem; font-style: italic;
+  color: var(--gold); margin-bottom: 2.5rem;
+  opacity: 0; animation: fadeUp 0.7s ease 0.6s forwards;
+}
+.hero-btns {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp 0.7s ease 0.7s forwards;
+}
+
+/* ══ BRIDGE ══ */
+.bridge {
+  background: var(--bg-alt); padding: 6rem 2rem; text-align: center;
+}
+.bridge-inner { max-width: 700px; margin: 0 auto; }
+.bridge-label {
+  font-size: 0.55rem; letter-spacing: 0.5em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1.5rem; display: block;
+}
+.bridge-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 400; line-height: 1.3;
+  color: var(--navy); margin-bottom: 1.75rem;
+}
+.bridge-title em { font-style: italic; color: var(--gold-dark); }
+.bridge-body {
+  font-size: 0.95rem; line-height: 2;
+  color: var(--text-mid); max-width: 560px;
+  margin: 0 auto 2.5rem;
+}
+.bridge-statement {
+  background: var(--navy);
+  border-left: 3px solid var(--gold);
+  padding: 2rem 2.5rem; text-align: left;
+  max-width: 560px; margin: 0 auto;
+}
+.bridge-statement p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem; font-style: italic;
+  line-height: 1.8; color: rgba(255,255,255,0.85);
+}
+.bridge-statement em { color: var(--gold); font-style: normal; }
+
+/* ══ WORLD SECTION ══ */
+.world-section {
+  padding: 6rem 2rem;
+}
+.world-section.dark { background: var(--navy); }
+.world-section.light { background: var(--creme); }
+
+.world-inner {
+  max-width: 960px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: start;
+}
+
+.world-eyebrow {
+  font-size: 0.55rem; letter-spacing: 0.5em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1.25rem; display: block;
+}
+.world-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 400; line-height: 1.2; margin-bottom: 1.25rem;
+}
+.dark .world-title { color: rgba(255,255,255,0.92); }
+.light .world-title { color: var(--navy); }
+.dark .world-title em { color: var(--gold); font-style: italic; }
+.light .world-title em { color: var(--gold-dark); font-style: italic; }
+
+.world-intro {
+  font-size: 0.88rem; line-height: 2; margin-bottom: 1.5rem;
+}
+.dark .world-intro { color: rgba(255,255,255,0.55); }
+.light .world-intro { color: var(--text-mid); }
+
+.pain-list {
+  list-style: none; display: flex; flex-direction: column;
+  gap: 0.5rem; margin-bottom: 2rem;
+}
+.pain-list li {
+  font-size: 0.82rem; padding: 0.6rem 1rem;
+  border-left: 2px solid rgba(197,160,89,0.3);
+  display: flex; gap: 0.75rem;
+}
+.dark .pain-list li { color: rgba(255,255,255,0.5); }
+.light .pain-list li { color: var(--text-mid); }
+
+.world-resolution {
+  font-size: 0.9rem; line-height: 1.9; margin-bottom: 2rem;
+}
+.dark .world-resolution { color: rgba(255,255,255,0.7); }
+.light .world-resolution { color: var(--text); }
+
+/* Feature card */
+.feature-card {
+  padding: 2.5rem;
+  border-top: 2px solid var(--gold);
+  display: flex; flex-direction: column; gap: 1rem;
+}
+.dark .feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(197,160,89,0.2); border-top: 2px solid var(--gold); }
+.light .feature-card { background: var(--navy); }
+
+.feature-card-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem; font-style: italic; color: var(--gold);
+}
+.feature-card-tag {
+  font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+.feature-card-text {
+  font-size: 0.82rem; line-height: 1.85;
+  color: rgba(255,255,255,0.55);
+}
+.feature-card-points {
+  list-style: none; display: flex; flex-direction: column; gap: 0.4rem;
+}
+.feature-card-points li {
+  font-size: 0.78rem; color: rgba(255,255,255,0.5);
+  display: flex; gap: 0.6rem; align-items: flex-start;
+}
+.feature-card-points li::before { content: '—'; color: var(--gold); flex-shrink: 0; }
+
+/* ══ CONNECTION ══ */
+.connection {
+  background: var(--bg); padding: 6rem 2rem; text-align: center;
+}
+.connection-inner { max-width: 640px; margin: 0 auto; }
+.connection-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  color: var(--navy); margin-bottom: 1.5rem; line-height: 1.35;
+}
+.connection-title em { font-style: italic; color: var(--gold-dark); }
+.connection-body {
+  font-size: 0.9rem; line-height: 2; color: var(--text-mid);
+  margin-bottom: 2rem;
+}
+.connection-pillars {
+  display: flex; gap: 2rem; justify-content: center;
+  flex-wrap: wrap; margin-bottom: 0;
+}
+.connection-pillar {
+  font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--gold-dark); padding: 0.5rem 1.25rem;
+  border: 1px solid var(--gold-border);
+}
+
+/* ══ CLOSING ══ */
+.closing {
+  background: var(--navy); padding: 7rem 2rem; text-align: center;
+}
+.closing-inner { max-width: 620px; margin: 0 auto; }
+.closing-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+  font-style: italic; font-weight: 400;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.65; margin-bottom: 0.75rem;
+}
+.closing-quote em { color: var(--gold); font-style: normal; }
+.closing-attr {
+  font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: rgba(255,255,255,0.25); margin-bottom: 1.5rem; display: block;
+}
+.closing-sub {
+  font-size: 0.88rem; color: rgba(255,255,255,0.45);
+  line-height: 1.9; margin-bottom: 3rem;
+}
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+@media (max-width: 1024px) {
+  .world-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .world-section { padding: 4rem 1.5rem; }
+}
+
+
+
+
+body { background: #F5EDD8; }
+.page-title { font-family:'Playfair Display',serif !important; font-weight:400 !important; color: #0D1B2A !important; }
+.page-title em { color: #C5A059 !important; }
+.page-sub { color: rgba(13,27,42,0.65) !important; }
+.page-eyebrow { color: #C5A059 !important; }
+.pillar { border-color: rgba(197,160,89,0.4) !important; }
+details { border-bottom:1px solid rgba(13,27,42,0.1);padding:1.25rem 0; }
+summary { font-size:0.9rem;font-weight:500;color:#0D1B2A;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center; }
+summary::-webkit-details-marker { display:none; }
+details p { font-size:0.82rem;line-height:1.9;color:rgba(13,27,42,0.65);margin-top:0.75rem; }
+
+
+@media (max-width: 768px) {
+  div[style*="grid-template-columns:repeat(3,1fr)"],
+  div[style*="grid-template-columns:repeat(3, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  div[style*="grid-template-columns:1fr 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  .page-wrap {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+}
+</style>
 </head>
-<body style="background:var(--creme);">
-
+<body>
 <header>
-  <div class="header-top">
-    <a class="logo" href="index.html">
-      <span class="logo-logik">LOGIC</span><span class="logo-pipe"> | </span><span class="logo-soul">Soul</span>
-    </a>
-    <ul class="main-nav" id="mainNav">
-      <li><button class="nav-btn" id="btn-unternehmen" onclick="toggleSidebar('unternehmen',this)">Für Unternehmen <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button></li>
-      <li><a class="nav-btn" href="fuer-dich.html">Für Dich</a></li>
-      <li><button class="nav-btn" id="btn-begleiter" onclick="toggleSidebar('begleiter',this)">Tägliche Begleiter <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button></li>
-      <li><button class="nav-btn" id="btn-haptisch" onclick="toggleSidebar('haptisch',this)">Haptische Begleiter <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button></li>
-      <li><a class="nav-btn" href="methodik.html">Methodik</a></li>
-      <li><a class="nav-btn nav-cta" href="kontakt.html">Gespräch anfragen</a></li>
+<div class="header-top">
+  <a href="index.html" class="logo">
+    <span class="logo-logik">Logic</span>
+    <span class="logo-pipe"> | </span>
+    <span class="logo-soul">Soul</span>
+  </a>
+  <nav>
+    <ul class="main-nav">
+      <li><button class="nav-btn" onclick="toggleSidebar('unternehmen', this)">Für Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
+      <li><button class="nav-btn" onclick="toggleSidebar('dich', this)">Für Dich <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
+      <li><button class="nav-btn" onclick="toggleSidebar('produkte', this)">Produkte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
+      <li><a href="methodik.html" class="nav-btn">Methodik</a></li>
+      <li><a href="kontakt.html" class="nav-btn nav-cta">Gespräch anfragen</a></li>
     </ul>
-    <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-menu-btn" id="mob-btn-unternehmen" onclick="toggleMobileSubmenu('unternehmen')">Für Unternehmen <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button>
-  <div class="mobile-submenu" id="mob-sub-unternehmen">
-    <a class="mobile-sub-btn" href="unternehmen.html">Übersicht</a>
-    <a class="mobile-sub-btn" href="audit.html">KI-Audit</a>
-    <a class="mobile-sub-btn" href="optimierung.html">KI-Optimierung</a>
-    <a class="mobile-sub-btn" href="begleiter-team.html">Tägliche Begleiter im Team</a>
-  </div>
-  <a class="mobile-menu-btn" href="fuer-dich.html">Für Dich</a>
-  <button class="mobile-menu-btn" id="mob-btn-begleiter" onclick="toggleMobileSubmenu('begleiter')">Tägliche Begleiter <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button>
-  <div class="mobile-submenu" id="mob-sub-begleiter">
-    <a class="mobile-sub-btn" href="begleiter.html">Übersicht</a>
-    <a class="mobile-sub-btn" href="sam.html">SAM</a>
-    <a class="mobile-sub-btn" href="alma.html">ALMA</a>
-  </div>
-  <button class="mobile-menu-btn" id="mob-btn-haptisch" onclick="toggleMobileSubmenu('haptisch')">Haptische Begleiter <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button>
-  <div class="mobile-submenu" id="mob-sub-haptisch">
-    <a class="mobile-sub-btn" href="basis-set.html">Basis-Set</a>
-    <a class="mobile-sub-btn" href="selbstreflexion.html">Selbstreflexions-Set</a>
-    <a class="mobile-sub-btn" href="fuehrungsset.html">Führungskräfte-Set</a>
-    <a class="mobile-sub-btn" href="etraining.html">E-Training</a>
-  </div>
-  <a class="mobile-menu-btn" href="methodik.html">Methodik</a>
-  <a class="mobile-menu-cta" href="kontakt.html">Gespräch anfragen</a>
+  </nav>
+  <button class="hamburger" onclick="toggleMobileMenu()">
+    <span></span><span></span><span></span>
+  </button>
 </div>
+</header>
 
 <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
 
 <div class="sidebar-panel" id="sidebar-unternehmen">
-  <div class="sidebar-header"><span class="sidebar-label">B2B</span><div class="sidebar-title">Für Unternehmen</div></div>
+  <div class="sidebar-header">
+    <span class="sidebar-label">Logic | Soul</span>
+    <div class="sidebar-title">Für Führungskräfte</div>
+  </div>
   <div class="sidebar-items">
-    <a class="sidebar-btn" href="unternehmen.html">Übersicht</a>
-    <a class="sidebar-btn" href="audit.html">KI-Audit</a>
-    <a class="sidebar-btn" href="optimierung.html">KI-Optimierung</a>
-    <a class="sidebar-btn" href="begleiter-team.html">Tägliche Begleiter im Team</a>
-    <a class="sidebar-btn" href="alma.html">ALMA — Für Führungskräfte</a>
+    <a href="alma.html" class="sidebar-btn">ALMA</a>
+    <a href="fuehrungsset.html" class="sidebar-btn">Führungskräfte-Set</a>
+    <a href="kontakt.html" class="sidebar-btn">Erstgespräch anfragen</a>
   </div>
 </div>
 
-<div class="sidebar-panel" id="sidebar-begleiter">
-  <div class="sidebar-header"><span class="sidebar-label">Digital</span><div class="sidebar-title">Tägliche Begleiter</div></div>
+<div class="sidebar-panel" id="sidebar-dich">
+  <div class="sidebar-header">
+    <span class="sidebar-label">Logic | Soul</span>
+    <div class="sidebar-title">Für Dich</div>
+  </div>
   <div class="sidebar-items">
-    <a class="sidebar-btn" href="begleiter.html">Übersicht</a>
-    <a class="sidebar-btn" href="sam.html">SAM — Persönliche Entwicklung</a>
-    <a class="sidebar-btn" href="alma.html">ALMA — Führungskräfte</a>
+    <a href="sam.html" class="sidebar-btn">SAM</a>
+    <a href="musterchecks.html" class="sidebar-btn">Musterchecks</a>
+    <a href="basis-set.html" class="sidebar-btn">Basis-Set</a>
+    <a href="selbstreflexion.html" class="sidebar-btn">Selbstreflexions-Set</a>
+    <a href="etraining.html" class="sidebar-btn">E-Training</a>
   </div>
 </div>
 
-<div class="sidebar-panel" id="sidebar-haptisch">
-  <div class="sidebar-header"><span class="sidebar-label">Haptik</span><div class="sidebar-title">Haptische Begleiter</div></div>
+<div class="sidebar-panel" id="sidebar-produkte">
+  <div class="sidebar-header">
+    <span class="sidebar-label">Logic | Soul</span>
+    <div class="sidebar-title">Produkte</div>
+  </div>
   <div class="sidebar-items">
-    <a class="sidebar-btn" href="basis-set.html">Basis-Set · Karten + Workbook</a>
-    <a class="sidebar-btn" href="selbstreflexion.html">Selbstreflexions-Set</a>
-    <a class="sidebar-btn" href="fuehrungsset.html">Führungskräfte-Set + Workbook</a>
-    <a class="sidebar-btn" href="etraining.html">E-Training · bald verfügbar</a>
+    <a href="produkte.html" class="sidebar-btn" style="color:var(--gold);border-bottom:1px solid rgba(197,160,89,0.2);">Alle Produkte</a>
+    <a href="alma.html" class="sidebar-btn">ALMA — für Führungskräfte</a>
+    <a href="sam.html" class="sidebar-btn">SAM — für Dich</a>
+    <a href="fuehrungsset.html" class="sidebar-btn">Führungskräfte-Set</a>
+    <a href="basis-set.html" class="sidebar-btn">Basis-Set</a>
+    <a href="selbstreflexion.html" class="sidebar-btn">Selbstreflexions-Set</a>
+    <a href="musterchecks.html" class="sidebar-btn">Beziehungsmuster-Sets</a>
+    <a href="etraining.html" class="sidebar-btn">E-Training</a>
   </div>
 </div>
 
-<main>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-btn" id="mob-btn-unternehmen" onclick="toggleMobileSubmenu('unternehmen')">
+    Für Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+  </button>
+  <div class="mobile-submenu" id="mob-sub-unternehmen">
+    <a href="alma.html" class="mobile-sub-btn">ALMA</a>
+    <a href="fuehrungsset.html" class="mobile-sub-btn">Führungskräfte-Set</a>
+  </div>
+  <button class="mobile-menu-btn" id="mob-btn-dich" onclick="toggleMobileSubmenu('dich')">
+    Für Dich <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+  </button>
+  <div class="mobile-submenu" id="mob-sub-dich">
+    <a href="sam.html" class="mobile-sub-btn">SAM</a>
+    <a href="musterchecks.html" class="mobile-sub-btn">Musterchecks</a>
+    <a href="basis-set.html" class="mobile-sub-btn">Basis-Set</a>
+    <a href="selbstreflexion.html" class="mobile-sub-btn">Selbstreflexions-Set</a>
+    <a href="etraining.html" class="mobile-sub-btn">E-Training</a>
+  </div>
+  <button class="mobile-menu-btn" id="mob-btn-produkte" onclick="toggleMobileSubmenu('produkte')">
+    Produkte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+  </button>
+  <div class="mobile-submenu" id="mob-sub-produkte">
+    <a href="alma.html" class="mobile-sub-btn">ALMA</a>
+    <a href="sam.html" class="mobile-sub-btn">SAM</a>
+    <a href="fuehrungsset.html" class="mobile-sub-btn">Führungskräfte-Set</a>
+    <a href="basis-set.html" class="mobile-sub-btn">Basis-Set</a>
+    <a href="selbstreflexion.html" class="mobile-sub-btn">Selbstreflexions-Set</a>
+    <a href="etraining.html" class="mobile-sub-btn">E-Training</a>
+  </div>
+  <a href="methodik.html" class="mobile-menu-btn" style="text-decoration:none;">Methodik</a>
+  <a href="kontakt.html" class="mobile-menu-cta">Gespräch anfragen</a>
+</div>
+
+
+
+<main style="background:#F5EDD8;">
   <div class="page-wrap">
-    <div class="page-hero reveal">
-      <p class="page-eyebrow">Täglicher KI-Mentor</p>
-      <h1 class="page-title">SAM — Dein täglicher <em>KI-Mentor.</em></h1>
-    </div>
-    
-<p class="page-sub reveal" id="seo-intro" style="color:rgba(13,27,42,0.65);">SAM begleitet Menschen dabei, innere Muster zu erkennen — nicht durch Analyse der Vergangenheit, sondern durch Arbeit mit dem, was jetzt präsent ist. Täglich. Fokussiert. Menschlich.</p>
 
-<div style="background:var(--creme);padding:2rem 3rem;border-left:3px solid var(--gold-border);margin-bottom:3rem;" class="reveal">
-  <p style="font-size:0.9rem;line-height:1.95;color:var(--text);">
-    <strong>Du suchst einen KI Coach?</strong> SAM ist mehr als das.<br><br>
-    Kein klassisches Coaching, keine Sitzungen, kein „Du solltest". 
-    SAM ist Dein <strong>täglicher Begleiter für innere Klarheit</strong> — 
-    immer verfügbar, ohne Wertung, direkt auf Deinem Handy.<br><br>
-    „Warum reagiere ich immer wieder gleich?" — „Wie bleibe ich unter Druck klar?" 
-    SAM hilft Dir genau dabei. Als persönlicher KI-Assistent der Deine 
-    Selbstwahrnehmung schärft und Deine innere Unruhe verständlich macht.
-  </p>
-</div>
+    <div class="page-hero reveal" style="border-color:rgba(13,27,42,0.1);">
+      <p class="page-eyebrow">Für Dich</p>
+      <h1 class="page-title">Du machst es dir immer wieder<br><em>selbst schwer.</em><br>Das muss nicht so bleiben.</h1>
+    </div>
 
-<div class="page-intro-grid" style="margin-top:3rem;">
-  <div class="reveal">
-    <div class="pillar-list">
-      <div class="pillar"><div class="pillar-title">Persönliche Transformation</div><div class="pillar-text">SAM arbeitet mit dem, was im Moment da ist — nicht mit dem, was war.</div></div>
-      <div class="pillar"><div class="pillar-title">Proaktives Rollenspiel</div><div class="pillar-text">„Sollen wir das kurz durchspielen?" SAM bietet an — wenn es passt. Nicht als Funktion, sondern als echte Begleitung.</div></div>
-      <div class="pillar"><div class="pillar-title">Täglicher Begleiter</div><div class="pillar-text">SAM ist kein Tool, das Du aufrufst. SAM ist da — wenn Du es brauchst.</div></div>
-      <div class="pillar"><div class="pillar-title">SystemAlchemie als Kern</div><div class="pillar-text">Die vollständige Methode hinter SAM — strukturiert, klar, wirksam. <a href="methodik.html" class="internal-link" style="display:inline-flex;margin-top:0.5rem;">Zur Methode</a></div></div>
-    </div>
-    <div style="margin-top:2.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
-      <a href="DIGISTORE_URL_HIER_EINSETZEN" target="_blank" class="btn-navy">SAM: Dein täglicher Begleiter für 1 €</a>
-      <a href="https://www.sam-mentor.com" target="_blank" class="btn-outline">sam-mentor.com</a>
-    </div>
-  </div>
-  <div class="reveal">
-    <div style="background:var(--navy);padding:3rem;border-top:2px solid var(--gold);display:flex;flex-direction:column;align-items:center;gap:1.25rem;text-align:center;">
-      <div style="font-family:'Playfair Display',serif;font-size:2.5rem;font-style:italic;color:var(--gold);">SAM</div>
-      <div style="font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.38);line-height:1.9;">KI-Mentor · SystemAlchemie<br>Persönliche Transformation</div>
-      <div style="font-family:'Playfair Display',serif;font-size:1.1rem;color:rgba(255,255,255,0.8);">47 € / Monat</div>
-      <a href="DIGISTORE_URL_HIER_EINSETZEN" target="_blank" class="btn-gold" style="width:100%;text-align:center;">3 Tage testen · 1 €</a>
-      <p style="font-size:0.62rem;color:rgba(255,255,255,0.3);">Danach 47 €/Monat · jederzeit kündbar</p>
-    </div>
-    <div style="margin-top:1.5rem;padding:1.5rem;background:var(--bg-card);border:1px solid var(--border);">
-      <p style="font-size:0.55rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;">Besonders gut zusammen</p>
-      <p style="font-size:0.82rem;color:var(--text-mid);line-height:1.8;margin-bottom:1rem;">Das Basis-Set ergänzt SAM perfekt — als haptischer Anker für Deinen Alltag.</p>
-      <a href="basis-set.html" class="btn-outline" style="font-size:0.58rem;padding:0.65rem 1.25rem;">Zum Basis-Set →</a>
-    </div>
-  </div>
-</div>
+    <p class="page-sub reveal">Nicht weil du falsch bist. Sondern weil dein System noch auf einer alten Spur läuft. SAM hilft dir täglich zu sehen was in dir passiert. Nicht irgendwann. Jetzt.</p>
 
-  </div>
+    <!-- KI Coach -->
+    <div style="background:white;padding:2rem 3rem;border-left:3px solid #C5A059;margin:2rem 0 3rem;" class="reveal">
+      <p style="font-size:0.9rem;line-height:1.95;color:#0D1B2A;">
+        <strong>Du suchst einen KI Coach?</strong> SAM ist mehr als das.<br><br>
+        Kein Coaching, keine Sitzungen, kein Stundenplan. SAM ist dein <strong>täglicher Begleiter für innere Klarheit.</strong> Immer verfügbar, ohne Wertung, direkt auf deinem Handy.
+      </p>
+    </div>
 
-<div style="margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border);" class="reveal">
-  <p class="page-eyebrow">Häufige Fragen</p>
-  <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--navy);margin-bottom:2rem;font-weight:400;">Alles zu SAM</h2>
-  <div style="display:flex;flex-direction:column;gap:0;">
-    <details style="border-bottom:1px solid var(--border);padding:1.25rem 0;">
-      <summary style="font-size:0.9rem;font-weight:500;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">Was ist SAM — ist das ein KI Coach? <span style="color:var(--gold);font-size:1.2rem;">+</span></summary>
-      <p style="font-size:0.82rem;line-height:1.9;color:var(--text-mid);margin-top:0.75rem;">SAM ist kein klassischer KI Coach — sondern ein täglicher KI-Begleiter für innere Klarheit. Kein Coaching, keine Sitzungen. SAM ist täglich verfügbar und hilft Dir, Deine Reaktionen zu verstehen und handlungsfähig zu bleiben.</p>
-    </details>
-    <details style="border-bottom:1px solid var(--border);padding:1.25rem 0;">
-      <summary style="font-size:0.9rem;font-weight:500;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">Was kostet SAM? <span style="color:var(--gold);font-size:1.2rem;">+</span></summary>
-      <p style="font-size:0.82rem;line-height:1.9;color:var(--text-mid);margin-top:0.75rem;">SAM kostet 47 € pro Monat. Du kannst SAM 3 Tage lang für nur 1 € testen — jederzeit kündbar, keine versteckten Kosten.</p>
-    </details>
-    <details style="border-bottom:1px solid var(--border);padding:1.25rem 0;">
-      <summary style="font-size:0.9rem;font-weight:500;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">Für wen ist SAM geeignet? <span style="color:var(--gold);font-size:1.2rem;">+</span></summary>
-      <p style="font-size:0.82rem;line-height:1.9;color:var(--text-mid);margin-top:0.75rem;">SAM ist für alle Menschen die in stressigen Momenten klarer werden möchten — ob im Beruf, in der Führungsrolle oder im privaten Alltag. SAM hilft Dir, innere Muster zu erkennen und souverän zu handeln.</p>
-    </details>
-    <details style="padding:1.25rem 0;">
-      <summary style="font-size:0.9rem;font-weight:500;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">Ist SAM eine Therapie oder ein Coaching? <span style="color:var(--gold);font-size:1.2rem;">+</span></summary>
-      <p style="font-size:0.82rem;line-height:1.9;color:var(--text-mid);margin-top:0.75rem;">Nein. SAM ersetzt keine Therapie und ist kein Coaching. SAM ist ein digitaler Begleiter der Dir hilft, im Alltag klarer zu werden — ohne Diagnosen, ohne Bewertungen.</p>
-    </details>
-  </div>
-</div>
+    <div class="page-intro-grid" style="margin-top:3rem;">
+      <div class="reveal">
+        <div class="pillar-list">
+          <div class="pillar">
+            <div class="pillar-num">01</div>
+            <div class="pillar-title">Die 5 Schritte täglich</div>
+            <div class="pillar-text">SAM begleitet dich durch die SystemAlchemie-Methode. Wahrnehmen was ist. Einordnen ohne zu bewerten. Benennen was da ist. Prüfen was es schützt. Neu ausrichten was möglich ist.</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">02</div>
+            <div class="pillar-title">Musterchecks</div>
+            <div class="pillar-text">SAM erkennt über Zeit welche Muster sich wiederholen. Nicht um sie zu bewerten. Um sie sichtbar zu machen. Du siehst wie du dich entwickelst. Was sich verändert. Was noch auf der alten Spur läuft.</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">03</div>
+            <div class="pillar-title">Rollenspiele und Vorbereitung</div>
+            <div class="pillar-text">Schwieriges Gespräch morgen? SAM hilft dir innerlich vorzubereiten. Nicht durch Argumente. Durch Selbstwahrnehmung. Du gehst klar rein statt reaktiv.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div style="background:#0D1B2A;border-top:2px solid #C5A059;padding:2.5rem;">
+          <p style="font-size:0.52rem;letter-spacing:0.4em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.75rem;">SAM</p>
+          <p style="font-family:'Playfair Display',serif;font-size:1.6rem;font-style:italic;color:#C5A059;margin-bottom:1.25rem;">3 Tage für 1 Euro.<br>Dann weißt du es.</p>
+          <p style="font-size:0.82rem;line-height:1.85;color:rgba(255,255,255,0.55);margin-bottom:1.5rem;">Kein Abo das du vergisst. Drei Tage SAM nutzen. Wenn es sich richtig anfühlt bleibst du.</p>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:2rem;">
+            <p style="font-size:0.78rem;color:rgba(255,255,255,0.5);display:flex;gap:0.6rem;"><span style="color:#C5A059;">—</span>3 Tage für 1 Euro testen</p>
+            <p style="font-size:0.78rem;color:rgba(255,255,255,0.5);display:flex;gap:0.6rem;"><span style="color:#C5A059;">—</span>Danach 47 Euro pro Monat</p>
+            <p style="font-size:0.78rem;color:rgba(255,255,255,0.5);display:flex;gap:0.6rem;"><span style="color:#C5A059;">—</span>Jederzeit kündbar</p>
+          </div>
+          <a href="DIGISTORE_URL_HIER" class="btn-gold" style="display:block;text-align:center;">Jetzt testen für 1 Euro</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- WAS SAM KANN -->
+    <div style="margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(13,27,42,0.1);" class="reveal">
+      <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:2rem;">Was SAM mit dir macht</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+        <div style="background:white;border-top:2px solid #C5A059;padding:1.75rem;">
+          <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.5rem;">Täglich bei dir</p>
+          <p style="font-size:0.8rem;line-height:1.8;color:rgba(13,27,42,0.6);">Nicht für einmal die Woche. Für den Moment in dem du merkst dass etwas nicht stimmt.</p>
+        </div>
+        <div style="background:white;border-top:2px solid #C5A059;padding:1.75rem;">
+          <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.5rem;">Musterchecks</p>
+          <p style="font-size:0.8rem;line-height:1.8;color:rgba(13,27,42,0.6);">SAM erkennt Wiederholungen. Du siehst wie sich dein Erleben über Zeit verändert.</p>
+        </div>
+        <div style="background:white;border-top:2px solid #C5A059;padding:1.75rem;">
+          <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.5rem;">Gesprächsvorbereitung</p>
+          <p style="font-size:0.8rem;line-height:1.8;color:rgba(13,27,42,0.6);">Innere Klarheit vor schwierigen Gesprächen. Auch privat. Auch im Alltag.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- VERWEISE ZU SETS -->
+    <div style="margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(13,27,42,0.1);" class="reveal">
+      <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:1.25rem;">SAM und die Kartensets</p>
+      <p style="font-size:0.9rem;line-height:1.9;color:rgba(13,27,42,0.65);margin-bottom:2rem;">SAM und die Kartensets ergänzen sich. Haptisch und digital. Der Einstieg in die SystemAlchemie auf zwei Wegen gleichzeitig.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+        <a href="basis-set.html" style="text-decoration:none;">
+          <div style="background:white;border:1px solid rgba(13,27,42,0.1);border-top:2px solid #C5A059;padding:2rem;transition:box-shadow 0.3s;" onmouseover="this.style.boxShadow='0 4px 20px rgba(197,160,89,0.15)'" onmouseout="this.style.boxShadow=''">
+            <p style="font-size:0.52rem;letter-spacing:0.4em;text-transform:uppercase;color:rgba(13,27,42,0.4);margin-bottom:0.5rem;">Einstieg</p>
+            <p style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#0D1B2A;margin-bottom:0.5rem;">Basis-Set</p>
+            <p style="font-size:0.8rem;line-height:1.7;color:rgba(13,27,42,0.6);margin-bottom:1rem;">Kartenset und Workbook als haptischer Einstieg. Ideal für den Anfang mit SAM.</p>
+            <p style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#C5A059;">Entdecken →</p>
+          </div>
+        </a>
+        <a href="selbstreflexion.html" style="text-decoration:none;">
+          <div style="background:white;border:1px solid rgba(13,27,42,0.1);border-top:2px solid #C5A059;padding:2rem;transition:box-shadow 0.3s;" onmouseover="this.style.boxShadow='0 4px 20px rgba(197,160,89,0.15)'" onmouseout="this.style.boxShadow=''">
+            <p style="font-size:0.52rem;letter-spacing:0.4em;text-transform:uppercase;color:rgba(13,27,42,0.4);margin-bottom:0.5rem;">Tiefer gehen</p>
+            <p style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#0D1B2A;margin-bottom:0.5rem;">Selbstreflexions-Set</p>
+            <p style="font-size:0.8rem;line-height:1.7;color:rgba(13,27,42,0.6);margin-bottom:1rem;">Für alle die mit SAM gearbeitet haben und tiefer gehen möchten.</p>
+            <p style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#C5A059;">Entdecken →</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div style="margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(13,27,42,0.1);" class="reveal">
+      <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#0D1B2A;margin-bottom:2rem;font-weight:400;">Alles zu SAM</h2>
+      <details>
+        <summary>Ist SAM eine Therapie? <span style="color:#C5A059;">+</span></summary>
+        <p>Nein. SAM ersetzt keine Therapie und ist kein Coaching. SAM ist ein täglicher Begleiter der dir hilft im Alltag klarer zu werden. Ohne Diagnosen, ohne Bewertungen.</p>
+      </details>
+      <details>
+        <summary>Was sind Musterchecks? <span style="color:#C5A059;">+</span></summary>
+        <p>SAM begleitet dich nicht nur im einzelnen Gespräch, sondern erkennt über Zeit welche Muster sich wiederholen. Welche Situationen dich immer wieder triggern. Welche Reaktionen du immer noch hast. Das macht Entwicklung sichtbar und messbar.</p>
+      </details>
+      <details>
+        <summary>Was passiert nach den 3 Testtagen? <span style="color:#C5A059;">+</span></summary>
+        <p>Nach dem Testmonat läuft SAM für 47 Euro pro Monat weiter. Jederzeit kündbar, keine Mindestlaufzeit.</p>
+      </details>
+      <details style="border-bottom:none;">
+        <summary>Für wen ist SAM geeignet? <span style="color:#C5A059;">+</span></summary>
+        <p>SAM ist für alle die in stressigen Momenten klarer werden möchten. Ob im Beruf, in der Führungsrolle oder im privaten Alltag. Keine Vorkenntnisse nötig.</p>
+      </details>
+    </div>
+
+    <!-- CTA -->
+    <div style="margin-top:4rem;background:#0D1B2A;border-left:3px solid #C5A059;padding:2.5rem 3rem;text-align:center;" class="reveal">
+      <p style="font-family:'Playfair Display',serif;font-size:1.3rem;color:rgba(255,255,255,0.88);margin-bottom:0.75rem;font-weight:400;font-style:italic;">Drei Tage. Dann weißt du ob es das ist.</p>
+      <p style="font-size:0.85rem;color:rgba(255,255,255,0.45);margin-bottom:2rem;">Kein Risiko. Kein Aufwand. Nur du und SAM.</p>
+      <a href="DIGISTORE_URL_HIER" class="btn-gold">Jetzt starten für 1 Euro</a>
+    </div>
+
   </div>
 </main>
-
 <footer>
-  <a class="footer-logo" href="index.html">
-    <span class="footer-logik">LOGIC</span><span class="footer-pipe"> | </span><span class="footer-soul">Soul</span>
+  <a href="index.html" class="footer-logo">
+    <span class="footer-logik">Logic</span>
+    <span class="footer-pipe"> | </span>
+    <span class="footer-soul">Soul</span>
   </a>
   <nav class="footer-nav">
-    <a href="unternehmen.html">Unternehmen</a>
-    <a href="fuer-dich.html">Für Dich</a>
-    <a href="begleiter.html">Tägliche Begleiter</a>
     <a href="alma.html">ALMA</a>
     <a href="sam.html">SAM</a>
+    <a href="fuehrungsset.html">Führungskräfte-Set</a>
+    <a href="basis-set.html">Basis-Set</a>
     <a href="methodik.html">Methodik</a>
     <a href="kontakt.html">Kontakt</a>
+    <a href="https://business-kompass.vercel.app" target="_blank" style="opacity:0.4;">Business Kompass ↗</a>
   </nav>
   <div class="footer-legal">
     <span class="footer-copy">© 2026 Logic | Soul · Yana Thomée</span>
@@ -400,10 +685,10 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
   <div class="legal-box">
     <div class="legal-box-header"><div class="legal-box-title">Impressum</div><button class="legal-box-close" onclick="closeLegal()">✕</button></div>
     <div class="legal-box-content">
-      <p><strong>Angaben gemäß § 5 TMG</strong></p>
-      <p>Yana Thomée · Logic | Soul<br>[STRASSE] · [PLZ ORT]</p>
-      <p><strong>Kontakt</strong><br>hello@logic-soul.com</p>
-      <p style="font-size:0.72rem;color:var(--text-dim);">TODO: Vollständiges Impressum eintragen.</p>
+      <p>Yana Thomée<br>Hölzleswiesen 13<br>70619 Stuttgart<br>Deutschland</p>
+      <p>E-Mail: <a href="mailto:hello@logic-soul.com" style="color:var(--gold-dark);">hello@logic-soul.com</a></p>
+      <p>Wir sind zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit.</p>
+      <p style="font-size:0.72rem;color:var(--text-dim);">Stand: 30.04.2026</p>
     </div>
   </div>
 </div>
@@ -413,12 +698,10 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
     <div class="legal-box-header"><div class="legal-box-title">Datenschutzerklärung</div><button class="legal-box-close" onclick="closeLegal()">✕</button></div>
     <div class="legal-box-content">
       <p><strong>Verantwortliche Stelle</strong><br>Yana Thomée · hello@logic-soul.com</p>
-      <p style="font-size:0.72rem;color:var(--text-dim);">TODO: Vollständige Datenschutzerklärung eintragen.</p>
+      <p style="font-size:0.72rem;color:var(--text-dim);">Vollständige Datenschutzerklärung folgt.</p>
     </div>
   </div>
 </div>
-
-
 <script>
 let currentSidebar = null;
 function toggleSidebar(id, btnEl) {
@@ -451,16 +734,19 @@ function toggleMobileSubmenu(id) {
   document.querySelectorAll('.mobile-menu-btn').forEach(b => b.classList.remove('expanded'));
   if (!isOpen) { sub.classList.add('open'); btn.classList.add('expanded'); }
 }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSidebar(); });
-// Reveal
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-}, { threshold:0.08 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-// Legal
-function showLegal(id) { document.getElementById('legal-' + id).classList.add('open'); }
-function closeLegal() { document.querySelectorAll('.legal-overlay').forEach(m => m.classList.remove('open')); }
+function showLegal(type) {
+  document.getElementById('legal-' + type).classList.add('open');
+}
+function closeLegal() {
+  document.querySelectorAll('.legal-overlay').forEach(o => o.classList.remove('open'));
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeSidebar(); closeLegal(); } });
+document.querySelectorAll('.reveal').forEach(el => {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  obs.observe(el);
+});
 </script>
-
 </body>
 </html>
