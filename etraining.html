@@ -415,14 +415,7 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
   }
 }
 
-.footer-dropdown { position: relative; display: inline-flex; align-items: center; }
-.footer-dropdown-btn { background: none; border: none; cursor: pointer; font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.35); font-family: inherit; padding: 0; transition: color 0.2s; line-height: 1; display: flex; align-items: center; }
-.footer-dropdown-btn:hover { color: var(--gold); }
-.footer-dropdown-menu { display: none; position: fixed; bottom: auto; left: auto; background: #0D1B2A; border: 1px solid rgba(197,160,89,0.25); border-top: 2px solid var(--gold); min-width: 220px; z-index: 99999; box-shadow: 0 -8px 24px rgba(0,0,0,0.4); }
-.footer-dropdown-menu.open { display: block; }
-.footer-dropdown-menu a { display: block; padding: 0.75rem 1.25rem; font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s, background 0.2s; border-bottom: 1px solid rgba(255,255,255,0.05); }
-.footer-dropdown-menu a:last-child { border-bottom: none; }
-.footer-dropdown-menu a:hover { color: var(--gold); background: rgba(197,160,89,0.06); }
+
 
 </style>
 </head>
@@ -580,18 +573,12 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
     <a href="basis-set.html">Basis-Set</a>
     <a href="methodik.html">Methodik</a>
     <a href="kontakt.html">Kontakt</a>
-    <div class="footer-dropdown" id="footerWeitere">
-      <button onclick="toggleFooterDropdown(event)" class="footer-dropdown-btn">Weitere Produkte <svg viewBox="0 0 10 6" fill="none" style="width:8px;height:8px;margin-left:4px;vertical-align:middle;"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button>
-      <div class="footer-dropdown-menu" id="footerDropdownMenu">
-        <a href="musterchecks.html">Beziehungsmuster-Check</a>
-        <a href="https://kompass.logic-soul.com" target="_blank">Business Kompass ↗</a>
-      </div>
-    </div>
+    <a href="https://kompass.logic-soul.com" target="_blank" style="color:rgba(255,255,255,0.25);font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;">Business Kompass ↗</a>
   </nav>
   <div class="footer-legal">
     <span class="footer-copy">© 2026 Logic | Soul · Yana Thomée</span>
     <button onclick="showLegal('impressum')" style="background:none;border:none;cursor:pointer;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);padding:0;font-family:inherit;line-height:1;">Impressum</button>
-    <a href="datenschutz.html" style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(242,240,237,0.5);text-decoration:none;">Datenschutz</a>
+    <a href="datenschutz.html" style="font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);text-decoration:none;">Datenschutz</a>
   </div>
 </footer>
 
