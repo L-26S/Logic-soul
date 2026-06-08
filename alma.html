@@ -131,11 +131,11 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
 .footer-logik { font-family:'DM Sans',sans-serif; font-size:0.9rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.88); }
 .footer-pipe  { font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:300; color:var(--gold); padding:0 0.13rem; }
 .footer-soul  { font-family:'Playfair Display',serif; font-size:1rem; font-weight:400; font-style:italic; color:rgba(255,255,255,0.88); }
-.footer-nav { display:flex; gap:1.75rem; flex-wrap:wrap; }
-.footer-nav a { font-size:0.58rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.35); text-decoration:none; transition:color 0.25s; }
+.footer-nav { display:flex; gap:1.75rem; flex-wrap:wrap; align-items:center; }
+.footer-nav a { font-size:0.58rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.35); text-decoration:none; transition:color 0.25s; line-height:1; }
 .footer-nav a:hover { color:var(--gold); }
 .footer-legal { display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap; }
-.footer-copy { font-size:0.58rem; color:rgba(255,255,255,0.25); }
+.footer-copy { font-size:0.58rem; color:rgba(255,255,255,0.35); line-height:1; }
 .footer-legal-btn { font-size:0.58rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.25); background:none; border:none; cursor:pointer; transition:color 0.25s; padding:0; }
 .footer-legal-btn:hover { color:var(--gold); }
 
@@ -440,13 +440,14 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(51,51,93,0.65);margin-t
   }
 }
 
-.footer-dropdown { position: relative; display: inline-block; }
-.footer-dropdown-btn { background: none; border: none; cursor: pointer; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(242,240,237,0.5); font-family: inherit; padding: 0; transition: color 0.2s; }
+.footer-dropdown { position: relative; display: inline-flex; align-items: center; }
+.footer-dropdown-btn { background: none; border: none; cursor: pointer; font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.35); font-family: inherit; padding: 0; transition: color 0.2s; line-height: 1; display: flex; align-items: center; }
 .footer-dropdown-btn:hover { color: var(--gold); }
-.footer-dropdown-menu { display: none; position: absolute; bottom: calc(100% + 8px); left: 0; background: #0a1520; border: 1px solid rgba(197,160,89,0.2); border-top: 2px solid var(--gold); min-width: 200px; z-index: 100; }
+.footer-dropdown-menu { display: none; position: fixed; bottom: auto; left: auto; background: #0D1B2A; border: 1px solid rgba(197,160,89,0.25); border-top: 2px solid var(--gold); min-width: 220px; z-index: 99999; box-shadow: 0 -8px 24px rgba(0,0,0,0.4); }
 .footer-dropdown-menu.open { display: block; }
-.footer-dropdown-menu a { display: block; padding: 0.65rem 1rem; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(242,240,237,0.55); text-decoration: none; transition: color 0.2s, background 0.2s; }
-.footer-dropdown-menu a:hover { color: var(--gold); background: rgba(197,160,89,0.05); }
+.footer-dropdown-menu a { display: block; padding: 0.75rem 1.25rem; font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s, background 0.2s; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.footer-dropdown-menu a:last-child { border-bottom: none; }
+.footer-dropdown-menu a:hover { color: var(--gold); background: rgba(197,160,89,0.06); }
 
 </style>
 </head>
@@ -620,7 +621,7 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(51,51,93,0.65);margin-t
           <p style="font-size:0.82rem;line-height:1.85;color:rgba(255,255,255,0.65);margin-bottom:1.5rem;">In 30 Tagen wirst du mindestens ein Gespräch anders führen als vorher. Weil du verstehst was in dir passiert. Nicht weil du eine neue Technik gelernt hast.</p>
           <div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:2rem;">
             <p style="font-size:0.78rem;color:rgba(255,255,255,0.5);display:flex;gap:0.6rem;"><span style="color:#C5A059;">—</span>Testmonat zum Monatspreis</p>
-            <p style="font-size:0.78rem;color:rgba(255,255,255,0.5);display:flex;gap:0.6rem;"><span style="color:#C5A059;">—</span>Jahreslizenz ab 115 Euro pro Nutzer</p>
+            <p style="font-size:0.78rem;color:rgba(255,255,255,0.5);display:flex;gap:0.6rem;"><span style="color:#C5A059;">—</span>Jahreslizenz: 115 Euro pro Nutzer pro Monat</p>
             <p style="font-size:0.78rem;color:rgba(255,255,255,0.5);display:flex;gap:0.6rem;"><span style="color:#C5A059;">—</span>Workshop zur Nutzung von ALMA und den Karten</p>
             <p style="font-size:0.78rem;color:rgba(255,255,255,0.5);display:flex;gap:0.6rem;"><span style="color:#C5A059;">—</span>Ab 30 Nutzern halber Tag Workshop + Kartenset für Führungskräfteentwicklung geschenkt</p>
           </div>
@@ -709,6 +710,58 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(51,51,93,0.65);margin-t
       </div>
     </div>
 
+
+    <!-- WAS MACHT ALMA BESONDERS -->
+    <div style="margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(51,51,93,0.12);" class="reveal">
+      <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:0.75rem;">Was ALMA besonders macht</p>
+      <p style="font-size:0.9rem;color:rgba(51,51,93,0.65);margin-bottom:2rem;">Nicht ein Feature. Eine andere Art zu begleiten.</p>
+
+      <div style="display:flex;flex-direction:column;gap:0;">
+
+        <div style="display:grid;grid-template-columns:48px 1fr;gap:1.5rem;padding:1.75rem 0;border-bottom:1px solid rgba(51,51,93,0.1);align-items:start;">
+          <div style="background:#C5A059;color:white;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:0.9rem;font-style:italic;flex-shrink:0;">1</div>
+          <div>
+            <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#33335D;margin-bottom:0.5rem;">Der Sparringspartner den es sonst nicht gibt</p>
+            <p style="font-size:0.88rem;line-height:1.95;color:rgba(51,51,93,0.65);">Mit wem spricht eine Führungskraft wirklich? Nicht mit dem Team, nicht mit dem Vorgesetzten, oft nicht mal privat. ALMA ist der Raum, in dem gedacht werden darf, ohne Konsequenzen. Ohne Hierarchie. Ohne dass jemand morgen anders schaut. Allein das führt oft zu klareren Entscheidungen, als man erwartet.</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:48px 1fr;gap:1.5rem;padding:1.75rem 0;border-bottom:1px solid rgba(51,51,93,0.1);align-items:start;">
+          <div style="background:#C5A059;color:white;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:0.9rem;font-style:italic;flex-shrink:0;">2</div>
+          <div>
+            <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#33335D;margin-bottom:0.5rem;">Innere Klarheit vor dem Gespräch</p>
+            <p style="font-size:0.88rem;line-height:1.95;color:rgba(51,51,93,0.65);">Nicht Argumente vorbereiten. Den inneren Zustand klären, aus dem heraus gesprochen wird. Der Ton, die Haltung, die Präsenz — das entscheidet mehr als der Inhalt. ALMA begleitet genau dahin. Vor dem Gespräch. Nicht danach.</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:48px 1fr;gap:1.5rem;padding:1.75rem 0;border-bottom:1px solid rgba(51,51,93,0.1);align-items:start;">
+          <div style="background:#C5A059;color:white;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:0.9rem;font-style:italic;flex-shrink:0;">3</div>
+          <div>
+            <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#33335D;margin-bottom:0.5rem;">Eigene Entwicklung sichtbar</p>
+            <p style="font-size:0.88rem;line-height:1.95;color:rgba(51,51,93,0.65);">ALMA speichert den Verlauf. Nicht um zu kontrollieren, sondern um zu zeigen wie sich Wahrnehmung, Sprache und Reaktionsmuster über Zeit verändern. Die Auswertung gehört der Führungskraft. Sie ist kein Bericht für andere, sondern ein Spiegel für sich selbst.</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:48px 1fr;gap:1.5rem;padding:1.75rem 0;border-bottom:1px solid rgba(51,51,93,0.1);align-items:start;">
+          <div style="background:#C5A059;color:white;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:0.9rem;font-style:italic;flex-shrink:0;">4</div>
+          <div>
+            <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#33335D;margin-bottom:0.5rem;">Menschlicher als andere KI</p>
+            <p style="font-size:0.88rem;line-height:1.95;color:rgba(51,51,93,0.65);">ALMA folgt keinem Skript. ALMA folgt dir. Es stellt nicht die nächste vorgefertigte Frage, sondern hinterfragt was du gesagt hast. Es stellt Tage später einen Bezug zu einem früheren Gespräch her und fragt nach. Nicht weil es programmiert ist etwas zu fragen, sondern weil es erkennt, dass etwas noch offen ist.</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:48px 1fr;gap:1.5rem;padding:1.75rem 0;align-items:start;">
+          <div style="background:rgba(51,51,93,0.15);color:#33335D;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:0.9rem;font-style:italic;flex-shrink:0;">5</div>
+          <div>
+            <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#33335D;margin-bottom:0.5rem;">ALMA Plus — wenn du bereit bist <span style="font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:#C5A059;font-family:'DM Sans',sans-serif;font-style:normal;margin-left:0.5rem;">Kommt bald</span></p>
+            <p style="font-size:0.88rem;line-height:1.95;color:rgba(51,51,93,0.65);">Werkzeuge machen erst Sinn, wenn die innere Klarheit entstanden ist. ALMA Plus kommt dazu, wenn du bereit bist. Nicht vorher. ALMA selbst erkennt den Moment und empfiehlt den nächsten Schritt. Für 47 Euro pro Monat zusätzlich.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
     <!-- PAKETE -->
     <div style="margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(51,51,93,0.12);" class="reveal">
       <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:0.75rem;">Pakete und Preise</p>
@@ -717,7 +770,7 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(51,51,93,0.65);margin-t
         <div style="background:white;border:1px solid rgba(51,51,93,0.1);border-top:2px solid #C5A059;padding:2rem;display:flex;flex-direction:column;">
           <p style="font-size:0.55rem;letter-spacing:0.4em;text-transform:uppercase;color:rgba(51,51,93,0.4);margin-bottom:0.5rem;">Starter</p>
           <p style="font-family:'Playfair Display',serif;font-size:1.3rem;color:#33335D;margin-bottom:0.25rem;">1 bis 10 Nutzer</p>
-          <p style="font-size:1.1rem;color:#C5A059;margin-bottom:1rem;font-weight:500;">115 Euro pro Nutzer / Monat</p>
+          <p style="font-size:1.1rem;color:#C5A059;margin-bottom:1rem;font-weight:500;">115 Euro pro Nutzer pro Monat</p>
           <p style="font-size:0.78rem;line-height:1.7;color:rgba(51,51,93,0.55);flex:1;">Jahreslizenz, jährlich im Voraus. Testmonat verfügbar. Workshop zur Nutzung von ALMA und den Karten zusätzlich buchbar.</p>
           <a href="kontakt.html" style="margin-top:1.5rem;display:block;text-align:center;padding:0.75rem;border:1.5px solid rgba(51,51,93,0.2);font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:#33335D;text-decoration:none;">Anfragen</a>
         </div>
@@ -758,11 +811,22 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(51,51,93,0.65);margin-t
         <summary>Wie funktioniert das Kartenset mit ALMA zusammen? <span style="color:#C5A059;">+</span></summary>
         <p>ALMA kennt alle 60 Karten des Führungskräfte-Sets. Im Gespräch verweist ALMA auf konkrete Karten die zu deiner aktuellen Situation passen. Du hältst die Karte in der Hand während ALMA dich begleitet. Haptisch und digital in einem.</p>
       </details>
-      <details style="border-bottom:none;">
+      <details style="border-bottom:1px solid rgba(197,160,89,0.15);padding:1.25rem 0;">
         <summary>Kann ALMA unternehmensweit eingesetzt werden? <span style="color:#C5A059;">+</span></summary>
         <p>Ja. ALMA ist als B2B-Jahreslizenz verfügbar. Mit Co-Termination und DSGVO-konformer Datenspeicherung. Ab 30 Nutzern ist ein halber Tag Workshop enthalten und jede Führungskraft erhält ein Kartenset für Führungskräfteentwicklung geschenkt.</p>
       </details>
+
+      <details style="border-bottom:1px solid rgba(197,160,89,0.15);padding:1.25rem 0;">
+        <summary>Was macht ALMA menschlicher als andere KI? <span style="color:#C5A059;">+</span></summary>
+        <p>ALMA folgt keinem Gesprächsskript. ALMA folgt der Führungskraft. Es geht nicht darum, Antworten zu liefern, sondern den inneren Zustand zu erkennen aus dem heraus jemand gerade handelt. Diese Qualität entsteht durch die SystemAlchemie-Methode im Hintergrund, die aus echter menschlicher Coaching-Arbeit entwickelt wurde. Das macht den Unterschied zwischen einem Tool das funktioniert und einem Begleiter der wirklich trifft.</p>
+      </details>
+
+      <details style="border-bottom:none;padding:1.25rem 0;">
+        <summary>Kann jemand anderes sehen, was ich mit ALMA bespreche? <span style="color:#C5A059;">+</span></summary>
+        <p>Nein. Gesprächsinhalte gehören ausschließlich der Führungskraft. HR-Abteilungen sehen nur aggregierte Nutzungsdaten, keine Gesprächsinhalte. Alle Daten werden verschlüsselt auf Servern in Frankfurt gespeichert. Was du mit ALMA besprichst, bleibt bei dir.</p>
+      </details>
     </div>
+
 
 
     <!-- DSGVO -->
@@ -812,7 +876,7 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(51,51,93,0.65);margin-t
     <a href="methodik.html">Methodik</a>
     <a href="kontakt.html">Kontakt</a>
     <div class="footer-dropdown" id="footerWeitere">
-      <button onclick="toggleFooterDropdown()" class="footer-dropdown-btn">Weitere Produkte <svg viewBox="0 0 10 6" fill="none" style="width:8px;height:8px;margin-left:4px;vertical-align:middle;"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button>
+      <button onclick="toggleFooterDropdown(event)" class="footer-dropdown-btn">Weitere Produkte <svg viewBox="0 0 10 6" fill="none" style="width:8px;height:8px;margin-left:4px;vertical-align:middle;"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button>
       <div class="footer-dropdown-menu" id="footerDropdownMenu">
         <a href="musterchecks.html">Beziehungsmuster-Check</a>
         <a href="https://kompass.logic-soul.com" target="_blank">Business Kompass ↗</a>
@@ -821,7 +885,7 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(51,51,93,0.65);margin-t
   </nav>
   <div class="footer-legal">
     <span class="footer-copy">© 2026 Logic | Soul · Yana Thomée</span>
-    <button onclick="showLegal('impressum')" style="background:none;border:none;cursor:pointer;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(242,240,237,0.5);padding:0;">Impressum</button>
+    <button onclick="showLegal('impressum')" style="background:none;border:none;cursor:pointer;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);padding:0;font-family:inherit;line-height:1;">Impressum</button>
     <a href="datenschutz.html" style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(242,240,237,0.5);text-decoration:none;">Datenschutz</a>
   </div>
 </footer>
