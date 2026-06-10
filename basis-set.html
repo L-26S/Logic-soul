@@ -9,10 +9,6 @@
 <title>Basis-Set — SystemKanäle und Ankerplatz | Logic | Soul</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-
-
-
-
 :root {
   --gold: #C5A059; --gold-light: #d4b472; --gold-dim: rgba(197,160,89,0.1);
   --gold-border: rgba(197,160,89,0.32); --gold-dark: #a8863e;
@@ -27,7 +23,6 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; font-weight:300; }
-
 
 /* NAV */
 header { position:fixed; top:0; left:0; right:0; z-index:500; background:rgba(250,250,248,0.97); backdrop-filter:blur(20px); border-bottom:1px solid var(--border); box-shadow:0 1px 20px rgba(13,27,42,0.05); }
@@ -156,7 +151,6 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
   .sidebar-panel { left:0 !important; right:0 !important; width:100% !important; max-height:70vh; border-left:none; border-right:none; }
 }
 
-
 .legal-overlay { display:none; position:fixed; inset:0; background:rgba(13,27,42,0.6); backdrop-filter:blur(4px); z-index:600; align-items:center; justify-content:center; padding:2rem; }
 .legal-overlay.open { display:flex; }
 .legal-box { background:var(--bg-card); border:1px solid var(--border); max-width:600px; width:100%; max-height:80vh; display:flex; flex-direction:column; overflow:hidden; }
@@ -165,239 +159,6 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
 .legal-box-close { background:none; border:1px solid var(--border); padding:0.3rem 0.6rem; font-size:0.75rem; color:var(--text-dim); cursor:pointer; transition:border-color 0.2s, color 0.2s; }
 .legal-box-close:hover { border-color:var(--gold); color:var(--gold-dark); }
 .legal-box-content { padding:1.75rem; overflow-y:auto; font-size:0.82rem; line-height:1.85; color:var(--text-mid); display:flex; flex-direction:column; gap:1rem; }
-
-
-/* ══ HERO ══ */
-.hero {
-  min-height: calc(100vh - var(--nav-h));
-  display: flex; align-items: center; justify-content: center;
-  text-align: center;
-  background: var(--navy);
-  padding: 5rem 2rem 4rem;
-  position: relative; overflow: hidden;
-}
-.hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 60% 40%, rgba(197,160,89,0.08) 0%, transparent 65%);
-  pointer-events: none;
-}
-.hero-inner { max-width: 780px; position: relative; z-index: 1; }
-.hero-eyebrow {
-  font-size: 0.55rem; letter-spacing: 0.5em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 2rem;
-  opacity: 0; animation: fadeUp 0.7s ease 0.1s forwards;
-}
-.hero-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4.5vw, 3.8rem);
-  font-weight: 400; line-height: 1.15;
-  color: rgba(255,255,255,0.92); margin-bottom: 2rem;
-  opacity: 0; animation: fadeUp 0.7s ease 0.25s forwards;
-}
-.hero-title em { font-style: italic; color: var(--gold); }
-.hero-sub {
-  font-size: 0.95rem; line-height: 2;
-  color: rgba(255,255,255,0.55);
-  max-width: 580px; margin: 0 auto 1.5rem;
-  opacity: 0; animation: fadeUp 0.7s ease 0.4s forwards;
-}
-.hero-pain {
-  display: flex; flex-direction: column; gap: 0.35rem;
-  margin: 0 auto 1.5rem; max-width: 480px;
-  opacity: 0; animation: fadeUp 0.7s ease 0.5s forwards;
-}
-.hero-pain-item {
-  font-size: 0.88rem; color: rgba(255,255,255,0.45);
-  padding: 0.5rem 1rem;
-  border-left: 2px solid rgba(197,160,89,0.25);
-  text-align: left;
-}
-.hero-verdict {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem; font-style: italic;
-  color: var(--gold); margin-bottom: 2.5rem;
-  opacity: 0; animation: fadeUp 0.7s ease 0.6s forwards;
-}
-.hero-btns {
-  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
-  opacity: 0; animation: fadeUp 0.7s ease 0.7s forwards;
-}
-
-/* ══ BRIDGE ══ */
-.bridge {
-  background: var(--bg-alt); padding: 6rem 2rem; text-align: center;
-}
-.bridge-inner { max-width: 700px; margin: 0 auto; }
-.bridge-label {
-  font-size: 0.55rem; letter-spacing: 0.5em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 1.5rem; display: block;
-}
-.bridge-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
-  font-weight: 400; line-height: 1.3;
-  color: var(--navy); margin-bottom: 1.75rem;
-}
-.bridge-title em { font-style: italic; color: var(--gold-dark); }
-.bridge-body {
-  font-size: 0.95rem; line-height: 2;
-  color: var(--text-mid); max-width: 560px;
-  margin: 0 auto 2.5rem;
-}
-.bridge-statement {
-  background: var(--navy);
-  border-left: 3px solid var(--gold);
-  padding: 2rem 2.5rem; text-align: left;
-  max-width: 560px; margin: 0 auto;
-}
-.bridge-statement p {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.05rem; font-style: italic;
-  line-height: 1.8; color: rgba(255,255,255,0.85);
-}
-.bridge-statement em { color: var(--gold); font-style: normal; }
-
-/* ══ WORLD SECTION ══ */
-.world-section {
-  padding: 6rem 2rem;
-}
-.world-section.dark { background: var(--navy); }
-.world-section.light { background: var(--creme); }
-
-.world-inner {
-  max-width: 960px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 5rem; align-items: start;
-}
-
-.world-eyebrow {
-  font-size: 0.55rem; letter-spacing: 0.5em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 1.25rem; display: block;
-}
-.world-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
-  font-weight: 400; line-height: 1.2; margin-bottom: 1.25rem;
-}
-.dark .world-title { color: rgba(255,255,255,0.92); }
-.light .world-title { color: var(--navy); }
-.dark .world-title em { color: var(--gold); font-style: italic; }
-.light .world-title em { color: var(--gold-dark); font-style: italic; }
-
-.world-intro {
-  font-size: 0.88rem; line-height: 2; margin-bottom: 1.5rem;
-}
-.dark .world-intro { color: rgba(255,255,255,0.55); }
-.light .world-intro { color: var(--text-mid); }
-
-.pain-list {
-  list-style: none; display: flex; flex-direction: column;
-  gap: 0.5rem; margin-bottom: 2rem;
-}
-.pain-list li {
-  font-size: 0.82rem; padding: 0.6rem 1rem;
-  border-left: 2px solid rgba(197,160,89,0.3);
-  display: flex; gap: 0.75rem;
-}
-.dark .pain-list li { color: rgba(255,255,255,0.5); }
-.light .pain-list li { color: var(--text-mid); }
-
-.world-resolution {
-  font-size: 0.9rem; line-height: 1.9; margin-bottom: 2rem;
-}
-.dark .world-resolution { color: rgba(255,255,255,0.7); }
-.light .world-resolution { color: var(--text); }
-
-/* Feature card */
-.feature-card {
-  padding: 2.5rem;
-  border-top: 2px solid var(--gold);
-  display: flex; flex-direction: column; gap: 1rem;
-}
-.dark .feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(197,160,89,0.2); border-top: 2px solid var(--gold); }
-.light .feature-card { background: var(--navy); }
-
-.feature-card-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem; font-style: italic; color: var(--gold);
-}
-.feature-card-tag {
-  font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
-}
-.feature-card-text {
-  font-size: 0.82rem; line-height: 1.85;
-  color: rgba(255,255,255,0.55);
-}
-.feature-card-points {
-  list-style: none; display: flex; flex-direction: column; gap: 0.4rem;
-}
-.feature-card-points li {
-  font-size: 0.78rem; color: rgba(255,255,255,0.5);
-  display: flex; gap: 0.6rem; align-items: flex-start;
-}
-.feature-card-points li::before { content: '—'; color: var(--gold); flex-shrink: 0; }
-
-/* ══ CONNECTION ══ */
-.connection {
-  background: var(--bg); padding: 6rem 2rem; text-align: center;
-}
-.connection-inner { max-width: 640px; margin: 0 auto; }
-.connection-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
-  color: var(--navy); margin-bottom: 1.5rem; line-height: 1.35;
-}
-.connection-title em { font-style: italic; color: var(--gold-dark); }
-.connection-body {
-  font-size: 0.9rem; line-height: 2; color: var(--text-mid);
-  margin-bottom: 2rem;
-}
-.connection-pillars {
-  display: flex; gap: 2rem; justify-content: center;
-  flex-wrap: wrap; margin-bottom: 0;
-}
-.connection-pillar {
-  font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
-  color: var(--gold-dark); padding: 0.5rem 1.25rem;
-  border: 1px solid var(--gold-border);
-}
-
-/* ══ CLOSING ══ */
-.closing {
-  background: var(--navy); padding: 7rem 2rem; text-align: center;
-}
-.closing-inner { max-width: 620px; margin: 0 auto; }
-.closing-quote {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
-  font-style: italic; font-weight: 400;
-  color: rgba(255,255,255,0.88);
-  line-height: 1.65; margin-bottom: 0.75rem;
-}
-.closing-quote em { color: var(--gold); font-style: normal; }
-.closing-attr {
-  font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase;
-  color: rgba(255,255,255,0.25); margin-bottom: 1.5rem; display: block;
-}
-.closing-sub {
-  font-size: 0.88rem; color: rgba(255,255,255,0.45);
-  line-height: 1.9; margin-bottom: 3rem;
-}
-
-@keyframes fadeUp {
-  from { opacity:0; transform:translateY(20px); }
-  to   { opacity:1; transform:translateY(0); }
-}
-
-@media (max-width: 1024px) {
-  .world-inner { grid-template-columns: 1fr; gap: 3rem; }
-  .world-section { padding: 4rem 1.5rem; }
-}
-
-
-
 
 body { background: #F5EDD8; }
 .page-title { font-family:'Playfair Display',serif !important; font-weight:400 !important; color: #0D1B2A !important; }
@@ -410,31 +171,13 @@ summary { font-size:0.9rem;font-weight:500;color:#0D1B2A;cursor:pointer;list-sty
 summary::-webkit-details-marker { display:none; }
 details p { font-size:0.82rem;line-height:1.9;color:rgba(13,27,42,0.65);margin-top:0.75rem; }
 
-
 @media (max-width: 768px) {
   div[style*="grid-template-columns:repeat(3,1fr)"],
-  div[style*="grid-template-columns:repeat(3, 1fr)"] {
-    grid-template-columns: 1fr !important;
-  }
-  div[style*="grid-template-columns:1fr 1fr 1fr"] {
-    grid-template-columns: 1fr !important;
-  }
-  .page-wrap {
-    padding-left: 1.25rem !important;
-    padding-right: 1.25rem !important;
-  }
-}
-
-body { background: #F5EDD8; }
-@media (max-width: 768px) {
-  div[style*="grid-template-columns:repeat(3,1fr)"],
+  div[style*="grid-template-columns:repeat(3, 1fr)"] { grid-template-columns: 1fr !important; }
   div[style*="grid-template-columns:1fr 1fr 1fr"] { grid-template-columns: 1fr !important; }
   div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
   .page-wrap { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
 }
-
-
-
 </style>
 </head>
 <body>
@@ -553,10 +296,6 @@ body { background: #F5EDD8; }
   <a href="kontakt.html" class="mobile-menu-cta">Gespräch anfragen</a>
 </div>
 
-
-
-
-
 <main style="background:#F5EDD8;">
   <div class="page-wrap">
     <div class="page-hero reveal" style="border-color:rgba(13,27,42,0.1);">
@@ -568,7 +307,7 @@ body { background: #F5EDD8; }
 
     <div style="background:white;border-left:3px solid #C5A059;padding:1.25rem 2rem;margin:2rem 0;" class="reveal"><p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;font-style:italic;">Du hörst auf, der Stress zu sein. Und fängst an, den Stress zu beobachten.</p></div>
 
-    <div class="page-intro-grid" style="margin-top:3rem;">
+    <div class="page-intro-grid" style="margin-top:3rem;margin-bottom:0;">
       <div class="reveal">
         <div class="pillar-list">
           <div class="pillar">
@@ -590,7 +329,8 @@ body { background: #F5EDD8; }
       </div>
 
       <div class="reveal">
-        <div style="background:#0D1B2A;border-top:2px solid #C5A059;padding:2.5rem;">
+        <!-- DUNKLER KASTEN — endet mit btn-gold -->
+        <div style="background:#0D1B2A;border-top:2px solid #C5A059;padding:1.75rem 2.5rem 2.5rem;">
           <p style="font-size:0.52rem;letter-spacing:0.4em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.75rem;">Basis-Set</p>
           <p style="font-family:'Playfair Display',serif;font-size:1.4rem;font-style:italic;color:#C5A059;margin-bottom:1.25rem;">Das Fundament<br>für alles weitere.</p>
           <p style="font-size:0.82rem;line-height:1.85;color:rgba(255,255,255,0.55);margin-bottom:1.5rem;">Kartenset in Tarotkartengröße. Systemische Impulsfragen. Keine Affirmationen. Kein spirituelles Gedankengut. Ehrliche Fragen die tief gehen.</p>
@@ -602,21 +342,21 @@ body { background: #F5EDD8; }
           <div style="padding:1rem;background:rgba(197,160,89,0.08);border:1px solid rgba(197,160,89,0.2);margin-bottom:1.5rem;">
             <p style="font-size:0.72rem;color:rgba(255,255,255,0.4);text-align:center;">Preis folgt in Kürze</p>
           </div>
-
-        <a href="kontakt.html" class="btn-gold" style="display:block;text-align:center;">Vormerken lassen</a>
+          <a href="kontakt.html" class="btn-gold" style="display:block;text-align:center;">Vormerken lassen</a>
         </div>
       </div>
+    </div>
+
+    <!-- WORKBOOK-KASTEN — volle Breite, außerhalb des Grids -->
+    <div style="background:white;border-left:3px solid #C5A059;padding:2rem 2.5rem;margin-top:1.25rem;" class="reveal">
+      <p style="font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:#C5A059;margin-bottom:0.5rem;">Das Workbook</p>
+      <p style="font-size:0.88rem;line-height:1.95;color:rgba(13,27,42,0.7);">Das Workbook ist ein hochwertiges, handliches A4-Buch das wirklich benutzt wird. Nicht gelesen. Bearbeitet. Mit den 5 Schritten der SystemAlchemie® als Begleitung durch den Prozess. Schritt 4 wird dabei besonders tief — er fragt nicht nur was das Muster schützt, sondern auch was es mit dir gemacht hat.</p>
     </div>
 
     <!-- WARUM ZUERST DAS BASIS-SET -->
     <div style="margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(13,27,42,0.1);" class="reveal">
       <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:1.25rem;">Warum zuerst das Basis-Set?</p>
-          <div style="background:white;border-left:3px solid #C5A059;padding:2rem 2.5rem;margin:2rem 0;" class="reveal">
-      <p style="font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:#C5A059;margin-bottom:0.5rem;">Das Workbook</p>
-      <p style="font-size:0.88rem;line-height:1.95;color:rgba(13,27,42,0.7);">Ein hochwertiges, handliches A4-Buch das wirklich benutzt wird. Nicht gelesen. Bearbeitet. Mit den 5 Schritten der SystemAlchemie® als Begleitung durch den Prozess. Schritt 4 wird dabei besonders tief — er fragt nicht nur was das Muster schützt, sondern auch was es mit dir gemacht hat.</p>
-    </div>
-
-<div style="background:white;border-left:3px solid #C5A059;padding:2rem 2.5rem;">
+      <div style="background:white;border-left:3px solid #C5A059;padding:2rem 2.5rem;">
         <p style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#0D1B2A;margin-bottom:1rem;font-weight:400;line-height:1.5;">SAM arbeitet am besten wenn du weißt über welchen Kanal du wahrnimmst. Und wenn du deinen Ankerplatz kennst.</p>
         <p style="font-size:0.85rem;line-height:1.9;color:rgba(13,27,42,0.65);">Ohne dieses Fundament kann SAM dich ein Stück begleiten. Tiefe Arbeit leistet SAM jedoch nicht ohne einen sicheren, stabilen inneren Ort. Das Basis-Set schafft genau diesen Ort. Für nachhaltige innere Arbeit ist es sehr zu empfehlen.</p>
         <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
@@ -651,6 +391,7 @@ body { background: #F5EDD8; }
 
   </div>
 </main>
+
 <footer>
   <a href="index.html" class="footer-logo">
     <span class="footer-logik">Logic</span>
@@ -677,16 +418,12 @@ body { background: #F5EDD8; }
   <div class="legal-box">
     <div class="legal-box-header"><div class="legal-box-title">Impressum</div><button class="legal-box-close" onclick="closeLegal()">✕</button></div>
     <div class="legal-box-content">
-      <p>Yana Thomée<br>
-Hölzleswiesen 13<br>
-70619 Stuttgart<br>
-Deutschland</p>
-<p>Tel.: +4917620495934<br>
-E-Mail: <a href="mailto:hello@logic-soul.com" style="color:var(--gold-dark);">hello@logic-soul.com</a></p>
-<p>Umsatzsteuer-Identifikationsnummer: DE368068146</p>
-<p>Wir sind zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit.</p>
-<p>Die EU-Kommission stellt eine Plattform zur Online-Streitbeilegung bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank" style="color:var(--gold-dark);">https://ec.europa.eu/consumers/odr</a>. Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
-<p style="font-size:0.72rem;color:var(--text-dim);">Stand: 07.06.2026</p>
+      <p>Yana Thomée<br>Hölzleswiesen 13<br>70619 Stuttgart<br>Deutschland</p>
+      <p>Tel.: +4917620495934<br>E-Mail: <a href="mailto:hello@logic-soul.com" style="color:var(--gold-dark);">hello@logic-soul.com</a></p>
+      <p>Umsatzsteuer-Identifikationsnummer: DE368068146</p>
+      <p>Wir sind zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit.</p>
+      <p>Die EU-Kommission stellt eine Plattform zur Online-Streitbeilegung bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank" style="color:var(--gold-dark);">https://ec.europa.eu/consumers/odr</a>. Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+      <p style="font-size:0.72rem;color:var(--text-dim);">Stand: 07.06.2026</p>
     </div>
   </div>
 </div>
@@ -700,6 +437,7 @@ E-Mail: <a href="mailto:hello@logic-soul.com" style="color:var(--gold-dark);">he
     </div>
   </div>
 </div>
+
 <script>
 let currentSidebar = null;
 function toggleSidebar(id, btnEl) {
