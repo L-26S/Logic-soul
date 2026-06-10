@@ -140,6 +140,8 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
 /* REVEAL */
 .reveal { opacity:0; transform:translateY(20px); transition:opacity 0.6s ease, transform 0.6s ease; }
 .reveal.visible { opacity:1; transform:translateY(0); }
+.ls-banner-track { display:flex; gap:4rem; animation:ls-marquee 30s linear infinite; white-space:nowrap; width:max-content; }
+@keyframes ls-marquee { 0% { transform:translateX(0); } 100% { transform:translateX(-50%); } }
 
 /* RESPONSIVE */
 @media (max-width:1024px) {
@@ -625,20 +627,16 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
 
 
   <!-- BANNER -->
-  <div style="background:#C5A059;padding:0.7rem 2rem;text-align:center;overflow:hidden;position:relative;">
-    <div style="display:inline-flex;gap:3rem;animation:marquee 25s linear infinite;white-space:nowrap;">
-      <span style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:white;">✦ Führungskräfte-Set — jetzt vormerken und Einführungspreis sichern</span>
-      <span style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:white;">✦ Die ersten 10 Bestellungen erhalten das Bundle zum Einführungspreis von 69 Euro</span>
-      <span style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:white;">✦ Führungskräfte-Set — jetzt vormerken und Einführungspreis sichern</span>
-      <span style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:white;">✦ Die ersten 10 Bestellungen erhalten das Bundle zum Einführungspreis von 69 Euro</span>
+  <div style="background:#C5A059;padding:0.65rem 0;overflow:hidden;width:100%;">
+    <div class="ls-banner-track">
+      <span style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:white;flex-shrink:0;">&#10022; &nbsp; Führungskräfte-Set &mdash; jetzt vormerken und Einführungspreis sichern</span>
+      <span style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:white;flex-shrink:0;">&#10022; &nbsp; Die ersten 10 Bestellungen erhalten das Bundle zum Einführungspreis von 69 Euro</span>
+      <span style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:white;flex-shrink:0;">&#10022; &nbsp; Führungskräfte-Set &mdash; jetzt vormerken und Einführungspreis sichern</span>
+      <span style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:white;flex-shrink:0;">&#10022; &nbsp; Die ersten 10 Bestellungen erhalten das Bundle zum Einführungspreis von 69 Euro</span>
+      <span style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:white;flex-shrink:0;">&#10022; &nbsp; Führungskräfte-Set &mdash; jetzt vormerken und Einführungspreis sichern</span>
+      <span style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:white;flex-shrink:0;">&#10022; &nbsp; Die ersten 10 Bestellungen erhalten das Bundle zum Einführungspreis von 69 Euro</span>
     </div>
   </div>
-  <style>
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-  </style>
 
 <main>
 
