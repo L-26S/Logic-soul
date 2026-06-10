@@ -418,7 +418,7 @@ details { border-bottom:1px solid rgba(51,51,93,0.12);padding:1.25rem 0; }
 summary { font-size:0.9rem;font-weight:500;color:#33335D;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center; }
 summary::-webkit-details-marker { display:none; }
 details p { font-size:0.82rem;line-height:1.9;color:rgba(51,51,93,0.65);margin-top:0.75rem; }
-.alma-card { background: #33335D; border-top: 2px solid #C5A059; padding: 2.5rem; }
+.alma-card { background:#33335D; border-top:2px solid #C5A059; padding:2.15rem 2.25rem; }
 .alma-dark-band { background: #33335D; padding: 3rem; }
 .process-step { background: white; border-left: 3px solid #C5A059; padding: 1.5rem 2rem; margin-bottom: 1rem; }
 .process-step-num { font-size:0.55rem;letter-spacing:0.4em;text-transform:uppercase;color:#C5A059;margin-bottom:0.35rem; }
@@ -441,6 +441,27 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(51,51,93,0.65);margin-t
 }
 
 
+
+
+/* DSGVO CARD OVERRIDE */
+.dsgvo-grid > div {
+  background:white !important;
+  border:1px solid rgba(197,160,89,0.45) !important;
+}
+
+
+.process-step-dark {
+  border-left:3px solid #C5A059 !important;
+}
+.process-step-dark .process-step-title {
+  color:rgba(255,255,255,0.9) !important;
+}
+.process-step-dark .process-step-text {
+  color:rgba(255,255,255,0.65) !important;
+}
+.process-step-dark .process-step-num {
+  color:#C5A059 !important;
+}
 
 </style>
 </head>
@@ -580,7 +601,7 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(51,51,93,0.65);margin-t
     </div>
 
     <!-- HAUPTINHALT -->
-    <div class="page-intro-grid" style="margin-top:3rem;">
+    <div class="page-intro-grid" style="margin-top:3rem;align-items:start;">
       <div class="reveal">
         <div class="pillar-list">
           <div class="pillar">
@@ -605,12 +626,12 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(51,51,93,0.65);margin-t
         <div class="alma-card">
           <p style="font-size:0.52rem;letter-spacing:0.4em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.75rem;">ALMA</p>
           <p style="font-family:'Playfair Display',serif;font-size:1.6rem;font-style:italic;color:#C5A059;margin-bottom:1.25rem;">Nicht bessere Werkzeuge.<br>Klarere Führung.</p>
-          <p style="font-size:0.82rem;line-height:1.85;color:rgba(255,255,255,0.65);margin-bottom:1.5rem;">In 30 Tagen wirst du mindestens ein Gespräch anders führen als vorher. Weil du verstehst was in dir passiert. Nicht weil du eine neue Technik gelernt hast.</p>
-          <div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:2rem;">
-            <p style="font-size:0.78rem;color:rgba(255,255,255,0.5);display:flex;gap:0.6rem;"><span style="color:#C5A059;">—</span>Testmonat zum Monatspreis</p>
-            <p style="font-size:0.78rem;color:rgba(255,255,255,0.5);display:flex;gap:0.6rem;"><span style="color:#C5A059;">—</span>Jahreslizenz: 115 Euro pro Nutzer pro Monat</p>
-            <p style="font-size:0.78rem;color:rgba(255,255,255,0.5);display:flex;gap:0.6rem;"><span style="color:#C5A059;">—</span>Workshop zur Nutzung von ALMA und den Karten</p>
-            <p style="font-size:0.78rem;color:rgba(255,255,255,0.5);display:flex;gap:0.6rem;"><span style="color:#C5A059;">—</span>Ab 30 Nutzern halber Tag Workshop + Kartenset für Führungskräfteentwicklung geschenkt</p>
+          <p style="font-size:0.82rem;line-height:1.75;color:rgba(255,255,255,0.72);margin-bottom:1.2rem;">In 30 Tagen wirst du mindestens ein Gespräch anders führen als vorher. Weil du verstehst was in dir passiert. Nicht weil du eine neue Technik gelernt hast.</p>
+          <div style="display:flex;flex-direction:column;gap:0.42rem;margin-bottom:1.4rem;">
+            <p style="font-size:0.77rem;line-height:1.55;color:rgba(255,255,255,0.62);display:flex;gap:0.6rem;"><span style="color:#C5A059;">—</span>Testmonat zum Monatspreis</p>
+            <p style="font-size:0.77rem;line-height:1.55;color:rgba(255,255,255,0.62);display:flex;gap:0.6rem;"><span style="color:#C5A059;">—</span>Jahreslizenz: 115 Euro pro Nutzer pro Monat</p>
+            <p style="font-size:0.77rem;line-height:1.55;color:rgba(255,255,255,0.62);display:flex;gap:0.6rem;"><span style="color:#C5A059;">—</span>Workshop zur Nutzung von ALMA und den Karten</p>
+            <p style="font-size:0.77rem;line-height:1.55;color:rgba(255,255,255,0.62);display:flex;gap:0.6rem;"><span style="color:#C5A059;">—</span>Ab 30 Nutzern halber Tag Workshop + Kartenset für Führungskräfteentwicklung geschenkt</p>
           </div>
           <a href="kontakt.html" class="btn-gold" style="display:block;text-align:center;">Erstgespräch anfragen</a>
         </div>
@@ -620,17 +641,19 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(51,51,93,0.65);margin-t
     <!-- WARUM WERKZEUGE VERSAGEN -->
     <div style="margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(51,51,93,0.12);" class="reveal">
       <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:1.25rem;">Warum Workshops verpuffen</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:stretch;">
         <div>
           <p style="font-family:'Playfair Display',serif;font-size:1.3rem;color:#33335D;margin-bottom:1rem;font-weight:400;line-height:1.4;">Ohne innere Stabilität bringt kein Werkzeug etwas im Moment wenn es drauf ankommt.</p>
-          <p style="font-size:0.85rem;line-height:1.9;color:rgba(51,51,93,0.65);">Du kennst das Gefühl. Der Workshop war gut. Drei Wochen später ist alles wie vorher. Nicht weil die Methode falsch war. Sondern weil das System unter Druck immer auf die alte Spur zurückfällt. ALMA verändert die Spur selbst. Erst dann greifen Werkzeuge dauerhaft.</p>
+          <p style="font-size:0.85rem;line-height:1.9;color:rgba(51,51,93,0.65);margin-bottom:1rem;">Du kennst das Gefühl. Der Workshop war gut. Die Methode war nachvollziehbar. Alle haben verstanden, was sie anders machen könnten. Und drei Wochen später ist im Alltag trotzdem vieles wie vorher.</p>
+          <p style="font-size:0.85rem;line-height:1.9;color:rgba(51,51,93,0.65);margin-bottom:1rem;">Nicht weil die Methode falsch war. Sondern weil Führung nicht im ruhigen Seminarraum entschieden wird, sondern im Druckmoment. Genau dort fällt das innere System oft auf die alte Spur zurück.</p>
+          <p style="font-size:0.85rem;line-height:1.9;color:rgba(51,51,93,0.65);">ALMA setzt deshalb vor dem Werkzeug an. Erst entsteht Klarheit im eigenen System. Dann kann ein Gespräch wirklich anders geführt werden. Und erst dann werden Methoden nachhaltig nutzbar.</p>
         </div>
-        <div style="background:#C8CDE8;padding:2rem;border-left:3px solid #C5A059;">
-          <p style="font-size:0.75rem;font-weight:500;color:rgba(51,51,93,0.5);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem;">ALMA Phase 1</p>
-          <p style="font-size:0.85rem;line-height:1.8;color:#33335D;margin-bottom:0.5rem;"><strong>Innere Klarheit und Stabilität.</strong> Reaktionsmuster sehen. Aus Schutz wird Führung.</p>
-          <div style="margin:1.25rem 0;height:1px;background:rgba(51,51,93,0.1);"></div>
+        <div style="background:#33335D;padding:2rem;border-top:2px solid #C5A059;height:100%;display:flex;flex-direction:column;justify-content:center;">
+          <p style="font-size:0.75rem;font-weight:500;color:rgba(255,255,255,0.38);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem;">ALMA Phase 1</p>
+          <p style="font-size:0.85rem;line-height:1.8;color:rgba(255,255,255,0.72);margin-bottom:0.5rem;"><strong style="color:rgba(255,255,255,0.92);">Innere Klarheit und Stabilität.</strong> ALMA hilft Führungskräften, in sich Klarheit zu finden, in Stresssituationen stabil zu bleiben, Konflikte gekonnt anzugehen und zu lösen, Teamdynamiken zu erkennen und bewusster zu gestalten.</p>
+          <div style="margin:1.25rem 0;height:1px;background:rgba(197,160,89,0.22);"></div>
           <p style="font-size:0.75rem;font-weight:500;color:#C5A059;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem;">ALMA Plus — kommt bald</p>
-          <p style="font-size:0.85rem;line-height:1.8;color:rgba(51,51,93,0.5);">Werkzeuge die erst wirken wenn das Fundament steht. Gesprächssimulation. Entscheidungskompass. Tiefenanalyse.</p>
+          <p style="font-size:0.85rem;line-height:1.8;color:rgba(255,255,255,0.62);">Hier kommen die Werkzeuge, die nachhaltig wirken, wenn innere Klarheit und Stabilität bereits stehen.</p>
         </div>
       </div>
     </div>
@@ -638,7 +661,7 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(51,51,93,0.65);margin-t
     <!-- KARTEN IM ALLTAG -->
     <div style="margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(51,51,93,0.12);" class="reveal">
       <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:1.25rem;">Das Führungskräfte-Set im Alltag</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:stretch;">
         <div>
           <p style="font-family:'Playfair Display',serif;font-size:1.2rem;color:#33335D;margin-bottom:1rem;font-weight:400;">60 Karten. Immer griffbereit. Kein Handy nötig.</p>
           <div style="display:flex;flex-direction:column;gap:0.85rem;">
@@ -656,15 +679,15 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(51,51,93,0.65);margin-t
             </div>
           </div>
         </div>
-        <div style="background:#C8CDE8;padding:2rem;border-top:2px solid #C5A059;">
-          <p style="font-size:0.55rem;letter-spacing:0.4em;text-transform:uppercase;color:rgba(51,51,93,0.4);margin-bottom:0.75rem;">4 Kategorien</p>
+        <div style="background:#33335D;padding:2rem;border-top:2px solid #C5A059;height:100%;display:flex;flex-direction:column;">
+          <p style="font-size:0.55rem;letter-spacing:0.4em;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:0.75rem;">4 Kategorien</p>
           <div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.5rem;">
-            <div style="padding:0.6rem 0.85rem;background:rgba(197,160,89,0.08);font-size:0.82rem;color:#33335D;">Konflikt Quickstart</div>
-            <div style="padding:0.6rem 0.85rem;background:rgba(197,160,89,0.08);font-size:0.82rem;color:#33335D;">Selbstreflexion</div>
-            <div style="padding:0.6rem 0.85rem;background:rgba(197,160,89,0.08);font-size:0.82rem;color:#33335D;">1-zu-1 Dialog</div>
-            <div style="padding:0.6rem 0.85rem;background:rgba(197,160,89,0.08);font-size:0.82rem;color:#33335D;">Team Dynamik</div>
+            <div style="padding:0.6rem 0.85rem;background:rgba(255,255,255,0.05);font-size:0.82rem;color:rgba(255,255,255,0.75);">Konflikt Quickstart</div>
+            <div style="padding:0.6rem 0.85rem;background:rgba(255,255,255,0.05);font-size:0.82rem;color:rgba(255,255,255,0.75);">Selbstreflexion</div>
+            <div style="padding:0.6rem 0.85rem;background:rgba(255,255,255,0.05);font-size:0.82rem;color:rgba(255,255,255,0.75);">1-zu-1 Dialog</div>
+            <div style="padding:0.6rem 0.85rem;background:rgba(255,255,255,0.05);font-size:0.82rem;color:rgba(255,255,255,0.75);">Team Dynamik</div>
           </div>
-          <a href="fuehrungsset.html" class="internal-link" style="color:#33335D;border-color:rgba(51,51,93,0.2);">Führungskräfte-Set entdecken</a>
+          <a href="fuehrungsset.html" class="internal-link" style="margin-top:auto;color:#C5A059 !important;border-color:rgba(197,160,89,0.35) !important;align-self:flex-start;">Führungskräfte-Set entdecken</a>
         </div>
       </div>
     </div>
@@ -674,22 +697,22 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(51,51,93,0.65);margin-t
       <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:0.75rem;">So wird ALMA eingeführt</p>
       <p style="font-size:0.9rem;color:rgba(51,51,93,0.65);margin-bottom:2rem;">Kein Tool-Rollout. Eine echte Einführung mit Begleitung.</p>
       <div style="display:flex;flex-direction:column;gap:0;">
-        <div class="process-step" style="background:#C8CDE8;">
+        <div class="process-step process-step-dark" style="background:#33335D;">
           <div class="process-step-num">Schritt 01</div>
           <div class="process-step-title">Erstgespräch</div>
           <p class="process-step-text">15 Minuten. Wir schauen gemeinsam welches Paket passt, wie viele Lizenzen sinnvoll sind und was eure Führungskräfte gerade brauchen.</p>
         </div>
-        <div class="process-step" style="background:#C8CDE8;">
+        <div class="process-step process-step-dark" style="background:#33335D;">
           <div class="process-step-num">Schritt 02</div>
           <div class="process-step-title">Testmonat</div>
           <p class="process-step-text">Ausgewählte Führungskräfte testen ALMA einen Monat. Zum Monatspreis, ohne Bindung. Ihr seht selbst was passiert.</p>
         </div>
-        <div class="process-step" style="background:#C8CDE8;">
+        <div class="process-step process-step-dark" style="background:#33335D;">
           <div class="process-step-num">Schritt 03</div>
           <div class="process-step-title">Workshop inklusive</div>
           <p class="process-step-text">Zu jeder Buchung kommt ein Workshop dazu. Darin wird erklärt wie ALMA funktioniert, wie die Karten mit ALMA zusammenwirken und wie Führungskräfte den maximalen Nutzen aus beiden ziehen. Ab 30 gebuchten Nutzern ist ein halber Tag Workshop im Paket enthalten.</p>
         </div>
-        <div class="process-step" style="background:#C8CDE8;">
+        <div class="process-step process-step-dark" style="background:#33335D;">
           <div class="process-step-num">Schritt 04</div>
           <div class="process-step-title">Jahreslizenzen mit Co-Termination</div>
           <p class="process-step-text">Alle Lizenzen laufen immer zum gleichen Datum aus. Auch wenn im Laufe des Jahres neue dazukommen. Eine Rechnung. Ein Datum. Kein Verwaltungsaufwand für HR.</p>
@@ -783,20 +806,20 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(51,51,93,0.65);margin-t
     <div style="margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(51,51,93,0.12);" class="reveal">
       <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:0.75rem;">DSGVO-konform</p>
       <p style="font-size:0.9rem;color:rgba(51,51,93,0.65);margin-bottom:1.5rem;">ALMA ist von Grund auf datenschutzkonform gebaut. Für Unternehmen und HR-Abteilungen.</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
-        <div style="background:#C8CDE8;border:1px solid rgba(51,51,93,0.1);padding:1.5rem;">
+      <div class="dsgvo-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div style="background:white;border:1px solid rgba(197,160,89,0.45);padding:1.5rem;">
           <p style="font-size:0.72rem;font-weight:500;color:#C5A059;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.6rem;">Datenspeicherung</p>
           <p style="font-size:0.82rem;line-height:1.8;color:rgba(51,51,93,0.75);">Alle Daten werden verschlüsselt auf Servern in Frankfurt (EU) gespeichert. Kein Abfluss in Drittländer ohne Rechtsgrundlage.</p>
         </div>
-        <div style="background:#C8CDE8;border:1px solid rgba(51,51,93,0.1);padding:1.5rem;">
+        <div style="background:white;border:1px solid rgba(197,160,89,0.45);padding:1.5rem;">
           <p style="font-size:0.72rem;font-weight:500;color:#C5A059;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.6rem;">HR sieht keine Inhalte</p>
           <p style="font-size:0.82rem;line-height:1.8;color:rgba(51,51,93,0.75);">HR-Abteilungen sehen ausschließlich aggregierte Nutzungsdaten. Gesprächsinhalte gehören der Führungskraft.</p>
         </div>
-        <div style="background:#C8CDE8;border:1px solid rgba(51,51,93,0.1);padding:1.5rem;">
+        <div style="background:white;border:1px solid rgba(197,160,89,0.45);padding:1.5rem;">
           <p style="font-size:0.72rem;font-weight:500;color:#C5A059;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.6rem;">AVV inklusive</p>
           <p style="font-size:0.82rem;line-height:1.8;color:rgba(51,51,93,0.75);">Mit jedem Unternehmenskunden wird ein Auftragsverarbeitungsvertrag abgeschlossen. Auf Anfrage.</p>
         </div>
-        <div style="background:#C8CDE8;border:1px solid rgba(51,51,93,0.1);padding:1.5rem;">
+        <div style="background:white;border:1px solid rgba(197,160,89,0.45);padding:1.5rem;">
           <p style="font-size:0.72rem;font-weight:500;color:#C5A059;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.6rem;">Exportierbar und löschbar</p>
           <p style="font-size:0.82rem;line-height:1.8;color:rgba(51,51,93,0.75);">Führungskräfte können ihre Daten jederzeit exportieren oder vollständig löschen lassen.</p>
         </div>
@@ -845,7 +868,7 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(51,51,93,0.65);margin-t
     <div style="margin-top:4rem;background:#33335D;padding:3rem;text-align:center;" class="reveal">
       <p style="font-family:'Playfair Display',serif;font-size:1.4rem;color:rgba(255,255,255,0.88);margin-bottom:0.75rem;font-weight:400;">In 15 Minuten zeigen wir dir den Unterschied.</p>
       <p style="font-size:0.85rem;color:rgba(255,255,255,0.45);margin-bottom:2rem;">Kein Pitch. Ein echtes Gespräch darüber was ALMA für euch bedeuten kann.</p>
-      <a href="kontakt.html" class="btn-gold">Kostenloses Erstgespräch buchen</a>
+      <a href="kontakt.html" class="btn-gold">Kostenfreies Erstgespräch buchen</a>
     </div>
 
   </div>
