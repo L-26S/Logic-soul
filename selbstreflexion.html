@@ -435,6 +435,190 @@ body { background: #F5EDD8; }
 
 
 
+
+/* SELBSTREFLEXION FINAL STRUCTURE */
+.self-intro-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4rem;
+  align-items:stretch;
+  margin-top:3rem;
+}
+
+.self-focus-column{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+
+.self-focus-column > div:last-child{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+}
+
+.self-focus-column > div:last-child > div{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+
+.self-price-wrapper,
+.self-price-card{
+  height:100%;
+}
+
+.self-price-card > div:last-child{
+  flex:1;
+}
+
+.self-price-card{
+  background:#0D1B2A;
+  border-top:3px solid #C5A059;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+
+.self-section{
+  margin-top:4rem;
+  padding-top:3rem;
+  border-top:1px solid rgba(13,27,42,0.1);
+}
+
+.self-full-card{
+  background:white;
+  border-left:3px solid #C5A059;
+  padding:2rem 2.5rem;
+}
+
+.self-use-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+  align-items:stretch;
+}
+
+.self-use-card{
+  background:white;
+  border-top:2px solid #C5A059;
+  padding:1.75rem;
+}
+
+.self-basis-section{
+  background:white;
+  border-left:3px solid #C5A059;
+  padding:2.5rem 3rem;
+}
+
+@media (max-width:1100px){
+  header{overflow:visible!important;}
+  .header-top{
+    height:var(--nav-h)!important;
+    padding:0 1.25rem!important;
+    justify-content:space-between!important;
+  }
+  .logo{flex-shrink:0!important;}
+  .logo-logik{font-size:0.88rem!important;letter-spacing:0.16em!important;}
+  .logo-pipe,.logo-soul{font-size:0.95rem!important;}
+  .main-nav{display:none!important;}
+  .hamburger{
+    display:flex!important;
+    flex-direction:column!important;
+    gap:5px!important;
+    background:transparent!important;
+    border:none!important;
+    cursor:pointer!important;
+    padding:0.6rem!important;
+    margin-left:auto!important;
+    z-index:999!important;
+  }
+  .hamburger span{
+    display:block!important;
+    width:24px!important;
+    height:1.6px!important;
+    background:var(--navy)!important;
+  }
+  .mobile-menu{
+    top:var(--nav-h)!important;
+    left:0!important;
+    right:0!important;
+    bottom:0!important;
+    width:100%!important;
+    background:var(--navy)!important;
+    z-index:490!important;
+  }
+  .mobile-menu.open{display:flex!important;}
+}
+
+@media (max-width:900px){
+  .self-use-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width:768px){
+  .self-intro-grid,
+  .self-use-grid,
+  .page-intro-grid,
+  .world-inner,
+  .card-grid-2,
+  .card-grid-3,
+  div[style*="grid-template-columns:1fr 1fr"],
+  div[style*="grid-template-columns:repeat(3"],
+  div[style*="grid-template-columns:1fr 1fr 1fr"]{
+    grid-template-columns:1fr!important;
+  }
+
+  .page-wrap{
+    padding-left:1.25rem!important;
+    padding-right:1.25rem!important;
+  }
+
+  .page-title{
+    font-size:clamp(2rem,10vw,3rem)!important;
+  }
+
+  .self-full-card,
+  .self-basis-section,
+  .self-use-card,
+  div[style*="padding:2rem 2.5rem"],
+  div[style*="padding:2rem 3rem"],
+  div[style*="padding:2.5rem"]{
+    padding-left:1.5rem!important;
+    padding-right:1.5rem!important;
+  }
+
+  .btn-gold,
+  .btn-outline,
+  .btn-outline-light{
+    max-width:100%!important;
+  }
+}
+
+
+.self-price-wrapper{
+  padding-top:0;
+}
+
+@media (max-width:768px){
+  .self-price-wrapper{
+    padding-top:0;
+  }
+
+  .self-focus-column,
+  .self-price-wrapper,
+  .self-price-card{
+    height:auto;
+  }
+
+  .self-focus-column > div:last-child,
+  .self-focus-column > div:last-child > div{
+    flex:initial;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -454,7 +638,7 @@ body { background: #F5EDD8; }
       <li><a href="kontakt.html" class="nav-btn nav-cta">Gespräch anfragen</a></li>
     </ul>
   </nav>
-  <button class="hamburger" onclick="toggleMobileMenu()">
+  <button type="button" class="hamburger" onclick="toggleMobileMenu()">
     <span></span><span></span><span></span>
   </button>
 </div>
@@ -568,13 +752,13 @@ body { background: #F5EDD8; }
 
     <div style="background:white;border-left:3px solid #C5A059;padding:1.25rem 2rem;margin:2rem 0;" class="reveal"><p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;font-style:italic;">Nicht jedes Muster ist etwas Schlechtes.</p></div>
 
-    <div class="page-intro-grid" style="margin-top:3rem;">
-      <div class="reveal">
+    <div class="self-intro-grid">
+      <div class="reveal self-focus-column">
         <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:1.5rem;">4 Fokus-Bereiche</p>
         <div style="display:flex;flex-direction:column;gap:1rem;">
           <div style="background:white;border-left:3px solid #C5A059;padding:1.25rem 1.75rem;">
             <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.35rem;">Selbstakzeptanz</p>
-            <p style="font-size:0.8rem;line-height:1.7;color:rgba(13,27,42,0.6);">Der Umgang mit dir selbst. Was du dir erlaubst. Was du dir verweigert. Wer du bist wenn niemand zuschaut.</p>
+            <p style="font-size:0.8rem;line-height:1.7;color:rgba(13,27,42,0.6);">Der Umgang mit dir selbst. Was du dir erlaubst. Was du dir verweigerst. Wer du bist wenn niemand zuschaut.</p>
           </div>
           <div style="background:white;border-left:3px solid #C5A059;padding:1.25rem 1.75rem;">
             <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.35rem;">Innerer Kompass</p>
@@ -582,62 +766,74 @@ body { background: #F5EDD8; }
           </div>
           <div style="background:white;border-left:3px solid #C5A059;padding:1.25rem 1.75rem;">
             <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.35rem;">Innere Freiheit & Glaubenssätze</p>
-            <p style="font-size:0.8rem;line-height:1.7;color:rgba(13,27,42,0.6);">Unbewusste Überzeugungen die dich bremsen. Was du für unumstößlich hältst. Was wäre wenn du eine Ausnahme zulässt.</p>
+            <p style="font-size:0.8rem;line-height:1.7;color:rgba(13,27,42,0.6);">Unbewusste Überzeugungen die dich bremsen. Was du für unumstößlich hältst. Was möglich wird, wenn du eine Ausnahme zulässt.</p>
           </div>
           <div style="background:white;border-left:3px solid #C5A059;padding:1.25rem 1.75rem;">
             <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.35rem;">Gedankenspiralen</p>
-            <p style="font-size:0.8rem;line-height:1.7;color:rgba(13,27,42,0.6);">Die Schleifen die sich wiederholen. Der Gedanke der nicht loslässt. Was dahinter steckt wenn man hinschaut.</p>
+            <p style="font-size:0.8rem;line-height:1.7;color:rgba(13,27,42,0.6);">Die Schleifen die sich wiederholen. Der Gedanke der nicht loslässt. Was dahinter steckt wenn du wirklich hinschaust.</p>
           </div>
         </div>
       </div>
 
-      <div class="reveal">
-        <div style="background:#0D1B2A;border-top:3px solid #C5A059;overflow:hidden;">
-          <div style="background:#C5A059;padding:0.65rem 1.5rem;text-align:center;">
+      <div class="reveal self-price-wrapper">
+        <div class="self-price-card">
+          <div style="background:#C5A059;padding:0.45rem 1.5rem;text-align:center;">
             <p style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:white;font-weight:500;">&#10022; Einführungspreis — Jetzt zuschlagen &#10022;</p>
           </div>
-          <div style="padding:2rem 2.5rem;">
+          <div style="padding:2rem 2.5rem;display:flex;flex-direction:column;">
             <p style="font-size:0.52rem;letter-spacing:0.4em;text-transform:uppercase;color:rgba(197,160,89,0.7);margin-bottom:0.75rem;">Kartenset + Workbook</p>
             <p style="font-family:'Playfair Display',serif;font-size:1.5rem;font-style:italic;color:#C5A059;margin-bottom:0.5rem;">Selbstreflexions-Set</p>
-            <p style="font-size:0.85rem;line-height:1.85;color:rgba(255,255,255,0.55);margin-bottom:1.5rem;">Als Erste von der Wirkung profitieren. Das komplette Bundle jetzt zum Einführungspreis.</p>
+            <p style="font-size:0.85rem;line-height:1.85;color:rgba(255,255,255,0.55);margin-bottom:1.5rem;">Für Momente, in denen du nicht noch mehr über dich nachdenken willst, sondern endlich anders mit dir in Kontakt kommen möchtest. Das komplette Bundle jetzt zum Einführungspreis.</p>
             <div style="display:flex;align-items:baseline;gap:0.75rem;margin-bottom:1.5rem;">
-              <p style="font-size:0.78rem;color:rgba(255,255,255,0.3);text-decoration:line-through;">89 Euro</p>
+              <p style="font-size:0.78rem;color:rgba(255,255,255,0.3);text-decoration:line-through;">94,80 Euro</p>
               <p style="font-family:'Playfair Display',serif;font-size:2rem;color:#C5A059;">69 Euro</p>
             </div>
             <a href="https://ybc1bz-ma.myshopify.com/cart/54003462504785:1" class="btn-gold" target="_blank" style="display:block;text-align:center;margin-bottom:1.75rem;">Bundle jetzt kaufen — 69 Euro</a>
             <div style="border-top:1px solid rgba(197,160,89,0.15);padding-top:1.25rem;display:flex;flex-direction:column;gap:0.5rem;">
               <p style="font-size:0.58rem;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:0.5rem;">Oder einzeln kaufen</p>
-              <div style="display:flex;justify-content:space-between;align-items:center;">
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;">
                 <a href="https://ybc1bz-ma.myshopify.com/cart/54003461488977:1" style="font-size:0.78rem;color:rgba(255,255,255,0.45);text-decoration:none;" target="_blank">Nur Kartenset →</a>
                 <span style="font-size:0.72rem;color:rgba(255,255,255,0.3);">39,90 Euro</span>
               </div>
-              <div style="display:flex;justify-content:space-between;align-items:center;">
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;">
                 <a href="https://ybc1bz-ma.myshopify.com/cart/54003462177105:1" style="font-size:0.78rem;color:rgba(255,255,255,0.45);text-decoration:none;" target="_blank">Nur Workbook →</a>
                 <span style="font-size:0.72rem;color:rgba(255,255,255,0.3);">54,90 Euro</span>
               </div>
               <p style="font-size:0.65rem;color:rgba(197,160,89,0.5);margin-top:0.25rem;">Im Bundle sparst du 25,80 Euro.</p>
             </div>
-        </div>
-
-        <!-- Wie nutzen -->
-        <div style="background:white;border:1px solid rgba(13,27,42,0.1);padding:2rem;margin-top:1.5rem;">
-          <p style="font-size:0.55rem;letter-spacing:0.4em;text-transform:uppercase;color:#C5A059;margin-bottom:1rem;">Wie du das Set nutzt</p>
-          <div style="display:flex;flex-direction:column;gap:0.75rem;">
-            <div style="display:flex;gap:0.75rem;"><span style="color:#C5A059;flex-shrink:0;">—</span><p style="font-size:0.82rem;line-height:1.7;color:rgba(13,27,42,0.65);"><strong style="color:#0D1B2A;">Morgens:</strong> Eine Karte als Tagesbegleiter. Die Frage mitführen.</p></div>
-            <div style="display:flex;gap:0.75rem;"><span style="color:#C5A059;flex-shrink:0;">—</span><p style="font-size:0.82rem;line-height:1.7;color:rgba(13,27,42,0.65);"><strong style="color:#0D1B2A;">Abends:</strong> Das Erlebte systemisch ordnen. Was hat sich heute gezeigt?</p></div>
-            <div style="display:flex;gap:0.75rem;"><span style="color:#C5A059;flex-shrink:0;">—</span><p style="font-size:0.82rem;line-height:1.7;color:rgba(13,27,42,0.65);"><strong style="color:#0D1B2A;">Mit SAM:</strong> Eine Karte als Einstieg ins Gespräch mit SAM nutzen.</p></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Empfehlung -->
-    <div style="margin-top:4rem;background:rgba(197,160,89,0.08);border:1px solid rgba(197,160,89,0.2);padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;" class="reveal">
-      <div>
-        <p style="font-size:0.82rem;color:#0D1B2A;font-weight:500;">Noch nicht mit dem Basis-Set gearbeitet?</p>
-        <p style="font-size:0.8rem;color:rgba(13,27,42,0.55);">Das Selbstreflexions-Set entfaltet seine volle Tiefe wenn du deine SystemKanäle und deinen Ankerplatz bereits kennst.</p>
+    <!-- WIE DU DAS SET NUTZT -->
+    <div class="self-section reveal">
+      <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:1.25rem;">Wie du das Set nutzt</p>
+      <div class="self-use-grid">
+        <div class="self-use-card">
+          <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.5rem;">Morgens</p>
+          <p style="font-size:0.82rem;line-height:1.8;color:rgba(13,27,42,0.65);">Eine Karte als Tagesbegleiter ziehen. Nicht um sofort eine Antwort zu finden, sondern um eine ehrliche Frage mitzunehmen.</p>
+        </div>
+        <div class="self-use-card">
+          <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.5rem;">Abends</p>
+          <p style="font-size:0.82rem;line-height:1.8;color:rgba(13,27,42,0.65);">Das Erlebte systemisch ordnen. Was hat sich gezeigt? Wo bist du dir nähergekommen? Wo bist du ausgewichen?</p>
+        </div>
+        <div class="self-use-card">
+          <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.5rem;">Mit SAM</p>
+          <p style="font-size:0.82rem;line-height:1.8;color:rgba(13,27,42,0.65);">Eine Karte als Einstieg ins Gespräch mit SAM nutzen. Der Impuls öffnet den Raum, SAM hilft dir tiefer zu verstehen.</p>
+        </div>
       </div>
-      <a href="basis-set.html" class="btn-gold">Zum Basis-Set</a>
+    </div>
+
+    <!-- EMPFEHLUNG BASIS-SET -->
+    <div class="self-section reveal">
+      <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:1.25rem;">Vor der Tiefe kommt das Fundament</p>
+      <div class="self-basis-section">
+        <p style="font-family:'Playfair Display',serif;font-size:1.35rem;color:#0D1B2A;margin-bottom:1rem;font-weight:400;line-height:1.45;">Noch nicht mit dem Basis-Set gearbeitet?</p>
+        <p style="font-size:0.9rem;line-height:1.95;color:rgba(13,27,42,0.65);margin-bottom:1rem;">Das Selbstreflexions-Set geht tiefer. Genau deshalb braucht es ein stabiles Fundament. Wenn du deine SystemKanäle und deinen Ankerplatz noch nicht kennst, kann Reflexion schnell wieder im Kopf bleiben. Du denkst über dich nach, aber du kommst innerlich nicht wirklich bei dir an.</p>
+        <p style="font-size:0.9rem;line-height:1.95;color:rgba(13,27,42,0.65);margin-bottom:1.75rem;">Das Basis-Set hilft dir zuerst zu erkennen, wie dein System wahrnimmt und wo du innerlich Halt findest. Erst dann können die Fragen des Selbstreflexions-Sets ihre volle Tiefe entfalten. Nicht als Analyse. Sondern als echte innere Klärung.</p>
+        <a href="basis-set.html" class="btn-gold">Zum Basis-Set</a>
+      </div>
     </div>
 
   </div>
@@ -730,6 +926,7 @@ function closeLegal() {
   document.querySelectorAll('.legal-overlay').forEach(o => o.classList.remove('open'));
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeSidebar(); closeLegal(); } });
+document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open')));
 document.querySelectorAll('.reveal').forEach(el => {
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
