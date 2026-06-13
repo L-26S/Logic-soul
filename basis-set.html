@@ -178,6 +178,122 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(13,27,42,0.65);margin-t
   div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
   .page-wrap { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
 }
+
+/* BASIS FINAL RESPONSIVE + STRUCTURE */
+.basis-channel-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1.5rem;
+  align-items:stretch;
+}
+
+.basis-channel-card{
+  background:white;
+  border-top:2px solid #C5A059;
+  padding:1.75rem;
+}
+
+@media (max-width:1100px){
+  header{overflow:visible!important;}
+
+  .header-top{
+    height:var(--nav-h)!important;
+    padding:0 1.25rem!important;
+    justify-content:space-between!important;
+  }
+
+  .logo{flex-shrink:0!important;}
+
+  .logo-logik{
+    font-size:0.88rem!important;
+    letter-spacing:0.16em!important;
+  }
+
+  .logo-pipe,
+  .logo-soul{
+    font-size:0.95rem!important;
+  }
+
+  .main-nav{
+    display:none!important;
+  }
+
+  .hamburger{
+    display:flex!important;
+    flex-direction:column!important;
+    gap:5px!important;
+    background:transparent!important;
+    border:none!important;
+    cursor:pointer!important;
+    padding:0.6rem!important;
+    margin-left:auto!important;
+    z-index:999!important;
+  }
+
+  .hamburger span{
+    display:block!important;
+    width:24px!important;
+    height:1.6px!important;
+    background:var(--navy)!important;
+  }
+
+  .mobile-menu{
+    top:var(--nav-h)!important;
+    left:0!important;
+    right:0!important;
+    bottom:0!important;
+    width:100%!important;
+    background:var(--navy)!important;
+    z-index:490!important;
+  }
+
+  .mobile-menu.open{
+    display:flex!important;
+  }
+}
+
+@media (max-width:1024px){
+  .basis-channel-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media (max-width:768px){
+  .basis-channel-grid,
+  .page-intro-grid,
+  .world-inner,
+  .card-grid-2,
+  .card-grid-3,
+  div[style*="grid-template-columns:1fr 1fr"],
+  div[style*="grid-template-columns:repeat(3"],
+  div[style*="grid-template-columns:1fr 1fr 1fr"]{
+    grid-template-columns:1fr!important;
+  }
+
+  .page-wrap{
+    padding-left:1.25rem!important;
+    padding-right:1.25rem!important;
+  }
+
+  .page-title{
+    font-size:clamp(2rem,10vw,3rem)!important;
+  }
+
+  .basis-channel-card,
+  div[style*="padding:2rem 2.5rem"],
+  div[style*="padding:2rem 3rem"],
+  div[style*="padding:2.5rem"]{
+    padding-left:1.5rem!important;
+    padding-right:1.5rem!important;
+  }
+
+  .btn-gold,
+  .btn-outline,
+  .btn-outline-light{
+    max-width:100%!important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -197,7 +313,7 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(13,27,42,0.65);margin-t
       <li><a href="kontakt.html" class="nav-btn nav-cta">Gespräch anfragen</a></li>
     </ul>
   </nav>
-  <button class="hamburger" onclick="toggleMobileMenu()">
+  <button type="button" class="hamburger" onclick="toggleMobileMenu()">
     <span></span><span></span><span></span>
   </button>
 </div>
@@ -329,33 +445,32 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(13,27,42,0.65);margin-t
       </div>
 
       <div class="reveal">
-        <!-- DUNKLER KASTEN — endet mit btn-gold -->
-        <div style="background:#0D1B2A;border-top:3px solid #C5A059;overflow:hidden;">
-          <!-- Einführungspreis Banner -->
+        <div style="background:#0D1B2A;border-top:3px solid #C5A059;overflow:hidden;height:100%;display:flex;flex-direction:column;">
           <div style="background:#C5A059;padding:0.65rem 1.5rem;text-align:center;">
             <p style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:white;font-weight:500;">&#10022; Einführungspreis — Jetzt zuschlagen &#10022;</p>
           </div>
-          <div style="padding:2rem 2.5rem;">
+          <div style="padding:2rem 2.5rem;display:flex;flex-direction:column;flex:1;">
             <p style="font-size:0.52rem;letter-spacing:0.4em;text-transform:uppercase;color:rgba(197,160,89,0.7);margin-bottom:0.75rem;">Kartenset + Workbook</p>
             <p style="font-family:'Playfair Display',serif;font-size:1.5rem;font-style:italic;color:#C5A059;margin-bottom:0.5rem;">Basis-Set</p>
-            <p style="font-size:0.85rem;line-height:1.85;color:rgba(255,255,255,0.55);margin-bottom:1.5rem;">Als Erste von der Wirkung profitieren. Das komplette Bundle jetzt zum Einführungspreis.</p>
+            <p style="font-size:0.85rem;line-height:1.85;color:rgba(255,255,255,0.55);margin-bottom:1.5rem;">Das Fundament für deine Arbeit mit SAM. Kartenset und Workbook führen dich zu deinen SystemKanälen, deinen positiven Mustern und deinem persönlichen Ankerplatz.</p>
             <div style="display:flex;align-items:baseline;gap:0.75rem;margin-bottom:1.5rem;">
-              <p style="font-size:0.78rem;color:rgba(255,255,255,0.3);text-decoration:line-through;">89 Euro</p>
+              <p style="font-size:0.78rem;color:rgba(255,255,255,0.3);text-decoration:line-through;">94,80 Euro</p>
               <p style="font-family:'Playfair Display',serif;font-size:2rem;color:#C5A059;">69 Euro</p>
             </div>
             <a href="https://ybc1bz-ma.myshopify.com/cart/54003516768593:1" class="btn-gold" target="_blank" style="display:block;text-align:center;margin-bottom:1.75rem;">Bundle jetzt kaufen — 69 Euro</a>
             <div style="border-top:1px solid rgba(197,160,89,0.15);padding-top:1.25rem;display:flex;flex-direction:column;gap:0.5rem;">
               <p style="font-size:0.58rem;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:0.5rem;">Oder einzeln kaufen</p>
-              <div style="display:flex;justify-content:space-between;align-items:center;">
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;">
                 <a href="https://ybc1bz-ma.myshopify.com/cart/54003461292369:1" style="font-size:0.78rem;color:rgba(255,255,255,0.45);text-decoration:none;" target="_blank">Nur Kartenset →</a>
                 <span style="font-size:0.72rem;color:rgba(255,255,255,0.3);">39,90 Euro</span>
               </div>
-              <div style="display:flex;justify-content:space-between;align-items:center;">
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;">
                 <a href="https://ybc1bz-ma.myshopify.com/cart/54003462144337:1" style="font-size:0.78rem;color:rgba(255,255,255,0.45);text-decoration:none;" target="_blank">Nur Workbook →</a>
                 <span style="font-size:0.72rem;color:rgba(255,255,255,0.3);">54,90 Euro</span>
               </div>
               <p style="font-size:0.65rem;color:rgba(197,160,89,0.5);margin-top:0.25rem;">Im Bundle sparst du 25,80 Euro.</p>
             </div>
+          </div>
         </div>
       </div>
     </div>
@@ -382,24 +497,25 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(13,27,42,0.65);margin-t
     <!-- DIE 4 KANÄLE -->
     <div style="margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(13,27,42,0.1);" class="reveal">
       <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:1.5rem;">Die 4 SystemKanäle</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
-        <div style="background:white;border-top:2px solid #C5A059;padding:1.75rem;">
+      <div class="basis-channel-grid">
+        <div class="basis-channel-card">
           <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.5rem;">SystemProjektion</p>
           <p style="font-size:0.8rem;line-height:1.8;color:rgba(13,27,42,0.6);">Du denkst in Bildern. Innere Vorstellungen sind dein Zugang. Das Gehirn nutzt Metaphern als Wegweiser.</p>
         </div>
-        <div style="background:white;border-top:2px solid #C5A059;padding:1.75rem;">
+        <div class="basis-channel-card">
           <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.5rem;">SystemFrequenz</p>
           <p style="font-size:0.8rem;line-height:1.8;color:rgba(13,27,42,0.6);">Du nimmst über Töne, Klänge und innere Stimmen wahr. Ein Rauschen im Ohr, ein Brüllen im Kopf, eine Melodie die nicht loslässt.</p>
         </div>
-        <div style="background:white;border-top:2px solid #C5A059;padding:1.75rem;">
+        <div class="basis-channel-card">
           <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.5rem;">SystemGefüge</p>
           <p style="font-size:0.8rem;line-height:1.8;color:rgba(13,27,42,0.6);">Dein Körper ist dein Kompass. Enge in der Brust, Schwere im Magen, Kribbeln im Nacken. Der Körper lügt nicht.</p>
         </div>
-        <div style="background:white;border-top:2px solid #C5A059;padding:1.75rem;">
+        <div class="basis-channel-card">
           <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.5rem;">SystemKodierung</p>
           <p style="font-size:0.8rem;line-height:1.8;color:rgba(13,27,42,0.6);">Du denkst in Konzepten und Wenn-Dann-Szenarien. Sätze die sich wiederholen, Gedanken die sich drehen. Das Gehirn sucht Struktur und Kontrolle.</p>
         </div>
       </div>
+    </div>
     </div>
 
   </div>
@@ -490,6 +606,7 @@ function closeLegal() {
   document.querySelectorAll('.legal-overlay').forEach(o => o.classList.remove('open'));
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeSidebar(); closeLegal(); } });
+document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open')));
 document.querySelectorAll('.reveal').forEach(el => {
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
