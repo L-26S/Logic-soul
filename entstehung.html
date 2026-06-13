@@ -433,6 +433,28 @@ body { background: #F5EDD8; }
 
 
 
+
+/* STORY PAGE REFINEMENTS */
+.story-section{margin-top:3rem;padding-top:3rem;border-top:1px solid rgba(13,27,42,0.1);}
+.story-label{font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:1.5rem;}
+.story-text{font-size:0.95rem;line-height:2.15;color:rgba(13,27,42,0.72);margin-bottom:1.5rem;}
+.story-text:last-child{margin-bottom:0;}
+.story-lead{font-size:1rem;line-height:2.1;color:rgba(13,27,42,0.75);margin-bottom:1.35rem;}
+.story-quote{background:white;border-left:3px solid #C5A059;padding:1.75rem 2.25rem;}
+.story-quote p{font-family:'Playfair Display',serif;font-size:1.12rem;color:#0D1B2A;font-style:italic;line-height:1.85;}
+.story-dark{background:#0D1B2A;border-top:2px solid #C5A059;padding:2.5rem;}
+.story-dark-title{font-family:'Playfair Display',serif;font-size:1.22rem;color:rgba(255,255,255,0.88);font-weight:400;line-height:1.75;margin-bottom:1rem;}
+.story-dark-text{font-size:0.88rem;line-height:1.95;color:rgba(255,255,255,0.55);}
+.story-cta{margin-top:3rem;display:flex;gap:1rem;flex-wrap:wrap;}
+@media (max-width:768px){
+  .story-section{margin-top:2.5rem;padding-top:2.5rem;}
+  .story-quote,.story-dark{padding:1.5rem!important;}
+  .story-text{font-size:0.9rem;line-height:2;}
+  .story-lead{font-size:0.94rem;line-height:2;}
+  .story-cta{flex-direction:column;}
+  .story-cta a{width:100%;text-align:center;}
+}
+
 </style>
 </head>
 <body>
@@ -564,64 +586,102 @@ body { background: #F5EDD8; }
     </div>
 
     <div style="margin-top:2.5rem;" class="reveal">
-      <p style="font-size:1rem;line-height:2.1;color:rgba(13,27,42,0.75);">Ich bin Yana Thomée, Mitte dreißig, systemischer Coach und Gründerin von Logic | Soul. Und ich fange nicht mit dem an, was ich erreicht habe, sondern mit dem, was ich fast verpasst hätte.</p>
-    </div>
-
-    <div style="margin-top:3rem;padding-top:3rem;border-top:1px solid rgba(13,27,42,0.1);" class="reveal">
-      <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:1.5rem;">Das Leben das gut aussah</p>
-      <p style="font-size:0.95rem;line-height:2.15;color:rgba(13,27,42,0.72);margin-bottom:1.5rem;">Ich war das, was viele als angekommen bezeichnen würden. Guter Job. Respekt im Beruf. Widrigkeiten gemeistert, die andere aufgegeben hätten. Ich hatte gelernt zu funktionieren und ich war verdammt gut darin.</p>
-      <p style="font-size:0.95rem;line-height:2.15;color:rgba(13,27,42,0.72);margin-bottom:1.5rem;">Aber da war diese leise, hartnäckige Stimme. Nicht laut genug um sie nicht zu überhören. Nicht leise genug um sie zu vergessen. Sie flüsterte mir zu, dass ich zwar in meinem Leben ankam, aber nicht wirklich in mir selbst.</p>
-      <p style="font-size:0.95rem;line-height:2.15;color:rgba(13,27,42,0.72);">Ich lebte an mir vorbei. Nicht dramatisch. Nicht sichtbar für andere. Aber innerlich. Und dieser Gedanke war schwerer zu tragen als jede Krise die mir je begegnet war.</p>
+      <p class="story-lead">Die SystemAlchemie hat ihren Ursprung nicht in der Psychologie. Nicht in Therapien. Nicht in Studien. Und auch nicht in einer Methode, die ich zuerst theoretisch entwickeln wollte.</p>
+      <p class="story-lead">Sie entstand aus dem Leben einer einzigen Person. Aus meinem Leben. Aus einer Phase, in der äußerlich vieles richtig aussah. Und innerlich trotzdem etwas nicht stimmte.</p>
     </div>
 
     <div style="margin-top:3rem;" class="reveal">
-      <div style="background:white;border-left:3px solid #C5A059;padding:1.75rem 2.25rem;">
-        <p style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#0D1B2A;font-style:italic;line-height:1.85;">Ich hatte gelernt zu funktionieren. Aber ich hatte vergessen zu sein.</p>
+      <div class="story-quote">
+        <p>Ich war im Leben angekommen. Aber nicht in mir.</p>
       </div>
     </div>
 
-    <div style="margin-top:3rem;padding-top:3rem;border-top:1px solid rgba(13,27,42,0.1);" class="reveal">
-      <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:1.5rem;">Was ich fand als ich hinschaute</p>
-      <p style="font-size:0.95rem;line-height:2.15;color:rgba(13,27,42,0.72);margin-bottom:1.5rem;">Ich fing an, wirklich hineinzuhorchen. Nicht theoretisch, nicht mit dem Kopf, nicht mit einer Methode, die ich aus einem Buch kannte. Ich ließ mich fallen in das was wirklich da war.</p>
-      <p style="font-size:0.95rem;line-height:2.15;color:rgba(13,27,42,0.72);margin-bottom:1.5rem;">Was ich fand, hat mich erschüttert. Ich sah ein inneres Bild von mir selbst, das ich nicht kannte und gleichzeitig tief in mir erkannte. Meinen eigentlichen Kern. Und ich sah was ihn umgab: Schicht um Schicht von Schutzmechanismen, die ich über die Jahre aufgebaut hatte. Um zu passen. Um dazuzugehören. Um nicht zu viel zu sein. Um nicht zu wenig zu sein.</p>
-      <p style="font-size:0.95rem;line-height:2.15;color:rgba(13,27,42,0.72);">Diese Schutzschichten waren nicht böse. Sie hatten mich gerettet. In Momenten, in denen ich Schutz gebraucht hatte, waren sie genau das gewesen. Aber sie standen jetzt zwischen mir und dem Leben, das ich eigentlich wollte. Zwischen mir und mir.</p>
+    <div class="story-section reveal">
+      <p class="story-label">Als alles gut aussah</p>
+      <p class="story-text">Ich bin Yana Thomée, systemischer Coach und Gründerin von Logic | Soul. Aber diese Geschichte beginnt nicht mit einem Titel. Nicht mit einer Ausbildung. Nicht mit dem, was ich erreicht habe.</p>
+      <p class="story-text">Sie beginnt an dem Punkt, an dem ich eigentlich hätte zufrieden sein können. Guter Job. Respekt im Beruf. Herausforderungen gemeistert, die andere vielleicht zum Aufgeben gebracht hätten. Ich hatte gelernt zu funktionieren. Entscheidungen treffen. Stark bleiben. Weitermachen.</p>
+      <p class="story-text">Und ich war gut darin. Vielleicht sogar zu gut. Denn je besser ich funktionierte, desto leiser wurde der Teil in mir, der eigentlich etwas anderes wollte.</p>
+      <p class="story-text">Da war kein großer Zusammenbruch. Kein dramatischer Moment, den man von außen gesehen hätte. Es war leiser. Fast unscheinbar. Ein Gefühl von Leere. Ein inneres Wissen, das sich nicht mehr dauerhaft wegschieben ließ.</p>
     </div>
 
     <div style="margin-top:3rem;" class="reveal">
-      <div style="background:#0D1B2A;border-top:2px solid #C5A059;padding:2.5rem;">
-        <p style="font-family:'Playfair Display',serif;font-size:1.2rem;color:rgba(255,255,255,0.88);font-weight:400;line-height:1.75;margin-bottom:1rem;">Die Schutzschichten wegkämpfen wollte ich nicht. Konnte ich nicht. Wer kämpft schon gerne gegen das was ihm einmal das Leben gerettet hat.</p>
-        <p style="font-size:0.88rem;line-height:1.95;color:rgba(255,255,255,0.55);">Ich brauchte etwas anderes. Nicht Kampf. Nicht Verdrängung. Ich brauchte eine Art diese Energie umzuwandeln. Das Material war ja da. Es brauchte nur eine neue Richtung.</p>
+      <div class="story-quote">
+        <p>Ich hatte gelernt zu funktionieren. Aber ich hatte vergessen zu sein.</p>
       </div>
     </div>
 
-    <div style="margin-top:3rem;padding-top:3rem;border-top:1px solid rgba(13,27,42,0.1);" class="reveal">
-      <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:1.5rem;">Die Frage die alles veränderte</p>
-      <p style="font-size:0.95rem;line-height:2.15;color:rgba(13,27,42,0.72);margin-bottom:1.5rem;">In meiner Ausbildung als systemischer Coach hatte ich viel gelernt. Ich kannte Methoden, Modelle, Werkzeuge. Und ich merkte: Fast alle arbeiten mit der Vergangenheit. Mit dem was war. Mit dem warum.</p>
-      <p style="font-size:0.95rem;line-height:2.15;color:rgba(13,27,42,0.72);margin-bottom:1.5rem;">Aber was ist mit dem was gerade jetzt passiert? In diesem Moment, in dieser Situation, in diesem Körper? Und was tut man mit dem was man erkennt? Denn ab dem Moment der Erkenntnis hört vieles auf. Da steht man mit seinem Muster, weiß woher es kommt und hat keine Ahnung was jetzt.</p>
-      <p style="font-size:0.95rem;line-height:2.15;color:rgba(13,27,42,0.72);">Aus dieser Lücke heraus entstand die SystemAlchemie. Nicht am Schreibtisch, nicht aus Theorie, sondern aus meinem eigenen Weg, den ich einen Schritt nach dem anderen gegangen bin. Langsam. Mit Rückschritten. Mit Momenten in denen gar nichts geklappt hat.</p>
+    <div class="story-section reveal">
+      <p class="story-label">Der Moment des Hinschauens</p>
+      <p class="story-text">Ich werde den Moment nicht vergessen, in dem ich mir erlaubt habe, wirklich hinzuschauen. Nicht mit einer Analyse. Nicht mit einer Technik. Nicht mit dem Kopf, der sofort verstehen und einordnen will.</p>
+      <p class="story-text">Ich habe aufgehört, mich zu erklären. Und angefangen, mich wahrzunehmen.</p>
+      <p class="story-text">Was ich fand, war nicht angenehm. Aber es war wahr. Ich sah ein inneres Bild von mir selbst. Einen Kern, den ich nicht kannte und trotzdem sofort erkannte. Und um diesen Kern herum: Schichten. Schutz. Strategien. Anpassung. Funktionieren. Eine Mauer aus allem, was mich einmal getragen hatte.</p>
+      <p class="story-text">Um zu passen. Um dazuzugehören. Um nicht zu viel zu sein. Um nicht zu wenig zu sein. Um nicht aufzufallen. Um sicher zu bleiben.</p>
     </div>
 
     <div style="margin-top:3rem;" class="reveal">
-      <div style="background:white;border-left:3px solid #C5A059;padding:1.75rem 2.25rem;">
-        <p style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#0D1B2A;font-style:italic;line-height:1.85;">Ich habe meinen Schutzmechanismen keine neuen Aufgaben befohlen. Ich habe mit ihnen gesprochen. Und langsam, sehr langsam, haben sie sich verändert.</p>
+      <div class="story-dark">
+        <p class="story-dark-title">Das Schwierige war: Diese Schutzmechanismen waren nicht falsch.</p>
+        <p class="story-dark-text">Sie hatten mich geschützt. Sie hatten mir geholfen, durch Situationen zu kommen, in denen ich Schutz gebraucht hatte. Wie sollte ich gegen etwas kämpfen, das mir einmal geholfen hatte zu überleben, zu bestehen oder weiterzugehen?</p>
       </div>
     </div>
 
-    <div style="margin-top:3rem;padding-top:3rem;border-top:1px solid rgba(13,27,42,0.1);" class="reveal">
-      <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:1.5rem;">Wo ich heute bin</p>
-      <p style="font-size:0.95rem;line-height:2.15;color:rgba(13,27,42,0.72);margin-bottom:1.5rem;">Ich lebe heute näher an meinem eigentlichen Ich. Nicht perfekt. Nicht angekommen in dem Sinne dass es nichts mehr zu entdecken gäbe. Aber bewusst. Präsent. Mit einer inneren Haltung die sich anders anfühlt als alles vorher.</p>
-      <p style="font-size:0.95rem;line-height:2.15;color:rgba(13,27,42,0.72);margin-bottom:1.5rem;">Ich bin stolz auf diesen Weg. Nicht weil er einfach war, sondern weil er ehrlich war. Weil ich aufgehört habe, an mir vorbeizuleben. Und weil ich nun täglich erlebe was es bedeutet, nicht der Stress zu sein, sondern sein Beobachter.</p>
-      <p style="font-size:0.95rem;line-height:2.15;color:rgba(13,27,42,0.72);">Logic | Soul ist aus diesem Weg entstanden. SAM, ALMA, die Kartensets und Workbooks tragen alle dieselbe Frage in sich: Was passiert in dir gerade jetzt? Und was brauchst du, um von dort aus wirklich weiterzugehen? Nicht irgendwann. Jetzt.</p>
+    <div class="story-section reveal">
+      <p class="story-label">Warum keine fertige Methode passte</p>
+      <p class="story-text">Als Coach kannte ich Methoden, Modelle und Werkzeuge. Ich kannte innere Antreiber. Glaubenssätze. Musterarbeit. Biografiearbeit. Ich wusste, wie man fragt, sortiert und reflektiert.</p>
+      <p class="story-text">Und trotzdem fühlte sich vieles an dieser Stelle falsch an.</p>
+      <p class="story-text">Ich wollte meine Schutzmechanismen nicht ausmerzen. Ich wollte mich nicht optimieren. Ich wollte nicht gegen mich arbeiten, nur weil ein Teil von mir heute nicht mehr hilfreich war. Denn dieser Teil war nicht mein Gegner. Er war alt. Er war geprägt. Er war vielleicht zu schnell geworden. Aber er hatte eine Funktion.</p>
+      <p class="story-text">Also stellte sich eine andere Frage. Nicht: Wie bekomme ich das weg? Sondern: Was schützt es? Wozu ist es da? Und welche neue Aufgabe könnte diese Energie heute übernehmen?</p>
+    </div>
+
+    <div style="margin-top:3rem;" class="reveal">
+      <div class="story-quote">
+        <p>Nicht wegmachen. Nicht überschreiben. Umwandeln.</p>
+      </div>
+    </div>
+
+    <div class="story-section reveal">
+      <p class="story-label">Die Lücke, aus der SystemAlchemie entstand</p>
+      <p class="story-text">Viele Wege führen in die Vergangenheit. Sie fragen nach dem Warum. Nach dem Ursprung. Nach dem, was damals passiert ist. Das kann wichtig sein. Aber mir fehlte etwas Entscheidendes.</p>
+      <p class="story-text">Was passiert jetzt?</p>
+      <p class="story-text">In diesem Moment. In dieser Reaktion. In diesem Körper. In diesem inneren Bild. Und was mache ich mit dem, was ich erkannt habe, wenn ich nicht mehr nur verstehen, sondern anders mit mir umgehen will?</p>
+      <p class="story-text">Aus genau dieser Lücke entstand die SystemAlchemie. Nicht am Schreibtisch. Nicht aus Theorie. Sondern Schritt für Schritt aus meinem eigenen Weg. Langsam. Mit Rückschritten. Mit Momenten, in denen gar nichts leicht war. Aber ohne inneren Kampf.</p>
+    </div>
+
+    <div style="margin-top:3rem;" class="reveal">
+      <div class="story-dark">
+        <p class="story-dark-title">Ich habe meinen Schutzmechanismen keine neuen Aufgaben befohlen.</p>
+        <p class="story-dark-text">Ich habe sie angesehen. Erkannt. Benannt. Geprüft, was sie schützen. Und dann begonnen, ihre Energie neu auszurichten. Nicht gegen mich. Sondern mit dem, was in mir bereits da war.</p>
+      </div>
+    </div>
+
+    <div class="story-section reveal">
+      <p class="story-label">Was daraus wurde</p>
+      <p class="story-text">Mit der Zeit veränderte sich etwas. Nicht plötzlich. Nicht magisch. Nicht, weil ich beschlossen hatte, ab jetzt anders zu sein. Sondern weil ich begann, mein inneres System anders zu verstehen.</p>
+      <p class="story-text">Ich merkte: Ich bin nicht die Reaktion. Ich bin nicht der Druck. Ich bin nicht das Muster, das gerade anspringt. Ich kann beobachten, was in mir passiert. Und genau dort entsteht ein Raum, den ich vorher nicht hatte.</p>
+      <p class="story-text">Aus diesem Raum wurde eine Methode. Aus meinem persönlichen Weg wurde SystemAlchemie. Eine Praxis, die nicht fragt, was an dir falsch ist. Sondern was dein System gerade zeigt, schützt und verändern möchte.</p>
+    </div>
+
+    <div style="margin-top:3rem;" class="reveal">
+      <div class="story-quote">
+        <p>Du hörst auf, der Stress zu sein. Und fängst an, den Stress zu beobachten.</p>
+      </div>
+    </div>
+
+    <div class="story-section reveal">
+      <p class="story-label">Warum Logic | Soul daraus entstanden ist</p>
+      <p class="story-text">Ich lebe heute näher an meinem eigentlichen Ich. Nicht perfekt. Nicht fertig. Nicht angekommen in dem Sinne, dass es nichts mehr zu entdecken gäbe. Aber bewusster. Präsent. Verbundener mit dem, was in mir wirklich passiert.</p>
+      <p class="story-text">Logic | Soul ist aus diesem Weg entstanden. SAM, ALMA, die Kartensets und Workbooks tragen alle dieselbe Frage in sich: Was passiert in dir gerade jetzt? Wozu passiert es? Und was brauchst du, um von dort aus wirklich weiterzugehen?</p>
+      <p class="story-text">Nicht irgendwann. Nicht erst, wenn du alles verstanden hast. Nicht erst, wenn du perfekt vorbereitet bist. Jetzt. In dem Moment, in dem du bemerkst, dass etwas in dir reagiert.</p>
     </div>
 
     <div style="margin-top:3rem;" class="reveal">
       <div style="background:white;border:1px solid rgba(13,27,42,0.1);border-left:3px solid #C5A059;padding:1.75rem 2.25rem;">
-        <p style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#0D1B2A;font-style:italic;line-height:1.85;margin-bottom:1rem;">Du hörst auf, der Stress zu sein. Und fängst an, den Stress zu beobachten.</p>
+        <p style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#0D1B2A;font-style:italic;line-height:1.85;margin-bottom:1rem;">SystemAlchemie ist keine Methode gegen dich. Sie ist ein Weg zurück in Kontakt mit dir.</p>
         <p style="font-size:0.82rem;color:rgba(13,27,42,0.45);">Yana Thomée · Gründerin Logic | Soul · Systemischer Coach</p>
       </div>
     </div>
 
-    <div style="margin-top:3rem;display:flex;gap:1rem;flex-wrap:wrap;" class="reveal">
+    <div class="story-cta reveal">
       <a href="systemalchemie.html" class="btn-gold">Die Methode verstehen</a>
       <a href="sam.html" class="btn-outline">SAM kennenlernen</a>
     </div>
