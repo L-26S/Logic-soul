@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="SystemAlchemie: Keine Vergangenheitsarbeit, keine Therapie. Aus Reaktion wird Präsenz. Aus innerem Druck wird Handlungsspielraum. Im gegenwärtigen Moment.">
+<meta name="description" content="SystemAlchemie hilft dir zu erkennen, wie dein inneres System reagiert. Aus automatischer Reaktion wird Beobachtung, Klarheit und neuer Handlungsspielraum.">
 <meta name="keywords" content="SystemAlchemie Methode, innere Klarheit Methode, Reaktionsmuster verändern, Selbstwahrnehmung Methode">
 <meta property="og:title" content="SystemAlchemie — Die Methode | Logic | Soul">
-<meta property="og:description" content="SystemAlchemie: Keine Vergangenheitsarbeit, keine Therapie. Aus Reaktion wird Präsenz. Aus innerem Druck wird Handlungsspielraum. Im gegenwärtigen Moment.">
+<meta property="og:description" content="SystemAlchemie hilft dir zu erkennen, wie dein inneres System reagiert. Aus automatischer Reaktion wird Beobachtung, Klarheit und neuer Handlungsspielraum.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Logic | Soul">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -417,6 +417,94 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
 
 
 
+/* SYSTEMALCHEMIE METHOD PAGE REFINEMENT */
+.method-steps-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:1rem;
+}
+.method-step-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-top:2px solid var(--gold);
+  padding:1.5rem;
+}
+.method-product-cta{
+  margin-top:4rem;
+  background:var(--navy);
+  border-left:3px solid var(--gold);
+  padding:2.5rem 3rem;
+  display:grid;
+  grid-template-columns:1.25fr 0.75fr;
+  gap:2.5rem;
+  align-items:center;
+}
+.method-product-cta h2{
+  font-family:'Playfair Display',serif;
+  font-size:1.45rem;
+  color:rgba(255,255,255,0.9);
+  font-weight:400;
+  line-height:1.45;
+  margin-bottom:0.85rem;
+}
+.method-product-cta p{
+  font-size:0.86rem;
+  line-height:1.9;
+  color:rgba(255,255,255,0.55);
+}
+.method-product-actions{
+  display:flex;
+  flex-direction:column;
+  gap:0.85rem;
+  align-items:stretch;
+}
+.method-note-card{
+  background:white;
+  border-left:3px solid var(--gold);
+  padding:2rem 2.5rem;
+  margin:2.5rem 0 0;
+}
+.method-note-card p{
+  font-size:0.9rem;
+  line-height:1.95;
+  color:rgba(13,27,42,0.65);
+}
+.method-note-card strong{
+  color:var(--navy);
+  font-weight:500;
+}
+
+@media (max-width:1100px){
+  .method-steps-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+  .method-product-cta{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width:768px){
+  .method-steps-grid{
+    grid-template-columns:1fr!important;
+  }
+  .method-step-card,
+  .method-product-cta,
+  .method-note-card,
+  div[style*="padding:2.5rem"]{
+    padding-left:1.5rem!important;
+    padding-right:1.5rem!important;
+  }
+  .method-product-cta{
+    gap:1.5rem;
+  }
+  .method-product-actions .btn-gold,
+  .method-product-actions .btn-outline-light{
+    width:100%;
+    text-align:center;
+  }
+}
+
+
 </style>
 </head>
 <body>
@@ -543,33 +631,38 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
       <h1 class="page-title">System<em>Alchemie.</em></h1>
     </div>
 
-    <p class="page-sub reveal">Keine Vergangenheitsarbeit. Keine Therapie. Keine Methode die man jahrelang lernen muss. SystemAlchemie arbeitet mit dem was gerade da ist. Im gegenwärtigen Moment. Mit dem Material das bereits vorhanden ist.</p>
+    <p class="page-sub reveal">Du kennst vielleicht diese Momente: Du willst ruhig bleiben, aber dein Inneres ist schneller. Du willst klar reagieren, aber plötzlich bist du wieder im alten Muster. Rückzug. Druck. Grübeln. Rechtfertigen. Funktionieren. SystemAlchemie setzt genau dort an. Nicht in der Vergangenheit. Nicht in einer langen Analyse. Sondern in dem Moment, in dem dein System übernimmt — und du beginnst zu erkennen, was wirklich in dir passiert.</p>
+
+    <div class="method-note-card reveal">
+      <p><strong>SystemAlchemie beginnt nicht mit Kontrolle.</strong> Sie beginnt mit Beobachtung. Denn solange du nur versuchst, dich anders zu verhalten, kämpfst du gegen eine Reaktion, die einmal eine Funktion hatte. Erst wenn du verstehst, was dein System schützen will, entsteht wieder Handlungsspielraum.</p>
+    </div>
 
     <div class="page-intro-grid" style="margin-top:3rem;">
       <div class="reveal">
         <div class="pillar-list">
           <div class="pillar">
             <div class="pillar-title">Das Menschenbild</div>
-            <div class="pillar-text">Jede Reaktion hat eine Funktion. Kein Mensch reagiert falsch. Sein System schützt ihn. SystemAlchemie fragt nicht: Was ist falsch? Sie fragt: Was wird hier geschützt?</div>
+            <div class="pillar-text">Du bist nicht falsch, nur weil du reagierst. Jede Reaktion hat eine innere Logik. Auch dann, wenn sie dich heute blockiert. SystemAlchemie fragt deshalb nicht: Was stimmt nicht mit mir? Sondern: Was versucht mein System gerade zu schützen?</div>
           </div>
           <div class="pillar">
             <div class="pillar-title">Der Ansatz</div>
-            <div class="pillar-text">Nicht überschreiben. Nicht wegmachen. Umbauen mit dem Material das bereits vorhanden ist. Die Energie einer Reaktion bekommt eine neue Form. Das Signal bleibt. Aber seine Struktur verändert sich.</div>
+            <div class="pillar-text">SystemAlchemie will nichts wegmachen. Sie überschreibt dich nicht mit positiven Sätzen und zwingt dich nicht in ein neues Verhalten. Sie arbeitet mit dem, was bereits da ist. Die Energie bleibt. Aber sie bekommt eine neue Richtung.</div>
           </div>
           <div class="pillar">
             <div class="pillar-title">Das Ergebnis</div>
-            <div class="pillar-text">Aus Schutz wird Führung. Aus Reaktion wird Präsenz. Aus innerem Druck wird Handlungsspielraum. Nicht irgendwann. Sondern jetzt, im gegenwärtigen Moment.</div>
+            <div class="pillar-text">Du hörst auf, der Stress zu sein. Du beginnst, den Stress zu beobachten. Aus innerem Druck wird Orientierung. Aus automatischer Reaktion wird Präsenz. Und aus dem Gefühl, ausgeliefert zu sein, entsteht wieder ein Stück Wahlfreiheit.</div>
           </div>
         </div>
       </div>
 
       <div class="reveal">
         <div style="background:var(--navy);padding:2.5rem;border-top:2px solid var(--gold);">
-          <p style="font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:rgba(255,255,255,0.88);line-height:1.7;margin-bottom:1.5rem;">Souveränität ist eine Frage der inneren Stabilität. Du hörst auf, der Stress zu sein. Und fängst an, den Stress zu beobachten.</p>
+          <p style="font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:rgba(255,255,255,0.88);line-height:1.7;margin-bottom:1.5rem;">Souveränität entsteht nicht, weil du nichts mehr fühlst. Sie entsteht, wenn du wahrnehmen kannst, was in dir passiert — ohne sofort davon geführt zu werden.</p>
           <p style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:2rem;">SystemAlchemie · Logic | Soul</p>
           <div style="display:flex;flex-direction:column;gap:0.75rem;">
-            <a href="alma.html" class="internal-link" style="color:rgba(255,255,255,0.5);border-color:rgba(255,255,255,0.1);">ALMA für Führungskräfte</a>
             <a href="sam.html" class="internal-link" style="color:rgba(255,255,255,0.5);border-color:rgba(255,255,255,0.1);">SAM für Dich</a>
+            <a href="basis-set.html" class="internal-link" style="color:rgba(255,255,255,0.5);border-color:rgba(255,255,255,0.1);">Mit dem Basis-Set starten</a>
+            <a href="produkte.html" class="internal-link" style="color:rgba(255,255,255,0.5);border-color:rgba(255,255,255,0.1);">Alle Produkte ansehen</a>
           </div>
         </div>
       </div>
@@ -577,33 +670,47 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
 
     <!-- Die 5 Schritte -->
     <div style="margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border);" class="reveal">
-      <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;">Die 5 Schritte</p>
-      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;">
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-top:2px solid var(--gold);padding:1.5rem;">
+      <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Die 5 Schritte</p>
+      <p style="font-size:0.9rem;line-height:1.95;color:var(--text-mid);max-width:720px;margin-bottom:2rem;">Die fünf Schritte helfen dir, aus dem automatischen Reagieren auszusteigen. Nicht indem du dich zwingst, anders zu sein. Sondern indem du deinem inneren System eine klare, ruhige Reihenfolge gibst.</p>
+      <div class="method-steps-grid">
+        <div class="method-step-card">
           <p style="font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">01</p>
           <p style="font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);margin-bottom:0.5rem;">Wahrnehmen</p>
-          <p style="font-size:0.75rem;line-height:1.7;color:var(--text-mid);">Was zeigt mein System gerade?</p>
+          <p style="font-size:0.75rem;line-height:1.7;color:var(--text-mid);">Was zeigt mein System gerade — im Körper, im Gedanken, im Impuls?</p>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-top:2px solid var(--gold);padding:1.5rem;">
+        <div class="method-step-card">
           <p style="font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">02</p>
           <p style="font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);margin-bottom:0.5rem;">Einordnen</p>
-          <p style="font-size:0.75rem;line-height:1.7;color:var(--text-mid);">Mein System sendet ein Signal. Nicht mehr und nicht weniger.</p>
+          <p style="font-size:0.75rem;line-height:1.7;color:var(--text-mid);">Mein System sendet ein Signal. Es ist nicht gegen mich. Es will etwas schützen.</p>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-top:2px solid var(--gold);padding:1.5rem;">
+        <div class="method-step-card">
           <p style="font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">03</p>
           <p style="font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);margin-bottom:0.5rem;">Benennen</p>
-          <p style="font-size:0.75rem;line-height:1.7;color:var(--text-mid);">Ich registriere gerade...</p>
+          <p style="font-size:0.75rem;line-height:1.7;color:var(--text-mid);">Ich registriere gerade: Das ist Druck. Rückzug. Angst. Wut. Enge. Schutz.</p>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-top:2px solid var(--gold);padding:1.5rem;">
+        <div class="method-step-card">
           <p style="font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">04</p>
           <p style="font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);margin-bottom:0.5rem;">Prüfen</p>
-          <p style="font-size:0.75rem;line-height:1.7;color:var(--text-mid);">Was schützt dieses Muster? Und hat es etwas mit dir gemacht?</p>
+          <p style="font-size:0.75rem;line-height:1.7;color:var(--text-mid);">Was schützt dieses Muster? Und erfüllt es heute noch den Zweck, für den es einmal entstanden ist?</p>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-top:2px solid var(--gold);padding:1.5rem;">
+        <div class="method-step-card">
           <p style="font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">05</p>
           <p style="font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);margin-bottom:0.5rem;">Neu ausrichten</p>
-          <p style="font-size:0.75rem;line-height:1.7;color:var(--text-mid);">Die Energie bekommt eine neue Form.</p>
+          <p style="font-size:0.75rem;line-height:1.7;color:var(--text-mid);">Die Energie bekommt eine neue Form. Nicht gegen dich. Sondern mit dir.</p>
         </div>
+      </div>
+    </div>
+
+    <!-- PRODUKT CTA -->
+    <div class="method-product-cta reveal">
+      <div>
+        <p style="font-size:0.55rem;letter-spacing:0.45em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Starten mit SystemAlchemie</p>
+        <h2>Du willst mit den fünf Schritten beginnen?</h2>
+        <p>Dann ist das Basis-Set der beste Einstieg. Es hilft dir, deine SystemKanäle und deinen Ankerplatz kennenzulernen, bevor du tiefer in Muster, Reflexion und innere Ausrichtung gehst. Nicht nur lesen. Wirklich mit dir arbeiten.</p>
+      </div>
+      <div class="method-product-actions">
+        <a href="basis-set.html" class="btn-gold" style="text-align:center;">Zum Basis-Set</a>
+        <a href="produkte.html" class="btn-outline-light" style="text-align:center;">Alle Produkte ansehen</a>
       </div>
     </div>
 
