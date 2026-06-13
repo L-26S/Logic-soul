@@ -544,6 +544,108 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
   div[style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
   .page-wrap { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
 }
+
+/* MOBILE HEADER FIX — Logic | Soul */
+@media (max-width: 1100px) {
+  header {
+    overflow: visible !important;
+  }
+
+  .header-top {
+    height: var(--nav-h) !important;
+    padding: 0 1.25rem !important;
+    justify-content: space-between !important;
+  }
+
+  .logo {
+    flex-shrink: 0 !important;
+  }
+
+  .logo-logik {
+    font-size: 0.88rem !important;
+    letter-spacing: 0.16em !important;
+  }
+
+  .logo-pipe,
+  .logo-soul {
+    font-size: 0.95rem !important;
+  }
+
+  .main-nav {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 0.6rem !important;
+    margin-left: auto !important;
+    z-index: 999 !important;
+  }
+
+  .hamburger span {
+    display: block !important;
+    width: 24px !important;
+    height: 1.6px !important;
+    background: var(--navy) !important;
+  }
+
+  .mobile-menu {
+    top: calc(var(--nav-h) + var(--banner-h)) !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    background: var(--navy) !important;
+    z-index: 490 !important;
+  }
+
+  .mobile-menu.open {
+    display: flex !important;
+  }
+}
+
+/* MOBILE LAYOUT FIX — Stack content instead of squeezing */
+@media (max-width: 768px) {
+  .page-intro-grid,
+  .world-inner,
+  .zwei-welten,
+  .card-grid-2,
+  .card-grid-3,
+  div[style*="grid-template-columns:1fr 1fr"],
+  div[style*="grid-template-columns:repeat(3"],
+  div[style*="grid-template-columns:1fr 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  .page-wrap {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  .hero {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 12vw, 3.2rem) !important;
+  }
+
+  .hero-pain {
+    max-width: 100% !important;
+  }
+
+  .btn-gold,
+  .btn-outline-light {
+    max-width: 100% !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -563,7 +665,7 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
       <li><a href="kontakt.html" class="nav-btn nav-cta">Gespräch anfragen</a></li>
     </ul>
   </nav>
-  <button class="hamburger" onclick="toggleMobileMenu()">
+  <button type="button" class="hamburger" onclick="toggleMobileMenu()">
     <span></span><span></span><span></span>
   </button>
 </div>
@@ -855,6 +957,7 @@ function closeLegal() {
   document.querySelectorAll('.legal-overlay').forEach(o => o.classList.remove('open'));
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeSidebar(); closeLegal(); } });
+document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open')));
 document.querySelectorAll('.reveal').forEach(el => {
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
