@@ -9,10 +9,6 @@
 <title>Selbstreflexions-Set — 60 systemische Impulse | Logic | Soul</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-
-
-
-
 :root {
   --gold: #C5A059; --gold-light: #d4b472; --gold-dim: rgba(197,160,89,0.1);
   --gold-border: rgba(197,160,89,0.32); --gold-dark: #a8863e;
@@ -27,8 +23,6 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; font-weight:300; }
-
-
 /* NAV */
 header { position:fixed; top:0; left:0; right:0; z-index:500; background:rgba(250,250,248,0.97); backdrop-filter:blur(20px); border-bottom:1px solid var(--border); box-shadow:0 1px 20px rgba(13,27,42,0.05); }
 .header-top { height:var(--nav-h); display:flex; align-items:center; justify-content:space-between; padding:0 3rem; }
@@ -45,7 +39,6 @@ header { position:fixed; top:0; left:0; right:0; z-index:500; background:rgba(25
 .nav-cta:hover { background:var(--gold) !important; color:white !important; }
 .hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; }
 .hamburger span { display:block; width:22px; height:1.5px; background:var(--navy); }
-
 /* SIDEBAR */
 .sidebar-panel { position:fixed; top:var(--nav-h); width:260px; background:var(--navy); border:1px solid rgba(197,160,89,0.2); border-top:2px solid var(--gold); z-index:450; display:flex; flex-direction:column; opacity:0; visibility:hidden; pointer-events:none; transform:translateY(-8px); transition:opacity 0.22s ease, transform 0.22s ease, visibility 0.22s; overflow-y:auto; max-height:calc(100vh - var(--nav-h) - 2rem); box-shadow:0 8px 40px rgba(0,0,0,0.25); }
 .sidebar-panel.open { opacity:1; visibility:visible; pointer-events:all; transform:translateY(0); }
@@ -58,7 +51,6 @@ header { position:fixed; top:0; left:0; right:0; z-index:500; background:rgba(25
 .sidebar-btn { display:flex; align-items:center; width:100%; padding:0.8rem 1.5rem; font-family:'DM Sans',sans-serif; font-size:0.61rem; font-weight:300; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.6); background:none; border:none; border-bottom:1px solid rgba(255,255,255,0.04); text-align:left; cursor:pointer; transition:color 0.18s, background 0.18s, padding-left 0.18s; text-decoration:none; }
 .sidebar-btn:last-child { border-bottom:none; }
 .sidebar-btn:hover { color:var(--gold); background:rgba(197,160,89,0.07); padding-left:1.85rem; }
-
 /* MOBILE MENU */
 .mobile-menu { display:none; position:fixed; top:var(--nav-h); left:0; right:0; bottom:0; background:var(--navy); z-index:490; overflow-y:auto; flex-direction:column; }
 .mobile-menu.open { display:flex; }
@@ -72,7 +64,6 @@ header { position:fixed; top:0; left:0; right:0; z-index:500; background:rgba(25
 .mobile-sub-btn:hover { color:var(--gold); padding-left:3rem; }
 .mobile-menu-cta { margin:1.5rem 1.75rem; border:1.5px solid var(--gold); color:var(--gold); padding:0.75rem 1.75rem; font-family:'DM Sans',sans-serif; font-size:0.63rem; letter-spacing:0.22em; text-transform:uppercase; background:none; cursor:pointer; transition:background 0.25s, color 0.25s; text-align:center; display:block; text-decoration:none; }
 .mobile-menu-cta:hover { background:var(--gold); color:white; }
-
 /* PAGE LAYOUT */
 main { padding-top:var(--nav-h); min-height:100vh; }
 .page-wrap { max-width:1160px; margin:0 auto; padding:4rem 3rem 6rem; width:100%; }
@@ -82,7 +73,6 @@ main { padding-top:var(--nav-h); min-height:100vh; }
 .page-title em { font-style:italic; color:var(--gold-dark); }
 .page-sub { font-size:0.9rem; line-height:1.95; color:var(--text-mid); max-width:680px; }
 .page-intro-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; margin-bottom:4rem; }
-
 /* CARDS & COMPONENTS */
 .card { background:var(--bg-card); border:1px solid var(--border); padding:2.5rem; position:relative; transition:border-color 0.3s, box-shadow 0.3s, transform 0.3s; }
 .card:hover { border-color:var(--gold-border); box-shadow:0 8px 40px rgba(197,160,89,0.1); transform:translateY(-3px); }
@@ -93,7 +83,6 @@ main { padding-top:var(--nav-h); min-height:100vh; }
 .card-eyebrow { font-size:0.52rem; letter-spacing:0.4em; text-transform:uppercase; color:var(--gold); margin-bottom:0.75rem; display:block; }
 .card-title { font-family:'Playfair Display',serif; font-size:1.4rem; color:var(--navy); margin-bottom:0.4rem; }
 .card-text { font-size:0.8rem; line-height:1.85; color:var(--text-mid); }
-
 /* PILLAR LIST */
 .pillar-list { display:flex; flex-direction:column; gap:1.75rem; }
 .pillar { border-left:2px solid var(--gold-border); padding-left:1.25rem; transition:border-color 0.3s; }
@@ -101,17 +90,14 @@ main { padding-top:var(--nav-h); min-height:100vh; }
 .pillar-num { font-size:0.52rem; letter-spacing:0.4em; color:var(--gold); margin-bottom:0.35rem; }
 .pillar-title { font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--navy); margin-bottom:0.35rem; }
 .pillar-text { font-size:0.79rem; line-height:1.8; color:var(--text-mid); }
-
 /* DARK BAND */
 .dark-band { background:var(--navy); padding:3rem; display:flex; align-items:center; justify-content:space-between; gap:3rem; flex-wrap:wrap; margin-top:3.5rem; }
 .dark-band-title { font-family:'Playfair Display',serif; font-size:1.4rem; color:rgba(255,255,255,0.9); line-height:1.4; }
 .dark-band-text { font-size:0.84rem; color:rgba(255,255,255,0.55); line-height:1.85; margin-top:0.5rem; }
-
 /* INTERNAL LINK */
 .internal-link { display:inline-flex; align-items:center; gap:0.5rem; font-size:0.65rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold-dark); text-decoration:none; border-bottom:1px solid var(--gold-border); padding-bottom:2px; transition:border-color 0.25s, color 0.25s; }
 .internal-link:hover { color:var(--gold); border-color:var(--gold); }
 .internal-link::after { content:'→'; font-size:0.9rem; }
-
 /* BUTTONS */
 .btn-gold { background:var(--gold); color:white; border:none; padding:0.9rem 2.2rem; font-family:'DM Sans',sans-serif; font-size:0.63rem; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; text-decoration:none; cursor:pointer; display:inline-block; transition:background 0.25s, transform 0.2s; }
 .btn-gold:hover { background:var(--gold-dark); transform:translateY(-2px); }
@@ -121,7 +107,6 @@ main { padding-top:var(--nav-h); min-height:100vh; }
 .btn-outline-light:hover { border-color:var(--gold); color:var(--gold); }
 .btn-navy { background:var(--navy); color:white; border:none; padding:0.9rem 2.2rem; font-family:'DM Sans',sans-serif; font-size:0.63rem; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; text-decoration:none; cursor:pointer; display:inline-block; transition:background 0.25s; }
 .btn-navy:hover { background:var(--navy-mid); }
-
 /* FOOTER */
 footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); padding:2rem 3rem; display:flex; align-items:center; justify-content:space-between; flex-shrink:0; flex-wrap:wrap; gap:1.5rem; }
 .footer-logo { display:flex; align-items:baseline; cursor:pointer; text-decoration:none; }
@@ -135,11 +120,9 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
 .footer-copy { font-size:0.58rem; color:rgba(255,255,255,0.35); line-height:1; }
 .footer-legal-btn { font-size:0.58rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.25); background:none; border:none; cursor:pointer; transition:color 0.25s; padding:0; }
 .footer-legal-btn:hover { color:var(--gold); }
-
 /* REVEAL */
 .reveal { opacity:0; transform:translateY(20px); transition:opacity 0.6s ease, transform 0.6s ease; }
 .reveal.visible { opacity:1; transform:translateY(0); }
-
 /* RESPONSIVE */
 @media (max-width:1024px) {
   .header-top { padding:0 1.5rem; }
@@ -155,8 +138,6 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
   .footer-legal { justify-content:center; }
   .sidebar-panel { left:0 !important; right:0 !important; width:100% !important; max-height:70vh; border-left:none; border-right:none; }
 }
-
-
 .legal-overlay { display:none; position:fixed; inset:0; background:rgba(13,27,42,0.6); backdrop-filter:blur(4px); z-index:600; align-items:center; justify-content:center; padding:2rem; }
 .legal-overlay.open { display:flex; }
 .legal-box { background:var(--bg-card); border:1px solid var(--border); max-width:600px; width:100%; max-height:80vh; display:flex; flex-direction:column; overflow:hidden; }
@@ -165,8 +146,6 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
 .legal-box-close { background:none; border:1px solid var(--border); padding:0.3rem 0.6rem; font-size:0.75rem; color:var(--text-dim); cursor:pointer; transition:border-color 0.2s, color 0.2s; }
 .legal-box-close:hover { border-color:var(--gold); color:var(--gold-dark); }
 .legal-box-content { padding:1.75rem; overflow-y:auto; font-size:0.82rem; line-height:1.85; color:var(--text-mid); display:flex; flex-direction:column; gap:1rem; }
-
-
 /* ══ HERO ══ */
 .hero {
   min-height: calc(100vh - var(--nav-h));
@@ -223,7 +202,6 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
   display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
   opacity: 0; animation: fadeUp 0.7s ease 0.7s forwards;
 }
-
 /* ══ BRIDGE ══ */
 .bridge {
   background: var(--bg-alt); padding: 6rem 2rem; text-align: center;
@@ -257,20 +235,17 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
   line-height: 1.8; color: rgba(255,255,255,0.85);
 }
 .bridge-statement em { color: var(--gold); font-style: normal; }
-
 /* ══ WORLD SECTION ══ */
 .world-section {
   padding: 6rem 2rem;
 }
 .world-section.dark { background: var(--navy); }
 .world-section.light { background: var(--creme); }
-
 .world-inner {
   max-width: 960px; margin: 0 auto;
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 5rem; align-items: start;
 }
-
 .world-eyebrow {
   font-size: 0.55rem; letter-spacing: 0.5em; text-transform: uppercase;
   color: var(--gold); margin-bottom: 1.25rem; display: block;
@@ -284,13 +259,11 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
 .light .world-title { color: var(--navy); }
 .dark .world-title em { color: var(--gold); font-style: italic; }
 .light .world-title em { color: var(--gold-dark); font-style: italic; }
-
 .world-intro {
   font-size: 0.88rem; line-height: 2; margin-bottom: 1.5rem;
 }
 .dark .world-intro { color: rgba(255,255,255,0.55); }
 .light .world-intro { color: var(--text-mid); }
-
 .pain-list {
   list-style: none; display: flex; flex-direction: column;
   gap: 0.5rem; margin-bottom: 2rem;
@@ -302,13 +275,11 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
 }
 .dark .pain-list li { color: rgba(255,255,255,0.5); }
 .light .pain-list li { color: var(--text-mid); }
-
 .world-resolution {
   font-size: 0.9rem; line-height: 1.9; margin-bottom: 2rem;
 }
 .dark .world-resolution { color: rgba(255,255,255,0.7); }
 .light .world-resolution { color: var(--text); }
-
 /* Feature card */
 .feature-card {
   padding: 2.5rem;
@@ -317,7 +288,6 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
 }
 .dark .feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(197,160,89,0.2); border-top: 2px solid var(--gold); }
 .light .feature-card { background: var(--navy); }
-
 .feature-card-name {
   font-family: 'Playfair Display', serif;
   font-size: 1.8rem; font-style: italic; color: var(--gold);
@@ -338,7 +308,6 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
   display: flex; gap: 0.6rem; align-items: flex-start;
 }
 .feature-card-points li::before { content: '—'; color: var(--gold); flex-shrink: 0; }
-
 /* ══ CONNECTION ══ */
 .connection {
   background: var(--bg); padding: 6rem 2rem; text-align: center;
@@ -363,7 +332,6 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
   color: var(--gold-dark); padding: 0.5rem 1.25rem;
   border: 1px solid var(--gold-border);
 }
-
 /* ══ CLOSING ══ */
 .closing {
   background: var(--navy); padding: 7rem 2rem; text-align: center;
@@ -385,20 +353,14 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
   font-size: 0.88rem; color: rgba(255,255,255,0.45);
   line-height: 1.9; margin-bottom: 3rem;
 }
-
 @keyframes fadeUp {
   from { opacity:0; transform:translateY(20px); }
   to   { opacity:1; transform:translateY(0); }
 }
-
 @media (max-width: 1024px) {
   .world-inner { grid-template-columns: 1fr; gap: 3rem; }
   .world-section { padding: 4rem 1.5rem; }
 }
-
-
-
-
 body { background: #F5EDD8; }
 .page-title { font-family:'Playfair Display',serif !important; font-weight:400 !important; color: #0D1B2A !important; }
 .page-title em { color: #C5A059 !important; }
@@ -409,8 +371,6 @@ details { border-bottom:1px solid rgba(13,27,42,0.1);padding:1.25rem 0; }
 summary { font-size:0.9rem;font-weight:500;color:#0D1B2A;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center; }
 summary::-webkit-details-marker { display:none; }
 details p { font-size:0.82rem;line-height:1.9;color:rgba(13,27,42,0.65);margin-top:0.75rem; }
-
-
 @media (max-width: 768px) {
   div[style*="grid-template-columns:repeat(3,1fr)"],
   div[style*="grid-template-columns:repeat(3, 1fr)"] {
@@ -424,7 +384,6 @@ details p { font-size:0.82rem;line-height:1.9;color:rgba(13,27,42,0.65);margin-t
     padding-right: 1.25rem !important;
   }
 }
-
 body { background: #F5EDD8; }
 @media (max-width: 768px) {
   div[style*="grid-template-columns:repeat(3,1fr)"],
@@ -432,10 +391,6 @@ body { background: #F5EDD8; }
   div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
   .page-wrap { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
 }
-
-
-
-
 /* SELBSTREFLEXION FINAL STRUCTURE */
 .self-intro-grid{
   display:grid;
@@ -444,35 +399,29 @@ body { background: #F5EDD8; }
   align-items:stretch;
   margin-top:3rem;
 }
-
 .self-focus-column{
   display:flex;
   flex-direction:column;
   height:100%;
 }
-
 .self-focus-column > div:last-child{
   flex:1;
   display:flex;
   flex-direction:column;
 }
-
 .self-focus-column > div:last-child > div{
   flex:1;
   display:flex;
   flex-direction:column;
   justify-content:flex-start;
 }
-
 .self-price-wrapper,
 .self-price-card{
   height:100%;
 }
-
 .self-price-card > div:last-child{
   flex:1;
 }
-
 .self-price-card{
   background:#0D1B2A;
   border-top:3px solid #C5A059;
@@ -480,38 +429,32 @@ body { background: #F5EDD8; }
   display:flex;
   flex-direction:column;
 }
-
 .self-section{
   margin-top:4rem;
   padding-top:3rem;
   border-top:1px solid rgba(13,27,42,0.1);
 }
-
 .self-full-card{
   background:white;
   border-left:3px solid #C5A059;
   padding:2rem 2.5rem;
 }
-
 .self-use-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:1.5rem;
   align-items:stretch;
 }
-
 .self-use-card{
   background:white;
   border-top:2px solid #C5A059;
   padding:1.75rem;
 }
-
 .self-basis-section{
   background:white;
   border-left:3px solid #C5A059;
   padding:2.5rem 3rem;
 }
-
 @media (max-width:1100px){
   header{overflow:visible!important;}
   .header-top{
@@ -551,13 +494,11 @@ body { background: #F5EDD8; }
   }
   .mobile-menu.open{display:flex!important;}
 }
-
 @media (max-width:900px){
   .self-use-grid{
     grid-template-columns:1fr;
   }
 }
-
 @media (max-width:768px){
   .self-intro-grid,
   .self-use-grid,
@@ -570,16 +511,13 @@ body { background: #F5EDD8; }
   div[style*="grid-template-columns:1fr 1fr 1fr"]{
     grid-template-columns:1fr!important;
   }
-
   .page-wrap{
     padding-left:1.25rem!important;
     padding-right:1.25rem!important;
   }
-
   .page-title{
     font-size:clamp(2rem,10vw,3rem)!important;
   }
-
   .self-full-card,
   .self-basis-section,
   .self-use-card,
@@ -589,36 +527,29 @@ body { background: #F5EDD8; }
     padding-left:1.5rem!important;
     padding-right:1.5rem!important;
   }
-
   .btn-gold,
   .btn-outline,
   .btn-outline-light{
     max-width:100%!important;
   }
 }
-
-
 .self-price-wrapper{
   padding-top:0;
 }
-
 @media (max-width:768px){
   .self-price-wrapper{
     padding-top:0;
   }
-
   .self-focus-column,
   .self-price-wrapper,
   .self-price-card{
     height:auto;
   }
-
   .self-focus-column > div:last-child,
   .self-focus-column > div:last-child > div{
     flex:initial;
   }
 }
-
 </style>
 </head>
 <body>
@@ -643,9 +574,7 @@ body { background: #F5EDD8; }
   </button>
 </div>
 </header>
-
 <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
-
 <div class="sidebar-panel" id="sidebar-methodik">
   <div class="sidebar-header">
     <span class="sidebar-label">Logic | Soul</span>
@@ -657,7 +586,6 @@ body { background: #F5EDD8; }
     <a href="methodik.html" class="sidebar-btn">Die 5 Schritte</a>
   </div>
 </div>
-
 <div class="sidebar-panel" id="sidebar-unternehmen">
   <div class="sidebar-header">
     <span class="sidebar-label">Logic | Soul</span>
@@ -669,7 +597,6 @@ body { background: #F5EDD8; }
     <a href="kontakt.html" class="sidebar-btn">Erstgespräch anfragen</a>
   </div>
 </div>
-
 <div class="sidebar-panel" id="sidebar-dich">
   <div class="sidebar-header">
     <span class="sidebar-label">Logic | Soul</span>
@@ -682,7 +609,6 @@ body { background: #F5EDD8; }
     <a href="selbstreflexion.html" class="sidebar-btn">Selbstreflexions-Set</a>
   </div>
 </div>
-
 <div class="sidebar-panel" id="sidebar-produkte">
   <div class="sidebar-header">
     <span class="sidebar-label">Logic | Soul</span>
@@ -698,7 +624,6 @@ body { background: #F5EDD8; }
     <a href="musterchecks.html" class="sidebar-btn">Musterchecks</a>
   </div>
 </div>
-
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-menu-btn" id="mob-btn-unternehmen" onclick="toggleMobileSubmenu('unternehmen')">
     Für Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
@@ -736,22 +661,14 @@ body { background: #F5EDD8; }
   </div>
   <a href="kontakt.html" class="mobile-menu-cta">Gespräch anfragen</a>
 </div>
-
-
-
-
-
 <main style="background:#F5EDD8;">
   <div class="page-wrap">
     <div class="page-hero reveal" style="border-color:rgba(13,27,42,0.1);">
       <p class="page-eyebrow">Tiefer gehen · 60 Karten</p>
       <h1 class="page-title">60 Impulse die dich<br>zu dir selbst <em>einladen.</em></h1>
     </div>
-
     <p class="page-sub reveal">Das Selbstreflexions-Set ist kein Ratgeber und kein Programm. Es ist ein Rückzugsort für ehrliche Innenschau. 60 systemische Impulsfragen in 4 Fokus-Bereichen. Keine Affirmationen. Keine schönen Gedanken. Fragen die wirklich etwas bewegen.</p>
-
     <div style="background:white;border-left:3px solid #C5A059;padding:1.25rem 2rem;margin:2rem 0;" class="reveal"><p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;font-style:italic;">Nicht jedes Muster ist etwas Schlechtes.</p></div>
-
     <div class="self-intro-grid">
       <div class="reveal self-focus-column">
         <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:1.5rem;">4 Fokus-Bereiche</p>
@@ -774,7 +691,6 @@ body { background: #F5EDD8; }
           </div>
         </div>
       </div>
-
       <div class="reveal self-price-wrapper">
         <div class="self-price-card">
           <div style="background:#C5A059;padding:0.45rem 1.5rem;text-align:center;">
@@ -788,6 +704,10 @@ body { background: #F5EDD8; }
               <p style="font-size:0.78rem;color:rgba(255,255,255,0.3);text-decoration:line-through;">94,80 Euro</p>
               <p style="font-family:'Playfair Display',serif;font-size:2rem;color:#C5A059;">69 Euro</p>
             </div>
+            <div style="background:rgba(197,160,89,0.12);border:1px solid rgba(197,160,89,0.3);padding:0.6rem 1rem;margin-bottom:1.25rem;">
+              <p style="font-size:0.6rem;color:rgba(255,255,255,0.5);margin-bottom:0.2rem;letter-spacing:0.1em;text-transform:uppercase;">Rabattcode im Checkout eingeben</p>
+              <p style="font-family:'DM Sans',monospace;font-size:0.9rem;color:#C5A059;font-weight:500;letter-spacing:0.15em;">EarlyLogicSoul</p>
+            </div>
             <a href="https://logic-soul.myshopify.com/cart/54003462504785:1" class="btn-gold" target="_blank" style="display:block;text-align:center;margin-bottom:1.75rem;">Bundle jetzt kaufen — 69 Euro</a>
             <div style="border-top:1px solid rgba(197,160,89,0.15);padding-top:1.25rem;display:flex;flex-direction:column;gap:0.5rem;">
               <p style="font-size:0.58rem;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:0.5rem;">Oder einzeln kaufen</p>
@@ -800,12 +720,12 @@ body { background: #F5EDD8; }
                 <span style="font-size:0.72rem;color:rgba(255,255,255,0.3);">54,90 Euro</span>
               </div>
               <p style="font-size:0.65rem;color:rgba(197,160,89,0.5);margin-top:0.25rem;">Im Bundle sparst du 25,80 Euro.</p>
+              <p style="font-size:0.62rem;color:rgba(255,255,255,0.35);margin-top:0.25rem;">Auch bei Einzelkauf: Zahlung erfolgt erst beim Versand.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-
     <!-- WIE DU DAS SET NUTZT -->
     <div class="self-section reveal">
       <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:1.25rem;">Wie du das Set nutzt</p>
@@ -824,7 +744,6 @@ body { background: #F5EDD8; }
         </div>
       </div>
     </div>
-
     <!-- EMPFEHLUNG BASIS-SET -->
     <div class="self-section reveal">
       <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:1.25rem;">Vor der Tiefe kommt das Fundament</p>
@@ -835,7 +754,6 @@ body { background: #F5EDD8; }
         <a href="basis-set.html" class="btn-gold">Zum Basis-Set</a>
       </div>
     </div>
-
   </div>
 </main>
 <footer>
@@ -859,7 +777,6 @@ body { background: #F5EDD8; }
     <a href="datenschutz.html" style="font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);text-decoration:none;">Datenschutz</a>
   </div>
 </footer>
-
 <div id="legal-impressum" class="legal-overlay" onclick="if(event.target===this)closeLegal()">
   <div class="legal-box">
     <div class="legal-box-header"><div class="legal-box-title">Impressum</div><button class="legal-box-close" onclick="closeLegal()">✕</button></div>
@@ -877,7 +794,6 @@ E-Mail: <a href="mailto:hello@logic-soul.com" style="color:var(--gold-dark);">he
     </div>
   </div>
 </div>
-
 <div id="legal-datenschutz" class="legal-overlay" onclick="if(event.target===this)closeLegal()">
   <div class="legal-box">
     <div class="legal-box-header"><div class="legal-box-title">Datenschutzerklärung</div><button class="legal-box-close" onclick="closeLegal()">✕</button></div>
