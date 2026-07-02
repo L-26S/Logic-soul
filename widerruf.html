@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Vertrag widerrufen — elektronische Widerrufsfunktion für Bestellungen bei Logic | Soul.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Vertrag widerrufen | Logic | Soul</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C5A059; --gold-dark: #a8863e;
+  --navy: #0D1B2A; --creme: #F5EDD8;
+  --text-mid: rgba(13,27,42,0.65); --border: rgba(13,27,42,0.12);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--creme); color:var(--navy); font-family:'DM Sans',sans-serif; font-weight:300; min-height:100vh; }
+.wrap { max-width:640px; margin:0 auto; padding:5rem 1.5rem 6rem; }
+.eyebrow { font-size:0.55rem; letter-spacing:0.5em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem; }
+h1 { font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(1.8rem,4vw,2.6rem); margin-bottom:1.25rem; color:var(--navy); }
+.intro { font-size:0.9rem; line-height:1.9; color:var(--text-mid); margin-bottom:2.5rem; }
+.card { background:white; border-top:3px solid var(--gold); padding:2.5rem; }
+.step { display:none; }
+.step.active { display:block; }
+label { display:block; font-size:0.7rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-mid); margin-bottom:0.4rem; margin-top:1.25rem; }
+label:first-of-type { margin-top:0; }
+input, textarea { width:100%; padding:0.75rem 1rem; border:1.5px solid var(--border); font-family:'DM Sans',sans-serif; font-size:0.9rem; color:var(--navy); background:var(--creme); }
+input:focus, textarea:focus { outline:none; border-color:var(--gold); }
+textarea { resize:vertical; min-height:80px; }
+.hint { font-size:0.72rem; color:var(--text-mid); margin-top:0.35rem; }
+.btn-gold { background:var(--gold); color:white; border:none; padding:0.9rem 2rem; font-family:'DM Sans',sans-serif; font-size:0.65rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; cursor:pointer; display:inline-block; margin-top:2rem; transition:background 0.2s; }
+.btn-gold:hover { background:var(--gold-dark); }
+.btn-gold:disabled { opacity:0.5; cursor:not-allowed; }
+.summary { background:var(--creme); border-left:3px solid var(--gold); padding:1.25rem 1.5rem; margin-top:1.5rem; font-size:0.85rem; line-height:1.8; }
+.summary strong { color:var(--navy); }
+.confirmation { text-align:center; padding:2rem 0; }
+.confirmation .check { font-size:2rem; color:var(--gold); margin-bottom:1rem; }
+.confirmation h2 { font-family:'Playfair Display',serif; font-weight:400; font-size:1.4rem; margin-bottom:1rem; }
+.confirmation p { font-size:0.88rem; line-height:1.85; color:var(--text-mid); }
+.confirmation .timestamp { font-size:0.72rem; color:var(--gold-dark); margin-top:1rem; letter-spacing:0.05em; }
+.back-link { display:inline-block; margin-top:2rem; font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold-dark); text-decoration:none; }
+.error { color:#b33; font-size:0.8rem; margin-top:1rem; display:none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">Widerrufsfunktion</p>
+  <h1>Vertrag widerrufen</h1>
+  <p class="intro">Du hast das Recht, deine Bestellung innerhalb von 14 Tagen ohne Angabe von Gründen zu widerrufen. Über dieses Formular kannst du deinen Widerruf elektronisch erklären. Details zu Fristen und Voraussetzungen findest du in unserer <a href="widerrufsrecht.html" style="color:var(--gold-dark);">Widerrufsbelehrung</a>.</p>
+
+  <div class="card">
+
+    <!-- SCHRITT 1: Vertragsdaten -->
+    <div class="step active" id="step1">
+      <label for="name">Name</label>
+      <input type="text" id="name" required>
+
+      <label for="order">Bestellnummer</label>
+      <input type="text" id="order" required placeholder="z. B. #1234">
+      <p class="hint">Findest du in deiner Bestellbestätigungs-E-Mail.</p>
+
+      <label for="email">E-Mail-Adresse</label>
+      <input type="email" id="email" required>
+      <p class="hint">Hierhin senden wir deine Eingangsbestätigung.</p>
+
+      <label for="reason">Grund (optional)</label>
+      <textarea id="reason" placeholder="Nicht verpflichtend — hilft uns aber, besser zu werden."></textarea>
+
+      <p class="error" id="step1error">Bitte fülle Name, Bestellnummer und E-Mail-Adresse aus.</p>
+
+      <button class="btn-gold" onclick="goToStep2()">Vertrag widerrufen</button>
+    </div>
+
+    <!-- SCHRITT 2: Bestätigung -->
+    <div class="step" id="step2">
+      <p style="font-size:0.9rem;line-height:1.85;color:var(--text-mid);">Bitte prüfe deine Angaben:</p>
+      <div class="summary" id="summaryBox"></div>
+      <p class="error" id="step2error">Es gab ein Problem beim Senden. Bitte versuche es erneut oder schreib uns direkt an <a href="mailto:intern@logic-soul.com">intern@logic-soul.com</a>.</p>
+      <button class="btn-gold" id="confirmBtn" onclick="confirmWithdrawal()">Widerruf bestätigen</button>
+    </div>
+
+    <!-- SCHRITT 3: Eingangsbestätigung -->
+    <div class="step" id="step3">
+      <div class="confirmation">
+        <div class="check">&#10003;</div>
+        <h2>Dein Widerruf ist eingegangen</h2>
+        <p>Wir haben deine Widerrufserklärung erhalten. Eine schriftliche Eingangsbestätigung senden wir zusätzlich an deine angegebene E-Mail-Adresse. Wir melden uns zeitnah mit den nächsten Schritten.</p>
+        <p class="timestamp" id="timestampDisplay"></p>
+      </div>
+    </div>
+
+  </div>
+
+  <a href="index.html" class="back-link">← Zurück zur Startseite</a>
+</div>
+
+<script>
+let formData = {};
+
+function goToStep2() {
+  const name = document.getElementById('name').value.trim();
+  const order = document.getElementById('order').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const reason = document.getElementById('reason').value.trim();
+
+  if (!name || !order || !email) {
+    document.getElementById('step1error').style.display = 'block';
+    return;
+  }
+  document.getElementById('step1error').style.display = 'none';
+
+  formData = { name, order, email, reason };
+
+  document.getElementById('summaryBox').innerHTML =
+    '<strong>Name:</strong> ' + name + '<br>' +
+    '<strong>Bestellnummer:</strong> ' + order + '<br>' +
+    '<strong>E-Mail:</strong> ' + email +
+    (reason ? '<br><strong>Grund:</strong> ' + reason : '');
+
+  document.getElementById('step1').classList.remove('active');
+  document.getElementById('step2').classList.add('active');
+}
+
+async function confirmWithdrawal() {
+  const btn = document.getElementById('confirmBtn');
+  btn.disabled = true;
+  btn.textContent = 'Wird gesendet ...';
+  document.getElementById('step2error').style.display = 'none';
+
+  const now = new Date();
+  const timestamp = now.toLocaleString('de-DE', { dateStyle: 'long', timeStyle: 'short' });
+
+  try {
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: 'WEB3FORMS_ACCESS_KEY_HIER',
+        subject: 'Widerruf — Bestellung ' + formData.order,
+        name: formData.name,
+        email: formData.email,
+        order: formData.order,
+        reason: formData.reason || 'Kein Grund angegeben',
+        timestamp: timestamp,
+        message: 'Widerrufserklärung von ' + formData.name + ' zu Bestellung ' + formData.order + ' am ' + timestamp
+      })
+    });
+
+    if (!response.ok) throw new Error('Submit failed');
+
+    document.getElementById('timestampDisplay').textContent = 'Eingegangen am ' + timestamp;
+    document.getElementById('step2').classList.remove('active');
+    document.getElementById('step3').classList.add('active');
+  } catch (err) {
+    document.getElementById('step2error').style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Widerruf bestätigen';
+  }
+}
+</script>
+</body>
+</html>
