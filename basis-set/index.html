@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Das Basis-Set der SystemAlchemie: Eigene SystemKanäle entdecken, positive Muster sehen, persönlichen Ankerplatz finden. Das Fundament für SAM.">
+<meta name="keywords" content="SystemAlchemie Basis-Set, SystemKanäle, Ankerplatz, Selbstwahrnehmung Kartenset">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Basis-Set — SystemKanäle und Ankerplatz | Logic | Soul</title>
+<link rel="canonical" href="https://logic-soul.com/basis-set/">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C5A059; --gold-light: #d4b472; --gold-dim: rgba(197,160,89,0.1);
+  --gold-border: rgba(197,160,89,0.32); --gold-dark: #a8863e;
+  --navy: #0D1B2A; --navy-mid: #162336; --navy-light: rgba(13,27,42,0.06);
+  --navy-border: rgba(13,27,42,0.12);
+  --bg: #F2F0ED; --bg-alt: #FAFAF8; --bg-card: #FFFFFF;
+  --border: rgba(13,27,42,0.09);
+  --text: #0D1B2A; --text-mid: rgba(13,27,42,0.65); --text-dim: rgba(13,27,42,0.42);
+  --alma: #19047C; --alma-dark: #0f0250; --creme: #F5EDD8;
+  --nav-h: 68px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; font-weight:300; }
+header { position:fixed; top:0; left:0; right:0; z-index:500; background:rgba(250,250,248,0.97); backdrop-filter:blur(20px); border-bottom:1px solid var(--border); box-shadow:0 1px 20px rgba(13,27,42,0.05); }
+.header-top { height:var(--nav-h); display:flex; align-items:center; justify-content:space-between; padding:0 3rem; }
+.logo { display:flex; align-items:baseline; cursor:pointer; text-decoration:none; }
+.logo-logik { font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--navy); }
+.logo-pipe  { font-family:'DM Sans',sans-serif; font-size:1.1rem; font-weight:300; color:var(--gold); padding:0 0.13rem; }
+.logo-soul  { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:400; font-style:italic; color:var(--navy); }
+.main-nav { display:flex; align-items:center; list-style:none; }
+.nav-btn { display:flex; align-items:center; gap:0.3rem; height:var(--nav-h); padding:0 0.85rem; font-family:'DM Sans',sans-serif; font-size:0.61rem; font-weight:400; letter-spacing:0.18em; text-transform:uppercase; color:var(--navy); opacity:0.55; background:none; border:none; cursor:pointer; transition:opacity 0.2s; white-space:nowrap; border-bottom:2px solid transparent; text-decoration:none; display:flex; align-items:center; }
+.nav-btn:hover { opacity:1; }
+.nav-btn.active { opacity:1; border-bottom-color:var(--gold); }
+.nav-btn svg { width:7px; height:7px; opacity:0.4; transition:transform 0.25s; flex-shrink:0; }
+.nav-cta { margin-left:1rem !important; padding:0.5rem 1.3rem !important; height:auto !important; border:1.5px solid var(--gold) !important; color:var(--gold-dark) !important; font-size:0.6rem !important; opacity:1 !important; transition:background 0.25s, color 0.25s !important; }
+.nav-cta:hover { background:var(--gold) !important; color:white !important; }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; }
+.hamburger span { display:block; width:22px; height:1.5px; background:var(--navy); }
+.sidebar-panel { position:fixed; top:var(--nav-h); width:260px; background:var(--navy); border:1px solid rgba(197,160,89,0.2); border-top:2px solid var(--gold); z-index:450; display:flex; flex-direction:column; opacity:0; visibility:hidden; pointer-events:none; transform:translateY(-8px); transition:opacity 0.22s ease, transform 0.22s ease, visibility 0.22s; overflow-y:auto; max-height:calc(100vh - var(--nav-h) - 2rem); box-shadow:0 8px 40px rgba(0,0,0,0.25); }
+.sidebar-panel.open { opacity:1; visibility:visible; pointer-events:all; transform:translateY(0); }
+.sidebar-overlay { position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(13,27,42,0.15); backdrop-filter:blur(2px); z-index:440; opacity:0; visibility:hidden; transition:opacity 0.22s, visibility 0.22s; cursor:pointer; }
+.sidebar-overlay.open { opacity:1; visibility:visible; }
+.sidebar-header { padding:1.25rem 1.5rem 0.85rem; border-bottom:1px solid rgba(197,160,89,0.12); }
+.sidebar-label { font-size:0.5rem; letter-spacing:0.5em; text-transform:uppercase; color:var(--gold); display:block; }
+.sidebar-title { font-family:'Playfair Display',serif; font-size:1rem; color:rgba(255,255,255,0.9); margin-top:0.35rem; }
+.sidebar-items { padding:0.5rem 0; }
+.sidebar-btn { display:flex; align-items:center; width:100%; padding:0.8rem 1.5rem; font-family:'DM Sans',sans-serif; font-size:0.61rem; font-weight:300; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.6); background:none; border:none; border-bottom:1px solid rgba(255,255,255,0.04); text-align:left; cursor:pointer; transition:color 0.18s, background 0.18s, padding-left 0.18s; text-decoration:none; }
+.sidebar-btn:last-child { border-bottom:none; }
+.sidebar-btn:hover { color:var(--gold); background:rgba(197,160,89,0.07); padding-left:1.85rem; }
+.mobile-menu { display:none; position:fixed; top:var(--nav-h); left:0; right:0; bottom:0; background:var(--navy); z-index:490; overflow-y:auto; flex-direction:column; }
+.mobile-menu.open { display:flex; }
+.mobile-menu-btn { display:flex; align-items:center; justify-content:space-between; width:100%; padding:1.1rem 1.75rem; font-family:'DM Sans',sans-serif; font-size:0.72rem; font-weight:300; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.7); background:none; border:none; border-bottom:1px solid rgba(255,255,255,0.06); text-align:left; cursor:pointer; }
+.mobile-menu-btn:hover, .mobile-menu-btn.expanded { color:var(--gold); }
+.mobile-menu-btn svg { width:10px; height:10px; opacity:0.4; transition:transform 0.25s; flex-shrink:0; }
+.mobile-menu-btn.expanded svg { transform:rotate(180deg); opacity:1; }
+.mobile-submenu { display:none; flex-direction:column; background:rgba(0,0,0,0.25); border-bottom:1px solid rgba(255,255,255,0.06); }
+.mobile-submenu.open { display:flex; }
+.mobile-sub-btn { display:block; width:100%; padding:0.85rem 2.5rem; font-family:'DM Sans',sans-serif; font-size:0.65rem; font-weight:300; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.5); background:none; border:none; border-bottom:1px solid rgba(255,255,255,0.03); text-align:left; cursor:pointer; transition:color 0.2s, padding-left 0.2s; text-decoration:none; display:block; }
+.mobile-sub-btn:hover { color:var(--gold); padding-left:3rem; }
+.mobile-menu-cta { margin:1.5rem 1.75rem; border:1.5px solid var(--gold); color:var(--gold); padding:0.75rem 1.75rem; font-family:'DM Sans',sans-serif; font-size:0.63rem; letter-spacing:0.22em; text-transform:uppercase; background:none; cursor:pointer; transition:background 0.25s, color 0.25s; text-align:center; display:block; text-decoration:none; }
+.mobile-menu-cta:hover { background:var(--gold); color:white; }
+main { padding-top:var(--nav-h); min-height:100vh; }
+.page-wrap { max-width:1160px; margin:0 auto; padding:4rem 3rem 6rem; width:100%; }
+.page-hero { margin-bottom:3.5rem; padding-bottom:2.5rem; border-bottom:1px solid var(--border); }
+.page-eyebrow { font-size:0.55rem; letter-spacing:0.5em; text-transform:uppercase; color:var(--gold); margin-bottom:0.85rem; }
+.page-title { font-family:'Playfair Display',serif; font-size:clamp(2.2rem,3.5vw,3.8rem); font-weight:400; line-height:1.1; color:var(--navy); margin-bottom:1.25rem; }
+.page-title em { font-style:italic; color:var(--gold-dark); }
+.page-sub { font-size:0.9rem; line-height:1.95; color:var(--text-mid); max-width:680px; }
+.page-intro-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; margin-bottom:4rem; }
+.pillar-list { display:flex; flex-direction:column; gap:1.75rem; }
+.pillar { border-left:2px solid var(--gold-border); padding-left:1.25rem; transition:border-color 0.3s; }
+.pillar:hover { border-left-color:var(--gold); }
+.pillar-num { font-size:0.52rem; letter-spacing:0.4em; color:var(--gold); margin-bottom:0.35rem; }
+.pillar-title { font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--navy); margin-bottom:0.35rem; }
+.pillar-text { font-size:0.79rem; line-height:1.8; color:var(--text-mid); }
+.internal-link { display:inline-flex; align-items:center; gap:0.5rem; font-size:0.65rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold-dark); text-decoration:none; border-bottom:1px solid var(--gold-border); padding-bottom:2px; transition:border-color 0.25s, color 0.25s; }
+.internal-link:hover { color:var(--gold); border-color:var(--gold); }
+.internal-link::after { content:'→'; font-size:0.9rem; }
+.btn-gold { background:var(--gold); color:white; border:none; padding:0.9rem 2.2rem; font-family:'DM Sans',sans-serif; font-size:0.63rem; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; text-decoration:none; cursor:pointer; display:inline-block; transition:background 0.25s, transform 0.2s; }
+.btn-gold:hover { background:var(--gold-dark); transform:translateY(-2px); }
+.btn-outline-light { border:1.5px solid rgba(255,255,255,0.25); color:rgba(255,255,255,0.8); padding:0.9rem 2.2rem; font-family:'DM Sans',sans-serif; font-size:0.63rem; font-weight:300; letter-spacing:0.22em; text-transform:uppercase; text-decoration:none; cursor:pointer; display:inline-block; background:transparent; transition:border-color 0.25s, color 0.25s; }
+.btn-outline-light:hover { border-color:var(--gold); color:var(--gold); }
+footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); padding:2rem 3rem; display:flex; align-items:center; justify-content:space-between; flex-shrink:0; flex-wrap:wrap; gap:1.5rem; }
+.footer-logo { display:flex; align-items:baseline; cursor:pointer; text-decoration:none; }
+.footer-logik { font-family:'DM Sans',sans-serif; font-size:0.9rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.88); }
+.footer-pipe  { font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:300; color:var(--gold); padding:0 0.13rem; }
+.footer-soul  { font-family:'Playfair Display',serif; font-size:1rem; font-weight:400; font-style:italic; color:rgba(255,255,255,0.88); }
+.footer-nav { display:flex; gap:1.75rem; flex-wrap:wrap; align-items:center; }
+.footer-nav a { font-size:0.58rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.35); text-decoration:none; transition:color 0.25s; line-height:1; }
+.footer-nav a:hover { color:var(--gold); }
+.footer-legal { display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap; }
+.footer-copy { font-size:0.58rem; color:rgba(255,255,255,0.35); line-height:1; }
+.footer-legal-btn { font-size:0.58rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.25); background:none; border:none; cursor:pointer; transition:color 0.25s; padding:0; }
+.footer-legal-btn:hover { color:var(--gold); }
+.reveal { opacity:0; transform:translateY(20px); transition:opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.legal-overlay { display:none; position:fixed; inset:0; background:rgba(13,27,42,0.6); backdrop-filter:blur(4px); z-index:600; align-items:center; justify-content:center; padding:2rem; }
+.legal-overlay.open { display:flex; }
+.legal-box { background:var(--bg-card); border:1px solid var(--border); max-width:600px; width:100%; max-height:80vh; display:flex; flex-direction:column; overflow:hidden; }
+.legal-box-header { display:flex; align-items:center; justify-content:space-between; padding:1.25rem 1.75rem; border-bottom:1px solid var(--border); flex-shrink:0; }
+.legal-box-title { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--navy); }
+.legal-box-close { background:none; border:1px solid var(--border); padding:0.3rem 0.6rem; font-size:0.75rem; color:var(--text-dim); cursor:pointer; transition:border-color 0.2s, color 0.2s; }
+.legal-box-close:hover { border-color:var(--gold); color:var(--gold-dark); }
+.legal-box-content { padding:1.75rem; overflow-y:auto; font-size:0.82rem; line-height:1.85; color:var(--text-mid); display:flex; flex-direction:column; gap:1rem; }
+body { background: #F5EDD8; }
+.page-title { font-family:'Playfair Display',serif !important; font-weight:400 !important; color: #0D1B2A !important; }
+.page-title em { color: #C5A059 !important; }
+.page-sub { color: rgba(13,27,42,0.65) !important; }
+.page-eyebrow { color: #C5A059 !important; }
+.pillar { border-color: rgba(197,160,89,0.4) !important; }
+.basis-channel-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; align-items:stretch; }
+.basis-channel-card { background:white; border-top:2px solid #C5A059; padding:1.75rem; }
+@media (max-width:1100px) {
+  header{overflow:visible!important;}
+  .header-top{height:var(--nav-h)!important;padding:0 1.25rem!important;justify-content:space-between!important;}
+  .logo{flex-shrink:0!important;}
+  .logo-logik{font-size:0.88rem!important;letter-spacing:0.16em!important;}
+  .logo-pipe,.logo-soul{font-size:0.95rem!important;}
+  .main-nav{display:none!important;}
+  .hamburger{display:flex!important;flex-direction:column!important;gap:5px!important;background:transparent!important;border:none!important;cursor:pointer!important;padding:0.6rem!important;margin-left:auto!important;z-index:999!important;}
+  .hamburger span{display:block!important;width:24px!important;height:1.6px!important;background:var(--navy)!important;}
+  .mobile-menu{top:var(--nav-h)!important;left:0!important;right:0!important;bottom:0!important;width:100%!important;background:var(--navy)!important;z-index:490!important;}
+  .mobile-menu.open{display:flex!important;}
+}
+@media (max-width:1024px) {
+  .header-top{padding:0 1.5rem;}
+  .main-nav{display:none;}
+  .hamburger{display:flex;}
+  .page-wrap{padding:3rem 1.5rem 5rem;}
+  .page-intro-grid{grid-template-columns:1fr;gap:2rem;}
+  footer{flex-direction:column;text-align:center;padding:2rem 1.5rem;}
+  .footer-nav{justify-content:center;}
+  .footer-legal{justify-content:center;}
+  .sidebar-panel{left:0!important;right:0!important;width:100%!important;max-height:70vh;border-left:none;border-right:none;}
+  .basis-channel-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:768px) {
+  .basis-channel-grid,.page-intro-grid,div[style*="grid-template-columns:1fr 1fr"],div[style*="grid-template-columns:repeat(3"],div[style*="grid-template-columns:1fr 1fr 1fr"]{grid-template-columns:1fr!important;}
+  .page-wrap{padding-left:1.25rem!important;padding-right:1.25rem!important;}
+  .page-title{font-size:clamp(2rem,10vw,3rem)!important;}
+  .btn-gold,.btn-outline,.btn-outline-light{max-width:100%!important;}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="header-top">
+  <a href="/" class="logo">
+    <span class="logo-logik">Logic</span>
+    <span class="logo-pipe"> | </span>
+    <span class="logo-soul">Soul</span>
+  </a>
+  <nav>
+    <ul class="main-nav">
+      <li><button class="nav-btn" onclick="toggleSidebar('unternehmen', this)">Für Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
+      <li><button class="nav-btn" onclick="toggleSidebar('dich', this)">Für Dich <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
+      <li><button class="nav-btn" onclick="toggleSidebar('produkte', this)">Produkte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
+      <li><button class="nav-btn" onclick="toggleSidebar('methodik', this)">Methodik <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
+      <li><a href="/kontakt/" class="nav-btn nav-cta">Gespräch anfragen</a></li>
+    </ul>
+  </nav>
+  <button type="button" class="hamburger" onclick="toggleMobileMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+</header>
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<div class="sidebar-panel" id="sidebar-methodik">
+  <div class="sidebar-header"><span class="sidebar-label">Logic | Soul</span><div class="sidebar-title">Methodik</div></div>
+  <div class="sidebar-items">
+    <a href="/systemalchemie/" class="sidebar-btn">Was ist SystemAlchemie?</a>
+    <a href="/entstehung/" class="sidebar-btn">Wie sie entstand</a>
+    <a href="/methodik/" class="sidebar-btn">Die 5 Schritte</a>
+  </div>
+</div>
+<div class="sidebar-panel" id="sidebar-unternehmen">
+  <div class="sidebar-header"><span class="sidebar-label">Logic | Soul</span><div class="sidebar-title">Für Führungskräfte</div></div>
+  <div class="sidebar-items">
+    <a href="/alma/" class="sidebar-btn">ALMA</a>
+    <a href="/fuehrungsset/" class="sidebar-btn">Führungskräfte-Set</a>
+    <a href="/kontakt/" class="sidebar-btn">Erstgespräch anfragen</a>
+  </div>
+</div>
+<div class="sidebar-panel" id="sidebar-dich">
+  <div class="sidebar-header"><span class="sidebar-label">Logic | Soul</span><div class="sidebar-title">Für Dich</div></div>
+  <div class="sidebar-items">
+    <a href="/sam/" class="sidebar-btn">SAM</a>
+    <a href="/musterchecks/" class="sidebar-btn">Musterchecks</a>
+    <a href="/basis-set/" class="sidebar-btn">Basis-Set</a>
+    <a href="/selbstreflexion/" class="sidebar-btn">Selbstreflexions-Set</a>
+  </div>
+</div>
+<div class="sidebar-panel" id="sidebar-produkte">
+  <div class="sidebar-header"><span class="sidebar-label">Logic | Soul</span><div class="sidebar-title">Produkte</div></div>
+  <div class="sidebar-items">
+    <a href="/produkte/" class="sidebar-btn" style="color:var(--gold);border-bottom:1px solid rgba(197,160,89,0.2);">Alle Produkte</a>
+    <a href="/alma/" class="sidebar-btn">ALMA — für Führungskräfte</a>
+    <a href="/sam/" class="sidebar-btn">SAM — für Dich</a>
+    <a href="/fuehrungsset/" class="sidebar-btn">Führungskräfte-Set</a>
+    <a href="/basis-set/" class="sidebar-btn">Basis-Set</a>
+    <a href="/selbstreflexion/" class="sidebar-btn">Selbstreflexions-Set</a>
+    <a href="/musterchecks/" class="sidebar-btn">Musterchecks</a>
+  </div>
+</div>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-btn" id="mob-btn-unternehmen" onclick="toggleMobileSubmenu('unternehmen')">Für Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button>
+  <div class="mobile-submenu" id="mob-sub-unternehmen">
+    <a href="/alma/" class="mobile-sub-btn">ALMA</a>
+    <a href="/fuehrungsset/" class="mobile-sub-btn">Führungskräfte-Set</a>
+  </div>
+  <button class="mobile-menu-btn" id="mob-btn-dich" onclick="toggleMobileSubmenu('dich')">Für Dich <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button>
+  <div class="mobile-submenu" id="mob-sub-dich">
+    <a href="/sam/" class="mobile-sub-btn">SAM</a>
+    <a href="/musterchecks/" class="mobile-sub-btn">Musterchecks</a>
+    <a href="/basis-set/" class="mobile-sub-btn">Basis-Set</a>
+    <a href="/selbstreflexion/" class="mobile-sub-btn">Selbstreflexions-Set</a>
+  </div>
+  <button class="mobile-menu-btn" id="mob-btn-produkte" onclick="toggleMobileSubmenu('produkte')">Produkte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button>
+  <div class="mobile-submenu" id="mob-sub-produkte">
+    <a href="/alma/" class="mobile-sub-btn">ALMA</a>
+    <a href="/sam/" class="mobile-sub-btn">SAM</a>
+    <a href="/fuehrungsset/" class="mobile-sub-btn">Führungskräfte-Set</a>
+    <a href="/basis-set/" class="mobile-sub-btn">Basis-Set</a>
+    <a href="/selbstreflexion/" class="mobile-sub-btn">Selbstreflexions-Set</a>
+  </div>
+  <button class="mobile-menu-btn" id="mob-btn-methodik" onclick="toggleMobileSubmenu('methodik')">Methodik <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button>
+  <div class="mobile-submenu" id="mob-sub-methodik">
+    <a href="/systemalchemie/" class="mobile-sub-btn">Was ist SystemAlchemie?</a>
+    <a href="/entstehung/" class="mobile-sub-btn">Wie sie entstand</a>
+    <a href="/methodik/" class="mobile-sub-btn">Die 5 Schritte</a>
+  </div>
+  <a href="/kontakt/" class="mobile-menu-cta">Gespräch anfragen</a>
+</div>
+<main style="background:#F5EDD8;">
+  <div class="page-wrap">
+    <div class="page-hero reveal" style="border-color:rgba(13,27,42,0.1);">
+      <p class="page-eyebrow">Fundament · Kartenset + Workbook</p>
+      <h1 class="page-title">Bevor du deine Muster verstehst<br>musst du verstehen <em>wie du wahrnimmst.</em></h1>
+    </div>
+    <p class="page-sub reveal">Das Basis-Set ist der erste Schritt in die SystemAlchemie. Es hilft dir herauszufinden über welchen SystemKanal du am stärksten wahrnimmst. Es zeigt dir deine eigenen Stärken. Und es führt dich zu deinem persönlichen Ankerplatz. Ohne dieses Fundament bleibt alles andere oberflächlich.</p>
+    <div style="background:white;border-left:3px solid #C5A059;padding:1.25rem 2rem;margin:2rem 0;" class="reveal"><p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;font-style:italic;">Du hörst auf, der Stress zu sein. Und fängst an, den Stress zu beobachten.</p></div>
+    <div class="page-intro-grid" style="margin-top:3rem;margin-bottom:0;">
+      <div class="reveal">
+        <div class="pillar-list">
+          <div class="pillar">
+            <div class="pillar-num">01</div>
+            <div class="pillar-title">Deine SystemKanäle</div>
+            <div class="pillar-text">Jeder Mensch nimmt anders wahr. Über Bilder. Über Töne. Über den Körper. Über Gedanken. Das Basis-Set hilft dir herauszufinden welcher Kanal bei dir am stärksten ist. Das verändert, wie du mit dir selbst arbeitest.</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">02</div>
+            <div class="pillar-title">Positive Muster sehen</div>
+            <div class="pillar-text">Nicht jedes Muster ist etwas Schlechtes. Das Basis-Set arbeitet bewusst mit positiven Beispielen. Du lernst nicht nur was dich blockiert. Du lernst auch was dich trägt.</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">03</div>
+            <div class="pillar-title">Dein Ankerplatz</div>
+            <div class="pillar-text">Der Ankerplatz ist ein sicherer, stabiler innerer Ort. Ohne ihn kann SAM dich ein Stück begleiten. Für tiefe, nachhaltige innere Arbeit ist dieser Ort jedoch der Schlüssel. Das Basis-Set führt dich dorthin.</div>
+          </div>
+        </div>
+        <div class="pillar" style="margin-top:1.75rem;">
+            <div class="pillar-num">→</div>
+            <div class="pillar-title">Das Ziel</div>
+            <div class="pillar-text">Dich selbst wieder klar wahrnehmen — bevor Muster, Reaktionen und äußere Erwartungen dazwischenfunken. Das Basis-Set legt dafür das Fundament, auf dem alles Weitere aufbaut.</div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div style="background:#0D1B2A;border-top:3px solid #C5A059;overflow:hidden;height:100%;display:flex;flex-direction:column;">
+          <div style="background:#C5A059;padding:0.65rem 1.5rem;text-align:center;">
+            <p style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:white;font-weight:500;">&#10022; Einführungspreis — Jetzt sichern &#10022;</p>
+          </div>
+          <div style="padding:2rem 2.5rem;display:flex;flex-direction:column;flex:1;">
+            <p style="font-size:0.52rem;letter-spacing:0.4em;text-transform:uppercase;color:rgba(197,160,89,0.7);margin-bottom:0.75rem;">Kartenset + Workbook</p>
+            <p style="font-family:'Playfair Display',serif;font-size:1.5rem;font-style:italic;color:#C5A059;margin-bottom:0.5rem;">Basis-Set</p>
+            <p style="font-size:0.85rem;line-height:1.85;color:rgba(255,255,255,0.55);margin-bottom:1.5rem;">Verbindliche Vorbestellung. Als Erste von der Wirkung profitieren. Versandstart voraussichtlich 1. September. Die Zahlung erfolgt sofort bei Bestellung.</p>
+            <div style="display:flex;align-items:baseline;gap:0.75rem;margin-bottom:0.5rem;">
+              <p style="font-size:0.78rem;color:rgba(255,255,255,0.3);text-decoration:line-through;">94,80 Euro</p>
+              <p style="font-family:'Playfair Display',serif;font-size:2rem;color:#C5A059;">69 Euro</p>
+            </div>
+            <div style="background:rgba(197,160,89,0.12);border:1px solid rgba(197,160,89,0.3);padding:0.6rem 1rem;margin-bottom:1.25rem;">
+              <p style="font-size:0.6rem;color:rgba(255,255,255,0.5);margin-bottom:0.2rem;letter-spacing:0.1em;text-transform:uppercase;">Rabattcode im Checkout eingeben</p>
+              <p style="font-family:'DM Sans',monospace;font-size:0.9rem;color:#C5A059;font-weight:500;letter-spacing:0.15em;">EarlyLogicSoul</p>
+            </div>
+            <a href="https://logic-soul.myshopify.com/cart/54003516768593:1" class="btn-gold" target="_blank" style="display:block;text-align:center;margin-bottom:1.75rem;">Jetzt vorbestellen — 69 Euro</a>
+            <div style="border-top:1px solid rgba(197,160,89,0.15);padding-top:1.25rem;display:flex;flex-direction:column;gap:0.5rem;">
+              <p style="font-size:0.58rem;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:0.5rem;">Oder einzeln vorbestellen</p>
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;">
+                <a href="https://logic-soul.myshopify.com/cart/54003461292369:1" style="font-size:0.78rem;color:rgba(255,255,255,0.45);text-decoration:none;" target="_blank">Nur Kartenset →</a>
+                <span style="font-size:0.72rem;color:rgba(255,255,255,0.3);">39,90 Euro</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;">
+                <a href="https://logic-soul.myshopify.com/cart/54003462144337:1" style="font-size:0.78rem;color:rgba(255,255,255,0.45);text-decoration:none;" target="_blank">Nur Workbook →</a>
+                <span style="font-size:0.72rem;color:rgba(255,255,255,0.3);">54,90 Euro</span>
+              </div>
+              <p style="font-size:0.65rem;color:rgba(197,160,89,0.5);margin-top:0.25rem;">Im Bundle sparst du 25,80 Euro.</p>
+              <p style="font-size:0.62rem;color:rgba(255,255,255,0.35);margin-top:0.25rem;">Auch bei Einzelkauf: Zahlung erfolgt sofort bei Bestellung. Versandstart voraussichtlich 1. September.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="background:white;border-left:3px solid #C5A059;padding:2rem 2.5rem;margin-top:1.25rem;" class="reveal">
+      <p style="font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:#C5A059;margin-bottom:0.5rem;">Das Workbook</p>
+      <p style="font-size:0.88rem;line-height:1.95;color:rgba(13,27,42,0.7);">Das Workbook ist ein hochwertiges, handliches A4-Buch das wirklich benutzt wird. Nicht gelesen. Bearbeitet. Mit den 5 Schritten der SystemAlchemie® als Begleitung durch den Prozess. Schritt 4 wird dabei besonders tief — er fragt nicht nur was das Muster schützt, sondern auch was es mit dir gemacht hat.</p>
+    </div>
+    <div style="margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(13,27,42,0.1);" class="reveal">
+      <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:1.25rem;">Warum zuerst das Basis-Set?</p>
+      <div style="background:white;border-left:3px solid #C5A059;padding:2rem 2.5rem;">
+        <p style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#0D1B2A;margin-bottom:1rem;font-weight:400;line-height:1.5;">SAM arbeitet am besten wenn du weißt über welchen Kanal du wahrnimmst. Und wenn du deinen Ankerplatz kennst.</p>
+        <p style="font-size:0.85rem;line-height:1.9;color:rgba(13,27,42,0.65);">Ohne dieses Fundament kann SAM dich ein Stück begleiten. Tiefe Arbeit leistet SAM jedoch nicht ohne einen sicheren, stabilen inneren Ort. Das Basis-Set schafft genau diesen Ort. Für nachhaltige innere Arbeit ist es sehr zu empfehlen.</p>
+        <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
+          <a href="/sam/" class="internal-link">Mehr zu SAM</a>
+          <a href="/produkte/" class="internal-link">Alle Produkte</a>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(13,27,42,0.1);" class="reveal">
+      <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:1.5rem;">Die 4 SystemKanäle</p>
+      <div class="basis-channel-grid">
+        <div class="basis-channel-card">
+          <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.5rem;">SystemProjektion</p>
+          <p style="font-size:0.8rem;line-height:1.8;color:rgba(13,27,42,0.6);">Du denkst in Bildern. Innere Vorstellungen sind dein Zugang. Das Gehirn nutzt Metaphern als Wegweiser.</p>
+        </div>
+        <div class="basis-channel-card">
+          <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.5rem;">SystemFrequenz</p>
+          <p style="font-size:0.8rem;line-height:1.8;color:rgba(13,27,42,0.6);">Du nimmst über Töne, Klänge und innere Stimmen wahr. Ein Rauschen im Ohr, ein Brüllen im Kopf, eine Melodie die nicht loslässt.</p>
+        </div>
+        <div class="basis-channel-card">
+          <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.5rem;">SystemGefüge</p>
+          <p style="font-size:0.8rem;line-height:1.8;color:rgba(13,27,42,0.6);">Dein Körper ist dein Kompass. Enge in der Brust, Schwere im Magen, Kribbeln im Nacken. Der Körper lügt nicht.</p>
+        </div>
+        <div class="basis-channel-card">
+          <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.5rem;">SystemKodierung</p>
+          <p style="font-size:0.8rem;line-height:1.8;color:rgba(13,27,42,0.6);">Du denkst in Konzepten und Wenn-Dann-Szenarien. Sätze die sich wiederholen, Gedanken die sich drehen. Das Gehirn sucht Struktur und Kontrolle.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer>
+  <a href="/" class="footer-logo">
+    <span class="footer-logik">Logic</span>
+    <span class="footer-pipe"> | </span>
+    <span class="footer-soul">Soul</span>
+  </a>
+  <nav class="footer-nav">
+    <a href="/alma/">ALMA</a>
+    <a href="/sam/">SAM</a>
+    <a href="/fuehrungsset/">Führungskräfte-Set</a>
+    <a href="/basis-set/">Basis-Set</a>
+    <a href="/methodik/">Methodik</a>
+    <a href="/kontakt/">Kontakt</a>
+    <a href="https://kompass.logic-soul.com" target="_blank" style="color:rgba(255,255,255,0.25);font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;">Business Kompass ↗</a>
+  </nav>
+  <div class="footer-legal">
+    <span class="footer-copy">© 2026 Logic | Soul · Yana Thomée</span>
+    <button onclick="showLegal('impressum')" style="background:none;border:none;cursor:pointer;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);padding:0;font-family:inherit;line-height:1;">Impressum</button>
+    <a href="/datenschutz/" style="font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);text-decoration:none;">Datenschutz</a>
+    <a href="/widerruf/" style="font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);text-decoration:none;">Vertrag widerrufen</a>
+  </div>
+</footer>
+<div id="legal-impressum" class="legal-overlay" onclick="if(event.target===this)closeLegal()">
+  <div class="legal-box">
+    <div class="legal-box-header"><div class="legal-box-title">Impressum</div><button class="legal-box-close" onclick="closeLegal()">✕</button></div>
+    <div class="legal-box-content">
+      <p>Yana Thomée<br>Hölzleswiesen 13<br>70619 Stuttgart<br>Deutschland</p>
+      <p>Tel.: +4917620495934<br>E-Mail: <a href="mailto:hello@logic-soul.com" style="color:var(--gold-dark);">hello@logic-soul.com</a></p>
+      <p>Umsatzsteuer-Identifikationsnummer: DE368068146</p>
+      <p>Wir sind zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit.</p>
+      <p>Die EU-Kommission stellt eine Plattform zur Online-Streitbeilegung bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank" style="color:var(--gold-dark);">https://ec.europa.eu/consumers/odr</a>. Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+      <p style="font-size:0.72rem;color:var(--text-dim);">Stand: 07.06.2026</p>
+    </div>
+  </div>
+</div>
+<div id="legal-datenschutz" class="legal-overlay" onclick="if(event.target===this)closeLegal()">
+  <div class="legal-box">
+    <div class="legal-box-header"><div class="legal-box-title">Datenschutzerklärung</div><button class="legal-box-close" onclick="closeLegal()">✕</button></div>
+    <div class="legal-box-content">
+      <p><strong>Verantwortliche Stelle</strong><br>Yana Thomée · hello@logic-soul.com</p>
+      <p style="font-size:0.72rem;color:var(--text-dim);">Vollständige Datenschutzerklärung folgt.</p>
+    </div>
+  </div>
+</div>
+<script>
+let currentSidebar = null;
+function toggleSidebar(id, btnEl) {
+  if (currentSidebar === id) { closeSidebar(); return; }
+  closeSidebar(false);
+  currentSidebar = id;
+  const panel = document.getElementById('sidebar-' + id);
+  panel.classList.add('open');
+  document.getElementById('sidebarOverlay').classList.add('open');
+  if (btnEl && window.innerWidth > 1024) {
+    const rect = btnEl.getBoundingClientRect();
+    let left = rect.left;
+    if (left + 260 > window.innerWidth - 16) left = window.innerWidth - 276;
+    panel.style.left = left + 'px';
+  }
+}
+function closeSidebar(reset=true) {
+  document.querySelectorAll('.sidebar-panel').forEach(p => p.classList.remove('open'));
+  document.getElementById('sidebarOverlay').classList.remove('open');
+  if (reset) currentSidebar = null;
+}
+function toggleMobileMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function toggleMobileSubmenu(id) {
+  const sub = document.getElementById('mob-sub-' + id);
+  const btn = document.getElementById('mob-btn-' + id);
+  const isOpen = sub.classList.contains('open');
+  document.querySelectorAll('.mobile-submenu').forEach(s => s.classList.remove('open'));
+  document.querySelectorAll('.mobile-menu-btn').forEach(b => b.classList.remove('expanded'));
+  if (!isOpen) { sub.classList.add('open'); btn.classList.add('expanded'); }
+}
+function showLegal(type) { document.getElementById('legal-' + type).classList.add('open'); }
+function closeLegal() { document.querySelectorAll('.legal-overlay').forEach(o => o.classList.remove('open')); }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeSidebar(); closeLegal(); } });
+document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open')));
+document.querySelectorAll('.reveal').forEach(el => {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  obs.observe(el);
+});
+</script>
+</body>
+</html>
