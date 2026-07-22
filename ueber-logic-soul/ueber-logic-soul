@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Die Philosophie hinter Logic | Soul: systemisches Denken, das Emotion und Logik verbindet. Haptik und KI schließen sich nicht aus, sie ergänzen sich.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Über Logic | Soul | Logic | Soul</title>
+<link rel="canonical" href="https://logic-soul.com/ueber-logic-soul/">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C5A059; --gold-dark: #a8863e;
+  --navy: #0D1B2A; --bg-alt: #FAFAF8;
+  --border: rgba(13,27,42,0.09);
+  --text: #0D1B2A; --text-mid: rgba(13,27,42,0.65); --text-dim: rgba(13,27,42,0.42);
+  --nav-h: 68px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:white; color:#0D1B2A; font-family:'DM Sans',sans-serif; font-weight:300; }
+header { position:fixed; top:0; left:0; right:0; z-index:500; background:rgba(250,250,248,0.97); backdrop-filter:blur(20px); border-bottom:1px solid var(--border); box-shadow:0 1px 20px rgba(13,27,42,0.05); }
+.header-top { height:var(--nav-h); display:flex; align-items:center; justify-content:space-between; padding:0 3rem; }
+.logo { display:flex; align-items:baseline; cursor:pointer; text-decoration:none; }
+.logo-logik { font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--navy); }
+.logo-pipe { font-family:'DM Sans',sans-serif; font-size:1.1rem; font-weight:300; color:var(--gold); padding:0 0.13rem; }
+.logo-soul { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:400; font-style:italic; color:var(--navy); }
+.main-nav { display:flex; align-items:center; list-style:none; }
+.nav-btn { display:flex; align-items:center; gap:0.3rem; height:var(--nav-h); padding:0 0.85rem; font-family:'DM Sans',sans-serif; font-size:0.61rem; font-weight:400; letter-spacing:0.18em; text-transform:uppercase; color:var(--navy); opacity:0.55; background:none; border:none; cursor:pointer; transition:opacity 0.2s; white-space:nowrap; border-bottom:2px solid transparent; text-decoration:none; }
+.nav-btn:hover { opacity:1; }
+.nav-btn.active { opacity:1; border-bottom-color:var(--gold); }
+.nav-btn svg { width:7px; height:7px; opacity:0.4; transition:transform 0.25s; flex-shrink:0; }
+.nav-cta { margin-left:1rem !important; padding:0.5rem 1.3rem !important; height:auto !important; border:1.5px solid var(--gold) !important; color:var(--gold-dark) !important; font-size:0.6rem !important; opacity:1 !important; transition:background 0.25s, color 0.25s !important; }
+.nav-cta:hover { background:var(--gold) !important; color:white !important; }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; }
+.hamburger span { display:block; width:22px; height:1.5px; background:var(--navy); }
+.sidebar-panel { position:fixed; top:var(--nav-h); width:260px; background:var(--navy); border:1px solid rgba(197,160,89,0.2); border-top:2px solid var(--gold); z-index:450; display:flex; flex-direction:column; opacity:0; visibility:hidden; pointer-events:none; transform:translateY(-8px); transition:opacity 0.22s ease, transform 0.22s ease, visibility 0.22s; overflow-y:auto; max-height:calc(100vh - var(--nav-h) - 2rem); box-shadow:0 8px 40px rgba(0,0,0,0.25); }
+.sidebar-panel.open { opacity:1; visibility:visible; pointer-events:all; transform:translateY(0); }
+.sidebar-overlay { position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(13,27,42,0.15); backdrop-filter:blur(2px); z-index:440; opacity:0; visibility:hidden; transition:opacity 0.22s, visibility 0.22s; cursor:pointer; }
+.sidebar-overlay.open { opacity:1; visibility:visible; }
+.sidebar-header { padding:1.25rem 1.5rem 0.85rem; border-bottom:1px solid rgba(197,160,89,0.12); }
+.sidebar-label { font-size:0.5rem; letter-spacing:0.5em; text-transform:uppercase; color:var(--gold); display:block; }
+.sidebar-title { font-family:'Playfair Display',serif; font-size:1rem; color:rgba(255,255,255,0.9); margin-top:0.35rem; }
+.sidebar-items { padding:0.5rem 0; }
+.sidebar-btn { display:flex; align-items:center; width:100%; padding:0.8rem 1.5rem; font-family:'DM Sans',sans-serif; font-size:0.61rem; font-weight:300; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.6); background:none; border:none; border-bottom:1px solid rgba(255,255,255,0.04); text-align:left; cursor:pointer; transition:color 0.18s, background 0.18s, padding-left 0.18s; text-decoration:none; }
+.sidebar-btn:last-child { border-bottom:none; }
+.sidebar-btn:hover { color:var(--gold); background:rgba(197,160,89,0.07); padding-left:1.85rem; }
+.mobile-menu { display:none; position:fixed; top:var(--nav-h); left:0; right:0; bottom:0; background:var(--navy); z-index:490; overflow-y:auto; flex-direction:column; }
+.mobile-menu.open { display:flex; }
+.mobile-menu-btn { display:flex; align-items:center; justify-content:space-between; width:100%; padding:1.1rem 1.75rem; font-family:'DM Sans',sans-serif; font-size:0.72rem; font-weight:300; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.7); background:none; border:none; border-bottom:1px solid rgba(255,255,255,0.06); text-align:left; cursor:pointer; }
+.mobile-menu-btn:hover, .mobile-menu-btn.expanded { color:var(--gold); }
+.mobile-menu-btn svg { width:10px; height:10px; opacity:0.4; transition:transform 0.25s; flex-shrink:0; }
+.mobile-menu-btn.expanded svg { transform:rotate(180deg); opacity:1; }
+.mobile-submenu { display:none; flex-direction:column; background:rgba(0,0,0,0.25); border-bottom:1px solid rgba(255,255,255,0.06); }
+.mobile-submenu.open { display:flex; }
+.mobile-sub-btn { display:block; width:100%; padding:0.85rem 2.5rem; font-family:'DM Sans',sans-serif; font-size:0.65rem; font-weight:300; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.5); background:none; border:none; border-bottom:1px solid rgba(255,255,255,0.03); text-align:left; cursor:pointer; transition:color 0.2s, padding-left 0.2s; text-decoration:none; }
+.mobile-sub-btn:hover { color:var(--gold); padding-left:3rem; }
+.mobile-menu-cta { margin:1.5rem 1.75rem; border:1.5px solid var(--gold); color:var(--gold); padding:0.75rem 1.75rem; font-family:'DM Sans',sans-serif; font-size:0.63rem; letter-spacing:0.22em; text-transform:uppercase; background:none; cursor:pointer; transition:background 0.25s, color 0.25s; text-align:center; display:block; text-decoration:none; }
+.mobile-menu-cta:hover { background:var(--gold); color:white; }
+main { padding-top:var(--nav-h); min-height:100vh; }
+.page-wrap { max-width:920px; margin:0 auto; padding:5rem 3rem 6rem; width:100%; }
+.page-eyebrow { font-size:0.55rem; letter-spacing:0.5em; text-transform:uppercase; color:var(--gold); margin-bottom:0.85rem; }
+.page-title { font-family:'Playfair Display',serif; font-size:clamp(2rem,3.5vw,3.2rem); font-weight:400; line-height:1.15; color:#0D1B2A; margin-bottom:2rem; }
+.page-title em { font-style:italic; color:var(--gold-dark); }
+.lead { font-family:'Playfair Display',serif; font-size:1.2rem; font-style:italic; color:#0D1B2A; line-height:1.6; margin-bottom:2.5rem; }
+.body-text p { font-size:0.92rem; line-height:2; color:var(--text-mid); margin-bottom:1.4rem; }
+.principle { border-left:2px solid rgba(197,160,89,0.35); padding-left:1.5rem; margin-bottom:2.5rem; }
+.principle-title { font-family:'Playfair Display',serif; font-size:1.15rem; color:#0D1B2A; margin-bottom:0.5rem; }
+.principle-text { font-size:0.88rem; line-height:1.9; color:var(--text-mid); }
+.internal-link { display:inline-flex; align-items:center; gap:0.5rem; font-size:0.65rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold-dark); text-decoration:none; border-bottom:1px solid rgba(197,160,89,0.32); padding-bottom:2px; }
+.internal-link:hover { color:var(--gold); }
+.internal-link::after { content:'→'; font-size:0.9rem; }
+footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); padding:2rem 3rem; display:flex; align-items:center; justify-content:space-between; flex-shrink:0; flex-wrap:wrap; gap:1.5rem; }
+.footer-logo { display:flex; align-items:baseline; cursor:pointer; text-decoration:none; }
+.footer-logik { font-family:'DM Sans',sans-serif; font-size:0.9rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.88); }
+.footer-pipe { font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:300; color:var(--gold); padding:0 0.13rem; }
+.footer-soul { font-family:'Playfair Display',serif; font-size:1rem; font-weight:400; font-style:italic; color:rgba(255,255,255,0.88); }
+.footer-nav { display:flex; gap:1.75rem; flex-wrap:wrap; align-items:center; }
+.footer-nav a { font-size:0.58rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.35); text-decoration:none; transition:color 0.25s; line-height:1; }
+.footer-nav a:hover { color:var(--gold); }
+.footer-legal { display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap; }
+.footer-copy { font-size:0.58rem; color:rgba(255,255,255,0.35); line-height:1; }
+.legal-overlay { display:none; position:fixed; inset:0; background:rgba(13,27,42,0.6); backdrop-filter:blur(4px); z-index:600; align-items:center; justify-content:center; padding:2rem; }
+.legal-overlay.open { display:flex; }
+.legal-box { background:white; border:1px solid var(--border); max-width:600px; width:100%; max-height:80vh; display:flex; flex-direction:column; overflow:hidden; }
+.legal-box-header { display:flex; align-items:center; justify-content:space-between; padding:1.25rem 1.75rem; border-bottom:1px solid var(--border); flex-shrink:0; }
+.legal-box-title { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--navy); }
+.legal-box-close { background:none; border:1px solid var(--border); padding:0.3rem 0.6rem; font-size:0.75rem; color:var(--text-dim); cursor:pointer; }
+.legal-box-content { padding:1.75rem; overflow-y:auto; font-size:0.82rem; line-height:1.85; color:var(--text-mid); display:flex; flex-direction:column; gap:1rem; }
+@media (max-width:1024px) {
+  .header-top { padding:0 1.5rem; }
+  .main-nav { display:none; }
+  .hamburger { display:flex; }
+  .page-wrap { padding:3.5rem 1.5rem 4rem; }
+  footer { flex-direction:column; text-align:center; padding:2rem 1.5rem; }
+  .footer-nav { justify-content:center; }
+  .footer-legal { justify-content:center; }
+  .sidebar-panel { left:0 !important; right:0 !important; width:100% !important; max-height:70vh; border-left:none; border-right:none; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <a href="/" class="logo">
+      <span class="logo-logik">Logic</span>
+      <span class="logo-pipe"> | </span>
+      <span class="logo-soul">Soul</span>
+    </a>
+    <nav>
+      <ul class="main-nav">
+        <li><button class="nav-btn" onclick="toggleSidebar('fuehrungskraefte', this)">Für Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
+        <li><button class="nav-btn active" onclick="toggleSidebar('ueber', this)">Über Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
+        <li><a href="/kontakt/" class="nav-btn nav-cta">Erstgespräch anfragen</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="hamburger" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<div class="sidebar-panel" id="sidebar-fuehrungskraefte">
+  <div class="sidebar-header">
+    <span class="sidebar-label">ALMA</span>
+    <div class="sidebar-title">Für Führungskräfte</div>
+  </div>
+  <div class="sidebar-items">
+    <a href="/alma/" class="sidebar-btn">ALMA — KI-Begleiter</a>
+    <a href="/fuehrungsset/" class="sidebar-btn">Führungskräfte-Set</a>
+    <a href="/kontakt/" class="sidebar-btn">Erstgespräch anfragen</a>
+  </div>
+</div>
+
+<div class="sidebar-panel" id="sidebar-ueber">
+  <div class="sidebar-header">
+    <span class="sidebar-label">Logic | Soul</span>
+    <div class="sidebar-title">Über Logic | Soul</div>
+  </div>
+  <div class="sidebar-items">
+    <a href="/ueber-logic-soul/" class="sidebar-btn" style="color:var(--gold);">Philosophie</a>
+    <a href="/ueber-mich/" class="sidebar-btn">Über mich</a>
+  </div>
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-btn" id="mob-btn-fuehrungskraefte" onclick="toggleMobileSubmenu('fuehrungskraefte')">
+    Für Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+  </button>
+  <div class="mobile-submenu" id="mob-sub-fuehrungskraefte">
+    <a href="/alma/" class="mobile-sub-btn">ALMA — KI-Begleiter</a>
+    <a href="/fuehrungsset/" class="mobile-sub-btn">Führungskräfte-Set</a>
+  </div>
+  <button class="mobile-menu-btn expanded" id="mob-btn-ueber" onclick="toggleMobileSubmenu('ueber')">
+    Über Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+  </button>
+  <div class="mobile-submenu open" id="mob-sub-ueber">
+    <a href="/ueber-logic-soul/" class="mobile-sub-btn" style="color:rgba(197,160,89,0.9);">Philosophie</a>
+    <a href="/ueber-mich/" class="mobile-sub-btn">Über mich</a>
+  </div>
+  <a href="/kontakt/" class="mobile-menu-cta">Erstgespräch anfragen</a>
+</div>
+
+<main>
+  <div class="page-wrap">
+    <p class="page-eyebrow">Philosophie</p>
+    <h1 class="page-title">Logic und Soul sind kein Gegensatz.<br><em>Sie gehören zusammen.</em></h1>
+
+    <p class="lead">Systemisches Denken heißt nicht, Gefühle aus der Führung herauszuhalten. Es heißt, sie zu verstehen, statt sie zu ignorieren.</p>
+
+    <div class="body-text">
+      <p>Der Name ist Programm. Logic steht für klares, strukturiertes Denken. Soul für das, was sich nicht in eine Excel-Tabelle packen lässt: innere Zustände, Beziehungen, das, was eine Entscheidung wirklich trägt oder untergräbt. Die meisten Ansätze trennen beides. Führungstrainings sprechen über Zahlen und Prozesse. Coaching spricht über Gefühle. Logic | Soul verbindet beides in einem Ansatz, weil Führung in der Realität auch nie getrennt stattfindet.</p>
+    </div>
+
+    <div class="principle">
+      <p class="principle-title">Systemisches Denken statt Trennung</p>
+      <p class="principle-text">Jede Reaktion, jede Entscheidung, jedes Zögern hat eine Logik. Wer diese Logik versteht, statt sie zu bewerten, trifft klarere Entscheidungen. Das gilt für einzelne Führungskräfte genauso wie für ganze Teams.</p>
+    </div>
+
+    <div class="principle">
+      <p class="principle-title">Haptik schließt KI nicht aus</p>
+      <p class="principle-text">Eine Karte in der Hand und ein KI-Begleiter im Hintergrund sind kein Widerspruch. Das Führungskräfte-Set und ALMA sind bewusst so gebaut, dass sie sich ergänzen: die Karte für den Moment, ALMA für die Tiefe davor, dazwischen und danach.</p>
+    </div>
+
+    <div class="principle" style="margin-bottom:0;">
+      <p class="principle-title">Werkzeuge, die im Alltag ankommen</p>
+      <p class="principle-text">Ein guter Workshop ist kein schlechtes Investment. Er verpufft nur zu oft, sobald der Alltag wieder beginnt. Logic | Soul baut Werkzeuge, die genau dort ansetzen, wo Workshops enden: im Druckmoment selbst.</p>
+    </div>
+
+    <div style="margin-top:3rem;">
+      <a href="/ueber-mich/" class="internal-link">Über mich</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <a href="/" class="footer-logo">
+    <span class="footer-logik">Logic</span>
+    <span class="footer-pipe"> | </span>
+    <span class="footer-soul">Soul</span>
+  </a>
+  <nav class="footer-nav">
+    <a href="/alma/">ALMA</a>
+    <a href="/fuehrungsset/">Führungskräfte-Set</a>
+    <a href="/ueber-mich/">Über mich</a>
+    <a href="/kontakt/">Kontakt</a>
+  </nav>
+  <div class="footer-legal">
+    <span class="footer-copy">© 2026 Logic | Soul · Yana Thomée</span>
+    <button onclick="showLegal('impressum')" style="background:none;border:none;cursor:pointer;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);padding:0;font-family:inherit;line-height:1;">Impressum</button>
+    <a href="/datenschutz/" style="font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);text-decoration:none;">Datenschutz</a>
+    <a href="/widerruf/" style="font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);text-decoration:none;">Vertrag widerrufen</a>
+  </div>
+</footer>
+
+<div id="legal-impressum" class="legal-overlay" onclick="if(event.target===this)closeLegal()">
+  <div class="legal-box">
+    <div class="legal-box-header"><div class="legal-box-title">Impressum</div><button class="legal-box-close" onclick="closeLegal()">✕</button></div>
+    <div class="legal-box-content">
+      <p>Yana Thomée<br>Hölzleswiesen 13<br>70619 Stuttgart<br>Deutschland</p>
+      <p>Tel.: +4917620495934<br>E-Mail: <a href="mailto:hello@logic-soul.com" style="color:var(--gold-dark);">hello@logic-soul.com</a></p>
+      <p>Umsatzsteuer-Identifikationsnummer: DE368068146</p>
+      <p style="font-size:0.72rem;color:var(--text-dim);">Stand: 07.06.2026</p>
+    </div>
+  </div>
+</div>
+
+<script>
+let currentSidebar = null;
+function toggleSidebar(id, btnEl) {
+  if (currentSidebar === id) { closeSidebar(); return; }
+  closeSidebar(false);
+  currentSidebar = id;
+  const panel = document.getElementById('sidebar-' + id);
+  panel.classList.add('open');
+  document.getElementById('sidebarOverlay').classList.add('open');
+  if (btnEl && window.innerWidth > 1024) {
+    const rect = btnEl.getBoundingClientRect();
+    let left = rect.left;
+    if (left + 260 > window.innerWidth - 16) left = window.innerWidth - 276;
+    panel.style.left = left + 'px';
+  }
+}
+function closeSidebar(reset=true) {
+  document.querySelectorAll('.sidebar-panel').forEach(p => p.classList.remove('open'));
+  document.getElementById('sidebarOverlay').classList.remove('open');
+  if (reset) currentSidebar = null;
+}
+function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+function toggleMobileSubmenu(id) {
+  const sub = document.getElementById('mob-sub-' + id);
+  const btn = document.getElementById('mob-btn-' + id);
+  const isOpen = sub.classList.contains('open');
+  document.querySelectorAll('.mobile-submenu').forEach(s => s.classList.remove('open'));
+  document.querySelectorAll('.mobile-menu-btn').forEach(b => b.classList.remove('expanded'));
+  if (!isOpen) { sub.classList.add('open'); btn.classList.add('expanded'); }
+}
+function showLegal(type) { document.getElementById('legal-' + type).classList.add('open'); }
+function closeLegal() { document.querySelectorAll('.legal-overlay').forEach(o => o.classList.remove('open')); }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeSidebar(); closeLegal(); } });
+document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open')));
+</script>
+</body>
+</html>
