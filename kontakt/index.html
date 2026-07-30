@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
 <meta name="description" content="Kostenloses Erstgespräch anfragen. 15 Minuten um zu schauen ob ALMA oder SAM das Richtige für dich ist.">
 <meta property="og:title" content="Kontakt — Gespräch anfragen | Logic | Soul">
 <meta property="og:type" content="website">
@@ -13,17 +14,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --gold: #C5A059; --gold-light: #d4b472; --gold-dim: rgba(197,160,89,0.1);
-  --gold-border: rgba(197,160,89,0.32); --gold-dark: #a8863e;
-  --navy: #0D1B2A; --navy-mid: #162336;
-  --bg: #F2F0ED; --bg-alt: #FAFAF8; --bg-card: #FFFFFF;
-  --border: rgba(13,27,42,0.09);
-  --text: #0D1B2A; --text-mid: rgba(13,27,42,0.65); --text-dim: rgba(13,27,42,0.42);
-  --nav-h: 68px;
+color-scheme: light only;
+--gold: #C5A059; --gold-light: #d4b472; --gold-dim: rgba(197,160,89,0.1);
+--gold-border: rgba(197,160,89,0.32); --gold-dark: #a8863e;
+--navy: #0D1B2A; --navy-mid: #162336;
+--bg: #F2F0ED; --bg-alt: #FAFAF8; --bg-card: #FFFFFF;
+--border: rgba(13,27,42,0.09);
+--text: #0D1B2A; --text-mid: rgba(13,27,42,0.65); --text-dim: rgba(13,27,42,0.42);
+--nav-h: 68px;
 }
 * { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
+html { scroll-behavior:smooth; background:white; }
 body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; font-weight:300; }
+.hero { min-height:calc(70vh); display:flex; align-items:center; justify-content:center; text-align:center; background:var(--navy); padding:6rem 2rem 5rem; position:relative; overflow:hidden; }
+.hero-inner { max-width:680px; margin:0 auto; position:relative; z-index:1; }
+.hero-eyebrow { font-size:0.55rem; letter-spacing:0.5em; text-transform:uppercase; color:var(--gold); margin-bottom:1.5rem; }
+.hero-title { font-family:'Playfair Display',serif; font-size:clamp(1.9rem,4vw,3.2rem); font-weight:400; line-height:1.2; color:rgba(255,255,255,0.92); }
+.hero-title em { font-style:italic; color:var(--gold); }
+.hero-sub { font-size:0.92rem; line-height:1.95; color:rgba(255,255,255,0.6); max-width:520px; margin:1.5rem auto 0; }
 header { position:fixed; top:0; left:0; right:0; z-index:500; background:rgba(250,250,248,0.97); backdrop-filter:blur(20px); border-bottom:1px solid var(--border); box-shadow:0 1px 20px rgba(13,27,42,0.05); }
 .header-top { height:var(--nav-h); display:flex; align-items:center; justify-content:space-between; padding:0 3rem; }
 .logo { display:flex; align-items:baseline; cursor:pointer; text-decoration:none; }
@@ -99,228 +107,217 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
 .dsgvo-check { flex-shrink:0; width:16px; height:16px; margin-top:2px; accent-color:var(--gold); cursor:pointer; }
 .dsgvo-text { font-size:0.68rem; line-height:1.75; color:var(--text-dim); }
 @media (max-width:1024px) {
-  .header-top { padding:0 1.5rem; }
-  .main-nav { display:none; }
-  .hamburger { display:flex; }
-  .page-wrap { padding:3rem 1.5rem 5rem; }
-  footer { flex-direction:column; text-align:center; padding:2rem 1.5rem; }
-  .footer-nav { justify-content:center; }
-  .footer-legal { justify-content:center; }
-  .sidebar-panel { left:0 !important; right:0 !important; width:100% !important; max-height:70vh; }
+.header-top { padding:0 1.5rem; }
+.main-nav { display:none; }
+.hamburger { display:flex; }
+.page-wrap { padding:3rem 1.5rem 5rem; }
+footer { flex-direction:column; text-align:center; padding:2rem 1.5rem; }
+.footer-nav { justify-content:center; }
+.footer-legal { justify-content:center; }
+.sidebar-panel { left:0 !important; right:0 !important; width:100% !important; max-height:70vh; }
 }
 @media (max-width:768px) {
-  div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
-  .page-wrap { padding-left:1.25rem !important; padding-right:1.25rem !important; }
+div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
+.page-wrap { padding-left:1.25rem !important; padding-right:1.25rem !important; }
 }
 </style>
 </head>
 <body>
-
 <!-- ══ B2B BUBBLE NAV ══ -->
 <header>
 <div class="header-top">
-  <a href="/" class="logo">
-    <span class="logo-logik">Logic</span>
-    <span class="logo-pipe"> | </span>
-    <span class="logo-soul">Soul</span>
-  </a>
-  <nav>
-    <ul class="main-nav">
-      <li><button class="nav-btn" onclick="toggleSidebar('fuehrungskraefte', this)">Für Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
-      <li><button class="nav-btn" onclick="toggleSidebar('methodik', this)">Methodik <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
-      <li><a href="/kontakt/" class="nav-btn nav-cta active" style="border-bottom-color:var(--gold);">Erstgespräch anfragen</a></li>
-    </ul>
-  </nav>
-  <button type="button" class="hamburger" onclick="toggleMobileMenu()">
-    <span></span><span></span><span></span>
-  </button>
+<a href="/" class="logo">
+<span class="logo-logik">Logic</span>
+<span class="logo-pipe"> | </span>
+<span class="logo-soul">Soul</span>
+</a>
+<nav>
+<ul class="main-nav">
+<li><button class="nav-btn" onclick="toggleSidebar('fuehrungskraefte', this)">Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
+<li><button class="nav-btn" onclick="toggleSidebar('ueber', this)">Über Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
+<li><a href="/kontakt/" class="nav-btn nav-cta active" style="border-bottom-color:var(--gold);">Erstgespräch anfragen</a></li>
+</ul>
+</nav>
+<button type="button" class="hamburger" onclick="toggleMobileMenu()">
+<span></span><span></span><span></span>
+</button>
 </div>
 </header>
-
 <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
-
 <div class="sidebar-panel" id="sidebar-fuehrungskraefte">
-  <div class="sidebar-header">
-    <span class="sidebar-label">ALMA · Führungskräfte-Set</span>
-    <div class="sidebar-title">Für Führungskräfte</div>
-  </div>
-  <div class="sidebar-items">
-    <a href="/alma/" class="sidebar-btn">ALMA — KI-Begleiter</a>
-    <a href="/fuehrungsset/" class="sidebar-btn">Führungskräfte-Set</a>
-    <a href="/kontakt/" class="sidebar-btn" style="color:var(--gold);">Erstgespräch anfragen</a>
-  </div>
+<div class="sidebar-header">
+<span class="sidebar-label">Logic | Soul</span>
+<div class="sidebar-title">Führungskräfte</div>
 </div>
-
-<div class="sidebar-panel" id="sidebar-methodik">
-  <div class="sidebar-header">
-    <span class="sidebar-label">Logic | Soul</span>
-    <div class="sidebar-title">Methodik</div>
-  </div>
-  <div class="sidebar-items">
-    <a href="/systemalchemie/" class="sidebar-btn">Was ist SystemAlchemie?</a>
-    <a href="/entstehung/" class="sidebar-btn">Wie sie entstand</a>
-    <a href="/methodik/" class="sidebar-btn">Die 5 Schritte</a>
-  </div>
+<div class="sidebar-items">
+<a href="/fuehrungskraefte/" class="sidebar-btn">Für Führungskräfte</a>
+<a href="/fuehrungsset/" class="sidebar-btn">Karten & Workbook</a>
+<a href="/alma/" class="sidebar-btn">ALMA</a>
+<a href="/anleitung/" class="sidebar-btn">Anleitung</a>
+<a href="/kontakt/" class="sidebar-btn" style="color:var(--gold);">Erstgespräch anfragen</a>
 </div>
-
+</div>
+<div class="sidebar-panel" id="sidebar-ueber">
+<div class="sidebar-header">
+<span class="sidebar-label">Logic | Soul</span>
+<div class="sidebar-title">Über Logic | Soul</div>
+</div>
+<div class="sidebar-items">
+<a href="/ueber-logic-soul/" class="sidebar-btn">Philosophie</a>
+<a href="/ueber-mich/" class="sidebar-btn">Über mich</a>
+</div>
+</div>
 <div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-menu-btn" id="mob-btn-fuehrungskraefte" onclick="toggleMobileSubmenu('fuehrungskraefte')">
-    Für Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
-  </button>
-  <div class="mobile-submenu" id="mob-sub-fuehrungskraefte">
-    <a href="/alma/" class="mobile-sub-btn">ALMA — KI-Begleiter</a>
-    <a href="/fuehrungsset/" class="mobile-sub-btn">Führungskräfte-Set</a>
-  </div>
-  <button class="mobile-menu-btn" id="mob-btn-methodik" onclick="toggleMobileSubmenu('methodik')">
-    Methodik <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
-  </button>
-  <div class="mobile-submenu" id="mob-sub-methodik">
-    <a href="/systemalchemie/" class="mobile-sub-btn">Was ist SystemAlchemie?</a>
-    <a href="/entstehung/" class="mobile-sub-btn">Wie sie entstand</a>
-    <a href="/methodik/" class="mobile-sub-btn">Die 5 Schritte</a>
-  </div>
-  <a href="/kontakt/" class="mobile-menu-cta" style="background:var(--gold);color:white;">Erstgespräch anfragen</a>
+<button class="mobile-menu-btn" id="mob-btn-fuehrungskraefte" onclick="toggleMobileSubmenu('fuehrungskraefte')">
+Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+</button>
+<div class="mobile-submenu" id="mob-sub-fuehrungskraefte">
+<a href="/fuehrungskraefte/" class="mobile-sub-btn">Für Führungskräfte</a>
+<a href="/fuehrungsset/" class="mobile-sub-btn">Karten & Workbook</a>
+<a href="/alma/" class="mobile-sub-btn">ALMA</a>
+<a href="/anleitung/" class="mobile-sub-btn">Anleitung</a>
 </div>
-
+<button class="mobile-menu-btn" id="mob-btn-ueber" onclick="toggleMobileSubmenu('ueber')">
+Über Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+</button>
+<div class="mobile-submenu" id="mob-sub-ueber">
+<a href="/ueber-logic-soul/" class="mobile-sub-btn">Philosophie</a>
+<a href="/ueber-mich/" class="mobile-sub-btn">Über mich</a>
+</div>
+<a href="/kontakt/" class="mobile-menu-cta" style="background:var(--gold);color:white;">Erstgespräch anfragen</a>
+</div>
 <!-- ══ CONTENT (unverändert) ══ -->
-<main style="background:var(--bg-alt);">
-  <div class="page-wrap" style="max-width:960px;">
-
-    <div style="text-align:center;padding:4rem 0 3rem;border-bottom:1px solid var(--border);margin-bottom:3.5rem;" class="reveal">
-      <p class="page-eyebrow">Gespräch anfragen</p>
-      <h1 class="page-title">Bereit für <em>innere Klarheit?</em></h1>
-      <p style="font-size:0.88rem;color:var(--text-mid);line-height:1.95;max-width:500px;margin:1rem auto 0;">Ein erstes Gespräch kostet nichts. Wir schauen gemeinsam ob und wie Logic | Soul dir helfen kann.</p>
-    </div>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;">
-
-      <div class="reveal">
-        <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;">Direkt buchen</p>
-        <div style="background:var(--navy);border-top:2px solid var(--gold);padding:2rem;">
-          <p style="font-family:'Playfair Display',serif;font-size:1.1rem;color:rgba(255,255,255,0.9);margin-bottom:0.5rem;font-weight:400;">15 Minuten Erstgespräch</p>
-          <p style="font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.8;margin-bottom:1.5rem;">Kostenlos und unverbindlich. Du buchst direkt einen Termin. Keine Wartezeit.</p>
-          <a href="https://cal.eu/logic-soul/15min" target="_blank" class="btn-gold" style="display:block;text-align:center;">Termin buchen</a>
-        </div>
-
-        <div style="margin-top:2.5rem;">
-          <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Oder direkt schreiben</p>
-          <a href="mailto:hello@logic-soul.com" style="font-size:0.88rem;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--gold-border);">hello@logic-soul.com</a>
-        </div>
-      </div>
-
-      <div class="reveal">
-        <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;">Nachricht schreiben</p>
-        <form action="https://api.web3forms.com/submit" method="POST" style="display:flex;flex-direction:column;gap:1.25rem;">
-          <input type="hidden" name="access_key" value="c28c5f3e-1228-4088-a7cf-2bcb930dafa6">
-          <input type="hidden" name="subject" value="Neue Anfrage — Logic | Soul">
-          <input type="hidden" name="from_name" value="Logic | Soul Website">
-          <input type="hidden" name="redirect" value="https://logic-soul.com/danke.html">
-          <div class="form-group"><label class="form-label">Name *</label><input type="text" name="name" class="form-input" placeholder="Ihr Name" required></div>
-          <div class="form-group"><label class="form-label">E-Mail *</label><input type="email" name="email" class="form-input" placeholder="ihre@email.de" required></div>
-          <div class="form-group"><label class="form-label">Telefon <span style="opacity:0.5;">(optional)</span></label><input type="tel" name="telefon" class="form-input" placeholder="+49 000 000000"></div>
-          <div class="form-group"><label class="form-label">Unternehmen <span style="opacity:0.5;">(optional)</span></label><input type="text" name="unternehmen" class="form-input" placeholder="Ihr Unternehmen"></div>
-          <div class="form-group"><label class="form-label">Worum geht es?</label>
-            <select name="thema" class="form-input form-select">
-              <option value="">Bitte wählen</option>
-              <option>ALMA — KI-Begleiter für Führungskräfte</option>
-              <option>Führungskräfte-Set</option>
-              <option>SAM — Persönlicher KI-Begleiter</option>
-              <option>Kartensets / Workbooks</option>
-              <option>Etwas anderes</option>
-            </select>
-          </div>
-          <div class="form-group"><label class="form-label">Nachricht *</label><textarea name="nachricht" class="form-input form-textarea" placeholder="Was bewegt Sie gerade?" rows="4" required></textarea></div>
-          <div class="form-group">
-            <label class="dsgvo-label">
-              <input type="checkbox" name="dsgvo" class="dsgvo-check" required>
-              <span class="dsgvo-text">Ich stimme zu, dass meine Angaben zur Kontaktaufnahme gespeichert werden. Die Daten werden ausschließlich zur Bearbeitung meiner Anfrage genutzt und nach Abschluss gelöscht. Widerruf jederzeit per E-Mail an <a href="mailto:hello@logic-soul.com" style="color:var(--gold-dark);">hello@logic-soul.com</a>. *</span>
-            </label>
-          </div>
-          <button type="submit" class="btn-gold" style="align-self:flex-start;">Nachricht senden</button>
-        </form>
-        <div id="form-success" style="display:none;background:var(--navy);border-left:3px solid var(--gold);padding:1.25rem 1.5rem;margin-top:0.5rem;">
-          <p style="font-family:'Playfair Display',serif;font-size:1rem;color:rgba(255,255,255,0.9);margin-bottom:0.35rem;">Vielen Dank für Ihre Anfrage.</p>
-          <p style="font-size:0.8rem;color:rgba(255,255,255,0.55);line-height:1.7;">Das Team von Logic | Soul wird sich in Kürze mit Ihnen in Verbindung setzen.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
+<main>
+<section class="hero">
+<div class="hero-inner">
+<p class="hero-eyebrow">Gespräch anfragen</p>
+<h1 class="hero-title">Bereit für <em>innere Klarheit?</em></h1>
+<p class="hero-sub">Ein erstes Gespräch kostet nichts. Wir schauen gemeinsam ob und wie Logic | Soul dir helfen kann.</p>
+</div>
+</section>
+<div class="page-wrap" style="max-width:960px;padding-top:4rem;">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;">
+<div class="reveal">
+<p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;">Direkt buchen</p>
+<div style="background:var(--navy);border-top:2px solid var(--gold);padding:2rem;">
+<p style="font-family:'Playfair Display',serif;font-size:1.1rem;color:rgba(255,255,255,0.9);margin-bottom:0.5rem;font-weight:400;">15 Minuten Erstgespräch</p>
+<p style="font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.8;margin-bottom:1.5rem;">Kostenlos und unverbindlich. Du buchst direkt einen Termin. Keine Wartezeit.</p>
+<a href="https://cal.eu/logic-soul/15min" target="_blank" class="btn-gold" style="display:block;text-align:center;">Termin buchen</a>
+</div>
+<div style="margin-top:2.5rem;">
+<p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Oder direkt schreiben</p>
+<a href="mailto:hello@logic-soul.com" style="font-size:0.88rem;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--gold-border);">hello@logic-soul.com</a>
+</div>
+</div>
+<div class="reveal">
+<p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;">Nachricht schreiben</p>
+<form action="https://api.web3forms.com/submit" method="POST" style="display:flex;flex-direction:column;gap:1.25rem;">
+<input type="hidden" name="access_key" value="c28c5f3e-1228-4088-a7cf-2bcb930dafa6">
+<input type="hidden" name="subject" value="Neue Anfrage — Logic | Soul">
+<input type="hidden" name="from_name" value="Logic | Soul Website">
+<input type="hidden" name="redirect" value="https://logic-soul.com/danke/">
+<div class="form-group"><label class="form-label">Name *</label><input type="text" name="name" class="form-input" placeholder="Ihr Name" required></div>
+<div class="form-group"><label class="form-label">E-Mail *</label><input type="email" name="email" class="form-input" placeholder="ihre@email.de" required></div>
+<div class="form-group"><label class="form-label">Telefon <span style="opacity:0.5;">(optional)</span></label><input type="tel" name="telefon" class="form-input" placeholder="+49 000 000000"></div>
+<div class="form-group"><label class="form-label">Unternehmen <span style="opacity:0.5;">(optional)</span></label><input type="text" name="unternehmen" class="form-input" placeholder="Ihr Unternehmen"></div>
+<div class="form-group"><label class="form-label">Worum geht es?</label>
+<select name="thema" class="form-input form-select">
+<option value="">Bitte wählen</option>
+<option>ALMA — KI-Begleiter für Führungskräfte</option>
+<option>Karten & Workbook</option>
+<option>SAM — Persönlicher KI-Begleiter</option>
+<option>Kartensets / Workbooks</option>
+<option>Etwas anderes</option>
+</select>
+</div>
+<div class="form-group"><label class="form-label">Nachricht *</label><textarea name="nachricht" class="form-input form-textarea" placeholder="Was bewegt Sie gerade?" rows="4" required></textarea></div>
+<div class="form-group">
+<label class="dsgvo-label">
+<input type="checkbox" name="dsgvo" class="dsgvo-check" required>
+<span class="dsgvo-text">Ich stimme zu, dass meine Angaben zur Kontaktaufnahme gespeichert werden. Die Daten werden ausschließlich zur Bearbeitung meiner Anfrage genutzt und nach Abschluss gelöscht. Widerruf jederzeit per E-Mail an <a href="mailto:hello@logic-soul.com" style="color:var(--gold-dark);">hello@logic-soul.com</a>. *</span>
+</label>
+</div>
+<button type="submit" class="btn-gold" style="align-self:flex-start;">Nachricht senden</button>
+</form>
+<div id="form-success" style="display:none;background:var(--navy);border-left:3px solid var(--gold);padding:1.25rem 1.5rem;margin-top:0.5rem;">
+<p style="font-family:'Playfair Display',serif;font-size:1rem;color:rgba(255,255,255,0.9);margin-bottom:0.35rem;">Vielen Dank für Ihre Anfrage.</p>
+<p style="font-size:0.8rem;color:rgba(255,255,255,0.55);line-height:1.7;">Das Team von Logic | Soul wird sich in Kürze mit Ihnen in Verbindung setzen.</p>
+</div>
+</div>
+</div>
+</div>
 </main>
-
 <!-- ══ B2B FOOTER ══ -->
 <footer>
-  <a href="/" class="footer-logo">
-    <span class="footer-logik">Logic</span>
-    <span class="footer-pipe"> | </span>
-    <span class="footer-soul">Soul</span>
-  </a>
-  <nav class="footer-nav">
-    <a href="/alma/">ALMA</a>
-    <a href="/fuehrungsset/">Führungskräfte-Set</a>
-    <a href="/methodik/">Methodik</a>
-    <a href="/kontakt/">Kontakt</a>
-  </nav>
-  <div class="footer-legal">
-    <span class="footer-copy">© 2026 Logic | Soul · Yana Thomée</span>
-    <button onclick="showLegal('impressum')" style="background:none;border:none;cursor:pointer;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);padding:0;font-family:inherit;line-height:1;">Impressum</button>
-    <a href="/datenschutz/" style="font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);text-decoration:none;">Datenschutz</a>
-    <a href="/widerruf/" style="font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);text-decoration:none;">Vertrag widerrufen</a>
-    <a href="/" style="font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.2);text-decoration:none;border-left:1px solid rgba(255,255,255,0.1);padding-left:0.75rem;">Auch privat? → logic-soul.com</a>
-  </div>
-</footer>
-
-<div id="legal-impressum" class="legal-overlay" onclick="if(event.target===this)closeLegal()">
-  <div class="legal-box">
-    <div class="legal-box-header"><div class="legal-box-title">Impressum</div><button class="legal-box-close" onclick="closeLegal()">✕</button></div>
-    <div class="legal-box-content">
-      <p>Yana Thomée<br>Hölzleswiesen 13<br>70619 Stuttgart<br>Deutschland</p>
-      <p>Tel.: +4917620495934<br>E-Mail: <a href="mailto:hello@logic-soul.com" style="color:var(--gold-dark);">hello@logic-soul.com</a></p>
-      <p>Umsatzsteuer-Identifikationsnummer: DE368068146</p>
-      <p style="font-size:0.72rem;color:var(--text-dim);">Stand: 07.06.2026</p>
-    </div>
-  </div>
+<a href="/" class="footer-logo">
+<span class="footer-logik">Logic</span>
+<span class="footer-pipe"> | </span>
+<span class="footer-soul">Soul</span>
+</a>
+<nav class="footer-nav">
+<a href="/alma/">ALMA</a>
+<a href="/fuehrungsset/">Karten & Workbook</a>
+<a href="/ueber-logic-soul/">Über Logic | Soul</a>
+<a href="/kontakt/">Kontakt</a>
+</nav>
+<div class="footer-legal">
+<span class="footer-copy">© 2026 Logic | Soul · Yana Thomée</span>
+<button onclick="showLegal('impressum')" style="background:none;border:none;cursor:pointer;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);padding:0;font-family:inherit;line-height:1;">Impressum</button>
+<a href="/datenschutz/" style="font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);text-decoration:none;">Datenschutz</a>
+<a href="/widerruf/" style="font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);text-decoration:none;">Vertrag widerrufen</a>
+<a href="/" style="font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.2);text-decoration:none;border-left:1px solid rgba(255,255,255,0.1);padding-left:0.75rem;">Auch privat? → logic-soul.com</a>
 </div>
-
+</footer>
+<div id="legal-impressum" class="legal-overlay" onclick="if(event.target===this)closeLegal()">
+<div class="legal-box">
+<div class="legal-box-header"><div class="legal-box-title">Impressum</div><button class="legal-box-close" onclick="closeLegal()">✕</button></div>
+<div class="legal-box-content">
+<p>Yana Thomée<br>Hölzleswiesen 13<br>70619 Stuttgart<br>Deutschland</p>
+<p>Tel.: +4917620495934<br>E-Mail: <a href="mailto:hello@logic-soul.com" style="color:var(--gold-dark);">hello@logic-soul.com</a></p>
+<p>Umsatzsteuer-Identifikationsnummer: DE368068146</p>
+<p style="font-size:0.72rem;color:var(--text-dim);">Stand: 07.06.2026</p>
+</div>
+</div>
+</div>
 <script>
 let currentSidebar = null;
 function toggleSidebar(id, btnEl) {
-  if (currentSidebar === id) { closeSidebar(); return; }
-  closeSidebar(false);
-  currentSidebar = id;
-  const panel = document.getElementById('sidebar-' + id);
-  panel.classList.add('open');
-  document.getElementById('sidebarOverlay').classList.add('open');
-  if (btnEl && window.innerWidth > 1024) {
-    const rect = btnEl.getBoundingClientRect();
-    let left = rect.left;
-    if (left + 260 > window.innerWidth - 16) left = window.innerWidth - 276;
-    panel.style.left = left + 'px';
-  }
+if (currentSidebar === id) { closeSidebar(); return; }
+closeSidebar(false);
+currentSidebar = id;
+const panel = document.getElementById('sidebar-' + id);
+panel.classList.add('open');
+document.getElementById('sidebarOverlay').classList.add('open');
+if (btnEl && window.innerWidth > 1024) {
+const rect = btnEl.getBoundingClientRect();
+let left = rect.left;
+if (left + 260 > window.innerWidth - 16) left = window.innerWidth - 276;
+panel.style.left = left + 'px';
+}
 }
 function closeSidebar(reset=true) {
-  document.querySelectorAll('.sidebar-panel').forEach(p => p.classList.remove('open'));
-  document.getElementById('sidebarOverlay').classList.remove('open');
-  if (reset) currentSidebar = null;
+document.querySelectorAll('.sidebar-panel').forEach(p => p.classList.remove('open'));
+document.getElementById('sidebarOverlay').classList.remove('open');
+if (reset) currentSidebar = null;
 }
 function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
 function toggleMobileSubmenu(id) {
-  const sub = document.getElementById('mob-sub-' + id);
-  const btn = document.getElementById('mob-btn-' + id);
-  const isOpen = sub.classList.contains('open');
-  document.querySelectorAll('.mobile-submenu').forEach(s => s.classList.remove('open'));
-  document.querySelectorAll('.mobile-menu-btn').forEach(b => b.classList.remove('expanded'));
-  if (!isOpen) { sub.classList.add('open'); btn.classList.add('expanded'); }
+const sub = document.getElementById('mob-sub-' + id);
+const btn = document.getElementById('mob-btn-' + id);
+const isOpen = sub.classList.contains('open');
+document.querySelectorAll('.mobile-submenu').forEach(s => s.classList.remove('open'));
+document.querySelectorAll('.mobile-menu-btn').forEach(b => b.classList.remove('expanded'));
+if (!isOpen) { sub.classList.add('open'); btn.classList.add('expanded'); }
 }
 function showLegal(type) { document.getElementById('legal-' + type).classList.add('open'); }
 function closeLegal() { document.querySelectorAll('.legal-overlay').forEach(o => o.classList.remove('open')); }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeSidebar(); closeLegal(); } });
 document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open')));
 document.querySelectorAll('.reveal').forEach(el => {
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  obs.observe(el);
+const obs = new IntersectionObserver(entries => {
+entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.12 });
+obs.observe(el);
 });
 </script>
 </body>
