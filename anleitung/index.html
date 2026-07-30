@@ -66,6 +66,7 @@ main { padding-top:var(--nav-h); min-height:100vh; }
 .hero-eyebrow { font-size:0.55rem; letter-spacing:0.5em; text-transform:uppercase; color:var(--gold); margin-bottom:1.5rem; }
 .hero-title { font-family:'Playfair Display',serif; font-size:clamp(1.9rem,4vw,3.2rem); font-weight:400; line-height:1.2; color:rgba(255,255,255,0.92); }
 .hero-title em { font-style:italic; color:var(--gold); }
+.hero-sub { font-size:0.92rem; line-height:1.95; color:rgba(255,255,255,0.6); max-width:640px; margin:1.5rem auto 0; }
 .page-wrap { max-width:920px; margin:0 auto; padding:5rem 3rem 6rem; width:100%; }
 .page-eyebrow { font-size:0.55rem; letter-spacing:0.5em; text-transform:uppercase; color:var(--gold); margin-bottom:0.85rem; }
 .page-title { font-family:'Playfair Display',serif; font-size:clamp(2rem,3.5vw,3.2rem); font-weight:400; line-height:1.15; color:#0D1B2A; margin-bottom:1.5rem; }
@@ -74,6 +75,8 @@ main { padding-top:var(--nav-h); min-height:100vh; }
 .jump-nav { display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:4rem; padding-bottom:2rem; border-bottom:1px solid var(--border); }
 .jump-btn { font-size:0.65rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-dark); text-decoration:none; border:1.5px solid rgba(197,160,89,0.35); padding:0.65rem 1.25rem; transition:background 0.2s, color 0.2s; }
 .jump-btn:hover { background:var(--gold); color:white; border-color:var(--gold); }
+.jump-btn-dark { color:var(--gold) !important; border-color:rgba(197,160,89,0.4) !important; }
+.jump-btn-dark:hover { background:var(--gold) !important; color:var(--navy) !important; }
 .guide-section { margin-bottom:4.5rem; scroll-margin-top:90px; }
 .guide-eyebrow { font-size:0.55rem; letter-spacing:0.5em; text-transform:uppercase; color:var(--gold); margin-bottom:0.75rem; }
 .guide-title { font-family:'Playfair Display',serif; font-size:1.7rem; color:#0D1B2A; margin-bottom:1.25rem; font-weight:400; }
@@ -200,18 +203,17 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
     <div class="hero-inner">
       <p class="hero-eyebrow">Anleitung</p>
       <h1 class="hero-title">Alles was du brauchst,<br>um <em>direkt loszulegen.</em></h1>
+      <p class="hero-sub">Egal ob du gerade ALMA freigeschaltet hast, Karten & Workbook in den Händen hältst oder das Workbook aufschlägst: Hier findest du in wenigen Minuten alles, was du für den Einstieg brauchst.</p>
+      <div class="jump-nav" style="justify-content:center;margin-bottom:0;padding-bottom:0;border-bottom:none;margin-top:2rem;">
+        <a href="#alma" class="jump-btn jump-btn-dark">ALMA</a>
+        <a href="#kartenset" class="jump-btn jump-btn-dark">Kartenset</a>
+        <a href="#workbook" class="jump-btn jump-btn-dark">Workbook</a>
+        <a href="#zusammen" class="jump-btn jump-btn-dark">Alles zusammen</a>
+      </div>
     </div>
   </section>
 
   <div class="page-wrap">
-    <p class="lead" style="margin-top:0;">Egal ob du gerade ALMA freigeschaltet hast, Karten & Workbook in den Händen hältst oder das Workbook aufschlägst: Hier findest du in wenigen Minuten alles, was du für den Einstieg brauchst.</p>
-
-    <div class="jump-nav">
-      <a href="#alma" class="jump-btn">ALMA</a>
-      <a href="#kartenset" class="jump-btn">Kartenset</a>
-      <a href="#workbook" class="jump-btn">Workbook</a>
-      <a href="#zusammen" class="jump-btn">Alles zusammen</a>
-    </div>
 
     <!-- ALMA -->
     <div class="guide-section" id="alma">
