@@ -134,6 +134,7 @@ div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !importa
 <nav>
 <ul class="main-nav">
 <li><button class="nav-btn" onclick="toggleSidebar('fuehrungskraefte', this)">Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
+        <li><button class="nav-btn" onclick="toggleSidebar('dich', this)">Für dich privat <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
 <li><button class="nav-btn" onclick="toggleSidebar('ueber', this)">Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
 <li><a href="/kontakt/" class="nav-btn nav-cta active" style="border-bottom-color:var(--gold);">Erstgespräch anfragen</a></li>
 </ul>
@@ -167,6 +168,18 @@ div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !importa
 <a href="/ueber-mich/" class="sidebar-btn">Über mich</a>
 </div>
 </div>
+<div class="sidebar-panel" id="sidebar-dich">
+  <div class="sidebar-header">
+    <span class="sidebar-label">Logic | Soul</span>
+    <div class="sidebar-title">Für dich privat</div>
+  </div>
+  <div class="sidebar-items">
+    <a href="/fuer-dich/" class="sidebar-btn">Für dich privat</a>
+    <a href="/sam/" class="sidebar-btn">SAM</a>
+    <a href="/basis-set/" class="sidebar-btn">Basis-Set</a>
+    <a href="/selbstreflexion/" class="sidebar-btn">Selbstreflexions-Set</a>
+  </div>
+</div>
 <div class="mobile-menu" id="mobileMenu">
 <button class="mobile-menu-btn" id="mob-btn-fuehrungskraefte" onclick="toggleMobileSubmenu('fuehrungskraefte')">
 Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
@@ -177,8 +190,17 @@ Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stro
 <a href="/alma/" class="mobile-sub-btn">ALMA</a>
 <a href="/anleitung/" class="mobile-sub-btn">Anleitung</a>
 </div>
+<button class="mobile-menu-btn" id="mob-btn-dich" onclick="toggleMobileSubmenu('dich')">
+Für dich privat <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+</button>
+<div class="mobile-submenu" id="mob-sub-dich">
+<a href="/fuer-dich/" class="mobile-sub-btn">Für dich privat</a>
+<a href="/sam/" class="mobile-sub-btn">SAM</a>
+<a href="/basis-set/" class="mobile-sub-btn">Basis-Set</a>
+<a href="/selbstreflexion/" class="mobile-sub-btn">Selbstreflexions-Set</a>
+</div>
 <button class="mobile-menu-btn" id="mob-btn-ueber" onclick="toggleMobileSubmenu('ueber')">
-Über Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
 </button>
 <div class="mobile-submenu" id="mob-sub-ueber">
 <a href="/ueber-logic-soul/" class="mobile-sub-btn">Philosophie</a>
