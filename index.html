@@ -594,10 +594,9 @@ max-width: 100% !important;
 </a>
 <nav>
 <ul class="main-nav">
-<li><button class="nav-btn" onclick="toggleSidebar('unternehmen', this)">Für Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
-<li><button class="nav-btn" onclick="toggleSidebar('dich', this)">Für Dich <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
-<li><button class="nav-btn" onclick="toggleSidebar('produkte', this)">Produkte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
-<li><button class="nav-btn" onclick="toggleSidebar('methodik', this)">Methodik <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
+<li><button class="nav-btn" onclick="toggleSidebar('unternehmen', this)">Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
+<li><button class="nav-btn" onclick="toggleSidebar('dich', this)">Für dich privat <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
+<li><button class="nav-btn" onclick="toggleSidebar('methodik', this)">Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
 <li><a href="/kontakt/" class="nav-btn nav-cta">Gespräch anfragen</a></li>
 </ul>
 </nav>
@@ -620,11 +619,14 @@ max-width: 100% !important;
 <div class="sidebar-panel" id="sidebar-methodik">
 <div class="sidebar-header">
 <span class="sidebar-label">Logic | Soul</span>
-<div class="sidebar-title">Über Logic | Soul</div>
+<div class="sidebar-title">Logic | Soul</div>
 </div>
 <div class="sidebar-items">
 <a href="/ueber-logic-soul/" class="sidebar-btn">Philosophie</a>
 <a href="/ueber-mich/" class="sidebar-btn">Über mich</a>
+<a href="/systemalchemie/" class="sidebar-btn">Was ist SystemAlchemie?</a>
+<a href="/entstehung/" class="sidebar-btn">Wie sie entstand</a>
+<a href="/methodik/" class="sidebar-btn">Die 5 Schritte</a>
 </div>
 </div>
 <div class="sidebar-panel" id="sidebar-unternehmen">
@@ -643,28 +645,13 @@ max-width: 100% !important;
 <div class="sidebar-panel" id="sidebar-dich">
 <div class="sidebar-header">
 <span class="sidebar-label">Logic | Soul</span>
-<div class="sidebar-title">Für Dich</div>
+<div class="sidebar-title">Für dich privat</div>
 </div>
 <div class="sidebar-items">
+<a href="/fuer-dich/" class="sidebar-btn">Für dich privat</a>
 <a href="/sam/" class="sidebar-btn">SAM</a>
-<a href="/musterchecks/" class="sidebar-btn">Musterchecks</a>
 <a href="/basis-set/" class="sidebar-btn">Basis-Set</a>
 <a href="/selbstreflexion/" class="sidebar-btn">Selbstreflexions-Set</a>
-</div>
-</div>
-<div class="sidebar-panel" id="sidebar-produkte">
-<div class="sidebar-header">
-<span class="sidebar-label">Logic | Soul</span>
-<div class="sidebar-title">Produkte</div>
-</div>
-<div class="sidebar-items">
-<a href="/produkte/" class="sidebar-btn" style="color:var(--gold);border-bottom:1px solid rgba(197,160,89,0.2);">Alle Produkte</a>
-<a href="/alma/" class="sidebar-btn">ALMA — für Führungskräfte</a>
-<a href="/sam/" class="sidebar-btn">SAM — für Dich</a>
-<a href="/fuehrungsset/" class="sidebar-btn">Karten & Workbook</a>
-<a href="/basis-set/" class="sidebar-btn">Basis-Set</a>
-<a href="/selbstreflexion/" class="sidebar-btn">Selbstreflexions-Set</a>
-<a href="/musterchecks/" class="sidebar-btn">Musterchecks</a>
 </div>
 </div>
 <div class="mobile-menu" id="mobileMenu">
@@ -678,30 +665,23 @@ Für Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4"
 <a href="/anleitung/" class="mobile-sub-btn">Anleitung</a>
 </div>
 <button class="mobile-menu-btn" id="mob-btn-dich" onclick="toggleMobileSubmenu('dich')">
-Für Dich <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+Für dich privat <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
 </button>
 <div class="mobile-submenu" id="mob-sub-dich">
+<a href="/fuer-dich/" class="mobile-sub-btn">Für dich privat</a>
 <a href="/sam/" class="mobile-sub-btn">SAM</a>
-<a href="/musterchecks/" class="mobile-sub-btn">Musterchecks</a>
-<a href="/basis-set/" class="mobile-sub-btn">Basis-Set</a>
-<a href="/selbstreflexion/" class="mobile-sub-btn">Selbstreflexions-Set</a>
-</div>
-<button class="mobile-menu-btn" id="mob-btn-produkte" onclick="toggleMobileSubmenu('produkte')">
-Produkte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
-</button>
-<div class="mobile-submenu" id="mob-sub-produkte">
-<a href="/alma/" class="mobile-sub-btn">ALMA</a>
-<a href="/sam/" class="mobile-sub-btn">SAM</a>
-<a href="/fuehrungsset/" class="mobile-sub-btn">Karten & Workbook</a>
 <a href="/basis-set/" class="mobile-sub-btn">Basis-Set</a>
 <a href="/selbstreflexion/" class="mobile-sub-btn">Selbstreflexions-Set</a>
 </div>
 <button class="mobile-menu-btn" id="mob-btn-methodik" onclick="toggleMobileSubmenu('methodik')">
-Über Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
 </button>
 <div class="mobile-submenu" id="mob-sub-methodik">
 <a href="/ueber-logic-soul/" class="mobile-sub-btn">Philosophie</a>
 <a href="/ueber-mich/" class="mobile-sub-btn">Über mich</a>
+<a href="/systemalchemie/" class="mobile-sub-btn">Was ist SystemAlchemie?</a>
+<a href="/entstehung/" class="mobile-sub-btn">Wie sie entstand</a>
+<a href="/methodik/" class="mobile-sub-btn">Die 5 Schritte</a>
 </div>
 <a href="/kontakt/" class="mobile-menu-cta">Gespräch anfragen</a>
 </div>
