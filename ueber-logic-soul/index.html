@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
 <meta name="description" content="Die Philosophie hinter Logic | Soul: systemisches Denken, das Emotion und Logik verbindet. Haptik und KI schließen sich nicht aus, sie ergänzen sich.">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <title>Über Logic | Soul | Logic | Soul</title>
@@ -10,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
+  color-scheme: light only;
   --gold: #C5A059; --gold-dark: #a8863e;
   --navy: #0D1B2A; --bg-alt: #FAFAF8;
   --border: rgba(13,27,42,0.09);
@@ -17,7 +19,7 @@
   --nav-h: 68px;
 }
 * { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
+html { scroll-behavior:smooth; background:white; }
 body { background:white; color:#0D1B2A; font-family:'DM Sans',sans-serif; font-weight:300; }
 header { position:fixed; top:0; left:0; right:0; z-index:500; background:rgba(250,250,248,0.97); backdrop-filter:blur(20px); border-bottom:1px solid var(--border); box-shadow:0 1px 20px rgba(13,27,42,0.05); }
 .header-top { height:var(--nav-h); display:flex; align-items:center; justify-content:space-between; padding:0 3rem; }
@@ -58,11 +60,13 @@ header { position:fixed; top:0; left:0; right:0; z-index:500; background:rgba(25
 .mobile-menu-cta { margin:1.5rem 1.75rem; border:1.5px solid var(--gold); color:var(--gold); padding:0.75rem 1.75rem; font-family:'DM Sans',sans-serif; font-size:0.63rem; letter-spacing:0.22em; text-transform:uppercase; background:none; cursor:pointer; transition:background 0.25s, color 0.25s; text-align:center; display:block; text-decoration:none; }
 .mobile-menu-cta:hover { background:var(--gold); color:white; }
 main { padding-top:var(--nav-h); min-height:100vh; }
+.hero { background:var(--navy); padding:6rem 2rem 5rem; text-align:center; position:relative; overflow:hidden; }
+.hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 60% 40%, rgba(197,160,89,0.08) 0%, transparent 65%); pointer-events:none; }
+.hero-inner { max-width:760px; margin:0 auto; position:relative; z-index:1; }
+.hero-eyebrow { font-size:0.55rem; letter-spacing:0.5em; text-transform:uppercase; color:var(--gold); margin-bottom:1.5rem; }
+.hero-title { font-family:'Playfair Display',serif; font-size:clamp(1.9rem,4vw,3.2rem); font-weight:400; line-height:1.2; color:rgba(255,255,255,0.92); }
+.hero-title em { font-style:italic; color:var(--gold); }
 .page-wrap { max-width:920px; margin:0 auto; padding:5rem 3rem 6rem; width:100%; }
-.page-eyebrow { font-size:0.55rem; letter-spacing:0.5em; text-transform:uppercase; color:var(--gold); margin-bottom:0.85rem; }
-.page-title { font-family:'Playfair Display',serif; font-size:clamp(2rem,3.5vw,3.2rem); font-weight:400; line-height:1.15; color:#0D1B2A; margin-bottom:2rem; }
-.page-title em { font-style:italic; color:var(--gold-dark); }
-.lead { font-family:'Playfair Display',serif; font-size:1.2rem; font-style:italic; color:#0D1B2A; line-height:1.6; margin-bottom:2.5rem; }
 .body-text p { font-size:0.92rem; line-height:2; color:var(--text-mid); margin-bottom:1.4rem; }
 .principle { border-left:2px solid rgba(197,160,89,0.35); padding-left:1.5rem; margin-bottom:2.5rem; }
 .principle-title { font-family:'Playfair Display',serif; font-size:1.15rem; color:#0D1B2A; margin-bottom:0.5rem; }
@@ -110,7 +114,7 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
     </a>
     <nav>
       <ul class="main-nav">
-        <li><button class="nav-btn" onclick="toggleSidebar('fuehrungskraefte', this)">Für Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
+        <li><button class="nav-btn" onclick="toggleSidebar('fuehrungskraefte', this)">Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
         <li><button class="nav-btn active" onclick="toggleSidebar('ueber', this)">Über Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
         <li><a href="/kontakt/" class="nav-btn nav-cta">Erstgespräch anfragen</a></li>
       </ul>
@@ -125,12 +129,14 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
 
 <div class="sidebar-panel" id="sidebar-fuehrungskraefte">
   <div class="sidebar-header">
-    <span class="sidebar-label">ALMA</span>
-    <div class="sidebar-title">Für Führungskräfte</div>
+    <span class="sidebar-label">Logic | Soul</span>
+    <div class="sidebar-title">Führungskräfte</div>
   </div>
   <div class="sidebar-items">
-    <a href="/alma/" class="sidebar-btn">ALMA — KI-Begleiter</a>
-    <a href="/fuehrungsset/" class="sidebar-btn">Führungskräfte-Set</a>
+    <a href="/fuehrungskraefte/" class="sidebar-btn">Startseite</a>
+    <a href="/fuehrungsset/" class="sidebar-btn">Karten & Workbook</a>
+    <a href="/alma/" class="sidebar-btn">ALMA</a>
+    <a href="/anleitung/" class="sidebar-btn">Anleitung</a>
     <a href="/kontakt/" class="sidebar-btn">Erstgespräch anfragen</a>
   </div>
 </div>
@@ -148,11 +154,13 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
 
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-menu-btn" id="mob-btn-fuehrungskraefte" onclick="toggleMobileSubmenu('fuehrungskraefte')">
-    Für Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+    Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
   </button>
   <div class="mobile-submenu" id="mob-sub-fuehrungskraefte">
-    <a href="/alma/" class="mobile-sub-btn">ALMA — KI-Begleiter</a>
-    <a href="/fuehrungsset/" class="mobile-sub-btn">Führungskräfte-Set</a>
+    <a href="/fuehrungskraefte/" class="mobile-sub-btn">Startseite</a>
+    <a href="/fuehrungsset/" class="mobile-sub-btn">Karten & Workbook</a>
+    <a href="/alma/" class="mobile-sub-btn">ALMA</a>
+    <a href="/anleitung/" class="mobile-sub-btn">Anleitung</a>
   </div>
   <button class="mobile-menu-btn expanded" id="mob-btn-ueber" onclick="toggleMobileSubmenu('ueber')">
     Über Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
@@ -165,14 +173,24 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
 </div>
 
 <main>
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Philosophie</p>
+      <h1 class="hero-title">Logic und Soul sind kein Gegensatz.<br><em>Sie gehören zusammen.</em></h1>
+    </div>
+  </section>
+
   <div class="page-wrap">
-    <p class="page-eyebrow">Philosophie</p>
-    <h1 class="page-title">Logic und Soul sind kein Gegensatz.<br><em>Sie gehören zusammen.</em></h1>
-
-    <p class="lead">Systemisches Denken heißt nicht, Gefühle aus der Führung herauszuhalten. Es heißt, sie zu verstehen, statt sie zu ignorieren.</p>
-
     <div class="body-text">
       <p>Der Name ist Programm. Logic steht für klares, strukturiertes Denken. Soul für das, was sich nicht in eine Excel-Tabelle packen lässt: innere Zustände, Beziehungen, das, was eine Entscheidung wirklich trägt oder untergräbt. Die meisten Ansätze trennen beides. Führungstrainings sprechen über Zahlen und Prozesse. Coaching spricht über Gefühle. Logic | Soul verbindet beides in einem Ansatz, weil Führung in der Realität auch nie getrennt stattfindet.</p>
+    </div>
+
+    <div class="principle">
+      <p class="principle-title">Was "systemisch" für uns bedeutet</p>
+      <p class="principle-text">Eine systemische Frage fragt nicht "was stimmt nicht mit dir", sondern "was passiert gerade um dich herum". Nicht die einzelne Person steht im Fokus, sondern das Zusammenspiel: das Team, das Gespräch, die Dynamik, in der eine Reaktion entsteht.</p>
+      <p class="principle-text" style="margin-top:1rem;">Viele Führungskräfte kennen diesen Gedanken: <em style="font-style:italic;">"Schon wieder komme ich nicht dazu, an mir selbst zu arbeiten. Ich lösche nur Brände."</em> Die naheliegende Frage wäre: Was mache ich falsch, dass ich keine Zeit finde?</p>
+      <p class="principle-text" style="margin-top:1rem;">Die systemische Frage ist eine andere: <em style="font-style:italic;">"Wie hat das Team gelernt, dass es einfacher ist, dich zu fragen, als selbst zu entscheiden?"</em></p>
+      <p class="principle-text" style="margin-top:1rem;">Das ist keine Frage nach persönlichem Versagen. Es ist eine Frage nach der Dynamik, die sich unbemerkt eingespielt hat. Genau darin liegt der Unterschied zwischen einem Tipp und einem Impuls.</p>
     </div>
 
     <div class="principle">
@@ -182,7 +200,7 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
 
     <div class="principle">
       <p class="principle-title">Haptik schließt KI nicht aus</p>
-      <p class="principle-text">Eine Karte in der Hand und ein KI-Begleiter im Hintergrund sind kein Widerspruch. Das Führungskräfte-Set und ALMA sind bewusst so gebaut, dass sie sich ergänzen: die Karte für den Moment, ALMA für die Tiefe davor, dazwischen und danach.</p>
+      <p class="principle-text">Eine Karte in der Hand und ein KI-Begleiter im Hintergrund sind kein Widerspruch. Karten & Workbook und ALMA sind bewusst so gebaut, dass sie sich ergänzen: die Karte für den Moment, ALMA für die Tiefe davor, dazwischen und danach.</p>
     </div>
 
     <div class="principle" style="margin-bottom:0;">
@@ -204,7 +222,7 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
   </a>
   <nav class="footer-nav">
     <a href="/alma/">ALMA</a>
-    <a href="/fuehrungsset/">Führungskräfte-Set</a>
+    <a href="/fuehrungsset/">Karten & Workbook</a>
     <a href="/ueber-mich/">Über mich</a>
     <a href="/kontakt/">Kontakt</a>
   </nav>
