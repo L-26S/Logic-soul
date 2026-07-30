@@ -123,6 +123,7 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
   .hamburger { display:flex; }
   .page-wrap { padding:3.5rem 1.5rem 4rem; }
   .teaser-grid { grid-template-columns:1fr; }
+  div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
   footer { flex-direction:column; text-align:center; padding:2rem 1.5rem; }
   .footer-nav { justify-content:center; }
   .footer-legal { justify-content:center; }
@@ -142,6 +143,7 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
     <nav>
       <ul class="main-nav">
         <li><button class="nav-btn active" onclick="toggleSidebar('fuehrungskraefte', this)">Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
+                <li><button class="nav-btn" onclick="toggleSidebar('dich', this)">Für dich privat <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
         <li><button class="nav-btn" onclick="toggleSidebar('ueber', this)">Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
         <li><a href="/kontakt/" class="nav-btn nav-cta">Erstgespräch anfragen</a></li>
       </ul>
@@ -178,6 +180,18 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
     <a href="/ueber-mich/" class="sidebar-btn">Über mich</a>
   </div>
 </div>
+<div class="sidebar-panel" id="sidebar-dich">
+  <div class="sidebar-header">
+    <span class="sidebar-label">Logic | Soul</span>
+    <div class="sidebar-title">Für dich privat</div>
+  </div>
+  <div class="sidebar-items">
+    <a href="/fuer-dich/" class="sidebar-btn">Für dich privat</a>
+    <a href="/sam/" class="sidebar-btn">SAM</a>
+    <a href="/basis-set/" class="sidebar-btn">Basis-Set</a>
+    <a href="/selbstreflexion/" class="sidebar-btn">Selbstreflexions-Set</a>
+  </div>
+</div>
 
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-menu-btn expanded" id="mob-btn-fuehrungskraefte" onclick="toggleMobileSubmenu('fuehrungskraefte')">
@@ -189,8 +203,17 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
     <a href="/alma/" class="mobile-sub-btn">ALMA</a>
     <a href="/anleitung/" class="mobile-sub-btn">Anleitung</a>
   </div>
+  <button class="mobile-menu-btn" id="mob-btn-dich" onclick="toggleMobileSubmenu('dich')">
+    Für dich privat <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+  </button>
+  <div class="mobile-submenu" id="mob-sub-dich">
+    <a href="/fuer-dich/" class="mobile-sub-btn">Für dich privat</a>
+    <a href="/sam/" class="mobile-sub-btn">SAM</a>
+    <a href="/basis-set/" class="mobile-sub-btn">Basis-Set</a>
+    <a href="/selbstreflexion/" class="mobile-sub-btn">Selbstreflexions-Set</a>
+  </div>
   <button class="mobile-menu-btn" id="mob-btn-ueber" onclick="toggleMobileSubmenu('ueber')">
-    Über Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+    Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
   </button>
   <div class="mobile-submenu" id="mob-sub-ueber">
     <a href="/ueber-logic-soul/" class="mobile-sub-btn">Philosophie</a>
@@ -204,11 +227,27 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
     <div class="hero-inner">
       <p class="hero-eyebrow">Logic | Soul für Führungskräfte</p>
       <h1 class="hero-title">Eine <em>neue Art</em> von Führung.<br>Nicht noch ein Tool.</h1>
-      <p class="hero-sub">Kein einmaliges Training, das im Alltag verpufft. Eine Begleitung, die bleibt, in Karten, im Workbook und jeden Tag zwischen den Gesprächen.</p>
+      <p class="hero-sub">Für die einzelne Führungskraft im Druckmoment. Für die Geschäftsführung, die sehen will, wo Unterstützung wirklich ankommt.</p>
     </div>
   </section>
 
   <div class="page-wrap">
+    <!-- WEGWEISER -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:4rem;">
+      <a href="/alma/" style="text-decoration:none;">
+        <div style="background:#0D1B2A;padding:2rem 2.25rem;height:100%;box-sizing:border-box;border-top:2px solid #C5A059;transition:transform 0.2s;">
+          <p style="font-family:'Playfair Display',serif;font-size:1.15rem;font-style:italic;color:rgba(255,255,255,0.92);line-height:1.5;margin-bottom:1rem;">Ein Gespräch steht bevor, das dir schwerfällt?</p>
+          <p style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#C5A059;">Zu ALMA →</p>
+        </div>
+      </a>
+      <a href="/fuehrungsset/" style="text-decoration:none;">
+        <div style="background:#0D1B2A;padding:2rem 2.25rem;height:100%;box-sizing:border-box;border-top:2px solid #C5A059;transition:transform 0.2s;">
+          <p style="font-family:'Playfair Display',serif;font-size:1.15rem;font-style:italic;color:rgba(255,255,255,0.92);line-height:1.5;margin-bottom:1rem;">Du willst einen greifbaren Impuls für den Alltag?</p>
+          <p style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#C5A059;">Zu Karten & Workbook →</p>
+        </div>
+      </a>
+    </div>
+
     <!-- WAS WIR SEHEN -->
     <div class="framing-section" style="border-top:none;padding-top:0;margin-bottom:4rem;">
       <span class="framing-eyebrow">Was wir sehen</span>
