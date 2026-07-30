@@ -141,6 +141,7 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
     <nav>
       <ul class="main-nav">
         <li><button class="nav-btn active" onclick="toggleSidebar('fuehrungskraefte', this)">Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
+                <li><button class="nav-btn" onclick="toggleSidebar('dich', this)">Für dich privat <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
         <li><button class="nav-btn" onclick="toggleSidebar('ueber', this)">Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
         <li><a href="/kontakt/" class="nav-btn nav-cta">Erstgespräch anfragen</a></li>
       </ul>
@@ -177,6 +178,18 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
     <a href="/ueber-mich/" class="sidebar-btn">Über mich</a>
   </div>
 </div>
+<div class="sidebar-panel" id="sidebar-dich">
+  <div class="sidebar-header">
+    <span class="sidebar-label">Logic | Soul</span>
+    <div class="sidebar-title">Für dich privat</div>
+  </div>
+  <div class="sidebar-items">
+    <a href="/fuer-dich/" class="sidebar-btn">Für dich privat</a>
+    <a href="/sam/" class="sidebar-btn">SAM</a>
+    <a href="/basis-set/" class="sidebar-btn">Basis-Set</a>
+    <a href="/selbstreflexion/" class="sidebar-btn">Selbstreflexions-Set</a>
+  </div>
+</div>
 
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-menu-btn expanded" id="mob-btn-fuehrungskraefte" onclick="toggleMobileSubmenu('fuehrungskraefte')">
@@ -194,6 +207,15 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
   <div class="mobile-submenu" id="mob-sub-ueber">
     <a href="/ueber-logic-soul/" class="mobile-sub-btn">Philosophie</a>
     <a href="/ueber-mich/" class="mobile-sub-btn">Über mich</a>
+  </div>
+    <button class="mobile-menu-btn" id="mob-btn-dich" onclick="toggleMobileSubmenu('dich')">
+    Für dich privat <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+  </button>
+  <div class="mobile-submenu" id="mob-sub-dich">
+    <a href="/fuer-dich/" class="mobile-sub-btn">Für dich privat</a>
+    <a href="/sam/" class="mobile-sub-btn">SAM</a>
+    <a href="/basis-set/" class="mobile-sub-btn">Basis-Set</a>
+    <a href="/selbstreflexion/" class="mobile-sub-btn">Selbstreflexions-Set</a>
   </div>
   <a href="/kontakt/" class="mobile-menu-cta">Erstgespräch anfragen</a>
 </div>
@@ -231,26 +253,33 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
       <div class="step">
         <div class="step-num">02</div>
         <div class="step-body">
+          <p class="step-title">Als App auf dem Handy speichern</p>
+          <p class="step-text">ALMA läuft als Web-App. Das heißt, du kannst sie dir wie eine echte App aufs Handy holen: Seite öffnen, im Browser-Menü "Zum Home-Bildschirm hinzufügen" wählen, fertig. Danach hast du ein eigenes Icon, genau wie bei jeder anderen App.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-body">
           <p class="step-title">Ein echtes Anliegen mitbringen</p>
           <p class="step-text">ALMA funktioniert am besten mit einer konkreten Situation, nicht mit einer allgemeinen Frage. Ein bevorstehendes Gespräch, eine Entscheidung, eine Spannung im Team. Je konkreter, desto klarer wird der Austausch.</p>
         </div>
       </div>
       <div class="step">
-        <div class="step-num">03</div>
+        <div class="step-num">04</div>
         <div class="step-body">
           <p class="step-title">Dem Prozess folgen, nicht der schnellen Antwort</p>
           <p class="step-text">ALMA stellt Rückfragen, bevor Lösungen kommen. Das ist beabsichtigt. Die Klarheit entsteht im Verlauf des Gesprächs, nicht in der ersten Antwort.</p>
         </div>
       </div>
       <div class="step">
-        <div class="step-num">04</div>
+        <div class="step-num">05</div>
         <div class="step-body">
           <p class="step-title">Regelmäßig statt einmalig</p>
           <p class="step-text">ALMA wirkt am stärksten, wenn du regelmäßig zurückkehrst, nicht nur in akuten Momenten. Ein kurzer Austausch am Morgen oder nach einem schwierigen Gespräch reicht oft schon.</p>
         </div>
       </div>
       <div class="step">
-        <div class="step-num">05</div>
+        <div class="step-num">06</div>
         <div class="step-body">
           <p class="step-title">Monatliche Reflexionschecks nutzen</p>
           <p class="step-text">Einmal im Monat nimmt sich ALMA mit dir gemeinsam Zeit für einen kurzen Reflexionscheck. So entdeckst du selbst, wo du dich entwickelt hast, ganz ohne dass es dir jemand sagen muss.</p>
