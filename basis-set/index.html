@@ -163,6 +163,7 @@ footer{flex-direction:column;text-align:center;padding:2rem 1.5rem;}
 </a>
 <nav>
 <ul class="main-nav">
+<li><button class="nav-btn" onclick="toggleSidebar('unternehmen', this)">Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
 <li><button class="nav-btn" onclick="toggleSidebar('dich', this)">Für dich privat <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
 <li><button class="nav-btn" onclick="toggleSidebar('methodik', this)">Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
 <li><a href="/kontakt/" class="nav-btn nav-cta">Gespräch anfragen</a></li>
@@ -182,9 +183,20 @@ footer{flex-direction:column;text-align:center;padding:2rem 1.5rem;}
 <div class="sidebar-items">
 <a href="/ueber-logic-soul/" class="sidebar-btn">Philosophie</a>
 <a href="/ueber-mich/" class="sidebar-btn">Über mich</a>
-<a href="/systemalchemie/" class="sidebar-btn">Was ist SystemAlchemie?</a>
-<a href="/entstehung/" class="sidebar-btn">Wie sie entstand</a>
-<a href="/methodik/" class="sidebar-btn">Die 5 Schritte</a>
+</div>
+</div>
+
+<div class="sidebar-panel" id="sidebar-unternehmen">
+<div class="sidebar-header">
+<span class="sidebar-label">Logic | Soul</span>
+<div class="sidebar-title">Für Führungskräfte</div>
+</div>
+<div class="sidebar-items">
+<a href="/fuehrungskraefte/" class="sidebar-btn">Für Führungskräfte</a>
+<a href="/fuehrungsset/" class="sidebar-btn">Karten & Workbook</a>
+<a href="/alma/" class="sidebar-btn">ALMA</a>
+<a href="/anleitung/" class="sidebar-btn">Anleitung</a>
+<a href="/kontakt/" class="sidebar-btn">Erstgespräch anfragen</a>
 </div>
 </div>
 <div class="sidebar-panel" id="sidebar-dich">
@@ -197,6 +209,15 @@ footer{flex-direction:column;text-align:center;padding:2rem 1.5rem;}
 </div>
 </div>
 <div class="mobile-menu" id="mobileMenu">
+<button class="mobile-menu-btn" id="mob-btn-unternehmen" onclick="toggleMobileSubmenu('unternehmen')">
+Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+</button>
+<div class="mobile-submenu" id="mob-sub-unternehmen">
+<a href="/fuehrungskraefte/" class="mobile-sub-btn">Für Führungskräfte</a>
+<a href="/fuehrungsset/" class="mobile-sub-btn">Karten & Workbook</a>
+<a href="/alma/" class="mobile-sub-btn">ALMA</a>
+<a href="/anleitung/" class="mobile-sub-btn">Anleitung</a>
+</div>
 <button class="mobile-menu-btn" id="mob-btn-dich" onclick="toggleMobileSubmenu('dich')">Für Dich <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button>
 <div class="mobile-submenu" id="mob-sub-dich">
 <a href="/fuer-dich/" class="mobile-sub-btn">Für dich privat</a>
@@ -210,9 +231,6 @@ Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="
 <div class="mobile-submenu" id="mob-sub-methodik">
 <a href="/ueber-logic-soul/" class="mobile-sub-btn">Philosophie</a>
 <a href="/ueber-mich/" class="mobile-sub-btn">Über mich</a>
-<a href="/systemalchemie/" class="mobile-sub-btn">Was ist SystemAlchemie?</a>
-<a href="/entstehung/" class="mobile-sub-btn">Wie sie entstand</a>
-<a href="/methodik/" class="mobile-sub-btn">Die 5 Schritte</a>
 </div>
 <a href="/kontakt/" class="mobile-menu-cta">Gespräch anfragen</a>
 </div>
