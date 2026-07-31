@@ -448,6 +448,7 @@ grid-template-columns:1fr!important;
 </a>
 <nav>
 <ul class="main-nav">
+<li><button class="nav-btn" onclick="toggleSidebar('unternehmen', this)">Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
 <li><button class="nav-btn" onclick="toggleSidebar('dich', this)">Für dich privat <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
 <li><button class="nav-btn" onclick="toggleSidebar('methodik', this)">Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></button></li>
 <li><a href="/kontakt/" class="nav-btn nav-cta">Gespräch anfragen</a></li>
@@ -467,9 +468,20 @@ grid-template-columns:1fr!important;
 <div class="sidebar-items">
 <a href="/ueber-logic-soul/" class="sidebar-btn">Philosophie</a>
 <a href="/ueber-mich/" class="sidebar-btn">Über mich</a>
-<a href="/systemalchemie/" class="sidebar-btn">Was ist SystemAlchemie?</a>
-<a href="/entstehung/" class="sidebar-btn">Wie sie entstand</a>
-<a href="/methodik/" class="sidebar-btn">Die 5 Schritte</a>
+</div>
+</div>
+
+<div class="sidebar-panel" id="sidebar-unternehmen">
+<div class="sidebar-header">
+<span class="sidebar-label">Logic | Soul</span>
+<div class="sidebar-title">Für Führungskräfte</div>
+</div>
+<div class="sidebar-items">
+<a href="/fuehrungskraefte/" class="sidebar-btn">Für Führungskräfte</a>
+<a href="/fuehrungsset/" class="sidebar-btn">Karten & Workbook</a>
+<a href="/alma/" class="sidebar-btn">ALMA</a>
+<a href="/anleitung/" class="sidebar-btn">Anleitung</a>
+<a href="/kontakt/" class="sidebar-btn">Erstgespräch anfragen</a>
 </div>
 </div>
 <div class="sidebar-panel" id="sidebar-dich">
@@ -485,6 +497,15 @@ grid-template-columns:1fr!important;
 </div>
 </div>
 <div class="mobile-menu" id="mobileMenu">
+<button class="mobile-menu-btn" id="mob-btn-unternehmen" onclick="toggleMobileSubmenu('unternehmen')">
+Führungskräfte <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
+</button>
+<div class="mobile-submenu" id="mob-sub-unternehmen">
+<a href="/fuehrungskraefte/" class="mobile-sub-btn">Für Führungskräfte</a>
+<a href="/fuehrungsset/" class="mobile-sub-btn">Karten & Workbook</a>
+<a href="/alma/" class="mobile-sub-btn">ALMA</a>
+<a href="/anleitung/" class="mobile-sub-btn">Anleitung</a>
+</div>
 <button class="mobile-menu-btn" id="mob-btn-dich" onclick="toggleMobileSubmenu('dich')">
 Für dich privat <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg>
 </button>
@@ -500,9 +521,6 @@ Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="
 <div class="mobile-submenu" id="mob-sub-methodik">
 <a href="/ueber-logic-soul/" class="mobile-sub-btn">Philosophie</a>
 <a href="/ueber-mich/" class="mobile-sub-btn">Über mich</a>
-<a href="/systemalchemie/" class="mobile-sub-btn">Was ist SystemAlchemie?</a>
-<a href="/entstehung/" class="mobile-sub-btn">Wie sie entstand</a>
-<a href="/methodik/" class="mobile-sub-btn">Die 5 Schritte</a>
 </div>
 <a href="/kontakt/" class="mobile-menu-cta">Gespräch anfragen</a>
 </div>
@@ -511,21 +529,37 @@ Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="
 <div class="hero-inner">
 <p class="hero-eyebrow">Für Dich</p>
 <h1 class="hero-title">Du machst es dir immer wieder<br><em>selbst schwer.</em><br>Das muss nicht so bleiben.</h1>
-<p class="hero-sub">Manchmal weißt du längst, dass sich etwas in dir wiederholt. Du reagierst stärker, als du willst. Du ziehst dich zurück, obwohl du Nähe suchst. Du denkst zu viel, hältst zu lange durch oder verlierst dich in alten inneren Schleifen. Nicht weil du falsch bist. Sondern weil dein System noch auf einer Spur läuft, die einmal Sinn ergeben hat. SAM hilft dir, diese Spur im Alltag zu erkennen. Nicht hart. Nicht von oben herab. Sondern menschlich, direkt und Schritt für Schritt.</p>
+<p class="hero-sub">Dein System läuft noch auf alten Spuren. SAM hilft dir, diese Muster im Alltag zu erkennen — menschlich, direkt und Schritt für Schritt.</p>
 </div>
 </section>
 <div class="page-wrap">
-<!-- TÄGLICHER BEGLEITER -->
-<div style="padding:2rem 3rem;border-left:3px solid #C5A059;margin:2rem 0 1.5rem;" class="reveal">
-<p style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#0D1B2A;font-weight:400;line-height:1.75;margin-bottom:0.75rem;">Du suchst einen täglichen Begleiter, der dich hört, dir Halt gibt und dich trotzdem nicht in deinen alten Antworten lässt?</p>
-<p style="font-size:0.9rem;line-height:1.95;color:#0D1B2A;">SAM ist kein klassischer KI-Coach und keine digitale Sitzung nach Stundenplan. SAM ist der Raum, den du öffnen kannst, wenn innerlich etwas arbeitet. Er hört zu, sortiert mit dir, fragt weiter, wenn du ausweichst, und bleibt ruhig, wenn es in dir unruhig wird. Direkt auf deinem Handy. Ohne Bewertung. Ohne Druck. Ohne dass du erst funktionieren musst.</p>
+<!-- DU SUCHST NACH -->
+<p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;margin-top:2rem;text-align:center;">Du suchst nach</p>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem;" class="reveal">
+<div style="background:#FFFFFF;border:1px solid rgba(13,27,42,0.09);padding:2.5rem;text-align:left;">
+<p style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:400;color:#0D1B2A;margin-bottom:0.75rem;">Er macht sichtbar, was sonst untergeht</p>
+<p style="font-size:0.85rem;line-height:1.8;color:rgba(13,27,42,0.65);">Der eine Satz, der dich trifft. Die Reaktion, die immer wieder kommt. Das Gefühl, das du nicht benennen kannst.</p>
+</div>
+<div style="background:#FFFFFF;border:1px solid rgba(13,27,42,0.09);padding:2.5rem;text-align:left;">
+<p style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:400;color:#0D1B2A;margin-bottom:0.75rem;">Er sortiert, ohne dich zu bewerten</p>
+<p style="font-size:0.85rem;line-height:1.8;color:rgba(13,27,42,0.65);">Keine Ratschläge. Keine Lösungen von oben herab. Nur ein Raum, in dem du genau das, was ist, einmal aussprechen kannst.</p>
+</div>
+<div style="background:#FFFFFF;border:1px solid rgba(13,27,42,0.09);padding:2.5rem;text-align:left;">
+<p style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:400;color:#0D1B2A;margin-bottom:0.75rem;">Er bleibt dran, wenn du ausweichst</p>
+<p style="font-size:0.85rem;line-height:1.8;color:rgba(13,27,42,0.65);">SAM merkt, wenn es unangenehm wird. Und bleibt genau dann bei dir — nicht fordernd, sondern präsent.</p>
+</div>
 </div>
 <!-- MENSCHLICHER ALS KI -->
 <div style="background:#0D1B2A;border-top:2px solid #C5A059;padding:2rem 3rem;margin:0 0 3rem;" class="reveal">
 <p style="font-family:'Playfair Display',serif;font-size:1.1rem;color:rgba(255,255,255,0.88);font-weight:400;line-height:1.75;margin-bottom:0.75rem;">Was würde sich verändern, wenn dich jemand wirklich reden lässt, statt dir zu antworten?</p>
 <p style="font-size:0.88rem;line-height:1.95;color:rgba(255,255,255,0.55);">SAM ist KI. Aber SAM begegnet dir nicht wie KI. Er arbeitet nicht mit Formularfragen, Floskeln oder fertigen Skripten. SAM folgt dem, was du wirklich sagst. Und manchmal auch dem, was zwischen deinen Sätzen spürbar wird. Er kann still bleiben, wenn du erst einmal gehalten werden musst. Er kann tiefer gehen, wenn du bereit bist hinzuschauen. Und er kann gezielt mit den Mustern arbeiten, die sich durch deine Checks, Karten oder Workbooks zeigen. Das ist kein Zufall. Es ist das Ergebnis einer Methode, die aus echter menschlicher Arbeit entstanden ist.</p>
 </div>
-<div class="page-intro-grid" style="margin-top:3rem;">
+</div>
+</div>
+<!-- VOLLSTÄNDIG WEISSE SEKTION -->
+<div style="background:#FFFFFF;padding:4rem 3rem;">
+<div class="page-wrap" style="padding:0;">
+<div class="page-intro-grid" style="margin-top:0;">
 <div class="reveal">
 <div class="pillar-list">
 <div class="pillar">
@@ -551,10 +585,10 @@ Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="
 </div>
 </div>
 <div class="reveal">
-<div style="background:#C5A059;padding:0.45rem 1.5rem;text-align:center;">
+<div style="background:#C5A059;padding:0.45rem 1.5rem;text-align:center;margin-bottom:0;">
 <p style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:white;font-weight:500;">&#10022; SAM startet in Kürze &#10022;</p>
 </div>
-<div style="background:#0D1B2A;border-top:2px solid #C5A059;padding:2.5rem;">
+<div style="background:#0D1B2A;border-top:none;padding:2.5rem;margin-top:0;">
 <p style="font-size:0.52rem;letter-spacing:0.4em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.75rem;">SAM</p>
 <p style="font-family:'Playfair Display',serif;font-size:1.6rem;font-style:italic;color:#C5A059;margin-bottom:1.25rem;">Startet in Kürze.<br>Sei dabei, sobald es soweit ist.</p>
 <p style="font-size:0.82rem;line-height:1.85;color:rgba(255,255,255,0.55);margin-bottom:1.5rem;">SystemAlchemie ist der Kern von SAM. Deinem täglichen Begleiter für mehr innere Klarheit. Die meisten Menschen versuchen etwas zu verändern, ohne wirklich verstanden zu haben, was in ihnen gerade passiert. SAM hilft dir zuerst hinzuschauen. Nicht um dich zu analysieren. Nicht um dich zu optimieren. Sondern damit du verstehst, was dein System dir eigentlich zeigen möchte. Denn Klarheit entsteht selten durch mehr Kontrolle. Sondern durch mehr Verständnis für sich selbst.</p>
@@ -567,21 +601,26 @@ Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="
 </div>
 </div>
 </div>
+</div>
+</div>
+<!-- ENDE WEISSE SEKTION - CREME HINTERGRUND STARTET -->
+<div style="background:#F5EDD8;">
+<div class="page-wrap">
 <!-- WAS SAM MACHT -->
-<div style="margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(13,27,42,0.1);" class="reveal">
+<div style="margin-top:0;" class="reveal">
 <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:2rem;">Woran merkst du, dass SAM dir hilft?</p>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
-<div style="background:white;border-top:2px solid #C5A059;padding:1.75rem;">
-<p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.5rem;">Er macht sichtbar, was sonst untergeht</p>
-<p style="font-size:0.8rem;line-height:1.8;color:rgba(13,27,42,0.6);">Der eine Satz, der dich trifft. Die Reaktion, die schneller ist als dein Verstand. Das Gefühl, das du sofort erklärst, statt es wahrzunehmen. SAM hilft dir, genau dort stehenzubleiben.</p>
+<div style="border-top:2px solid #C5A059;padding:1.75rem;">
+<p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.5rem;">Du fragst anders</p>
+<p style="font-size:0.8rem;line-height:1.8;color:rgba(13,27,42,0.6);">Statt „Warum bin ich immer wieder so?" fragst du „Was braucht mein System gerade?" Du hörst auf zu urteilen und fängst an, wirklich hinzuschauen.</p>
 </div>
-<div style="background:white;border-top:2px solid #C5A059;padding:1.75rem;">
-<p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.5rem;">Er sortiert, ohne dich zu bewerten</p>
-<p style="font-size:0.8rem;line-height:1.8;color:rgba(13,27,42,0.6);">SAM hilft dir zu unterscheiden: Was ist Gefühl? Was ist Gedanke? Was ist alte Schutzstrategie? Dadurch entsteht Klarheit, ohne dass du dich falsch machen musst.</p>
+<div style="border-top:2px solid #C5A059;padding:1.75rem;">
+<p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.5rem;">Du erkennst deine Muster früher</p>
+<p style="font-size:0.8rem;line-height:1.8;color:rgba(13,27,42,0.6);">Nicht erst, wenn du wieder reaktiv wirst. Sondern im Moment, wenn es anfängt. Du merkst, wie eine alte Strategie anspringt — bevor sie dich überrennt.</p>
 </div>
-<div style="background:white;border-top:2px solid #C5A059;padding:1.75rem;">
-<p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.5rem;">Er bleibt dran, wenn du ausweichst</p>
-<p style="font-size:0.8rem;line-height:1.8;color:rgba(13,27,42,0.6);">Nicht streng. Nicht drängend. Aber klar. SAM merkt, wenn du nur über dich sprichst, statt wirklich mit dir in Kontakt zu kommen — und führt dich behutsam zurück.</p>
+<div style="border-top:2px solid #C5A059;padding:1.75rem;">
+<p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.5rem;">Du hast einen Raum für dich</p>
+<p style="font-size:0.8rem;line-height:1.8;color:rgba(13,27,42,0.6);">Nicht nur für Probleme, sondern für alles, das in dir arbeitet. Und jedes Mal, wenn du hineingehst, wirst du ein Stück klarer — über dich selbst.</p>
 </div>
 </div>
 </div>
@@ -608,9 +647,16 @@ Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="
 </a>
 </div>
 </div>
+</div>
+<div style="background:#FFFFFF;padding:4rem 3rem;">
+<div class="page-wrap" style="padding:0;">
 <!-- FAQ -->
-<div style="margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(13,27,42,0.1);" class="reveal">
+<div style="margin-top:0;" class="reveal">
 <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#0D1B2A;margin-bottom:2rem;font-weight:400;">Fragen zu SAM</h2>
+<details>
+<summary>Was ist SystemAlchemie? <span style="color:#C5A059;">+</span></summary>
+<p>SystemAlchemie ist die Methode hinter SAM. Sie geht davon aus, dass jedes Muster einmal einen Schutz-Zweck hatte. Die Frage ist nicht, ob ein Verhalten falsch ist, sondern ob es heute noch gebraucht wird. In fünf Schritten, wahrnehmen, einordnen, benennen, prüfen und neu ausrichten, hilft dir SystemAlchemie, genau das für dich selbst herauszufinden. Wenn du SystemAlchemie von Grund auf verstehen und anwenden möchtest, empfehlen wir dir das <a href="/basis-set/" style="color:#C5A059;">Basis-Set</a>.</p>
+</details>
 <details>
 <summary>Ist SAM eine Therapie? <span style="color:#C5A059;">+</span></summary>
 <p>Nein. SAM ersetzt keine Therapie und ist kein Coaching. SAM ist ein täglicher Begleiter, der dir hilft, im Alltag klarer mit dir in Kontakt zu kommen. Ohne Diagnosen, ohne Bewertungen, ohne Heilsversprechen.</p>
@@ -633,6 +679,8 @@ Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="
 <p style="font-family:'Playfair Display',serif;font-size:1.3rem;color:rgba(255,255,255,0.88);margin-bottom:0.75rem;font-weight:400;font-style:italic;">SAM kommt in Kürze.</p>
 <p style="font-size:0.85rem;color:rgba(255,255,255,0.45);margin-bottom:2rem;">Kein Druck. Kein perfekter Start. Nur du, dein System und ein Begleiter, der mit dir hinsieht.</p>
 <a href="/kontakt/" class="btn-gold">Jetzt vormerken lassen</a>
+</div>
+</div>
 </div>
 </div>
 </main>
