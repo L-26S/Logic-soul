@@ -171,7 +171,7 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
       <li><a href="/kontakt/" class="nav-btn nav-cta">Erstgespräch anfragen</a></li>
     </ul>
   </nav>
-  <button type="button" class="hamburger" onclick="toggleMobileMenu()">
+  <button type="button" class="hamburger" aria-label="Menü öffnen" onclick="toggleMobileMenu()">
     <span></span><span></span><span></span>
   </button>
 </div>
@@ -251,7 +251,7 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
     <div class="hero-inner">
       <p class="hero-eyebrow">Für Führungskräfte · Haptisch</p>
       <h1 class="hero-title">Die Situation ist festgefahren. Dein Kopf rotiert.<br>Ein Impuls später <em>bist du wieder klar.</em></h1>
-      <p class="hero-sub">Vor einem schwierigen Gespräch. Mitten in einer Eskalation. In dem Moment in dem du merkst, dass du reaktiv wirst. Karten & Workbook geben dir einen haptischen Anker genau dann, wenn du nicht noch mehr Theorie brauchst, sondern einen klaren nächsten Impuls.</p>
+      <p class="hero-sub">Vor einem schwierigen Gespräch. Mitten in einer Eskalation. In dem Moment, in dem du merkst, dass du reaktiv wirst. Karten & Workbook geben dir einen haptischen Anker genau dann, wenn du nicht noch mehr Theorie brauchst, sondern einen klaren nächsten Impuls.</p>
     </div>
   </section>
 
@@ -260,28 +260,11 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
     <!-- VIER SITUATIONEN — SYSTEMISCHE FRAGEN -->
     <div style="margin-top:3.5rem;padding:3rem 3.5rem;background:#0D1B2A;" class="reveal">
       <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;">Vier Situationen, ein Kartenset</p>
-      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:400;line-height:1.35;color:rgba(255,255,255,0.92);margin-bottom:2.25rem;max-width:820px;">
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:400;line-height:1.35;color:rgba(255,255,255,0.92);margin-bottom:1.5rem;max-width:820px;">
         Nicht jede Antwort steht in einem Buch. <em style="color:var(--gold);font-style:italic;">Manche findest du erst, wenn du gefragt wirst.</em>
       </h2>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-bottom:2rem;">
-        <div>
-          <p style="font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">Konflikt Quickstart</p>
-          <p style="font-size:0.82rem;line-height:1.75;color:rgba(255,255,255,0.6);">Für den Moment, in dem ein Streit eskaliert, bevor du nachdenken kannst.</p>
-        </div>
-        <div>
-          <p style="font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">Selbstreflexion</p>
-          <p style="font-size:0.82rem;line-height:1.75;color:rgba(255,255,255,0.6);">Für den Blick zurück, wenn du merkst, dass du anders hättest reagieren können.</p>
-        </div>
-        <div>
-          <p style="font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">1-zu-1 Dialog</p>
-          <p style="font-size:0.82rem;line-height:1.75;color:rgba(255,255,255,0.6);">Für das eine Gespräch, das gerade mehr entscheidet, als du denkst.</p>
-        </div>
-        <div>
-          <p style="font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">Team Dynamik</p>
-          <p style="font-size:0.82rem;line-height:1.75;color:rgba(255,255,255,0.6);">Für die Spannung im Raum, die gerade niemand anspricht.</p>
-        </div>
-      </div>
-      <p style="font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;color:rgba(255,255,255,0.85);border-top:1px solid rgba(255,255,255,0.1);padding-top:1.75rem;">Die Karten geben keine Richtung vor. Sie leiten dich nicht. Ein Impuls reicht. Sieh selbst.</p>
+      <p style="font-size:0.92rem;line-height:1.9;color:rgba(255,255,255,0.65);margin-bottom:2rem;max-width:720px;">Konflikte. Selbstreflexion. 1-zu-1-Gespräche. Dynamiken im Team. Situationen, in denen man oft erst hinterher weiß, was man hätte sagen oder anders machen können.</p>
+      <p style="font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;color:rgba(255,255,255,0.85);border-top:1px solid rgba(255,255,255,0.1);padding-top:1.75rem;">Die Karten geben keine Richtung vor und liefern dir keine fertige Antwort. Sie unterbrechen den Automatismus und öffnen einen neuen Blick. Ein Impuls reicht. Sieh selbst.</p>
     </div>
   </div>
 
@@ -292,7 +275,7 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
       <p style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:400;color:var(--navy);margin-bottom:0.5rem;">Zieh eine Karte. <em style="color:var(--gold-dark);font-style:italic;">Kein Kauf, kein Formular.</em></p>
       <p style="font-size:0.85rem;color:var(--text-mid);margin-bottom:2.25rem;">Tippe auf die Karte, um sie umzudrehen.</p>
 
-      <div class="card-try-scene" id="cardTryScene" onclick="flipTryCard()">
+      <div class="card-try-scene" id="cardTryScene" role="button" tabindex="0" aria-label="Karte umdrehen" onclick="flipTryCard()" onkeydown="if(event.key==='Enter' || event.key===' '){event.preventDefault();flipTryCard();}">
         <div class="card-try-inner" id="cardTryInner">
           <div class="card-try-face card-try-front">
             <div class="card-try-mark"><img src="/images/kompass-logo.png" alt=""></div>
@@ -313,7 +296,7 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
         <button onclick="event.stopPropagation(); nextTryCard()" aria-label="Nächste Karte">→</button>
       </div>
 
-      <p style="margin-top:2rem;font-size:0.85rem;color:var(--text-mid);font-style:italic;">So fühlen sich alle 60 Karten an.</p>
+      <p style="margin-top:2rem;font-size:0.85rem;color:var(--text-mid);font-style:italic;">So beginnt jede Karte. Mit einem Impuls, der etwas in Bewegung bringt.</p>
     </div>
   </div>
 
@@ -324,7 +307,7 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
           <div class="pillar">
             <div class="pillar-num">60</div>
             <div class="pillar-title">Karten in vier Kategorien</div>
-            <div class="pillar-text">Konfliktgespräche. Schwierige Entscheidungen. Spannungen im Team. Situationen, in denen man oft erst hinterher weiß, was man hätte sagen sollen. Die 60 Karten geben dir konkrete Impulse für genau diese Momente. Keine Theorie. Keine Modelle. Sondern Fragen, Perspektiven und Denkanstöße, die dir helfen, klarer zu denken und bewusster zu handeln.</div>
+            <div class="pillar-text">Konflikte. Selbstreflexion. 1-zu-1-Gespräche. Dynamiken im Team. Situationen, in denen man oft erst hinterher weiß, was man hätte sagen oder anders machen können. Die 60 Karten geben dir konkrete Impulse für genau diese Momente. Keine Theorie. Keine Modelle. Sondern Fragen, Perspektiven und Denkanstöße, die dir helfen, klarer zu denken und bewusster zu handeln.</div>
           </div>
           <div class="pillar">
             <div class="pillar-num">+</div>
@@ -346,7 +329,7 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
       <div class="reveal">
         <div style="background:#0D1B2A;border-top:3px solid #C5A059;overflow:hidden;height:100%;display:flex;flex-direction:column;">
           <div style="background:#C5A059;padding:0.65rem 1.5rem;text-align:center;">
-            <p style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:white;font-weight:500;">✦ Einführungspreis — Jetzt zuschlagen ✦</p>
+            <p style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:white;font-weight:500;">Einführungspreis zur Vorbestellung</p>
           </div>
           <div style="padding:2rem 2.5rem;display:flex;flex-direction:column;flex:1;">
             <p style="font-size:0.52rem;letter-spacing:0.4em;text-transform:uppercase;color:rgba(197,160,89,0.7);margin-bottom:0.75rem;">Kartenset + Workbook</p>
@@ -379,7 +362,6 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
       </div>
     </div>
   </div>
-</main>
 
 <section style="background:var(--creme);padding:3.5rem 0 5rem;" class="reveal">
   <div style="max-width:1160px;margin:0 auto;padding:0 3rem;">
@@ -410,7 +392,7 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
       </div>
       <div style="background:#0D1B2A;padding:2rem;border-top:2px solid var(--gold);height:100%;display:flex;flex-direction:column;justify-content:center;">
         <p style="font-family:'Playfair Display',serif;font-size:1.15rem;font-style:italic;color:rgba(255,255,255,0.88);line-height:1.6;margin-bottom:1.25rem;">Was würde sich verändern, wenn du in jedem Druckmoment einen Impuls griffbereit hättest?</p>
-        <p style="font-size:0.82rem;line-height:1.75;color:rgba(255,255,255,0.55);">Unschlagbar zusammen mit ALMA. <a href="/alma/" style="color:var(--gold);">Schau hier →</a></p>
+        <p style="font-size:0.82rem;line-height:1.75;color:rgba(255,255,255,0.55);">Mit ALMA wird aus dem einzelnen Impuls eine kontinuierliche Begleitung. <a href="/alma/" style="color:var(--gold);">ALMA kennenlernen →</a></p>
       </div>
     </div>
   </div>
@@ -425,7 +407,7 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;">
       <div>
         <p style="font-size:0.92rem;line-height:1.95;color:var(--text-mid);margin-bottom:1rem;">Ein Impuls verpufft, wenn er nicht festgehalten wird. Das Workbook ist kein loses zweites Produkt. Es nimmt gezielt Bezug auf die Karten, die du gerade gezogen hast, und hilft dir, den Impuls wirklich einzuordnen, statt ihn im Alltag zu verlieren.</p>
-        <p style="font-size:0.92rem;line-height:1.95;color:var(--text-mid);">Zehn Minuten am Tag reichen. Wichtiger als die Dauer ist die Regelmäßigkeit. So wird aus einer einzelnen Karte über 30 Tage ein echter Lernmoment.</p>
+        <p style="font-size:0.92rem;line-height:1.95;color:var(--text-mid);">Zehn Minuten am Tag reichen. Wichtiger als die Dauer ist die Regelmäßigkeit. So werden aus einzelnen Impulsen über 30 Tage sichtbare Erkenntnisse und neue Handlungsmöglichkeiten.</p>
       </div>
       <div style="background:var(--creme);border-top:2px solid var(--gold);padding:2rem;">
         <p style="font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:var(--navy);line-height:1.6;margin-bottom:1.25rem;">Was würdest du über dich selbst herausfinden, wenn du 30 Tage lang ehrlich hinschaust?</p>
@@ -434,6 +416,7 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
     </div>
   </div>
 </section>
+</main>
 
 <!-- ══ B2B FOOTER ══ -->
 <footer>
