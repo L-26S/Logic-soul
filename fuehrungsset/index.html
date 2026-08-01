@@ -129,6 +129,28 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
   .page-title { font-size:clamp(2rem,10vw,3rem) !important; }
   section[style*="background:var(--creme)"] > div { padding-left:1.25rem !important; padding-right:1.25rem !important; }
 }
+/* ══ INTERAKTIVE KARTE ══ */
+.card-try-scene { width:230px; height:320px; margin:0 auto; perspective:1400px; cursor:pointer; }
+.card-try-inner { position:relative; width:100%; height:100%; transition:transform 0.7s cubic-bezier(0.4,0.1,0.2,1); transform-style:preserve-3d; }
+.card-try-scene.flipped .card-try-inner { transform:rotateY(180deg); }
+.card-try-face { position:absolute; width:100%; height:100%; backface-visibility:hidden; border-radius:4px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.75rem; }
+.card-try-front { background:linear-gradient(155deg,#0D1B2A 0%,#13233a 100%); border:1px solid rgba(197,160,89,0.4); box-shadow:0 20px 45px rgba(13,27,42,0.28); }
+.card-try-front::before { content:''; position:absolute; inset:12px; border:1px solid rgba(197,160,89,0.25); border-radius:2px; pointer-events:none; }
+.card-try-mark { width:38px; height:38px; margin-bottom:1.25rem; }
+.card-try-mark img { width:100%; height:100%; object-fit:contain; }
+.card-try-category { font-size:0.5rem; letter-spacing:0.3em; text-transform:uppercase; color:rgba(197,160,89,0.75); margin-bottom:0.5rem; }
+.card-try-front-title { font-family:'Playfair Display',serif; font-style:italic; font-size:0.95rem; color:rgba(255,255,255,0.85); text-align:center; }
+.card-try-hint { position:absolute; bottom:1.25rem; font-size:0.52rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(197,160,89,0.55); }
+.card-try-back { background:#FFFFFF; border:1px solid rgba(197,160,89,0.4); box-shadow:0 20px 45px rgba(13,27,42,0.18); transform:rotateY(180deg); }
+.card-try-back::before { content:''; position:absolute; inset:12px; border:1px solid rgba(197,160,89,0.3); border-radius:2px; pointer-events:none; }
+.card-try-back-category { font-size:0.5rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold-dark); margin-bottom:1rem; }
+.card-try-question { font-family:'Playfair Display',serif; font-size:1.05rem; font-style:italic; color:var(--navy); text-align:center; line-height:1.5; }
+.card-try-nav { display:flex; align-items:center; justify-content:center; gap:1.25rem; margin-top:1.75rem; }
+.card-try-nav button { background:none; border:1px solid rgba(197,160,89,0.4); width:32px; height:32px; border-radius:50%; color:var(--gold-dark); font-size:0.9rem; cursor:pointer; transition:all 0.2s; display:flex; align-items:center; justify-content:center; }
+.card-try-nav button:hover { background:var(--gold); border-color:var(--gold); color:white; }
+.card-try-dots { display:flex; gap:0.35rem; }
+.card-try-dot { width:5px; height:5px; border-radius:50%; background:rgba(197,160,89,0.3); transition:background 0.2s; }
+.card-try-dot.active { background:var(--gold); }
 </style>
 </head>
 <body>
@@ -260,6 +282,36 @@ footer { background:var(--navy); border-top:1px solid rgba(197,160,89,0.15); pad
         </div>
       </div>
       <p style="font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;color:rgba(255,255,255,0.85);border-top:1px solid rgba(255,255,255,0.1);padding-top:1.75rem;">Können Teammitglieder in Meetings offen Fehler zugeben, ohne Angst vor Konsequenzen zu haben? Die Antwort steht nicht auf der Karte. Sie entsteht, während du der Frage nachgehst.</p>
+    </div>
+
+    <!-- KARTE ZUM AUSPROBIEREN -->
+    <div style="margin-top:3.5rem;text-align:center;" class="reveal">
+      <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:0.75rem;">Zum Ausprobieren</p>
+      <p style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:400;color:var(--navy);margin-bottom:0.5rem;">Zieh eine Karte. <em style="color:var(--gold-dark);font-style:italic;">Kein Kauf, kein Formular.</em></p>
+      <p style="font-size:0.85rem;color:var(--text-mid);margin-bottom:2.25rem;">Tippe auf die Karte, um sie umzudrehen.</p>
+
+      <div class="card-try-scene" id="cardTryScene" onclick="flipTryCard()">
+        <div class="card-try-inner" id="cardTryInner">
+          <div class="card-try-face card-try-front">
+            <div class="card-try-mark"><img src="/images/kompass-logo.svg" alt=""></div>
+            <p class="card-try-category" id="tryFrontCategory">Konflikt Quickstart</p>
+            <p class="card-try-front-title">Karte ziehen</p>
+            <p class="card-try-hint">Tippen zum Umdrehen</p>
+          </div>
+          <div class="card-try-face card-try-back">
+            <p class="card-try-back-category" id="tryBackCategory">Konflikt Quickstart</p>
+            <p class="card-try-question" id="tryBackQuestion">Können Teammitglieder in Meetings offen Fehler zugeben, oder werden sie eher stillschweigend vermieden?</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-try-nav">
+        <button onclick="event.stopPropagation(); prevTryCard()" aria-label="Vorherige Karte">←</button>
+        <div class="card-try-dots" id="tryCardDots"></div>
+        <button onclick="event.stopPropagation(); nextTryCard()" aria-label="Nächste Karte">→</button>
+      </div>
+
+      <p style="margin-top:2rem;font-size:0.85rem;color:var(--text-mid);font-style:italic;">So fühlen sich alle 60 Karten an.</p>
     </div>
 
     <div class="page-intro-grid" style="margin-top:3rem;align-items:stretch;">
@@ -453,6 +505,53 @@ document.querySelectorAll('.reveal').forEach(el => {
   }, { threshold: 0.12 });
   obs.observe(el);
 });
+</script>
+<script>
+const tryCards = [
+  { category: "Konflikt Quickstart", question: "Können Teammitglieder in Meetings offen Fehler zugeben, oder werden sie eher stillschweigend vermieden?" },
+  { category: "Selbstreflexion", question: "Wie reagierst du, wenn jemand deine Entscheidung infrage stellt, bevor du sie erklärt hast?" },
+  { category: "1-zu-1 Dialog", question: "Was hättest du in eurem letzten Gespräch anders gemacht, wenn niemand sonst zugehört hätte?" },
+  { category: "Team Dynamik", question: "Welches einzelne Gespräch würde sich verändern, wenn du eine Woche lang nur zuhören würdest?" }
+];
+let tryCurrent = 0;
+let tryFlipped = false;
+
+function renderTryCard() {
+  document.getElementById('tryFrontCategory').textContent = tryCards[tryCurrent].category;
+  document.getElementById('tryBackCategory').textContent = tryCards[tryCurrent].category;
+  document.getElementById('tryBackQuestion').textContent = tryCards[tryCurrent].question;
+}
+function renderTryDots() {
+  const dotsEl = document.getElementById('tryCardDots');
+  dotsEl.innerHTML = '';
+  tryCards.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'card-try-dot' + (i === tryCurrent ? ' active' : '');
+    dotsEl.appendChild(dot);
+  });
+}
+function flipTryCard() {
+  tryFlipped = !tryFlipped;
+  document.getElementById('cardTryScene').classList.toggle('flipped', tryFlipped);
+}
+function resetTryFlip() {
+  tryFlipped = false;
+  document.getElementById('cardTryScene').classList.remove('flipped');
+}
+function nextTryCard() {
+  resetTryFlip();
+  tryCurrent = (tryCurrent + 1) % tryCards.length;
+  renderTryCard();
+  renderTryDots();
+}
+function prevTryCard() {
+  resetTryFlip();
+  tryCurrent = (tryCurrent - 1 + tryCards.length) % tryCards.length;
+  renderTryCard();
+  renderTryDots();
+}
+renderTryCard();
+renderTryDots();
 </script>
 </body>
 </html>
