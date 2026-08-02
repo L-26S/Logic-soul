@@ -151,6 +151,27 @@ footer{flex-direction:column;text-align:center;padding:2rem 1.5rem;}
 .hero-title { font-family:'Playfair Display',serif; font-size:clamp(1.9rem,4vw,3.4rem); font-weight:400; line-height:1.2; color:rgba(255,255,255,0.92); }
 .hero-title em { font-style:italic; color:var(--gold); }
 .hero-sub { font-size:0.92rem; line-height:1.95; color:rgba(255,255,255,0.6); max-width:640px; margin:1.5rem auto 0; }
+/* ══ INTERAKTIVE KARTE ══ */
+.card-try-scene { width:230px; height:320px; margin:0 auto; perspective:1400px; cursor:pointer; }
+.card-try-inner { position:relative; width:100%; height:100%; transition:transform 0.7s cubic-bezier(0.4,0.1,0.2,1); transform-style:preserve-3d; }
+.card-try-scene.flipped .card-try-inner { transform:rotateY(180deg); }
+.card-try-face { position:absolute; width:100%; height:100%; backface-visibility:hidden; border-radius:4px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.75rem; }
+.card-try-front { background:linear-gradient(155deg,#FBF6EC 0%,#F5EDD8 100%); border:1px solid rgba(197,160,89,0.4); box-shadow:0 20px 45px rgba(197,160,89,0.18); }
+.card-try-front::before { content:''; position:absolute; inset:12px; border:1px solid rgba(197,160,89,0.3); border-radius:2px; pointer-events:none; }
+.card-try-category { font-size:0.5rem; letter-spacing:0.3em; text-transform:uppercase; color:#a8863e; margin-bottom:0.75rem; }
+.card-try-front-title { font-family:'Playfair Display',serif; font-style:italic; font-size:0.95rem; color:#0D1B2A; text-align:center; }
+.card-try-hint { position:absolute; bottom:1.25rem; font-size:0.52rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(168,134,62,0.6); }
+.card-try-back { background:#FFFFFF; border:1px solid rgba(197,160,89,0.4); box-shadow:0 20px 45px rgba(13,27,42,0.18); transform:rotateY(180deg); }
+.card-try-back::before { content:''; position:absolute; inset:12px; border:1px solid rgba(197,160,89,0.3); border-radius:2px; pointer-events:none; }
+.card-try-back-category { font-size:0.5rem; letter-spacing:0.3em; text-transform:uppercase; color:#a8863e; margin-bottom:1rem; }
+.card-try-question { font-family:'Playfair Display',serif; font-size:1rem; font-style:italic; color:#0D1B2A; text-align:center; line-height:1.5; margin-bottom:0.85rem; }
+.card-try-impuls { font-size:0.7rem; color:rgba(13,27,42,0.5); text-align:center; line-height:1.6; }
+.card-try-nav { display:flex; align-items:center; justify-content:center; gap:1.25rem; margin-top:1.75rem; }
+.card-try-nav button { background:none; border:1px solid rgba(197,160,89,0.4); width:32px; height:32px; border-radius:50%; color:#a8863e; font-size:0.9rem; cursor:pointer; transition:all 0.2s; display:flex; align-items:center; justify-content:center; }
+.card-try-nav button:hover { background:#C5A059; border-color:#C5A059; color:white; }
+.card-try-dots { display:flex; gap:0.35rem; }
+.card-try-dot { width:5px; height:5px; border-radius:50%; background:rgba(197,160,89,0.3); transition:background 0.2s; }
+.card-try-dot.active { background:#C5A059; }
 </style>
 </head>
 <body>
@@ -246,6 +267,18 @@ Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="
 <div style="background:#F5EDD8;padding:4rem 3rem;">
 <div class="page-wrap" style="padding:0;">
 <div style="margin-top:0;" class="reveal">
+<p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:1.25rem;">Was genau macht das Basis-Set?</p>
+<p style="font-size:0.92rem;line-height:1.95;color:rgba(13,27,42,0.7);margin-bottom:1.25rem;">Warum tust du manchmal Dinge, die dir gar nicht mehr guttun, obwohl du es eigentlich besser weißt? Jedes Muster hat einen Zweck, meistens ist es ein Schutzmechanismus. Manche Muster helfen uns bis heute wunderbar durch unser Leben. Andere hindern uns mittlerweile, obwohl sie uns einst geholfen haben.</p>
+<p style="font-size:0.92rem;line-height:1.95;color:rgba(13,27,42,0.7);margin-bottom:1.25rem;">Mit dem Basis-Set gehen wir zuerst auf die Muster ein, die dir helfen. Anhand dieser positiven Muster lernst du, dich selbst besser wahrzunehmen, deine SystemKanäle kennenzulernen und deinen inneren Ankerplatz zu finden.</p>
+<p style="font-size:0.92rem;line-height:1.95;color:rgba(13,27,42,0.7);margin-bottom:1.25rem;">Denn wenn du später an den Mustern arbeiten möchtest, die du nicht mehr für hilfreich hältst, brauchst du einen sicheren inneren Ort. Einen Ort, den du in jeder Situation aufsuchen kannst. Der dir Ruhe gibt, Kraft und Erholung bietet. Wo du einfach du selbst bist.</p>
+<p style="font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;color:#0D1B2A;line-height:1.7;">Genau diesen Ort findest du am besten mit dem Basis-Set: 30 Tage, um dich kennenzulernen, deine positiven Eigenschaften zu entdecken und schätzen zu lernen. Was wäre, wenn der Blick auf deine positiven Muster etwas noch viel Tieferes in dir auslöst? Darauf darfst du dich freuen.</p>
+</div>
+</div>
+</div>
+
+<div style="background:#FFFFFF;padding:4rem 3rem;">
+<div class="page-wrap" style="padding:0;">
+<div style="margin-top:0;" class="reveal">
 <p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:1.5rem;">Die 4 SystemKanäle</p>
 <div class="basis-channel-grid">
 <div class="basis-channel-card">
@@ -269,14 +302,55 @@ Logic | Soul <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="
 </div>
 </div>
 
+<div style="background:#F5EDD8;padding:4rem 3rem;">
+<div class="page-wrap" style="padding:0;text-align:center;">
+<p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#a8863e;margin-bottom:0.75rem;">Zum Ausprobieren</p>
+<p style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:400;color:#0D1B2A;margin-bottom:0.5rem;">Zieh eine Karte. <em style="color:#a8863e;font-style:italic;">Kein Kauf, kein Formular.</em></p>
+<p style="font-size:0.85rem;color:rgba(13,27,42,0.65);margin-bottom:2.25rem;">Tippe auf die Karte, um sie umzudrehen.</p>
+
+<div class="card-try-scene" id="cardTryScene" role="button" tabindex="0" aria-label="Karte umdrehen" onclick="flipTryCard()" onkeydown="if(event.key==='Enter' || event.key===' '){event.preventDefault();flipTryCard();}">
+<div class="card-try-inner" id="cardTryInner">
+<div class="card-try-face card-try-front">
+<p class="card-try-category" id="tryFrontCategory">Präsenz</p>
+<p class="card-try-front-title">Karte ziehen</p>
+<p class="card-try-hint">Tippen zum Umdrehen</p>
+</div>
+<div class="card-try-face card-try-back">
+<p class="card-try-back-category" id="tryBackCategory">Präsenz</p>
+<p class="card-try-question" id="tryBackQuestion">Wann merkst du, dass du wirklich da bist — und nicht nur physisch anwesend?</p>
+<p class="card-try-impuls" id="tryBackImpuls">Wie fühlt sich dieser Unterschied an?</p>
+</div>
+</div>
+</div>
+
+<div class="card-try-nav">
+<button onclick="event.stopPropagation(); prevTryCard()" aria-label="Vorherige Karte">←</button>
+<div class="card-try-dots" id="tryCardDots"></div>
+<button onclick="event.stopPropagation(); nextTryCard()" aria-label="Nächste Karte">→</button>
+</div>
+
+<p style="margin-top:2rem;font-size:0.85rem;color:rgba(13,27,42,0.65);font-style:italic;">So beginnt jede Karte. Mit einem Impuls, der etwas in Bewegung bringt.</p>
+</div>
+</div>
+
 <div style="background:#FFFFFF;padding:4rem 3rem;">
 <div class="page-wrap" style="padding:0;">
 <div style="margin-top:0;" class="reveal">
-<p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:1.25rem;">Was genau macht das Basis-Set eigentlich?</p>
-<p style="font-size:0.92rem;line-height:1.95;color:rgba(13,27,42,0.7);margin-bottom:1.25rem;">Warum tust du manchmal Dinge, die dir gar nicht mehr guttun, obwohl du es eigentlich besser weißt? Jedes Muster hat einen Zweck, meistens ist es ein Schutzmechanismus. Manche Muster helfen uns bis heute wunderbar durch unser Leben. Andere hindern uns mittlerweile, obwohl sie uns einst geholfen haben.</p>
-<p style="font-size:0.92rem;line-height:1.95;color:rgba(13,27,42,0.7);margin-bottom:1.25rem;">Mit dem Basis-Set gehen wir zuerst auf die Muster ein, die dir helfen. Anhand dieser positiven Muster lernst du, dich selbst besser wahrzunehmen, deine SystemKanäle kennenzulernen und deinen inneren Ankerplatz zu finden.</p>
-<p style="font-size:0.92rem;line-height:1.95;color:rgba(13,27,42,0.7);margin-bottom:1.25rem;">Denn wenn du später an den Mustern arbeiten möchtest, die du nicht mehr für hilfreich hältst, brauchst du einen sicheren inneren Ort. Einen Ort, den du in jeder Situation aufsuchen kannst. Der dir Ruhe gibt, Kraft und Erholung bietet. Wo du einfach du selbst bist.</p>
-<p style="font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;color:#0D1B2A;line-height:1.7;">Genau diesen Ort findest du am besten mit dem Basis-Set: 30 Tage, um dich kennenzulernen, deine positiven Eigenschaften zu entdecken und schätzen zu lernen. Was wäre, wenn der Blick auf deine positiven Muster etwas noch viel Tieferes in dir auslöst? Darauf darfst du dich freuen.</p>
+<p style="font-size:0.55rem;letter-spacing:0.5em;text-transform:uppercase;color:#C5A059;margin-bottom:1.25rem;">Wie du das Basis-Set nutzt</p>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;">
+<div style="background:white;border-top:2px solid #C5A059;padding:1.75rem;">
+<p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.5rem;">Morgens</p>
+<p style="font-size:0.82rem;line-height:1.8;color:rgba(13,27,42,0.6);">Eine Karte ziehen und bewusst wahrnehmen, über welchen SystemKanal du dich gerade am stärksten wahrnimmst.</p>
+</div>
+<div style="background:white;border-top:2px solid #C5A059;padding:1.75rem;">
+<p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.5rem;">Abends</p>
+<p style="font-size:0.82rem;line-height:1.8;color:rgba(13,27,42,0.6);">Im Workbook festhalten, welches positive Muster sich heute gezeigt hat und wo du es gespürt hast.</p>
+</div>
+<div style="background:white;border-top:2px solid #C5A059;padding:1.75rem;">
+<p style="font-family:'Playfair Display',serif;font-size:1rem;color:#0D1B2A;margin-bottom:0.5rem;">Wenn es zu viel wird</p>
+<p style="font-size:0.82rem;line-height:1.8;color:rgba(13,27,42,0.6);">Deinen Ankerplatz aufsuchen. Den Ort, der dir Ruhe gibt, egal in welcher Situation du gerade steckst.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -437,6 +511,54 @@ entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible')
 }, { threshold: 0.12 });
 obs.observe(el);
 });
+</script>
+<script>
+const tryCards = [
+  { category: "Präsenz", question: "Wann merkst du, dass du wirklich da bist — und nicht nur physisch anwesend?", impuls: "Wie fühlt sich dieser Unterschied an?" },
+  { category: "Kraft", question: "In welchen Momenten verlierst du die Zeit, weil alles so natürlich fließt?", impuls: "Wie merkt dein Körper, dass du im Flow bist?" },
+  { category: "Verbindung", question: "Wann hast du das Gefühl, wirklich verstanden zu werden?", impuls: "Was verändert sich in dir, wenn das passiert?" },
+  { category: "Vision", question: "Wofür würdest du arbeiten, auch wenn niemand es sähe?", impuls: "Wie spürst du diesen Sinn in dir?" }
+];
+let tryCurrent = 0;
+let tryFlipped = false;
+
+function renderTryCard() {
+  document.getElementById('tryFrontCategory').textContent = tryCards[tryCurrent].category;
+  document.getElementById('tryBackCategory').textContent = tryCards[tryCurrent].category;
+  document.getElementById('tryBackQuestion').textContent = tryCards[tryCurrent].question;
+  document.getElementById('tryBackImpuls').textContent = tryCards[tryCurrent].impuls;
+}
+function renderTryDots() {
+  const dotsEl = document.getElementById('tryCardDots');
+  dotsEl.innerHTML = '';
+  tryCards.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'card-try-dot' + (i === tryCurrent ? ' active' : '');
+    dotsEl.appendChild(dot);
+  });
+}
+function flipTryCard() {
+  tryFlipped = !tryFlipped;
+  document.getElementById('cardTryScene').classList.toggle('flipped', tryFlipped);
+}
+function resetTryFlip() {
+  tryFlipped = false;
+  document.getElementById('cardTryScene').classList.remove('flipped');
+}
+function nextTryCard() {
+  resetTryFlip();
+  tryCurrent = (tryCurrent + 1) % tryCards.length;
+  renderTryCard();
+  renderTryDots();
+}
+function prevTryCard() {
+  resetTryFlip();
+  tryCurrent = (tryCurrent - 1 + tryCards.length) % tryCards.length;
+  renderTryCard();
+  renderTryDots();
+}
+renderTryCard();
+renderTryDots();
 </script>
 </body>
 </html>
